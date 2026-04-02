@@ -87,9 +87,9 @@ public class Execute
 // private.
     private static void stat_PGM_boot1_DEFINE_LaunchQue_Client()
     {
-        System.out.printf("entered Execute stat_PGM_boot3_INITIALISE_LaunchQue_Client().%n");
+        System.out.printf("entered Execute stat_PGM_boot1_DEFINE_LaunchQue_Client().%n");
         _stat_PGM_LaunchQue_Client = null;
-        System.out.printf("exiting Execute stat_PGM_boot3_INITIALISE_LaunchQue_Client().%n");
+        System.out.printf("exiting Execute stat_PGM_boot1_DEFINE_LaunchQue_Client().%n");
     }
     private static void stat_PGM_boot1_DEFINE_WriteQue_Cleient_InputSend()
     {

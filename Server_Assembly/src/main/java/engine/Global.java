@@ -18,60 +18,74 @@ public class Global
     }
     public void dyn_REG_boot1_DEFINE_Global(Framework obj)
     {
-            System.out.printf("entered dyn_REG_boot1_DEFINE_Global().%n");
+        System.out.printf("entered dyn_REG_boot1_DEFINE_Global().%n");
 
-            System.out.printf("exiting dyn_REG_boot1_DEFINE_Global().%n");
+        System.out.printf("exiting dyn_REG_boot1_DEFINE_Global().%n");
     }
     public void dyn_REG_boot2_SUBSTANTIATE_Global(Framework obj)
     {
-            System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Global().%n");
+        System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Global().%n");
 
-            System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Global().%n");
+        System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Global().%n");
     }
     public void dyn_REG_boot3_INITIALISE_Global(Framework obj)
     {
-            System.out.printf("entered dyn_REG_boot3_INITIALISE_Global().%n");
+        System.out.printf("entered dyn_REG_boot3_INITIALISE_Global().%n");
 
-            System.out.printf("exiting dyn_REG_boot3_INITIALISE_Global().%n");
+        System.out.printf("exiting dyn_REG_boot3_INITIALISE_Global().%n");
     }
     public void dyn_REG_boot4_INSTANTIATE_Global(Framework obj)
     {
-            System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Global().%n");
+        System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Global().%n");
 
-            System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
+        System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
     }
     public static char dyn_REG_get_numberOfCores()
     {
-            return stat_REG_get_numberOfCores();
+        return stat_REG_get_numberOfCores();
     }
     public static char dyn_REG_get_numberOfPraises()
     {
-            return stat_REG_get_numberOfPraises();
+        return stat_REG_get_numberOfPraises();
     }
-    public static float stat_CONVERT_Bytes_To_Float(byte[] bytes) 
+    public static double stat_CONVERT_ByteArray_To_Double(byte[] byteArray) 
     {
-    if (bytes.length != 4) {
-        throw new IllegalArgumentException("Byte array must have exactly 4 bytes.");
+        if (byteArray.length != 8) {
+            throw new IllegalArgumentException("Byte array must have a length of 8");
+        }
+        ByteBuffer buffer = ByteBuffer.wrap(byteArray);
+        return buffer.getDouble();
     }
-    ByteBuffer buffer = ByteBuffer.wrap(bytes);
-    return buffer.getFloat();
-    }
-    public static double stat_CONVERT_Bytes_To_Double(byte[] bytes) 
+    public static float stat_CONVERT_ByteArray_To_Float(byte[] byteArray) 
     {
-    if (bytes.length != 8) {
-        throw new IllegalArgumentException("Byte array must have a length of 8");
+        if (byteArray.length != 4) {
+            throw new IllegalArgumentException("Byte array must have exactly 4 byteArray.");
+        }
+        ByteBuffer buffer = ByteBuffer.wrap(byteArray);
+        return buffer.getFloat();
     }
-    ByteBuffer buffer = ByteBuffer.wrap(bytes);
-    return buffer.getDouble();
+    public static int stat_CONVERT_Byte_To_Int(byte[] byteArray) 
+    {
+        if (byteArray.length != 1) {
+            throw new IllegalArgumentException("Byte array must have exactly 1 byte.");
+        }
+        int unsignedVal = Byte.toUnsignedInt(byteArray[0]);
+        return unsignedVal;
     }
-    public static byte[] stat_CONVERT_Float_To_Bytes(float value) 
+    public static byte[] stat_CONVERT_Int_To_Byte(int value)
+    {
+        ByteBuffer buffer = ByteBuffer.allocate(4);
+        buffer.putInt(value);
+        return buffer.array();
+    }
+    public static byte[] stat_CONVERT_Float_To_ByteArray(float value) 
     {
         ByteBuffer buffer = ByteBuffer.allocate(Float.BYTES);
         buffer.order(java.nio.ByteOrder.LITTLE_ENDIAN);
         buffer.putFloat(value);
         return buffer.array();
     }
-    public static byte[] stat_CONVERT_Double_To_Bytes(double value) 
+    public static byte[] stat_CONVERT_Double_To_ByteArray(double value) 
     {
         ByteBuffer buffer = ByteBuffer.allocate(Double.BYTES);
         buffer.putDouble(value);
