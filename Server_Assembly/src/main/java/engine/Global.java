@@ -64,17 +64,18 @@ public class Global
         ByteBuffer buffer = ByteBuffer.wrap(byteArray);
         return buffer.getFloat();
     }
-    public static int stat_CONVERT_Byte_To_Int(byte[] byteArray) 
+    public static int stat_CONVERT_ByteArray_To_int(byte[] byteArray) 
     {
-        if (byteArray.length != 1) {
+        if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 1 byte.");
         }
-        int unsignedVal = Byte.toUnsignedInt(byteArray[0]);
-        return unsignedVal;
+        ByteBuffer buffer = ByteBuffer.wrap(byteArray);
+        return buffer.getInt();
     }
-    public static byte[] stat_CONVERT_Int_To_Byte(int value)
+    public static byte[] stat_CONVERT_int_To_ByteArray(int value)
     {
         ByteBuffer buffer = ByteBuffer.allocate(4);
+        buffer.order(java.nio.ByteOrder.LITTLE_ENDIAN);
         buffer.putInt(value);
         return buffer.array();
     }

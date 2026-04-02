@@ -55,7 +55,7 @@ public class IO
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static Pointer app_FUNCT_generate_Program()
+    public static Pointer app_FUNCT_ConcurrentIOServer_generate_Program()
     {
         try {
             return JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_generate_Program();
@@ -290,7 +290,7 @@ public class IO
     }
     public static Framework dyn_CLASS_get_Framework()
     {
-    return stat_CLASS_get_Framework();
+        return stat_CLASS_get_Framework();
     }
 // private.
     private static void stat_CLASS_boot1_DEFINE_framework()
