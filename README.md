@@ -1,9 +1,5 @@
 # OpenCFSD_Java_Assembly.
-## Implements.
- - OpenAvrilConcurrency dll.
- - CLIBWriteQue dll(s),
- - CLBILaunchQue dll(s).
-  
+
 ## Using.
 ### Windows 11 Home.
 Version: 25H2.
@@ -12,6 +8,11 @@ Build id: 26200.7840.
 ### Apache NetBeans IDE.
 Version: Apache NetBeans IDE 25.
 
+## Implements.
+ - OpenAvrilConcurrency dll.
+ - CLIBWriteQue dll(s),
+ - CLBILaunchQue dll(s).
+   
 ## Dependencies.
 ### The Java Development Kit (JDK).
 Version: 25.0.2.
