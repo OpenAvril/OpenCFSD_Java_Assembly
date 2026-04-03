@@ -704,7 +704,6 @@ OpenAvrilCLIBWriteEnableForThreadsAtSERVERINPUTACTION::WriteEnableForThreadsAt_S
 
 ````
 
-
 #### LIB_OpenAvrilConcurrent_IO_Server.dll.
 ##### Header.
 ````
@@ -881,7 +880,7 @@ extern "C"
 ````
 
 ### C# Imports.
-### ImportCLIBConcurrentServerIO.dll.
+#### ImportCLIBConcurrentServerIO.cs.
 ````
 using OpenTK.Graphics.OpenGL;
 using System;
@@ -944,8 +943,8 @@ namespace OpenAvrilCFSD
 }
 ````
 
-## Java Imports.
-### JavaLIBConcurrentIOServer.java.
+### Java Imports.
+#### JavaLIBConcurrentIOServer.java.
 ````
 package lib;
 import com.sun.jna.Library;
