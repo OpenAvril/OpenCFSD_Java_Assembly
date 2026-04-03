@@ -1,7 +1,7 @@
 # .
 
-## Native C++ Libraries.
-### Client.
+## Client.
+### Native C++ Libraries.
 #### LIB_LaunchEnableForConcurrentThreadsAt_CLIENT.dll.
 ##### Header.
 ````
@@ -311,7 +311,118 @@ OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt
 }
 ````
 
-### Server.
+### C# Imports.
+#### ImportCLIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll.
+````
+using System;
+using System.Runtime.InteropServices;
+using System.Security;
+namespace OpenAvrilCFSD
+{
+    [SuppressUnmanagedCodeSecurity]
+    public static class ImportCLIBWriteEnableForThreadsAtCLIENTINPUTACTION
+    {
+        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_generate_Program@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAPAXXZ")]
+        public static extern IntPtr app_FUNCT_generate_Program();
+
+        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_terminate_Program@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAXXZ")]
+        public static extern void app_FUNCT_terminate_Program();
+
+        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_write_End@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAXPAXPAE@Z")]
+        public static extern void app_FUNCT_write_End(IntPtr obj, byte coreId);
+
+        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_write_Start@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAXPAXPAE@Z")]
+        public static extern void app_FUNCT_write_Start(IntPtr obj, byte coreId);
+    }
+}
+````
+
+#### ImportCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE.dll.
+````
+using System;
+using System.Runtime.InteropServices;
+using System.Security;
+namespace OpenAvrilCFSD
+{
+    [SuppressUnmanagedCodeSecurity]
+    public static class ImportCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE
+    {
+        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_generate_Program@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAPAXXZ")]
+        public static extern IntPtr app_FUNCT_generate_Program();
+
+        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_terminate_Program@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAXXZ")]
+        public static extern void app_FUNCT_terminate_Program();
+
+        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_write_End@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAXPAXPAE@Z")]
+        public static extern void app_FUNCT_write_End(IntPtr obj, byte coreId);
+
+        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_write_Start@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAXPAXPAE@Z")]
+        public static extern void app_FUNCT_write_Start(IntPtr obj, byte coreId);
+    }
+}
+````
+
+### Java Imports.
+#### JavaLIBLaunchQue_Client.java.
+````
+package lib;
+import com.sun.jna.Library;
+import com.sun.jna.Native;
+import com.sun.jna.Pointer;
+
+public interface JavaLIBLaunchQue_Client  extends Library
+{
+    JavaLIBLaunchQue_Client INSTANCE = (JavaLIBLaunchQue_Client) Native.load("Assignment_1_-_the_dll", JavaLIBLaunchQue_Client.class);
+    Pointer app_FUNCT_generate_Program();
+    void app_FUNCT_request_Wait_launch(Pointer obj, byte[] bytes);
+    void app_FUNCT_terminate_Progaram();
+    void app_FUNCT_thread_End(Pointer obj, byte[] bytes);
+    byte[] app_FUNCT_get_coreId_To_launch(Pointer obj);
+    boolean app_FUNCT_get_Flag_Active(Pointer obj);
+    boolean app_FUNCT_get_Flag_ConcurrentCoreState(Pointer obj, byte[] bytes);
+    boolean app_FUNCT_get_Flag_Idle(Pointer obj);
+    boolean app_FUNCT_get_State_launchBit(Pointer obj);
+    void app_FUNCT_set_Flag_ConcurrentCoreState(Pointer obj, byte[] bytes, boolean newValue);
+}
+
+````
+
+#### JavaLIBWriteQue_ClientInputSend.java.
+````
+package lib;
+import com.sun.jna.Library;
+import com.sun.jna.Native;
+import com.sun.jna.Pointer;
+
+public interface JavaLIBWriteQue_ClientInputSend  extends Library
+{
+    JavaLIBLaunchQue_Client INSTANCE = (JavaLIBLaunchQue_Client) Native.load("Assignment_1_-_the_dll", JavaLIBLaunchQue_Client.class);
+    Pointer app_FUNCT_generate_Program();
+    void app_FUNCT_terminate_Program();
+    void app_FUNCT_write_End(Pointer obj, byte[] bytes);
+    void app_FUNCT_write_Start(Pointer obj, byte[] bytes);
+}
+````
+
+#### JavaLIBWriteQue_ClientOutputRecieve.java.
+````
+package lib;
+import com.sun.jna.Library;
+import com.sun.jna.Native;
+import com.sun.jna.Pointer;
+
+public interface JavaLIBWriteQue_ClientOutputRecieve  extends Library
+{
+    JavaLIBLaunchQue_Client INSTANCE = (JavaLIBLaunchQue_Client) Native.load("Assignment_1_-_the_dll", JavaLIBLaunchQue_Client.class);
+    Pointer app_FUNCT_generate_Program();
+    void app_FUNCT_terminate_Program();
+    void app_FUNCT_write_End(Pointer obj, byte[] bytes);
+    void app_FUNCT_write_Start(Pointer obj, byte[] bytes);
+}
+````
+
+## Server.
+### Native C++ Libraries.
 #### LIB_LaunchEnableForConcurrentThreadsAt_SERVER.dll.
 ##### Header.
 ````
@@ -543,10 +654,19 @@ OpenAvrilCLIBWriteEnableForThreadsAtSERVERINPUTACTION::WriteEnableForThreadsAt_S
 }
 ````
 
+#### LIB_WriteEnableForThreadsAt_SERVEROUTPUTRECIEVE.dll.
+##### Header.
+````
+
+````
+#### Source.
+````
+
+````
 
 
-### LIB_OpenAvrilConcurrent_IO_Server.dll.
-#### Header.
+#### LIB_OpenAvrilConcurrent_IO_Server.dll.
+##### Header.
 ````
 #ifdef LIBSERVERIOCONCURRNECY_EXPORTS
 #define LIBSERVERIOCONCURRNECY_API __declspec(dllexport)
@@ -584,7 +704,7 @@ extern "C"
 	}
 }
 ````
-#### Source.
+##### Source.
 ````
 #include "pch.h"
 #include "framework.h"
@@ -720,8 +840,8 @@ extern "C"
 	}
 ````
 
-## C# Imports.
-### ImportCLIBLaunchEnableForConcurrentThreadsAtCLIENT.dll.
+### C# Imports.
+#### ImportCLIBLaunchEnableForConcurrentThreadsAtCLIENT.dll.
 ````
 using System;
 using System.Runtime.InteropServices;
@@ -762,55 +882,6 @@ namespace OpenAvrilCFSD
 }
 ````
 
-### ImportCLIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll.
-````
-using System;
-using System.Runtime.InteropServices;
-using System.Security;
-namespace OpenAvrilCFSD
-{
-    [SuppressUnmanagedCodeSecurity]
-    public static class ImportCLIBWriteEnableForThreadsAtCLIENTINPUTACTION
-    {
-        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_generate_Program@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAPAXXZ")]
-        public static extern IntPtr app_FUNCT_generate_Program();
-
-        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_terminate_Program@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAXXZ")]
-        public static extern void app_FUNCT_terminate_Program();
-
-        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_write_End@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAXPAXPAE@Z")]
-        public static extern void app_FUNCT_write_End(IntPtr obj, byte coreId);
-
-        [DllImport("LIBWriteEnableForThreadsAtCLIENTINPUTACTION.dll", EntryPoint = "?app_FUNCT_write_Start@CLIBWriteEnableForThreadsAtCLIENTINPUTACTION@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION@@SAXPAXPAE@Z")]
-        public static extern void app_FUNCT_write_Start(IntPtr obj, byte coreId);
-    }
-}
-````
-
-### ImportCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE.dll.
-````
-using System;
-using System.Runtime.InteropServices;
-using System.Security;
-namespace OpenAvrilCFSD
-{
-    [SuppressUnmanagedCodeSecurity]
-    public static class ImportCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE
-    {
-        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_generate_Program@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAPAXXZ")]
-        public static extern IntPtr app_FUNCT_generate_Program();
-
-        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_terminate_Program@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAXXZ")]
-        public static extern void app_FUNCT_terminate_Program();
-
-        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_write_End@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAXPAXPAE@Z")]
-        public static extern void app_FUNCT_write_End(IntPtr obj, byte coreId);
-
-        [DllImport("LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.dll", EntryPoint = "?app_FUNCT_write_Start@CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE@@SAXPAXPAE@Z")]
-        public static extern void app_FUNCT_write_Start(IntPtr obj, byte coreId);
-    }
-}
-````
 
 ### ImportCLIBConcurrentServerIO.dll.
 ````
