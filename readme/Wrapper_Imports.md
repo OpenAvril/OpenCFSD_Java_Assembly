@@ -18,6 +18,7 @@ extern "C"
 		{
 		public:
 			static void* app_FUNCT_generate_Program();
+			static bool app_FUNCT_get_flag_isPGM_INSTNATIATED();
 			static void app_FUNCT_request_Wait_launch(void* obj, unsigned char* bytes);
 			static void app_FUNCT_terminate_Progaram();
 			static void app_FUNCT_thread_End(void* obj, unsigned char* bytes);
@@ -37,7 +38,7 @@ extern "C"
 			static void stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED();
 			static void stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED();
 			static void stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED();
-			static bool* stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED();
+			static bool* stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED();
 		};
 	}
 }
@@ -91,106 +92,113 @@ void* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableFor
     std::cout << "" << std::endl;
     return (void*)stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
 }
+bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_flag_isPGM_INSTNATIATED()
+{
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+        return stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0];
+    }
+    else {
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+    }
+}
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_request_Wait_launch(void* obj, unsigned char* bytes)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
         OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->app_thread_Start(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj), OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_ByteArray_To_uint8_t(bytes));
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
     }
     
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_terminate_Progaram()
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
         delete _ptr_Framework_LaunchEnableForConcurrentThreadsAt_CLIENT;
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
     }
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_thread_End(void* obj, unsigned char* bytes)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] == false) {
         OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->app_thread_End(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj), (uint8_t)*bytes);
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] = false;
     }
 }
 unsigned char* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_coreId_To_launch(void* obj)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] == false) {
         return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_uint8_t_To_ByteArray(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_for_Que_Of_CoreTolaunch(0));
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] = false;
         return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_uint8_t_To_ByteArray(UINT8_MAX);
     }
 }
 bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_Flag_Active(void* obj)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] == false) {
         return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_Global()->dyn_REG_get_ptr_flag_thread_2STATE_ACTIVE();
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] = false;
         return true;
     }
 }
 bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_Flag_ConcurrentCoreState(void* obj, unsigned char* bytes)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] == false) {
         return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_Of_STATE_For_ConcurrentCore(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_ByteArray_To_uint8_t(bytes));
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] = false;
         return true;
     }
 }
 bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_Flag_Idle(void* obj)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] == false) {
         return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_Global()->dyn_REG_get_ptr_flag_thread_2STATE_IDLE();
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] = false;
         return true;
     }
 }
 bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_State_launchBit(void* obj)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] == false) {
         return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_Of_STATE_For_ConcurrentCore(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_for_Que_Of_CoreTolaunch(0));
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] = false;
         return true;
     }
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_set_Flag_ConcurrentCoreState(void* obj, unsigned char* bytes, bool newValue)
 {
-    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] == false) {
+    if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[10] == false) {
         OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->set_Item_On_list_Of_STATE_For_ConcurrentCore(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_Global()->stat_CONVERT_ByteArray_To_uint8_t(bytes), newValue);
     }
     else {
-        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] = false;
+        stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[10] = false;
         stat_app_FUNCT_Calc_IsAllINSTANTIATED();//INSTANTIATE this member function last.
     }
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_app_FUNCT_Calc_IsAllINSTANTIATED()
 {
-    stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = false;
-    for (uint8_t memberFunctionId = 0; memberFunctionId < 10; memberFunctionId++)
+    stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = false;
+    for (uint8_t memberFunctionId = 1; memberFunctionId < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); memberFunctionId++)
     {
-        if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[memberFunctionId] == true)
+        if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[memberFunctionId] == true)
         {
-            stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = true;
+            stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = true;
         }
-        
     }
-    
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_boot1_CLASS_DEFINE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()
 {
@@ -211,21 +219,21 @@ void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForC
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED()
 {
-    _stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[10]();
-    while (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED() == NULL) { }
-    for (uint8_t index = 0; index < sizeof(*stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+    _stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[11]();
+    while (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED() == NULL) { }
+    for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
     {
         _stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
     }
 }
 void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED()
 {
-    for (uint8_t index = 0; index < sizeof(*stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+    for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
     {
         _stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
     }
 }
-bool* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()
+bool* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()
 {
     return _stat_REG_flag_isMemberFunctionINSTANTIATED;
 }
@@ -316,42 +324,47 @@ void* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForT
 }
 bool OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_get_flag_isPGM_INSTNATIATED()
 {
-	return stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0];
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+		return stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0];
+	}
+	else {
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+	}
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_terminate_Program()
 {
-	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
 		delete _ptr_Framework_WriteEnableForThreadsAt_CLIENTINPUTACTION;
 		while (stat_CLASS_get_ptr_Framework() != NULL) {}
 	}
 	else {
-		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
 	}
 	
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_write_End(void* obj, unsigned char* bytes)
 {
-	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
 		OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_End(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
 	}
 	else {
-		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
 	}
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_write_Start(void* obj, unsigned char* bytes)
 {
-	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] == false) {
 		OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_Start(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
 	}
 	else {
-		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] = false;
 		stat_app_FUNCT_Calc_IsAllINSTANTIATED();//INSTANTIATE this member function last.
 	}
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::stat_app_FUNCT_Calc_IsAllINSTANTIATED()
 {
 	stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = false;
-	for (uint8_t memberFunctionId = 1; memberFunctionId < 4; memberFunctionId++)
+	for (uint8_t memberFunctionId = 1; memberFunctionId < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); memberFunctionId++)
 	{
 		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[memberFunctionId] == true)
 		{
@@ -378,7 +391,7 @@ void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForTh
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED()
 {
-	_stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[4]();
+	_stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[5]();
 	while (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED() == NULL) {}
 	for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
 	{
@@ -414,13 +427,20 @@ extern "C"
 		{
 		public:
 			static void* app_FUNCT_generate_Program();
+			static bool app_FUNCT_get_flag_isPGM_INSTNATIATED();
 			static void app_FUNCT_terminate_Program();
 			static void app_FUNCT_write_End(void*, unsigned char* bytes);
 			static void app_FUNCT_write_Start(void*, unsigned char* bytes);
 		private:
+			static bool* _stat_REG_flag_isMemberFunctionINSTANTIATIOND;
+			static void stat_app_FUNCT_Calc_IsAllINSTANTIATED();
 			static void stat_boot1_CLASS_DEFINE_Framework();
 			static void stat_boot3_CLASS_INITIALISE_Framework();
 			static class WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Framework* stat_CLASS_get_ptr_Framework();
+			static void stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED();
+			static void stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED();
+			static void stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED();
+			static bool* stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED();
 		};
 	}
 }
@@ -431,6 +451,7 @@ extern "C"
 #include "framework.h"
 #include "LIB_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE.h"
 class OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Framework* _ptr_Framework_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE;
+bool* _stat_REG_flag_isMemberFunctionINSTANTIATED;
 void* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::app_FUNCT_generate_Program()
 {
 	std::cout << "started Classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
@@ -450,9 +471,9 @@ void* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableFo
 	stat_CLASS_get_ptr_Framework()->boot3_REG_INITIALISE_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Framework(stat_CLASS_get_ptr_Framework());
 	std::cout << "done Registers - INITIALISE." << std::endl;
 
-	std::cout << "started Program - INSTANTIATE." << std::endl;
-	stat_CLASS_get_ptr_Framework()->boot4_PGM_INSTANTIATE_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Framework(stat_CLASS_get_ptr_Framework());
-	std::cout << "done Program - INSTANTIATE." << std::endl;
+	std::cout << "started Program - INSTANTIATION." << std::endl;
+	stat_CLASS_get_ptr_Framework()->boot4_PGM_INSTANTIATION_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Framework(stat_CLASS_get_ptr_Framework());
+	std::cout << "done Program - INSTANTIATION." << std::endl;
 	
 	std::cout << "" << std::endl;
 	std::cout << "        ,     \\      /      ," << std::endl;
@@ -471,18 +492,55 @@ void* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableFo
 	std::cout << "" << std::endl;
 	return (void*)stat_CLASS_get_ptr_Framework();
 }
+bool OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::app_FUNCT_get_flag_isPGM_INSTNATIATED()
+{
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+		return stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0];
+	}
+	else {
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+	}
+}
+
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::app_FUNCT_terminate_Program()
 {
-	delete _ptr_Framework_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE;
-	while (stat_CLASS_get_ptr_Framework() != NULL) {}
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
+		delete _ptr_Framework_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE;
+		while (stat_CLASS_get_ptr_Framework() != NULL) {}
+	}
+	else {
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
+	}
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::app_FUNCT_write_End(void* obj, unsigned char* bytes)
 {
-	OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_End(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
+		OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_End(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+	}
+	else {
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
+	}
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::app_FUNCT_write_Start(void* obj, unsigned char* bytes)
 {
-	OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_Start(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+	if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] == false) {
+		OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_Start(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+	}
+	else {
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] = false;
+		stat_app_FUNCT_Calc_IsAllINSTANTIATED();//INSTANTIATE this member function last.
+	}
+}
+void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_app_FUNCT_Calc_IsAllINSTANTIATED()
+{
+	stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = false;
+	for (uint8_t memberFunctionId = 1; memberFunctionId < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); memberFunctionId++)
+	{
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[memberFunctionId] == true)
+		{
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = true;
+		}
+	}
 }
 void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_boot1_CLASS_DEFINE_Framework()
 {
@@ -496,6 +554,30 @@ void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableFor
 OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE_Framework* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_CLASS_get_ptr_Framework()
 {
 	return _ptr_Framework_WriteEnableForThreadsAt_CLIENTOUTPUTRECIEVE;
+}
+void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED()
+{
+	_stat_REG_flag_isMemberFunctionINSTANTIATED = NULL;
+}
+void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED()
+{
+	_stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[5]();
+	while (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED() == NULL) {}
+	for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+	{
+		_stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
+	}
+}
+void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED()
+{
+	for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+	{
+		_stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
+	}
+}
+bool* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::CLIBWriteEnableForThreadsAtCLIENTOUTPUTRECIEVE::stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()
+{
+	return _stat_REG_flag_isMemberFunctionINSTANTIATED;
 }
 ````
 
