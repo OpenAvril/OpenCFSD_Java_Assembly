@@ -29,9 +29,15 @@ extern "C"
 			static void app_FUNCT_set_Flag_ConcurrentCoreState(void* obj, unsigned char* bytes, bool newValue);
 
 		private:
+			static bool* _stat_REG_flag_isMemberFunctionINSTANTIATIOND;
+			static void stat_app_FUNCT_Calc_IsAllINSTANTIATED();
 			static void stat_boot1_CLASS_DEFINE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
 			static void stat_boot3_CLASS_INITIALISE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
 			static class LaunchEnableForConcurrentThreadsAt_CLIENT_Framework* stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
+			static void stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED();
+			static void stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED();
+			static void stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED();
+			static bool* stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED();
 		};
 	}
 }
@@ -40,73 +46,188 @@ extern "C"
 ````
 #include "pch.h"
 #include "framework.h"
-#include "LIB_WriteEnableForThreadsAt_CLIENTINPUTACTION.h"
-class OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework* _ptr_Framework_WriteEnableForThreadsAt_CLIENTINPUTACTION;
-void* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_generate_Program()
+#include "LIB_LaunchEnableForConcurrentThreadsAt_CLIENT.h"
+class OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Framework* _ptr_Framework_LaunchEnableForConcurrentThreadsAt_CLIENT;
+bool* _stat_REG_flag_isMemberFunctionINSTANTIATED;
+void* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_generate_Program()
 {
-	std::cout << "started Classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
-	stat_boot1_CLASS_DEFINE_Framework();
-	stat_boot3_CLASS_INITIALISE_Framework();
-	std::cout << "done Classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
+    std::cout << "started Classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
+    stat_boot1_CLASS_DEFINE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
+    stat_boot3_CLASS_INITIALISE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
+    std::cout << "done Classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
 
-	std::cout << "started Registers - DEFINE" << std::endl;
-	stat_CLASS_get_ptr_Framework()->boot1_REG_DEFINE_WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework(stat_CLASS_get_ptr_Framework());
-	std::cout << "done Registers - DEFINE." << std::endl;
+    std::cout << "started Registers - DEFINE" << std::endl;
+    stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()->boot1_REG_DEFINE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework(stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework());
+    std::cout << "done Registers - DEFINE." << std::endl;
 
-	std::cout << "started Registers - SUBSTANTIATE." << std::endl;
-	stat_CLASS_get_ptr_Framework()->boot2_REG_SUBSTANTIATE_WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework(stat_CLASS_get_ptr_Framework());
-	std::cout << "done Registers - SUBSTANTIATE." << std::endl;
+    std::cout << "started Registers - SUBSTANTIATE." << std::endl;
+    stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()->boot2_REG_SUBSTANTIATE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework(stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework());
+    std::cout << "done Registers - SUBSTANTIATE." << std::endl;
 
-	std::cout << "started Registers - INITIALISE." << std::endl;
-	stat_CLASS_get_ptr_Framework()->boot3_REG_INITIALISE_WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework(stat_CLASS_get_ptr_Framework());
-	std::cout << "done Registers - INITIALISE." << std::endl;
+    std::cout << "started Registers - INITIALISE." << std::endl;
+    stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()->boot3_REG_INITIALISE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework(stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework());
+    std::cout << "done Registers - INITIALISE." << std::endl;
 
-	std::cout << "started Program - INSTANTIATE." << std::endl;
-	stat_CLASS_get_ptr_Framework()->boot4_PGM_INSTANTIATE_WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework(stat_CLASS_get_ptr_Framework());
-	std::cout << "done Program - INSTANTIATE." << std::endl;
-	
-	std::cout << "" << std::endl;
-	std::cout << "        ,     \\      /      ," << std::endl;
-	std::cout << "        ,     \\      /      ," << std::endl;
-	std::cout << "       / \\    )\\ __ /(     / \\ " << std::endl;
-	std::cout << "      /   \\   (_\\  /_)    /   \\ " << std::endl;
-	std::cout << "____ / ____\\__ \\@  @/ ___/_____\\_____" << std::endl;
-	std::cout << "|              |\\../|               |" << std::endl;
-	std::cout << "|               \\VV/                |" << std::endl;
-	std::cout << "|        MIT Write Que .dll         |" << std::endl;
-	std::cout << "|___________________________________|" << std::endl;
-	std::cout << "|    / \\ /        \\\\        \\ /\\    |" << std::endl;
-	std::cout << "|  /    V          ))        V   \\  |" << std::endl;
-	std::cout << "|/                //               \\| " << std::endl;
-	std::cout << "`                 V                 '" << std::endl;
-	std::cout << "" << std::endl;
-	return (void*)stat_CLASS_get_ptr_Framework();
+    std::cout << "started Program - INSTANTIATION." << std::endl;
+    stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED();
+    stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED();
+    stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED();
+    stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()->boot4_PGM_INSTANTIATION_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework(stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework());
+    std::cout << "done Program - INSTANTIATION." << std::endl;
+
+    std::cout << "" << std::endl;
+    std::cout << "        ,     \\      /      ," << std::endl;
+    std::cout << "       / \\    )\\ __ /(     / \\ " << std::endl;
+    std::cout << "      /   \\   (_\\  /_)    /   \\ " << std::endl;
+    std::cout << "____ / ____\\__ \\@  @/ ___/_____\\_____" << std::endl;
+    std::cout << "|              |\\../|               |" << std::endl;
+    std::cout << "|               \\VV/                |" << std::endl;
+    std::cout << "|        MIT Launch Que .dll        |" << std::endl;
+    std::cout << "|___________________________________|" << std::endl;
+    std::cout << "|    / \\ /        \\\\        \\ /\\    |" << std::endl;
+    std::cout << "|  /    V          ))        V   \\  |" << std::endl;
+    std::cout << "|/                //               \\| " << std::endl;
+    std::cout << "`                 V                 '" << std::endl;
+    std::cout << "" << std::endl;
+    return (void*)stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
 }
-void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_terminate_Program()
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_request_Wait_launch(void* obj, unsigned char* bytes)
 {
-	delete _ptr_Framework_WriteEnableForThreadsAt_CLIENTINPUTACTION;
-	while (stat_CLASS_get_ptr_Framework() != NULL) {}
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+        OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->app_thread_Start(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj), OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_ByteArray_To_uint8_t(bytes));
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+    }
+    
 }
-void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_write_End(void* obj, unsigned char* bytes)
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_terminate_Progaram()
 {
-	OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_End(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
+        delete _ptr_Framework_LaunchEnableForConcurrentThreadsAt_CLIENT;
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
+    }
 }
-void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::app_FUNCT_write_Start(void* obj, unsigned char* bytes)
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_thread_End(void* obj, unsigned char* bytes)
 {
-	OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_WriteEnable()->dyn_app_FUNCT_write_Start(OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
+        OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->app_thread_End(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj), (uint8_t)*bytes);
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
+    }
 }
-void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::stat_boot1_CLASS_DEFINE_Framework()
+unsigned char* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_coreId_To_launch(void* obj)
 {
-	_ptr_Framework_WriteEnableForThreadsAt_CLIENTINPUTACTION = NULL;
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] == false) {
+        return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_uint8_t_To_ByteArray(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_for_Que_Of_CoreTolaunch(0));
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] = false;
+        return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_uint8_t_To_ByteArray(UINT8_MAX);
+    }
 }
-void OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::stat_boot3_CLASS_INITIALISE_Framework()
+bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_Flag_Active(void* obj)
 {
-	_ptr_Framework_WriteEnableForThreadsAt_CLIENTINPUTACTION = new class OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework();
-	while (stat_CLASS_get_ptr_Framework() == NULL) {}
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] == false) {
+        return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_Global()->dyn_REG_get_ptr_flag_thread_2STATE_ACTIVE();
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] = false;
+        return true;
+    }
 }
-OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::WriteEnableForThreadsAt_CLIENTINPUTACTION_Framework* OpenAvrilCLIBWriteEnableForThreadsAtCLIENTINPUTACTION::CLIBWriteEnableForThreadsAtCLIENTINPUTACTION::stat_CLASS_get_ptr_Framework()
+bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_Flag_ConcurrentCoreState(void* obj, unsigned char* bytes)
 {
-	return _ptr_Framework_WriteEnableForThreadsAt_CLIENTINPUTACTION;
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] == false) {
+        return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_Of_STATE_For_ConcurrentCore(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_ByteArray_To_uint8_t(bytes));
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] = false;
+        return true;
+    }
+}
+bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_Flag_Idle(void* obj)
+{
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] == false) {
+        return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_Global()->dyn_REG_get_ptr_flag_thread_2STATE_IDLE();
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] = false;
+        return true;
+    }
+}
+bool OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_get_State_launchBit(void* obj)
+{
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] == false) {
+        return OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_Of_STATE_For_ConcurrentCore(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->dyn_REG_get_Item_On_list_for_Que_Of_CoreTolaunch(0));
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] = false;
+        return true;
+    }
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::app_FUNCT_set_Flag_ConcurrentCoreState(void* obj, unsigned char* bytes, bool newValue)
+{
+    if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] == false) {
+        OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_LaunchConcurrency_Control()->set_Item_On_list_Of_STATE_For_ConcurrentCore(OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Global::stat_CONVERT_Obj_To_ClassOf(obj)->dyn_CLASS_get_ptr_LaunchConcurrency()->dyn_CLASS_get_ptr_Global()->stat_CONVERT_ByteArray_To_uint8_t(bytes), newValue);
+    }
+    else {
+        stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] = false;
+        stat_app_FUNCT_Calc_IsAllINSTANTIATED();//INSTANTIATE this member function last.
+    }
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_app_FUNCT_Calc_IsAllINSTANTIATED()
+{
+    stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = false;
+    for (uint8_t memberFunctionId = 0; memberFunctionId < 10; memberFunctionId++)
+    {
+        if (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[memberFunctionId] == true)
+        {
+            stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = true;
+        }
+        
+    }
+    
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_boot1_CLASS_DEFINE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()
+{
+    _ptr_Framework_LaunchEnableForConcurrentThreadsAt_CLIENT = NULL;
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_boot3_CLASS_INITIALISE_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()
+{
+    _ptr_Framework_LaunchEnableForConcurrentThreadsAt_CLIENT = new OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Framework();
+    while (stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework() == NULL) {}
+}
+OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::LaunchEnableForConcurrentThreadsAt_CLIENT_Framework* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_CLASS_get_ptr_LaunchEnableForConcurrentThreadsAt_CLIENT_Framework()
+{
+    return _ptr_Framework_LaunchEnableForConcurrentThreadsAt_CLIENT;
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED()
+{
+    _stat_REG_flag_isMemberFunctionINSTANTIATED = NULL;
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED()
+{
+    _stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[10]();
+    while (stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED() == NULL) { }
+    for (uint8_t index = 0; index < sizeof(*stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+    {
+        _stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
+    }
+}
+void OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED()
+{
+    for (uint8_t index = 0; index < sizeof(*stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+    {
+        _stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
+    }
+}
+bool* OpenAvrilCLIBLaunchEnableForConcurrentThreadsAtCLIENT::CLIBLaunchEnableForConcurrentThreadsAtCLIENT::stat_CLASS_get_ptr_flag_isMemberFunctionINSTANTIATED()
+{
+    return _stat_REG_flag_isMemberFunctionINSTANTIATED;
 }
 ````
 #### LIB_WriteEnableForThreadsAt_CLIENTINPUTACTION.dll.
