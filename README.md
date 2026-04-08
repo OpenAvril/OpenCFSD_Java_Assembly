@@ -9,7 +9,7 @@ Build id: 26200.7840.
 Version: Apache NetBeans IDE 25.
 
 ## Implements.
- - OpenConcurrency dll.
+ - OpenAvrilConcurrency dll.
  - CLIBWriteQue dll(s),
  - CLBILaunchQue dll(s).
    
