@@ -902,24 +902,31 @@ extern "C"
 		public:
 			static void app_FUNCT_flip_Input_DoubleBuffer(void* obj);
 			static void* app_FUNCT_generate_Program();
+			static bool app_FUNCT_get_flag_isPGM_INSTNATIATED();
 			static void app_FUNCT_select_set_Intput_Subset(void* obj, unsigned char* bytes);
-			static void app_FUNCT_terminate_Program(void* obj);
+			static void app_FUNCT_terminate_Program();
 			static void app_FUNCT_pop_From_Stack_Of_Output(void* obj);
 			static void app_FUNCT_push_To_STACK_Of_Input(void* obj);
-			static bool dyn_REG_get_flag_isStackLoaded_Server_InputAction(void* obj);
-			static bool dyn_REG_get_flag_isLoaded_Stack_OutputSend(void* obj);
-			static bool dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(void* obj);
+			static unsigned char* dyn_REG_get_flag_isStackLoaded_Server_InputAction(void* obj);
+			static unsigned char* dyn_REG_get_flag_isStackLoaded_Server_OutputSend(void* obj);
+			static unsigned char* dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(void* obj);
 			static unsigned char* dyn_REG_get_ptr_PraiseEventId(void* obj);
-			static unsigned char* dyn_REG_get_ptr_output_Value(void* obj);
-			static void dyn_REG_set_Item_input_Value_A(void* obj, unsigned char* bytes);
-			static void dyn_REG_set_Item_input_Value_B(void* obj, unsigned char* bytes);
+			static unsigned char* dyn_REG_get_ptr_Output_praise0_Value(void* obj);
+			static void dyn_REG_set_Item_Input_praise0_Value_A(void* obj, unsigned char* bytes);
+			static void dyn_REG_set_Item_Input_praise0_Value_B(void* obj, unsigned char* bytes);
 			static void dyn_REG_set_PraiseEventId(void* obj, unsigned char* bytes);
 			static void* dyn_PGM_get_program_WriteEnableStack_ServerInputAction(void* obj);
 			static void* dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve(void* obj);
 		private:
+			static bool* _stat_REG_flag_isMemberFunctionINSTANTIATIOND;
+			static void stat_app_FUNCT_Calc_IsAllINSTANTIATED();
 			static void stat_CLASS_boot1_DEFINE_Framework();
 			static void stat_CLASS_boot3_INITIALISE_Framework();
 			static void* stat_CLASS_get_ptr_Framework_Server();
+			static void stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED();
+			static void stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED();
+			static void stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED();
+			static bool* stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED();
 		};
 	}
 }
@@ -930,28 +937,70 @@ extern "C"
 #include "framework.h"
 #include "LIB_Concurrent_IO_Server.h"
 	static void* _CLASS_ptr_Framework_Server;
+	bool* _stat_REG_flag_isMemberFunctionINSTANTIATED;
 // public.
 	void OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_flip_Input_DoubleBuffer(void* obj)
 	{
-		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->app_FUNCT_flip_Input_DoubleBuffer();
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] == false) {
+			OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->app_FUNCT_flip_Input_DoubleBuffer();
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[1] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();//INSTANTIATE this member function last.
+		}
 	}
 	void* OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_generate_Program()
 	{
 		std::cout << "entered app_FUNCT_generate_Program()." << std::endl;
 
-		std::cout << "started Classe(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
+		std::cout << "started CLASS(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
 		stat_CLASS_boot1_DEFINE_Framework();
 		stat_CLASS_boot3_INITIALISE_Framework();
-		std::cout << "done Classe(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
+		std::cout << "done CLASS(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
 
-		std::cout << "started Structure(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
+		std::cout << "started STRUCT(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
 		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->stat_STRUCT_boot0_DECLAIRE();
 		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->stat_STRUCT_boot1_DEFINE();
-		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->stat_STRUCT_boot3_INITIALISE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()), OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Concurrent(), OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Input(), OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Output());
-		std::cout << "done Structure(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->stat_STRUCT_boot3_INITIALISE();
+		
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Input()->dyn_REG_boot1_DEFINE_User_Input();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Input()->dyn_REG_boot2_SUBSTANTIATE_User_Input();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Input()->dyn_REG_boot3_INITIALISE_User_Input();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Input()->dyn_REG_boot4_INSTANTIATE_User_Input();
+
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Output()->dyn_REG_boot1_DEFINE_User_Output();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Output()->dyn_REG_boot2_SUBSTANTIATE_User_Output();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Output()->dyn_REG_boot3_INITIALISE_User_Output();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Output()->dyn_REG_boot4_INSTANTIATE_User_Output();
+
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Algorithim()->dyn_REG_boot1_DEFINE_User_Algorithim();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Algorithim()->dyn_REG_boot2_SUBSTANTIATE_User_Algorithim();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Algorithim()->dyn_REG_boot3_INITIALISE_User_Algorithim();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_User_Algorithim()->dyn_REG_boot4_INSTANTIATE_User_Algorithim();
+
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Input()->dyn_REG_boot1_DEFINE_Input();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Input()->dyn_REG_boot2_SUBSTANTIATE_Input();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Input()->dyn_REG_boot3_INITIALISE_Input(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()));
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Input()->dyn_REG_boot4_INSTANTIATE_Input();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Input()->dyn_CLASS_get_ptr_Input_Control()->app_select_And_Set_Input_Subset(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()), (uint8_t)(0));
+
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Output()->dyn_REG_boot1_DEFINE_Output();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Output()->dyn_REG_boot2_SUBSTANTIATE_Output();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Output()->dyn_REG_boot3_INITIALISE_Output(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()));
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Output()->dyn_REG_boot4_INSTANTIATE_Output();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Output()->dyn_CLASS_get_ptr_Output_Control()->app_select_And_Set_Output_Subset(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()), (uint8_t)(0));
+
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Concurrent()->dyn_REG_boot1_DEFINE_Concurrent();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Concurrent()->dyn_REG_boot2_SUBSTANTIATE_Concurrent();
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Concurrent()->dyn_REG_boot3_INITIALISE_Concurrent(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()));
+		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_STRUCT_get_Concurrent()->dyn_REG_boot4_INSTANTIATE_Concurrent();
+		for (uint8_t concurrentThreadId = 0; concurrentThreadId < (OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Global()->dyn_REG_get_Item_number_Of_Implemented_Cores() -1); concurrentThreadId++)
+		{
+			OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Algorithms()->dyn_STRUCT_get_Item_On_list_Of_ptr_Concurrent(concurrentThreadId)->dyn_CLASS_get_ptr_Concurrent_Control()->app_selectset_Algorithm_Scubset(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()), (uint8_t)(0), concurrentThreadId);
+		}
+		std::cout << "done STRUCT(s) - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE." << std::endl;
 
 		std::cout << "started Registers - DEFINE" << std::endl;
-		
 		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server())->dyn_REG_boot1_DEFINE_Framework_Server(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(stat_CLASS_get_ptr_Framework_Server()));
 		std::cout << "done Registers - DEFINE." << std::endl;
 
@@ -984,67 +1033,183 @@ extern "C"
 		std::cout << " " << std::endl;
 		return (void*)stat_CLASS_get_ptr_Framework_Server();
 	}
+	bool OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_get_flag_isPGM_INSTNATIATED()
+	{
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] == false) {
+			return stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0];
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[2] = false;
+		}
+		return true;
+	}
 	void OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_select_set_Intput_Subset(void* obj, unsigned char* bytes)
 	{
-		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_CLASS_get_ptr_Input_Control()->app_select_And_Set_Input_Subset(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] == false) {
+			OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_CLASS_get_ptr_Input_Control()->app_select_And_Set_Input_Subset(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj), OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[3] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
-	void OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_terminate_Program(void* obj)
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_terminate_Program()
 	{
-		delete _CLASS_ptr_Framework_Server;
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] == false) {
+			delete _CLASS_ptr_Framework_Server;
+			while (stat_CLASS_get_ptr_Framework_Server() != NULL) { }
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[4] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
 	void OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_pop_From_Stack_Of_Output(void* obj)
 	{
-		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->app_FUNCT_pop_From_Stack_Of_Output(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj));
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] == false) {
+			OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->app_FUNCT_pop_From_Stack_Of_Output(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj));
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[5] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
 	void OpenAvrilConcurrency::CLIBConcurrentServerIO::app_FUNCT_push_To_STACK_Of_Input(void* obj)
 	{
-		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->app_FUNCT_push_To_STACK_Of_Input(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj));
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] == false) {
+			OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->app_FUNCT_push_To_STACK_Of_Input(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj));
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[6] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
-	bool OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_flag_isStackLoaded_Server_InputAction(void* obj)
+	unsigned char* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_flag_isStackLoaded_Server_InputAction(void* obj)
 	{
-		return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->dyn_REG_get_Item_flag_isLoaded_Stack_InputAction();
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] == false) {
+			return OpenAvrilConcurrency::Global::stat_CONVERT_bool_to_ByteArray(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->dyn_REG_get_Item_flag_isLoaded_Stack_InputAction());
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[7] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return OpenAvrilConcurrency::Global::stat_CONVERT_bool_to_ByteArray(true);
+		
 	}
-	bool OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_flag_isLoaded_Stack_OutputSend(void* obj)
+	unsigned char* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_flag_isStackLoaded_Server_OutputSend(void* obj)
 	{
-		return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->dyn_REG_get_Item_flag_isLoaded_Stack_OutputSend();
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] == false) {
+			return OpenAvrilConcurrency::Global::stat_CONVERT_bool_to_ByteArray(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_CLASS_get_ptr_Data_Control()->dyn_REG_get_Item_flag_isLoaded_Stack_OutputSend());
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[8] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return OpenAvrilConcurrency::Global::stat_CONVERT_bool_to_ByteArray(true);
 	}
-	bool OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(void* obj)
+	unsigned char* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(void* obj)
 	{
-		return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Execute()->dyn_CLASS_get_ptr_Execute_Control()->dyn_REG_get_Flag_is_SystemInitialised();
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] == false) {
+			return OpenAvrilConcurrency::Global::stat_CONVERT_bool_to_ByteArray(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Execute()->dyn_CLASS_get_ptr_Execute_Control()->dyn_REG_get_Flag_is_SystemInitialised());
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[9] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return OpenAvrilConcurrency::Global::stat_CONVERT_bool_to_ByteArray(true);
 	}
 	unsigned char* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_ptr_PraiseEventId(void* obj)
 	{
-		return OpenAvrilConcurrency::Global::stat_CONVERT_uint8_t_to_ByteArray(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Output_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_get_ptr_Output_praiseEventId());
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[10] == false) {
+			return OpenAvrilConcurrency::Global::stat_CONVERT_uint8_t_to_ByteArray(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Output_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_get_ptr_Output_praiseEventId());
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[10] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return OpenAvrilConcurrency::Global::stat_CONVERT_uint8_t_to_ByteArray(uint8_t(UINT8_MAX));
 	}
-	unsigned char* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_ptr_output_Value(void* obj)
+	unsigned char* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_get_ptr_Output_praise0_Value(void* obj)
 	{
-		return nullptr;
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[11] == false) {
+			OpenAvrilConcurrency::Output_praise0* objOutput_praise0 = (OpenAvrilConcurrency::Output_praise0*)OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Output_READ(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_get_ptr_Item_Of_ptr_Outputs_Subset();
+			return OpenAvrilConcurrency::Global::stat_CONVERT_Double_to_ByteArray(objOutput_praise0->dyn_REG_get_output_Value());
+			delete objOutput_praise0;
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[11] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return OpenAvrilConcurrency::Global::stat_CONVERT_Double_to_ByteArray(DBL_MAX);;
 	}
-	void OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_set_Item_input_Value_A(void* obj, unsigned char* bytes)
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_set_Item_Input_praise0_Value_A(void* obj, unsigned char* bytes)
 	{
-		OpenAvrilConcurrency::Praise0_Input* objPraise0_input = (OpenAvrilConcurrency::Praise0_Input*)OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj));
-		objPraise0_input->dyn_REG_set_Item_input_Value_A(OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_Float(bytes));
-		delete objPraise0_input;
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[12] == false) {
+			OpenAvrilConcurrency::Input_praise0* objInput_praise0 = (OpenAvrilConcurrency::Input_praise0*)OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj));
+			objInput_praise0->dyn_REG_set_Item_Input_praise0_valueA(OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_Float(bytes));
+			delete objInput_praise0;
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[12] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
-	void OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_set_Item_input_Value_B(void* obj, unsigned char* bytes)
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_set_Item_Input_praise0_Value_B(void* obj, unsigned char* bytes)
 	{
-		OpenAvrilConcurrency::Praise0_Input* objPraise0_input = (OpenAvrilConcurrency::Praise0_Input*)OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_get_ptr_Input_praiseEventId();
-		objPraise0_input->dyn_REG_set_Item_input_Value_B(OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_Float(bytes));
-		delete objPraise0_input;
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[13] == false) {
+			OpenAvrilConcurrency::Input_praise0* objInput_praise0 = (OpenAvrilConcurrency::Input_praise0*)OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_get_ptr_Input_praiseEventId();
+			objInput_praise0->dyn_REG_set_Item_Input_praise0_valueB(OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_Float(bytes));
+			delete objInput_praise0;
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[13] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
 	void OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_REG_set_PraiseEventId(void* obj, unsigned char* bytes)
 	{
-		OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_set_ptr_Input_praiseEventId(OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[14] == false) {
+			OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Data()->dyn_REG_get_ptr_Item_array_Of_doubleBuffer_Input_WRITE(OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj))->dyn_REG_set_ptr_Input_praiseEventId(OpenAvrilConcurrency::Global::stat_CONVERT_ByteArray_to_uint8_t(bytes));
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[14] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
 	}
 	void* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_PGM_get_program_WriteEnableStack_ServerInputAction(void* obj)
 	{
-		return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Execute()->dyn_PGM_get_WriteEnable_ServerInputAction();
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[15] == false) {
+			return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Execute()->dyn_PGM_get_WriteEnable_ServerInputAction();
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[15] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return (void*)(NULL);
 	}
 	void* OpenAvrilConcurrency::CLIBConcurrentServerIO::dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve(void* obj)
 	{
-		return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Execute()->dyn_PGM_get_WriteEnable_ServerOutputRecieve();
+		if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[16] == false) {
+			return OpenAvrilConcurrency::Global::stat_CONVERT_ObjPtr_to_Class(obj)->dyn_CLASS_get_ptr_Server()->dyn_CLASS_get_ptr_Execute()->dyn_PGM_get_WriteEnable_ServerOutputRecieve();
+		}
+		else {
+			stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[16] = false;
+			stat_app_FUNCT_Calc_IsAllINSTANTIATED();
+		}
+		return (void*)(NULL);
 	}
-// private.
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::stat_app_FUNCT_Calc_IsAllINSTANTIATED()
+	{
+		stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = false;
+		for (uint8_t memberFunctionId = 1; memberFunctionId < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); memberFunctionId++)
+		{
+			if (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[memberFunctionId] == true)
+			{
+				stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()[0] = true;
+			}
+		}
+	}
+	// private.
 	void OpenAvrilConcurrency::CLIBConcurrentServerIO::stat_CLASS_boot1_DEFINE_Framework()
 	{
 		_CLASS_ptr_Framework_Server = NULL;
@@ -1058,6 +1223,31 @@ extern "C"
 	{
 		return _CLASS_ptr_Framework_Server;
 	}
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::stat_REG_boot1_DEFINE_flag_isMemberFunctionINSTANTIATED()
+	{
+		_stat_REG_flag_isMemberFunctionINSTANTIATED = NULL;
+	}
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::stat_REG_boot2_SUBSTANTIATE_flag_isMemberFunctionINSTANTIATED()
+	{
+		_stat_REG_flag_isMemberFunctionINSTANTIATED = new bool[17]();
+		while (stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED() == NULL) {}
+		for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+		{
+			_stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
+		}
+	}
+	void OpenAvrilConcurrency::CLIBConcurrentServerIO::stat_REG_boot3_INITIALISE_flag_isMemberFunctionINSTANTIATED()
+	{
+		for (uint8_t index = 0; index < sizeof(*stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()); index++)
+		{
+			_stat_REG_flag_isMemberFunctionINSTANTIATED[index] = true;
+		}
+	}
+	bool* OpenAvrilConcurrency::CLIBConcurrentServerIO::stat_REG_get_ptr_flag_isMemberFunctionINSTANTIATED()
+	{
+		return _stat_REG_flag_isMemberFunctionINSTANTIATED;
+	}
+
 ````
 
 ### Java Imports.
@@ -1073,6 +1263,7 @@ public interface JavaLIBConcurrentIOServer  extends Library
     JavaLIBConcurrentIOServer INSTANCE = (JavaLIBConcurrentIOServer) Native.load("LIBConcurrentIOServer", JavaLIBConcurrentIOServer.class);
     void app_FUNCT_flip_Input_DoubleBuffer(Pointer obj);
     Pointer app_FUNCT_generate_Program();
+    byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();
     void app_FUNCT_select_set_Intput_Subset(Pointer obj, byte[] bytes);
     void app_FUNCT_terminate_Program();
     void app_FUNCT_pop_From_Stack_Of_Output(Pointer obj);
@@ -1081,9 +1272,9 @@ public interface JavaLIBConcurrentIOServer  extends Library
     byte[] dyn_REG_get_flag_isStackLoaded_Server_OutputSend(Pointer obj);
     byte[] dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(Pointer obj);
     byte[] dyn_REG_get_ptr_PraiseEventId(Pointer obj);
-    byte[] dyn_REG_get_ptr_output_Value(Pointer obj);
-    void dyn_REG_set_Item_input_Value_A(Pointer obj, byte[] bytes);
-    void dyn_REG_set_Item_input_Value_B(Pointer obj, byte[] bytes);
+    byte[] dyn_REG_get_ptr_Output_praise0_Value(Pointer obj);
+    void dyn_REG_set_Item_Input_praise0_Value_A(Pointer obj, byte[] bytes);
+    void dyn_REG_set_Item_Input_praise0_Value_B(Pointer obj, byte[] bytes);
     void dyn_REG_set_PraiseEventId(Pointer obj, byte[] bytes);
     Pointer dyn_PGM_get_program_WriteEnableStack_ServerInputAction(Pointer obj);
     Pointer dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve(Pointer obj);
