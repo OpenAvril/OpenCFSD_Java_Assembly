@@ -2,6 +2,7 @@ package engine;
 
 import java.nio.ByteBuffer;
 import java.util.BitSet;
+
 public class Global
 {
     private static char _stat_REG_numberOfCores;
@@ -87,6 +88,13 @@ public class Global
         }
         ByteBuffer buffer = ByteBuffer.wrap(byteArray);
         return buffer.getInt();
+    }
+    public static int stat_CONVERT_ByteArray_To_UnsignedInt(byte[] byteArray) 
+    {
+        if (byteArray.length != 1) {
+            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.");
+        }
+         return Byte.toUnsignedInt(byteArray[0]);
     }
     public static byte[] stat_CONVERT_int_To_ByteArray(int value)
     {

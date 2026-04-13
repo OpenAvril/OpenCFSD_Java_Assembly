@@ -2,17 +2,17 @@ package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
 import lib.JavaLIBConcurrentIOServer;
-public class ConcurrentIOServer 
+public class OpenEpiCentre
 {
 // public.
-    public ConcurrentIOServer()
+    public OpenEpiCentre()
     {
         
     }
-    public static void app_FUNCT_flip_Input_DoubleBuffer(Pointer obj)
+    public static void app_FUNCT_flip_Input_DoubleBuffer()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_flip_Input_DoubleBuffer(obj);
+            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_flip_Input_DoubleBuffer();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -40,10 +40,10 @@ public class ConcurrentIOServer
         }
         return (Pointer)null;
     }
-    public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
+    public static byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_get_CLIBConcurrentServerIO_flag_isPGM_INSTNATIATED();
+            return JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -54,12 +54,12 @@ public class ConcurrentIOServer
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return true;
+        return Global.stat_CONVERT_boolean_To_ByteArray(true);
     }
-    public static void app_FUNCT_select_set_Intput_Subset(Pointer obj, int praiseId)
+    public static void app_FUNCT_select_set_Intput_Subset(int praiseId)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_select_set_Intput_Subset(obj, Global.stat_CONVERT_int_To_ByteArray(praiseId));
+            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_select_set_Intput_Subset(Global.stat_CONVERT_int_To_ByteArray(praiseId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -86,10 +86,10 @@ public class ConcurrentIOServer
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_pop_From_Stack_Of_Output(Pointer obj)
+    public static void app_FUNCT_pop_From_Stack_Of_Output()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_pop_From_Stack_Of_Output(obj);
+            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_pop_From_Stack_Of_Output();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -101,10 +101,10 @@ public class ConcurrentIOServer
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_push_To_STACK_Of_Input(Pointer obj)
+    public static void app_FUNCT_push_To_STACK_Of_Input()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_push_To_STACK_Of_Input(obj);
+            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_push_To_STACK_Of_Input();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -116,26 +116,10 @@ public class ConcurrentIOServer
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-        public static Pointer dyn_PGM_get_program_WriteEnableStack_ServerInputAction(Pointer obj)
+    public static Pointer dyn_PGM_get_program_WriteEnableStack_ServerInputAction()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerInputAction(obj);
-        }
-        catch (NoClassDefFoundError e) {
-            System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
-            System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
-        }
-        return (Pointer)null;
-    }
-    public static Pointer dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve(Pointer obj)
-    {
-        try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve(obj);
+            return JavaLIBConcurrentIOServer.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -148,10 +132,10 @@ public class ConcurrentIOServer
         }
         return (Pointer)null;
     }
-    public static boolean dyn_REG_get_flag_isStackLoaded_Server_InputAction(Pointer obj)
+    public static Pointer dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction(obj));
+            return JavaLIBConcurrentIOServer.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -162,12 +146,12 @@ public class ConcurrentIOServer
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return true;
+        return (Pointer)null;
     }
-    public static boolean dyn_REG_get_flag_isStackLoaded_Server_OutputSend(Pointer obj)
+    public static byte[] dyn_REG_get_flag_isStackLoaded_Server_InputAction()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend(obj));
+            return JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -178,12 +162,12 @@ public class ConcurrentIOServer
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return true;
+        return Global.stat_CONVERT_boolean_To_ByteArray(true);
     }
-    public static boolean dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(Pointer obj)
+    public static byte[] dyn_REG_get_flag_isStackLoaded_Server_OutputSend()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(obj));
+            return JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -194,12 +178,28 @@ public class ConcurrentIOServer
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return true;
+        return Global.stat_CONVERT_boolean_To_ByteArray(true);
     }
-    public static double io_PRAISE_get_Item_Output_praise0_Value(Pointer obj)
+    public static byte[] dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_get_Item_Output_praise0_Value(obj));
+            return JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+    }
+    public static double io_PRAISE_get_Item_Output_praise0_Value()
+    {
+        try {
+            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_get_Item_Output_praise0_Value());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -212,10 +212,10 @@ public class ConcurrentIOServer
         }
         return (double)(Double.MAX_VALUE);
     }
-    public static int io_RPRAISE_get_ptr_PraiseEventId(Pointer obj)
+    public static int io_RPRAISE_get_ptr_PraiseEventId()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_int(JavaLIBConcurrentIOServer.INSTANCE.io_RPRAISE_get_ptr_PraiseEventId(obj));
+            return Global.stat_CONVERT_ByteArray_To_int(JavaLIBConcurrentIOServer.INSTANCE.io_RPRAISE_get_ptr_PraiseEventId());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -228,10 +228,10 @@ public class ConcurrentIOServer
         }
         return (int)(Integer.MAX_VALUE);
     }
-    public static void io_PRAISE_set_Item_Input_praise0_Value_A(Pointer obj, float inputValueA)
+    public static void io_PRAISE_set_Item_Input_praise0_Value_A(float inputValueA)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_A(obj, Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
+            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -243,10 +243,10 @@ public class ConcurrentIOServer
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void io_PRAISE_set_Item_Input_praise0_Value_B(Pointer obj, float inputValueB)
+    public static void io_PRAISE_set_Item_Input_praise0_Value_B(float inputValueB)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_B(obj, Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
+            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -258,10 +258,10 @@ public class ConcurrentIOServer
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void io_PRAISE_set_PraiseEventId(Pointer obj, int praiseId)
+    public static void io_PRAISE_set_PraiseEventId(int praiseId)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_PraiseEventId(obj, Global.stat_CONVERT_int_To_ByteArray(praiseId));
+            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_PraiseEventId(Global.stat_CONVERT_int_To_ByteArray(praiseId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

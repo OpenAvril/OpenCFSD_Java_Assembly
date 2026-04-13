@@ -5,16 +5,16 @@ import com.sun.jna.Pointer;
 
 public interface JavaLIBLaunchQue_Client extends Library
 {
-    JavaLIBLaunchQue_Client INSTANCE = (JavaLIBLaunchQue_Client) Native.load("Assignment_1_-_the_dll", JavaLIBLaunchQue_Client.class);
+    JavaLIBLaunchQue_Client INSTANCE = (JavaLIBLaunchQue_Client) Native.load("LIB_LaunchEnableForConcurrentThreadsAt_CLIENT", JavaLIBLaunchQue_Client.class);
     Pointer app_FUNCT_generate_Program();
     boolean app_FUNCT_get_flag_isPGM_INSTNATIATED();
-    void app_FUNCT_request_Wait_launch(Pointer obj, byte[] bytes);
+    void app_FUNCT_request_Wait_launch(byte[] bytes);
     void app_FUNCT_terminate_Progaram();
-    void app_FUNCT_thread_End(Pointer obj, byte[] bytes);
-    byte[] app_REG_get_coreId_To_launch(Pointer obj);
-    boolean app_REG_get_Flag_Active(Pointer obj);
-    boolean app_REG_get_Flag_ConcurrentCoreState(Pointer obj, byte[] bytes);
-    boolean app_REG_get_Flag_Idle(Pointer obj);
-    boolean app_REG_get_State_launchBit(Pointer obj);
-    void app_REG_set_Flag_ConcurrentCoreState(Pointer obj, byte[] bytes, boolean newValue);
+    void app_FUNCT_thread_End(byte[] bytes);
+    byte[] app_REG_get_coreId_To_launch();
+    boolean app_REG_get_Flag_Active();
+    boolean app_REG_get_Flag_ConcurrentCoreState(byte[] bytes);
+    boolean app_REG_get_Flag_Idle();
+    boolean app_REG_get_State_launchBit();
+    void app_REG_set_Flag_ConcurrentCoreState(byte[] bytes, boolean newValue);
 }

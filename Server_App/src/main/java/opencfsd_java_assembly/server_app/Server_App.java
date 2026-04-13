@@ -2,8 +2,8 @@ package opencfsd_java_assembly.server_app;
 import com.sun.jna.Pointer;
 import engine.Framework;
 import main.IO.ServerAssembly;
-import main.IO.ConcurrentIOServer;
-public class Server_App 
+
+public class Server_App
 {
     private static Framework _stat_PGM_ClientAssembly = null;
     private static Pointer _stat_PGMPtr_ConcurrnetIOServer = null;

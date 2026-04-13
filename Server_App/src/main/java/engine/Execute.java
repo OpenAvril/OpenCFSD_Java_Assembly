@@ -1,5 +1,5 @@
 package engine;
-import main.IO.ConcurrentIOServer;
+import main.IO.OpenEpiCentre;
 import com.sun.jna.Pointer;
 public class Execute 
 {
@@ -36,22 +36,22 @@ public class Execute
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
         //ConcurrentIOServer.app_FUNCT_generate_Program();
-        ConcurrentIOServer.app_FUNCT_flip_Input_DoubleBuffer(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.app_FUNCT_get_flag_isPGM_INSTNATIATED();
-        ConcurrentIOServer.app_FUNCT_pop_From_Stack_Of_Output(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.app_FUNCT_push_To_STACK_Of_Input(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.app_FUNCT_select_set_Intput_Subset(_stat_PGM_ConcurrentIOServer, praiseId_DEFAULT);
-        ConcurrentIOServer.app_FUNCT_terminate_Program();
-        ConcurrentIOServer.dyn_PGM_get_program_WriteEnableStack_ServerInputAction(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.dyn_REG_get_flag_isStackLoaded_Server_InputAction(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.dyn_REG_get_flag_isStackLoaded_Server_OutputSend(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.io_PRAISE_get_Item_Output_praise0_Value(_stat_PGM_ConcurrentIOServer);
-        ConcurrentIOServer.io_PRAISE_set_Item_Input_praise0_Value_A(_stat_PGM_ConcurrentIOServer, praiseId_DEFAULT);
-        ConcurrentIOServer.io_PRAISE_set_Item_Input_praise0_Value_B(_stat_PGM_ConcurrentIOServer, praiseId_DEFAULT);
-        ConcurrentIOServer.io_PRAISE_set_PraiseEventId(_stat_PGM_ConcurrentIOServer, praiseId_DEFAULT);
-        ConcurrentIOServer.io_RPRAISE_get_ptr_PraiseEventId(_stat_PGM_ConcurrentIOServer);
+        OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
+        OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
+        OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
+        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(praiseId_DEFAULT);
+        OpenEpiCentre.app_FUNCT_terminate_Program();
+        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
+        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
+        OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
+        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
+        OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(praiseId_DEFAULT);
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(praiseId_DEFAULT);
+        OpenEpiCentre.io_PRAISE_set_PraiseEventId(praiseId_DEFAULT);
+        OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId();
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Execute().%n");
     }
     public Pointer dyn_PGM_get_ConcurrentIOServer()
@@ -92,7 +92,7 @@ public class Execute
     private static void stat_PGM_boot3_INITIALISE_ConcurrentIOServer()
     {
         System.out.printf("entered stat_PGM_boot3_INITIALISE_ConcurrentIOServer().%n");
-        _stat_PGM_ConcurrentIOServer = ConcurrentIOServer.app_FUNCT_generate_Program();
+        _stat_PGM_ConcurrentIOServer = OpenEpiCentre.app_FUNCT_generate_Program();
         System.out.printf("exiting stat_PGM_boot3_INITIALISE_ConcurrentIOServer().%n");
     }
     private static Pointer stat_PGM_get_ConcurrentIOServer()
