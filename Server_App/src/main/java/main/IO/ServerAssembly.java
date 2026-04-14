@@ -1,10 +1,11 @@
 package main.IO;
 import engine.Framework;
+import com.sun.jna.Pointer;
 public class ServerAssembly 
 {
     public static Framework _stat_CLASS_framework;
 // public.
-    public static Framework app_generate_Program()
+    public static Pointer app_generate_Program()
     {
         System.out.printf("entered DESKTOP APPLICATION generate_Program().%n");
 
@@ -54,7 +55,7 @@ public class ServerAssembly
 
           System.out.printf("exiting DESKTOP APPLICATION generate_Program().%n");
 
-          return stat_CLASS_get_Framework();
+          return (Pointer)stat_CLASS_get_Framework();
     }
     public static Framework dyn_CLASS_get_Framework()
     {

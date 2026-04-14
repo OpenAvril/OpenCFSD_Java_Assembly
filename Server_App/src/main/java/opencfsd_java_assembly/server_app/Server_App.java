@@ -1,13 +1,15 @@
 package opencfsd_java_assembly.server_app;
 import com.sun.jna.Pointer;
 import engine.Framework;
+import engine.Global;
+import lib.JavaLIBConcurrentIOServer;
+import main.IO.OpenEpiCentre;
 import main.IO.ServerAssembly;
 
 public class Server_App
 {
     private static Framework _stat_PGM_ClientAssembly = null;
-    private static Pointer _stat_PGMPtr_ConcurrnetIOServer = null;
-// public. 
+// public.
     public static void main(String[] args) {
         System.out.printf("entered first member function, main()%n");
         _stat_PGM_ClientAssembly = ServerAssembly.app_generate_Program();
@@ -36,7 +38,12 @@ public class Server_App
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
-        _stat_PGMPtr_ConcurrnetIOServer = ServerAssembly.dyn_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_PGM_get_ConcurrentIOServer();
-               
+
+        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset((int)(0));
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A((float)(1.2));
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B((float)(2.6));
+        OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
+        OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
+
     }
 }

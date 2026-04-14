@@ -116,6 +116,10 @@ public class Global
         buffer.putDouble(value);
         return buffer.array();
     }
+    public static Framework stat_CONVERT_Pointer_To_Class(Pointer obj)
+    {
+        return (Frtamework)obj;
+    }
 	public static void stat_CLASS_boot0_DECLAIRE_Global()
 	{
 		System.out.printf("entered stat_CLASS_boot0_DECLAIRE_Global().%n");

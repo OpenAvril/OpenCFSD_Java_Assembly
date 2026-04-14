@@ -1,4 +1,5 @@
 package engine;
+import main.IO.LaunchQue_Server;
 import main.IO.OpenEpiCentre;
 import com.sun.jna.Pointer;
 public class Execute 
@@ -32,15 +33,28 @@ public class Execute
 
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_Execute().%n");
     }
-    public void dyn_REG_boot4_INSTANTIATE_Execute(int praiseId_DEFAULT)
+    public void dyn_REG_boot4_INSTANTIATE_Execute()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
-        //ConcurrentIOServer.app_FUNCT_generate_Program();
+        byte[] praiseId_DEFAULT = Global.stat_CONVERT_int_To_ByteArray((int)(Integer.MAX_VALUE));
+        //LaunchQue_Server.app_FUNCT_generate_Program();
+        LaunchQue_Server.app_FUNCT_request_Wait_launch(praiseId_DEFAULT);
+        LaunchQue_Server.app_FUNCT_terminate_Progaram();
+        LaunchQue_Server.app_FUNCT_thread_End(praiseId_DEFAULT);
+        LaunchQue_Server.app_REG_get_coreId_To_launch();
+        LaunchQue_Server.app_REG_get_Flag_Active();
+        LaunchQue_Server.app_REG_get_Flag_ConcurrentCoreState(praiseId_DEFAULT);
+        LaunchQue_Server.app_REG_get_Flag_Idle();
+        LaunchQue_Server.app_REG_get_State_launchBit();
+        LaunchQue_Server.app_REG_set_Flag_ConcurrentCoreState(praiseId_DEFAULT, praiseId_DEFAULT);
+
+        int threadId_DEFAULT = (int)(0);
         OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
+        //ConcurrentIOServer.app_FUNCT_generate_Program();
         OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
         OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
-        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(praiseId_DEFAULT);
+        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(threadId_DEFAULT);
         OpenEpiCentre.app_FUNCT_terminate_Program();
         OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
         OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
@@ -48,9 +62,9 @@ public class Execute
         OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
         OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
         OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(praiseId_DEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(praiseId_DEFAULT);
-        OpenEpiCentre.io_PRAISE_set_PraiseEventId(praiseId_DEFAULT);
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(threadId_DEFAULT);
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(threadId_DEFAULT);
+        OpenEpiCentre.io_PRAISE_set_PraiseEventId(threadId_DEFAULT);
         OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId();
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Execute().%n");
     }
