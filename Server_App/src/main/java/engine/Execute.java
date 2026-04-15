@@ -1,8 +1,11 @@
 package engine;
-import main.IO.LaunchQue_Server;
-import main.IO.OpenEpiCentre;
 import com.sun.jna.Pointer;
-public class Execute 
+import lib.JavaLIBWriteQueSERVERINPUTRECIEVE;
+import main.IO.LaunchQue_Server;
+import main.IO.WriteQue_SERVERINPUTRECIEVE;
+import main.IO.WriteQue_SERVEROUTPUTSEND;
+import main.IO.OpenEpiCentre;
+public class Execute
 {
     private static Pointer _stat_PGM_ConcurrentIOServer;
 // public.
@@ -36,7 +39,17 @@ public class Execute
     public void dyn_REG_boot4_INSTANTIATE_Execute()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
+        int threadId_DEFAULT = (int)(0);
         byte[] praiseId_DEFAULT = Global.stat_CONVERT_int_To_ByteArray((int)(Integer.MAX_VALUE));
+
+        //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
+        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_terminate_Program();
+        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(threadId_DEFAULT);
+        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(threadId_DEFAULT);
+
+
+
         //LaunchQue_Server.app_FUNCT_generate_Program();
         LaunchQue_Server.app_FUNCT_request_Wait_launch(praiseId_DEFAULT);
         LaunchQue_Server.app_FUNCT_terminate_Progaram();
@@ -47,6 +60,8 @@ public class Execute
         LaunchQue_Server.app_REG_get_Flag_Idle();
         LaunchQue_Server.app_REG_get_State_launchBit();
         LaunchQue_Server.app_REG_set_Flag_ConcurrentCoreState(praiseId_DEFAULT, praiseId_DEFAULT);
+
+
 
         int threadId_DEFAULT = (int)(0);
         OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
