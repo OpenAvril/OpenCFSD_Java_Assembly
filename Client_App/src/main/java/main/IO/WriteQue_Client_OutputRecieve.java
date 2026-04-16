@@ -1,6 +1,7 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
+import lib.JavaLIBWriteQue_ClientInputSend;
 import lib.JavaLIBWriteQue_ClientOutputRecieve;
 public class WriteQue_Client_OutputRecieve 
 {
@@ -20,6 +21,22 @@ public class WriteQue_Client_OutputRecieve
         }
         return null;
     }
+    public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
+    {
+        try {
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBWriteQue_ClientOutputRecieve.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return true;
+    }
     public static void app_FUNCT_terminate_Program()
     {
         try {
@@ -35,10 +52,10 @@ public class WriteQue_Client_OutputRecieve
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_End(Pointer obj, int threadId)
+    public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaLIBWriteQue_ClientOutputRecieve.INSTANCE.app_FUNCT_write_End(obj, Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBWriteQue_ClientOutputRecieve.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -50,10 +67,10 @@ public class WriteQue_Client_OutputRecieve
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_Start(Pointer obj, int threadId)
+    public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaLIBWriteQue_ClientOutputRecieve.INSTANCE.app_FUNCT_write_Start(obj, Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBWriteQue_ClientOutputRecieve.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_int_To_ByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

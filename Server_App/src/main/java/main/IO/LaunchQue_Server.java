@@ -25,10 +25,10 @@ public class LaunchQue_Server
         }
         return (Pointer)null;
     }
-    public static void app_FUNCT_request_Wait_launch(byte[] bytes)
+    public static void app_FUNCT_request_Wait_launch(int threadId)
     {
         try {
-            JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_request_Wait_launch(bytes);
+            JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_request_Wait_launch(Global.stat_CONVERT_int_To_ByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -55,10 +55,10 @@ public class LaunchQue_Server
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_thread_End(byte[] bytes)
+    public static void app_FUNCT_thread_End(int threadId)
     {
         try {
-            JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_thread_End(bytes);
+            JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_thread_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -70,10 +70,10 @@ public class LaunchQue_Server
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static byte[] app_REG_get_coreId_To_launch()
+    public static int app_REG_get_coreId_To_launch()
     {
         try {
-            return JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_coreId_To_launch();
+            return Global.stat_CONVERT_ByteArray_To_int(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_coreId_To_launch());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -84,12 +84,12 @@ public class LaunchQue_Server
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_int_To_ByteArray(Integer.MAX_VALUE);
+        return Integer.MAX_VALUE;
     }
-    public static byte[] app_REG_get_Flag_Active()
+    public static boolean app_REG_get_Flag_Active()
     {
         try {
-            return JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Active();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Active());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -100,12 +100,12 @@ public class LaunchQue_Server
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
-    public static byte[] app_REG_get_Flag_ConcurrentCoreState(byte[] bytes)
+    public static boolean app_REG_get_Flag_ConcurrentCoreState(int threadId)
     {
         try {
-            return JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(bytes);
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -116,12 +116,12 @@ public class LaunchQue_Server
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
-    public static byte[] app_REG_get_Flag_Idle()
+    public static boolean app_REG_get_Flag_Idle()
     {
         try {
-            return JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Idle();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Idle());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -132,12 +132,12 @@ public class LaunchQue_Server
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
-    public static byte[] app_REG_get_State_launchBit()
+    public static boolean app_REG_get_State_launchBit()
     {
         try {
-            return JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_State_launchBit();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_State_launchBit());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -148,12 +148,12 @@ public class LaunchQue_Server
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
-    public static void app_REG_set_Flag_ConcurrentCoreState(byte[] bytesConcurrentThreadId, byte[] bytesValue)
+    public static void app_REG_set_Flag_ConcurrentCoreState(int concurrentThreadId, boolean state)
     {
         try {
-            JavaLIBLaunchQue_Server.INSTANCE.app_REG_set_Flag_ConcurrentCoreState(bytesConcurrentThreadId, bytesValue);
+            JavaLIBLaunchQue_Server.INSTANCE.app_REG_set_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(concurrentThreadId), Global.stat_CONVERT_boolean_To_ByteArray(state));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

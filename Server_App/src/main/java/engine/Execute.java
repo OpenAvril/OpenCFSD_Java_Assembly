@@ -39,48 +39,57 @@ public class Execute
     public void dyn_REG_boot4_INSTANTIATE_Execute()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
-        int threadId_DEFAULT = (int)(0);
-        byte[] praiseId_DEFAULT = Global.stat_CONVERT_int_To_ByteArray((int)(Integer.MAX_VALUE));
+        int intPrimeDEFAULT = Integer.MAX_VALUE;
+        boolean booleanPrimeDEFAULT = true;
 
+        System.out.printf("entered CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
         //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        var tempA0 = WriteQue_SERVERINPUTRECIEVE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         WriteQue_SERVERINPUTRECIEVE.app_FUNCT_terminate_Program();
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(threadId_DEFAULT);
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(threadId_DEFAULT);
+        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
 
-
-
+        System.out.printf("entered CHECK member function LaunchQue_Server().%n");
         //LaunchQue_Server.app_FUNCT_generate_Program();
-        LaunchQue_Server.app_FUNCT_request_Wait_launch(praiseId_DEFAULT);
+        LaunchQue_Server.app_FUNCT_request_Wait_launch(intPrimeDEFAULT);
         LaunchQue_Server.app_FUNCT_terminate_Progaram();
-        LaunchQue_Server.app_FUNCT_thread_End(praiseId_DEFAULT);
-        LaunchQue_Server.app_REG_get_coreId_To_launch();
-        LaunchQue_Server.app_REG_get_Flag_Active();
-        LaunchQue_Server.app_REG_get_Flag_ConcurrentCoreState(praiseId_DEFAULT);
-        LaunchQue_Server.app_REG_get_Flag_Idle();
-        LaunchQue_Server.app_REG_get_State_launchBit();
-        LaunchQue_Server.app_REG_set_Flag_ConcurrentCoreState(praiseId_DEFAULT, praiseId_DEFAULT);
+        LaunchQue_Server.app_FUNCT_thread_End(intPrimeDEFAULT);
+        var tempB0 = LaunchQue_Server.app_REG_get_coreId_To_launch();
+        var tempB1 = LaunchQue_Server.app_REG_get_Flag_Active();
+        var tempB2 = LaunchQue_Server.app_REG_get_Flag_ConcurrentCoreState(intPrimeDEFAULT);
+        var tempB3 = LaunchQue_Server.app_REG_get_Flag_Idle();
+        var tempB4 = LaunchQue_Server.app_REG_get_State_launchBit();
+        LaunchQue_Server.app_REG_set_Flag_ConcurrentCoreState(intPrimeDEFAULT, booleanPrimeDEFAULT);
+        System.out.printf("done CHECK member function LaunchQue_Server().%n");
 
+        System.out.printf("entered CHECK member function WriteQue_SERVEROUTPUTSEND().%n");
+        //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
+        var tempC0 = WriteQue_SERVEROUTPUTSEND.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQue_SERVEROUTPUTSEND.app_FUNCT_terminate_Program();
+        WriteQue_SERVEROUTPUTSEND.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_SERVEROUTPUTSEND.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function WriteQue_SERVEROUTPUTSEND().%n");
 
-
-        int threadId_DEFAULT = (int)(0);
+        System.out.printf("entered CHECK member function OpenEpiCentre().%n");
         OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
-        //ConcurrentIOServer.app_FUNCT_generate_Program();
-        OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        OpenEpiCentre.app_FUNCT_generate_Program();
+        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(intPrimeDEFAULT);
+        OpenEpiCentre.app_FUNCT_terminate_Program();
         OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
         OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
-        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(threadId_DEFAULT);
-        OpenEpiCentre.app_FUNCT_terminate_Program();
-        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
-        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
-        OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
-        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
-        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
-        OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(threadId_DEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(threadId_DEFAULT);
-        OpenEpiCentre.io_PRAISE_set_PraiseEventId(threadId_DEFAULT);
-        OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId();
+        var tempD0 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
+        var tempD1 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
+        var tempD2 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
+        var tempD3 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
+        var tempD4 = OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+        var tempD5 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
+        var tempD6 = OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId();
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(intPrimeDEFAULT);
+        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(intPrimeDEFAULT);
+        OpenEpiCentre.io_PRAISE_set_PraiseEventId(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function OpenEpiCentre().%n");
+
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Execute().%n");
     }
     public Pointer dyn_PGM_get_ConcurrentIOServer()
@@ -107,9 +116,9 @@ public class Execute
     }
     private static void stat_REG_boot0_DECLAIRE_Execute()
     {
-            System.out.printf("entered stat_REG_boot0_DECLAIRE_Execute().%n");
+        System.out.printf("entered stat_REG_boot0_DECLAIRE_Execute().%n");
 
-            System.out.printf("exiting stat_REG_boot0_DECLAIRE_Execute().%n");
+        System.out.printf("exiting stat_REG_boot0_DECLAIRE_Execute().%n");
     }
 // private.
     private static void stat_PGM_boot1_DEFINE_ConcurrentIOServer()

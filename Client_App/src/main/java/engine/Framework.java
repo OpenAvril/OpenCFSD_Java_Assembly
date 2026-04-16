@@ -44,8 +44,7 @@ public class Framework
     public void dyn_REG_boot4_INSTANTIATE_Framework_App(Framework obj)
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Framework_App().%n");
-        int threadId_DEFAULT = (int)(0);
-        obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot4_INSTANTIATE_Execute(threadId_DEFAULT);
+        obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot4_INSTANTIATE_Execute();
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Framework_App().%n");
     }
     public void dyn_STRUCT_boot0_DECLAIRE()

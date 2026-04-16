@@ -37,31 +37,41 @@ public class Execute
 
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_Execute().%n");
     }
-    public void dyn_REG_boot4_INSTANTIATE_Execute(int threadId_DEFAULT)
+    public void dyn_REG_boot4_INSTANTIATE_Execute()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
-          
-        //LaunchQue_Client.app_FUNCT_generate_Program();
-        LaunchQue_Client.app_FUNCT_request_Wait_launch(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        LaunchQue_Client.app_FUNCT_terminate_Progaram();
-        LaunchQue_Client.app_FUNCT_thread_End(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        var temp0 = LaunchQue_Client.app_REG_get_Flag_Active(_stat_PGM_LaunchQue_Client);
-        var temp1 = LaunchQue_Client.app_REG_get_Flag_ConcurrentCoreState(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        var temp2 = LaunchQue_Client.app_REG_get_Flag_Idle(_stat_PGM_LaunchQue_Client);
-        var temp3 = LaunchQue_Client.app_REG_get_State_launchBit(_stat_PGM_LaunchQue_Client);
-        var temp4 = LaunchQue_Client.app_REG_get_coreId_To_launch(_stat_PGM_LaunchQue_Client);
-        LaunchQue_Client.app_REG_set_Flag_ConcurrentCoreState(_stat_PGM_LaunchQue_Client, threadId_DEFAULT, true);
+        int intPrimeDEFAULT = Integer.MAX_VALUE;
+        boolean booleanPrimeDEFAULT = true;
 
-        //WriteQue_Client_InputSend.app_FUNCT_generate_Program();
+        System.out.printf("entered CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
+        //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
+        var tempA0 = WriteQue_Client_InputSend.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         WriteQue_Client_InputSend.app_FUNCT_terminate_Program();
-        WriteQue_Client_InputSend.app_FUNCT_write_End(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        WriteQue_Client_InputSend.app_FUNCT_write_Start(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        
-        //WriteQue_Client_OutputRecieve.app_FUNCT_generate_Program();
+        WriteQue_Client_InputSend.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_Client_InputSend.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
+
+        System.out.printf("entered CHECK member function LaunchQue_Server().%n");
+        //LaunchQue_Server.app_FUNCT_generate_Program();
+        LaunchQue_Client.app_FUNCT_request_Wait_launch(intPrimeDEFAULT);
+        LaunchQue_Client.app_FUNCT_terminate_Progaram();
+        LaunchQue_Client.app_FUNCT_thread_End(intPrimeDEFAULT);
+        var tempB0 = LaunchQue_Client.app_REG_get_coreId_To_launch();
+        var tempB1 = LaunchQue_Client.app_REG_get_Flag_Active();
+        var tempB2 = LaunchQue_Client.app_REG_get_Flag_ConcurrentCoreState(intPrimeDEFAULT);
+        var tempB3 = LaunchQue_Client.app_REG_get_Flag_Idle();
+        var tempB4 = LaunchQue_Client.app_REG_get_State_launchBit();
+        LaunchQue_Client.app_REG_set_Flag_ConcurrentCoreState(intPrimeDEFAULT, booleanPrimeDEFAULT);
+        System.out.printf("done CHECK member function LaunchQue_Server().%n");
+
+        System.out.printf("entered CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
+        //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
+        var tempC0 = WriteQue_Client_OutputRecieve.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         WriteQue_Client_OutputRecieve.app_FUNCT_terminate_Program();
-        WriteQue_Client_OutputRecieve.app_FUNCT_write_End(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        WriteQue_Client_OutputRecieve.app_FUNCT_write_Start(_stat_PGM_LaunchQue_Client, threadId_DEFAULT);
-        
+        WriteQue_Client_OutputRecieve.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_Client_OutputRecieve.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
+
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Execute().%n");
     }
     public Pointer dyn_PGM_get_LaunchQue_Client()

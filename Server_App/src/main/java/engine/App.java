@@ -65,19 +65,19 @@ public class App
     private static void stat_CLASS_boot1_DEFINE_App()
     {
         System.out.printf("entered stat_CLASS_boot1_DEFINE_App().%n");
+        boot1_CLASS_DEFINE_Global();
         boot1_CLASS_DEFINE_Algorithims();
         boot1_CLASS_DEFINE_Data();
         boot1_CLASS_DEFINE_Execute();
-        boot1_CLASS_DEFINE_Global();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_App().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_App()
     {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_App().%n");
+        boot3_CLASS_INITIALISE_Global();
         boot3_CLASS_INITIALISE_Algorithms();
         boot3_CLASS_INITIALISE_Data();
         boot3_CLASS_INITIALISE_Execute();
-        boot3_CLASS_INITIALISE_Global();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
     }
     private static void stat_REG_boot0_DECLAIRE_App()

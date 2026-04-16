@@ -5,8 +5,7 @@ import main.IO.ClientAssembly;
 public class Client_App 
 {
     private static Framework _stat_PGM_ClientAssembly = null;
-    private static Pointer _stat_PGMPtr_ConcurrnetIOServer = null;
-// public. 
+// public.
     public static void main(String[] args) {
         System.out.printf("entered first member function, main()%n");
         _stat_PGM_ClientAssembly = ClientAssembly.app_generate_Program();
@@ -35,5 +34,7 @@ public class Client_App
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
+
+
     }
 }

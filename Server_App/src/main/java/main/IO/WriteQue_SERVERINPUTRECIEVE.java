@@ -57,10 +57,10 @@ public class WriteQue_SERVERINPUTRECIEVE
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_End(int bytesInt)
+    public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(bytesInt));
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -72,10 +72,10 @@ public class WriteQue_SERVERINPUTRECIEVE
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_Start(byte[] bytes)
+    public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_Start(bytes);
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_int_To_ByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

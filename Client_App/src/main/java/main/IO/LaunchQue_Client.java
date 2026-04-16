@@ -23,7 +23,7 @@ public class LaunchQue_Client
     public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
-            return JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -36,7 +36,7 @@ public class LaunchQue_Client
         }
         return true;
     }
-    public static void app_FUNCT_request_Wait_launch(Pointer obj, int threadId)
+    public static void app_FUNCT_request_Wait_launch(int threadId)
     {
         try {
             JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_request_Wait_launch(Global.stat_CONVERT_int_To_ByteArray(threadId));
@@ -66,7 +66,7 @@ public class LaunchQue_Client
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_thread_End(Pointer obj, int threadId)
+    public static void app_FUNCT_thread_End(int threadId)
     {
         try {
             JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_thread_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
@@ -81,10 +81,10 @@ public class LaunchQue_Client
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static byte[] app_REG_get_coreId_To_launch(Pointer obj)
+    public static int app_REG_get_coreId_To_launch()
     {
         try {
-            return JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_coreId_To_launch();
+            return Global.stat_CONVERT_ByteArray_To_int(JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_coreId_To_launch());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -95,28 +95,12 @@ public class LaunchQue_Client
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return null;
+        return Integer.MAX_VALUE;
     }
-    public static boolean app_REG_get_Flag_Active(Pointer obj)
+    public static boolean app_REG_get_Flag_Active()
     {
         try {
-            return JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_Active();
-        }
-        catch (NoClassDefFoundError e) {
-            System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
-            System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
-        }
-        return true;
-    }
-    public static boolean app_REG_get_Flag_ConcurrentCoreState(Pointer obj, int concurrentThreadId)
-    {
-        try {
-            return JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(concurrentThreadId));
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_Active());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -129,10 +113,26 @@ public class LaunchQue_Client
         }
         return true;
     }
-    public static boolean app_REG_get_Flag_Idle(Pointer obj)
+    public static boolean app_REG_get_Flag_ConcurrentCoreState(int concurrentThreadId)
     {
         try {
-            return JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_Idle();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(concurrentThreadId)));
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return true;
+    }
+    public static boolean app_REG_get_Flag_Idle()
+    {
+        try {
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_Idle());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -145,10 +145,10 @@ public class LaunchQue_Client
         }
         return false;
     }
-    public static boolean app_REG_get_State_launchBit(Pointer obj)
+    public static boolean app_REG_get_State_launchBit()
     {
         try {
-            return JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_State_launchBit();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_State_launchBit());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -161,10 +161,10 @@ public class LaunchQue_Client
         }
         return true;
     }
-    public static void app_REG_set_Flag_ConcurrentCoreState(Pointer obj, int concurrentThreadId, boolean newValue)
+    public static void app_REG_set_Flag_ConcurrentCoreState(int concurrentThreadId, boolean newValue)
     {
         try {
-            JavaLIBLaunchQue_Client.INSTANCE.app_REG_set_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(concurrentThreadId), newValue);
+            JavaLIBLaunchQue_Client.INSTANCE.app_REG_set_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(concurrentThreadId), Global.stat_CONVERT_boolean_To_ByteArray(newValue));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

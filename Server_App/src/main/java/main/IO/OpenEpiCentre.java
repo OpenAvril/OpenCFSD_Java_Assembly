@@ -1,7 +1,7 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import lib.JavaLIBConcurrentIOServer;
+import lib.JavaLIB_OpenEpiCentre;
 public class OpenEpiCentre
 {
 // public.
@@ -12,7 +12,7 @@ public class OpenEpiCentre
     public static void app_FUNCT_flip_Input_DoubleBuffer()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_flip_Input_DoubleBuffer();
+            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_flip_Input_DoubleBuffer();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -27,7 +27,7 @@ public class OpenEpiCentre
     public static Pointer app_FUNCT_generate_Program()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_generate_Program();
+            return JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_generate_Program();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -43,7 +43,7 @@ public class OpenEpiCentre
     public static byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+            return JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -59,7 +59,7 @@ public class OpenEpiCentre
     public static void app_FUNCT_select_set_Intput_Subset(int praiseId)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_select_set_Intput_Subset(Global.stat_CONVERT_int_To_ByteArray(praiseId));
+            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_select_set_Intput_Subset(Global.stat_CONVERT_int_To_ByteArray(praiseId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -74,7 +74,7 @@ public class OpenEpiCentre
     public static void app_FUNCT_terminate_Program()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_terminate_Program();
+            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_terminate_Program();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -89,7 +89,7 @@ public class OpenEpiCentre
     public static void app_FUNCT_pop_From_Stack_Of_Output()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_pop_From_Stack_Of_Output();
+            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_pop_From_Stack_Of_Output();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -104,7 +104,7 @@ public class OpenEpiCentre
     public static void app_FUNCT_push_To_STACK_Of_Input()
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.app_FUNCT_push_To_STACK_Of_Input();
+            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_push_To_STACK_Of_Input();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -119,7 +119,7 @@ public class OpenEpiCentre
     public static Pointer dyn_PGM_get_program_WriteEnableStack_ServerInputAction()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
+            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -135,7 +135,7 @@ public class OpenEpiCentre
     public static Pointer dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
+            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -151,7 +151,7 @@ public class OpenEpiCentre
     public static byte[] dyn_REG_get_flag_isStackLoaded_Server_InputAction()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
+            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -167,7 +167,7 @@ public class OpenEpiCentre
     public static byte[] dyn_REG_get_flag_isStackLoaded_Server_OutputSend()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
+            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -183,7 +183,7 @@ public class OpenEpiCentre
     public static byte[] dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency()
     {
         try {
-            return JavaLIBConcurrentIOServer.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -199,7 +199,7 @@ public class OpenEpiCentre
     public static double io_PRAISE_get_Item_Output_praise0_Value()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_get_Item_Output_praise0_Value());
+            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise0_Value());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -215,7 +215,7 @@ public class OpenEpiCentre
     public static int io_RPRAISE_get_ptr_PraiseEventId()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_int(JavaLIBConcurrentIOServer.INSTANCE.io_RPRAISE_get_ptr_PraiseEventId());
+            return Global.stat_CONVERT_ByteArray_To_int(JavaLIB_OpenEpiCentre.INSTANCE.io_RPRAISE_get_ptr_PraiseEventId());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -231,7 +231,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise0_Value_A(float inputValueA)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -246,7 +246,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise0_Value_B(float inputValueB)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -261,7 +261,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_PraiseEventId(int praiseId)
     {
         try {
-            JavaLIBConcurrentIOServer.INSTANCE.io_PRAISE_set_PraiseEventId(Global.stat_CONVERT_int_To_ByteArray(praiseId));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_PraiseEventId(Global.stat_CONVERT_int_To_ByteArray(praiseId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

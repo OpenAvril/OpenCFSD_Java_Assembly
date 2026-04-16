@@ -1,11 +1,7 @@
 package opencfsd_java_assembly.server_app;
-import com.sun.jna.Pointer;
 import engine.Framework;
-import engine.Global;
-import lib.JavaLIBConcurrentIOServer;
 import main.IO.OpenEpiCentre;
 import main.IO.ServerAssembly;
-
 public class Server_App
 {
     private static Framework _stat_PGM_ClientAssembly = null;

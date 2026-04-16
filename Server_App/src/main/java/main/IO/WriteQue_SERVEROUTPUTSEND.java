@@ -1,4 +1,90 @@
 package main.IO;
 
-public class WriteQue_SERVEROUTPUTSEND {
+import com.sun.jna.Pointer;
+import engine.Global;
+import lib.JavaLIBWriteQueSERVERINPUTRECIEVE;
+
+public class WriteQue_SERVEROUTPUTSEND
+{
+    public WriteQue_SERVEROUTPUTSEND()
+    {
+
+    }
+    public static Pointer app_FUNCT_generate_Program()
+    {
+        try {
+            return JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_generate_Program();
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return (Pointer)null;
+    }
+    public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
+    {
+        try {
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return true;
+    }
+        public static void app_FUNCT_terminate_Program()
+    {
+        try {
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_terminate_Program();
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+    }
+    public static void app_FUNCT_write_End(int threadId)
+    {
+        try {
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+    }
+    public static void app_FUNCT_write_Start(int threadId)
+    {
+        try {
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_int_To_ByteArray(threadId));
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+    }
 }
