@@ -1,4 +1,4 @@
-# OpenCFSD_Java_Assembly.
+# OpenCFSD Java Assembly.
 
 ## Using.
 ### Ubuntu LINUX.
