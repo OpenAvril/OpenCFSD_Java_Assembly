@@ -26,11 +26,11 @@ public class Server_App
         System.out.printf("`                 V                 '%n");
         System.out.printf("%n");
         System.out.printf("==========%n");
-        System.out.printf("decliration.%n");
+        System.out.printf("declaration.%n");
         System.out.printf("definition.%n");
-        System.out.printf("substanciation.%n");
+        System.out.printf("substantiation.%n");
         System.out.printf("initialisation.%n");
-        System.out.printf("instanciation.%n");
+        System.out.printf("instantiation.%n");
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
