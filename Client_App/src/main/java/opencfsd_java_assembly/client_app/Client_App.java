@@ -6,7 +6,7 @@ public class Client_App
     private static Framework _stat_PGM_ClientAssembly = null;
 // public.
     public static void main(String[] args) {
-        System.out.printf("entered first member function, main()%n");
+        System.out.printf("entered first member function, main().%n");
         _stat_PGM_ClientAssembly = ClientAssembly.app_generate_Program();
         System.out.printf("%n");
         System.out.printf("        ,     \\      /      ,%n");

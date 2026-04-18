@@ -40,10 +40,10 @@ public class OpenEpiCentre
         }
         return (Pointer)null;
     }
-    public static byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED()
+    public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
-            return JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -54,7 +54,7 @@ public class OpenEpiCentre
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
     public static void app_FUNCT_select_set_Intput_Subset(int praiseId)
     {
@@ -148,10 +148,10 @@ public class OpenEpiCentre
         }
         return (Pointer)null;
     }
-    public static byte[] dyn_REG_get_flag_isStackLoaded_Server_InputAction()
+    public static boolean dyn_REG_get_flag_isStackLoaded_Server_InputAction()
     {
         try {
-            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -162,12 +162,12 @@ public class OpenEpiCentre
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
-    public static byte[] dyn_REG_get_flag_isStackLoaded_Server_OutputSend()
+    public static boolean dyn_REG_get_flag_isStackLoaded_Server_OutputSend()
     {
         try {
-            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -178,12 +178,12 @@ public class OpenEpiCentre
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
-    public static byte[] dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency()
+    public static boolean dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency()
     {
         try {
-            return JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -194,7 +194,7 @@ public class OpenEpiCentre
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_boolean_To_ByteArray(true);
+        return true;
     }
     public static double io_PRAISE_get_Item_Output_praise0_Value()
     {
@@ -210,7 +210,7 @@ public class OpenEpiCentre
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return (double)(Double.MAX_VALUE);
+        return Double.MAX_VALUE;
     }
     public static int io_RPRAISE_get_ptr_PraiseEventId()
     {
@@ -226,7 +226,7 @@ public class OpenEpiCentre
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return (int)(Integer.MAX_VALUE);
+        return Integer.MAX_VALUE;
     }
     public static void io_PRAISE_set_Item_Input_praise0_Value_A(float inputValueA)
     {
