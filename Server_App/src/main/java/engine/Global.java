@@ -41,11 +41,11 @@ public class Global
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
     }
-    public static char dyn_REG_get_numberOfCores()
+    public int dyn_REG_get_numberOfCores()
     {
         return stat_REG_get_numberOfCores();
     }
-    public static char dyn_REG_get_numberOfPraises()
+    public int dyn_REG_get_numberOfPraises()
     {
         return stat_REG_get_numberOfPraises();
     }

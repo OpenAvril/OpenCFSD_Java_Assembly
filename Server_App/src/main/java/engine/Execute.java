@@ -5,8 +5,12 @@ import main.IO.LaunchQue_Server;
 import main.IO.WriteQue_SERVERINPUTRECIEVE;
 import main.IO.WriteQue_SERVEROUTPUTSEND;
 import main.IO.OpenEpiCentre;
+import threads.IO_ListenRespond;
+
 public class Execute
 {
+    private static Execute_Control _stat_CLASS_Execute_Control;
+    private static Thread[] _stat_REG_List_Of_Threads;
     private static Pointer _stat_PGM_ConcurrentIOServer;
 // public.
     public Execute() 
@@ -18,22 +22,26 @@ public class Execute
         stat_REG_boot0_DECLAIRE_Execute();
         System.out.printf("exiting CLASS Execute()%n");
     }
-    public void dyn_REG_boot1_DEFINE_Execute(Framework obj)
+    public Execute_Control dyn_CLASS_get_Execute_Control()
+    {
+        return stat_CLASS_get_Execute_Control();
+    }
+    public void dyn_REG_boot1_DEFINE_Execute()
     {
         System.out.printf("entered dyn_REG_boot1_DEFINE_Execute().%n");
-
+        stat_REG_boot1_DEFINE_List_Of_Threads();
         System.out.printf("exiting dyn_REG_boot1_DEFINE_Execute().%n");
     }
     public void dyn_REG_boot2_SUBSTANTIATE_Execute(Framework obj)
     {
         System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Execute().%n");
-
+        stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(obj);
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Execute().%n");
     }
     public void dyn_REG_boot3_INITIALISE_Execute(Framework obj)
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_Execute().%n");
-
+        stat_REG_boot3_INITIALISE_List_Of_Threads(obj);
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_Execute().%n");
     }
     public void dyn_REG_boot4_INSTANTIATE_Execute()
@@ -105,12 +113,14 @@ public class Execute
     private static void stat_CLASS_boot1_DEFINE_Execute()
     {
         System.out.printf("entered stat_CLASS_boot1_DEFINE_Execute().%n");
+        stat_CLASS_boot1_DEFINE_Execute_Control();
         stat_PGM_boot1_DEFINE_ConcurrentIOServer();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_Execute().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_Execute()
     {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Execute().%n");
+        stat_CLASS_boot3_INITIALISE_Execute_Control();
         stat_PGM_boot3_INITIALISE_ConcurrentIOServer();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Execute().%n");
     }
@@ -121,6 +131,59 @@ public class Execute
         System.out.printf("exiting stat_REG_boot0_DECLAIRE_Execute().%n");
     }
 // private.
+    private static void stat_CLASS_boot1_DEFINE_Execute_Control()
+    {
+        System.out.printf("entered stat_CLASS_boot1_DEFINE_Execute_Control().%n");
+        _stat_CLASS_Execute_Control = null;
+        System.out.printf("exiting stat_CLASS_boot1_DEFINE_Execute_Control().%n");
+    }
+    private static void stat_CLASS_boot3_INITIALISE_Execute_Control()
+    {
+        System.out.printf("entered stat_CLASS_boot3_INITIALISE_Execute_Control().%n");
+        _stat_CLASS_Execute_Control = new Execute_Control();
+        try {
+            stat_CLASS_get_Execute_Control();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Execute_Control().%n");
+    }
+    private static Execute_Control stat_CLASS_get_Execute_Control()
+    {
+        return _stat_CLASS_Execute_Control;
+    }
+    private static void stat_REG_boot1_DEFINE_List_Of_Threads()
+    {
+        _stat_REG_List_Of_Threads = null;
+    }
+    private static void stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(Framework obj)
+    {
+        _stat_REG_List_Of_Threads = new Thread[obj.dyn_CLASS_get_App().dyn_CLASS_get_Global().dyn_REG_get_numberOfCores()];
+        try {
+            stat_PGM_get_ptr_List_Of_Threads();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
+        {
+            _stat_REG_List_Of_Threads[threadId] = null;
+        }
+    }
+    private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj)
+    {
+        for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
+        {
+            int finalThreadId = threadId;
+            _stat_REG_List_Of_Threads[threadId] = new Thread(() -> obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, finalThreadId));
+            _stat_REG_List_Of_Threads[threadId].start();
+        }
+    }
+    private static Thread[] stat_PGM_get_ptr_List_Of_Threads()
+    {
+        return _stat_REG_List_Of_Threads;
+    }
     private static void stat_PGM_boot1_DEFINE_ConcurrentIOServer()
     {
         System.out.printf("entered Execute stat_PGM_boot1_DEFINE_ConcurrentIOServer().%n");
