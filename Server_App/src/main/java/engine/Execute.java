@@ -10,7 +10,7 @@ import threads.IO_ListenRespond;
 public class Execute
 {
     private static Execute_Control _stat_CLASS_Execute_Control;
-    private static Thread _stat_REG_Thread_IO;
+    private static Thread[] _stat_REG_List_Of_Threads;
     private static Pointer _stat_PGM_ConcurrentIOServer;
 // public.
     public Execute() 
