@@ -38,17 +38,38 @@ public class IO_ListenRespond
     {
 
     }
-    private void app_Do_Process_Of_Input(Framework obj)
+    private void app_Do_Process_Of_Input_Send(Framework obj)
     {
         byte[] buffer = new byte[1024];//TESTBENCH
         Input input = new Input();
-
+        if (obj.Get_client().Get_data().Get_data_Control().Get_flag_IsLoaded_Stack_InputAction() == true)
+        {
+            Avril_FSD.Library_For_WriteEnableForThreadsAt_CLIENTINPUTACTION.Write_Start(obj.Get_client().Get_execute().Get_program_WriteQue_C_IA(), 1);
+            byte[] data = new byte[64];
+            obj.Get_client().Get_data().Get_data_Control().Pop_Stack_InputAction(obj, obj.Get_client().Get_data().Get_input_Instnace().Get_FRONT_inputDoubleBuffer(obj), obj.Get_client().Get_data().Get_input_Instnace().Get_stack_Client_InputSend());
+            obj.Get_client().Get_data().Flip_InBufferToWrite();
+            obj.Get_client().Get_algorithms().Get_io_ListenRespond().Encode_NetworkingSteam_At_Client_Input(obj, obj.Get_client().Get_data().Get_input_Instnace().Get_BACK_inputDoubleBuffer(obj), data);
+            _client_SOCKET.SendMessageToConnection(_connection, data);
+            Avril_FSD.Library_For_WriteEnableForThreadsAt_CLIENTINPUTACTION.Write_End(obj.Get_client().Get_execute().Get_program_WriteQue_C_IA(), 1);
+        }
     }
-    private void app_Do_Process_Of_Output(Framework obj)
+    private void app_Do_Process_Of_Output_Receive(Framework obj)
     {
         byte[] buffer = new byte[1024];
         Output output = new Output();
 
+        if (obj.Get_server().Get_data().Get_data_Control().Get_flag_IsLoaded_Stack_OutputAction())
+        {
+            Avril_FSD.Library_For_WriteEnableForThreadsAt_SERVEROUTPUTRECIEVE.Write_Start(Avril_FSD.Library_For_Server_Concurrency.Get_program_WriteEnableStack_ServerOutputRecieve(), 0);
+            byte[] data = new byte[64];
+            var output = obj.Get_server().Get_data().Get_output_Instnace().Get_FRONT_outputDoubleBuffer(obj);
+            output.Get_output_Control().SelectSetOutputSubset(obj, output.Get_praiseEventId());
+            obj.Get_server().Get_algorithms().Get_io_ListenRespond().Encode_NetworkingSteam_At_Server_Output(obj, output, data);
+            address_CLIENT.SetAddress(info.connectionInfo.address.GetIP(), 27001);
+            uint connection = _server_SOCKET.Connect(ref address_CLIENT);
+            _server_SOCKET.SendMessageToConnection(connection, data);
+            _server_SOCKET.CloseConnection(info.connection);
+            Avril_FSD.Library_For_WriteEnableForThreadsAt_SERVEROUTPUTRECIEVE.Write_End(Avril_FSD.Library_For_Server_Concurrency.Get_program_WriteEnableStack_Serv
     }
     private void app_Encode_NetworkingSteam_At_Client_Input_Send(Input input, byte[] buffer)
     {
