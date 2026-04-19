@@ -6,6 +6,8 @@ import com.sun.jna.Pointer;
 
 public class Execute 
 {
+    private static Execute_Control _stat_CLASS_Execute_Control;
+    private static Thread[] _stat_REG_List_Of_Threads;
     private static Pointer _stat_PGM_LaunchQue_Client;
     private static Pointer _stat_PGM_WriteQue_Client_InputSend;
     private static Pointer _stat_PGM_WriteQue_Client_OutputRecieve;

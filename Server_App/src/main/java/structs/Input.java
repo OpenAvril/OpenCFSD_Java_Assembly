@@ -36,7 +36,7 @@ public class Input
         stat_REG_boot2_SUBSTANTIATE_InputSubset();
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Input().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_Input(Framework obj, User_Input objUserInput)
+    public void dyn_REG_boot3_INITIALISE_Input(User_Input objUserInput)
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_Input().%n");
         stat_REG_boot3_INITIALISE_Input_paiseId();

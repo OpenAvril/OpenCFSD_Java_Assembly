@@ -32,25 +32,25 @@ public class App
     {
         return stat_CLASS_get_Global();
     }
-    public void dyn_REG_boot1_DEFINE_App(Framework obj)
+    public void dyn_REG_boot1_DEFINE_App()
     {
         System.out.printf("entered dyn_boot1_REG_DEFINE_App().%n");
 
         System.out.printf("exiting dyn_boot1_REG_DEFINE_App().%n");
     }
-    public void dyn_REG_boot2_SUBSTANTIATE_App(Framework obj)
+    public void dyn_REG_boot2_SUBSTANTIATE_App()
     {
         System.out.printf("entered dyn_boot2_REG_SUBSTANTIATE_App().%n");
 
         System.out.printf("exiting dyn_boot2_REG_SUBSTANTIATE_App().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_App(Framework obj)
+    public void dyn_REG_boot3_INITIALISE_App()
     {
         System.out.printf("entered dyn_boot3_REG_INITIALISE_App().%n");
 
         System.out.printf("exiting dyn_boot3_REG_INITIALISE_App().%n");
     }
-    public void dyn_PGM_boot4_INSTANTIATE_App(Framework obj)
+    public void dyn_PGM_boot4_INSTANTIATE_App()
     {
         System.out.printf("entered dyn_boot4_PGM_INSTANTIATE_App().%n");
 

@@ -12,9 +12,9 @@ public class IO_ListenRespond
     }
     public void Encode_NetworkingSteam_At_Client_Input(Input input, byte[] buffer)
     {
-        buffer[0] = input.dyn_REG_get_praiseEventId();
+        buffer[0] = input--.dyn_REG_get_praiseEventId();
         buffer[1] = input.dyn_REG_get_playerId();
-        switch (input.dyn_REG_get_praiseEventId())
+        switch (input.dyn_REG_get_praiseEventId())-
         {
             case 0:
                 break;
