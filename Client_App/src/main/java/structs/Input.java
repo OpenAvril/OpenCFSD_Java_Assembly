@@ -1,5 +1,4 @@
 package structs;
-import engine.Framework;
 import structs.praisesubsets.Input_praise0;
 import structs.praisesubsets.Input_praise1;
 import structs.praisesubsets.Input_praise2;
@@ -36,7 +35,7 @@ public class Input
         stat_REG_boot2_SUBSTANTIATE_InputSubset();
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Input().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_Input(Framework obj, User_Input objUserInput)
+    public void dyn_REG_boot3_INITIALISE_Input(User_Input objUserInput)
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_Input().%n");
         stat_REG_boot3_INITIALISE_Input_paiseId();
@@ -56,6 +55,10 @@ public class Input
     public Object dyn_REG_get_InputSubset()
     {
         return stat_REG_get_InputSubset();
+    }
+    public void dyn_REG_set_Input_praiseId(int valuePraiseEventId)
+    {
+        stat_REG_set_Input_praiseId(valuePraiseEventId);
     }
     public void dyn_REG_set_InputSubset(Input_praise0 objInputPraise0)
     {
@@ -153,6 +156,10 @@ public class Input
     private static Object stat_REG_get_InputSubset()
     {
         return _stat_REG_InputSubset;
+    }
+    public static void stat_REG_set_Input_praiseId(int valuePraiseEventId)
+    {
+        _stat_REG_Input_paiseId = valuePraiseEventId;
     }
     private static void stat_REG_set_InputSubset(Object objSubset)
     {

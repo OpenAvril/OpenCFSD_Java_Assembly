@@ -1,5 +1,4 @@
 package structs;
-import engine.Framework;
 import structs.praisesubsets.Output_praise0;
 import structs.praisesubsets.Output_praise1;
 import structs.praisesubsets.Output_praise2;
@@ -36,7 +35,7 @@ public class Output
         stat_REG_boot2_SUBSTANTIATE_OutputSubset();
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Output().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_Output(Framework obj, User_Output objUserOutput)
+    public void dyn_REG_boot3_INITIALISE_Output(User_Output objUserOutput)
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_Output().%n");
         stat_REG_boot3_INITIALISE_Output_paiseId();

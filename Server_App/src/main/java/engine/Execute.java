@@ -161,7 +161,7 @@ public class Execute
     {
         _stat_REG_List_Of_Threads = new Thread[obj.dyn_CLASS_get_App().dyn_CLASS_get_Global().dyn_REG_get_numberOfCores()];
         try {
-            stat_PGM_get_ptr_List_Of_Threads();
+            stat_REG_get_ptr_List_Of_Threads();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
@@ -180,7 +180,7 @@ public class Execute
             _stat_REG_List_Of_Threads[threadId].start();
         }
     }
-    private static Thread[] stat_PGM_get_ptr_List_Of_Threads()
+    private static Thread[] stat_REG_get_ptr_List_Of_Threads()
     {
         return _stat_REG_List_Of_Threads;
     }

@@ -1,5 +1,4 @@
 package structs;
-import engine.Framework;
 import structs.praisesubsets.Output_praise0;
 import structs.praisesubsets.Output_praise1;
 import structs.praisesubsets.Output_praise2;
@@ -21,25 +20,25 @@ public class User_Output
         stat_REG_boot0_DECLAIRE_User_Output();
         System.out.printf("exiting STRUCT_CLASS User_Output()%n");
     }
-    public void dyn_REG_boot1_DEFINE_User_Output(Framework obj)
+    public void dyn_REG_boot1_DEFINE_User_Output()
     {
         System.out.printf("entered dyn_REG_boot1_DEFINE_User_Output().%n");
 
         System.out.printf("exiting dyn_REG_boot1_DEFINE_User_Output().%n");
     }
-    public void dyn_REG_boot2_SUBSTANTIATE_User_Output(Framework obj)
+    public void dyn_REG_boot2_SUBSTANTIATE_User_Output()
     {
         System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_User_Output().%n");
 
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_User_Output().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_User_Output(Framework obj)
+    public void dyn_REG_boot3_INITIALISE_User_Output()
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_User_Output().%n");
         stat_REG_boot3_INITIALISE_List_Of_OutputSubsets();
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_User_Output().%n");
     }
-    public void dyn_REG_boot4_INSTANTIATE_User_Output(Framework obj)
+    public void dyn_REG_boot4_INSTANTIATE_User_Output()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_User_Output().%n");
 

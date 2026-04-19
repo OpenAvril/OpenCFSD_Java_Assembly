@@ -1,5 +1,4 @@
 package structs;
-import engine.Framework;
 import structs.praisesubsets.Algorithim_praise0;
 import structs.praisesubsets.Algorithim_praise1;
 import structs.praisesubsets.Algorithim_praise2;
@@ -21,25 +20,25 @@ public class User_Algorithim
         stat_REG_boot0_DECLAIRE_User_Algorithim();
         System.out.printf("exiting STRUCT_CLASS User_Algorithim()%n");
     }
-    public void dyn_REG_boot1_DEFINE_User_Algorithim(Framework obj)
+    public void dyn_REG_boot1_DEFINE_User_Algorithim()
     {
         System.out.printf("entered dyn_REG_boot1_DEFINE_User_Algorithim().%n");
 
         System.out.printf("exiting dyn_REG_boot1_DEFINE_User_Algorithim().%n");
     }
-    public void dyn_REG_boot2_SUBSTANTIATE_User_Algorithim(Framework obj)
+    public void dyn_REG_boot2_SUBSTANTIATE_User_Algorithim()
     {
         System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_User_Algorithim().%n");
 
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_User_Algorithim().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_User_Algorithim(Framework obj)
+    public void dyn_REG_boot3_INITIALISE_User_Algorithim()
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_User_Algorithim().%n");
         stat_REG_boot3_INITIALISE_List_Of_AlgorithimSubsets();
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_User_Algorithim().%n");
     }
-    public void dyn_REG_boot4_INSTANTIATE_User_Algorithim(Framework obj)
+    public void dyn_REG_boot4_INSTANTIATE_User_Algorithim()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_User_Algorithim().%n");
 

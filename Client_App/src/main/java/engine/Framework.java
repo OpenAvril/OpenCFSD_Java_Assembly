@@ -1,10 +1,13 @@
 package engine;
 import structs.*;
+import threads.IO_ListenRespond;
+
 public class Framework
 {
     private static App _stat_CLASS_App;
     private static Algorithim _stat_STRUCT_Algorithim;
     private static Input _stat_STRUCT_Input;
+    private static IO_ListenRespond _stat_STRUCT_IO_ListenRespond;
     private static Output _stat_STRUCT_Output;
     private static User_Algorithim _stat_STRUCT_User_Algorithims;
     private static User_Input _stat_STRUCT_User_Inputs;
@@ -62,6 +65,7 @@ public class Framework
         stat_STRUCT_boot1_DEFINE_Algorithim();
         stat_STRUCT_boot1_DEFINE_Input();
         stat_STRUCT_boot1_DEFINE_Output();
+        stat_STRUCT_boot1_DEFINE_IO_ListenRespond();
         System.out.printf("exiting stat_STRUCT_boot1_DEFINE().%n");
     }
     public void dyn_STRUCT_boot3_INITIALISE()
@@ -73,6 +77,7 @@ public class Framework
         stat_STRUCT_boot3_INITIALISE_Algorithim();
         stat_STRUCT_boot3_INITIALISE_Input();
         stat_STRUCT_boot3_INITIALISE_Output();
+        stat_STRUCT_boot3_INITIALISE_IO_ListenRespond();
         System.out.printf("exiting stat_STRUCT_boot3_INITIALISE().%n");
     }
     public Algorithim dyn_STRUCT_get_Algorithim()
@@ -98,6 +103,10 @@ public class Framework
     public User_Output dyn_STRUCT_get_User_Output()
     {
         return stat_STRUCT_get_User_Output();
+    }
+    public IO_ListenRespond dyn_STRUCT_get_IO_ListenRespond()
+    {
+        return stat_STRUCT_get_IO_ListenRespond();
     }
 // private.
     private static void stat_CLASS_boot0_DECLAIRE_Framework_App()
@@ -170,36 +179,81 @@ public class Framework
     {
         _stat_STRUCT_User_Outputs = null;
     }
+    private static void stat_STRUCT_boot1_DEFINE_IO_ListenRespond()
+    {
+        _stat_STRUCT_IO_ListenRespond = null;
+    }
     private static void stat_STRUCT_boot3_INITIALISE_Algorithim()
     {
         _stat_STRUCT_Algorithim = new Algorithim();
-        while(stat_STRUCT_get_Algorithim() == null) { }
+        try {
+            stat_STRUCT_get_Algorithim();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
     }
     private static void stat_STRUCT_boot3_INITIALISE_Input()
     {
         _stat_STRUCT_Input = new Input();
-        while(stat_STRUCT_get_Input() == null) { }
+        try {
+            stat_STRUCT_get_Input();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
     }
     private static void stat_STRUCT_boot3_INITIALISE_Output()
     {
         _stat_STRUCT_Output = new Output();
-        while(stat_STRUCT_get_Output() == null) { }
+        try {
+            stat_STRUCT_get_Output();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
     }
     private static void stat_STRUCT_boot3_INITIALISE_User_Algorithim()
     {
         _stat_STRUCT_User_Algorithims = new User_Algorithim();
-        while(stat_STRUCT_get_User_Algorithim() == null) { }
+        try {
+            stat_STRUCT_get_User_Algorithim();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
     }
     private static void stat_STRUCT_boot3_INITIALISE_User_Input()
     {
         _stat_STRUCT_User_Inputs = new User_Input();
-        while(stat_STRUCT_get_User_Input() == null) { }
-    }
+        try {
+            stat_STRUCT_get_User_Input();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+      }
     private static void stat_STRUCT_boot3_INITIALISE_User_Output()
     {
         _stat_STRUCT_User_Outputs = new User_Output();
-        while(stat_STRUCT_get_User_Output() == null) { }
+        try {
+            stat_STRUCT_get_User_Output();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
     }
+    private static void stat_STRUCT_boot3_INITIALISE_IO_ListenRespond()
+    {
+        _stat_STRUCT_IO_ListenRespond = new IO_ListenRespond();
+        try {
+            stat_STRUCT_get_IO_ListenRespond();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+    }
+
     private static Algorithim stat_STRUCT_get_Algorithim()
     {
         return _stat_STRUCT_Algorithim;
@@ -207,6 +261,10 @@ public class Framework
     private static Input stat_STRUCT_get_Input()
     {
         return _stat_STRUCT_Input;
+    }
+    private static IO_ListenRespond stat_STRUCT_get_IO_ListenRespond()
+    {
+        return _stat_STRUCT_IO_ListenRespond;
     }
     private static Output stat_STRUCT_get_Output()
     {
