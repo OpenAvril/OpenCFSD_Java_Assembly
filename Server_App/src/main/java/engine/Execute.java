@@ -159,7 +159,7 @@ public class Execute
     }
     private static void stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(Framework obj)
     {
-        _stat_REG_List_Of_Threads = new Thread[obj.dyn_CLASS_get_App().dyn_CLASS_get_Global().dyn_REG_get_numberOfCores()];
+        _stat_REG_List_Of_Threads = new Thread[obj.dyn_CLASS_get_Global().dyn_REG_get_numberOfCores()];
         try {
             stat_REG_get_ptr_List_Of_Threads();
         }

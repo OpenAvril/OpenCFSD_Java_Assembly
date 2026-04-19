@@ -14,6 +14,9 @@ public class ClientAssembly
         System.out.printf("done architectured classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");
 
         stat_CLASS_get_Framework().dyn_CLASS_create_Global_and_Settings();
+        stat_CLASS_get_Framework().dyn_CLASS_get_Global().dyn_REG_boot1_DEFINE_Global();
+        stat_CLASS_get_Framework().dyn_CLASS_get_Global().dyn_REG_boot2_SUBSTANTIATE_Global();
+        stat_CLASS_get_Framework().dyn_CLASS_get_Global().dyn_REG_boot3_INITIALISE_Global();
 
         System.out.printf("started STRUCTS generate.%n");
         System.out.printf("started independent STRUCT classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");

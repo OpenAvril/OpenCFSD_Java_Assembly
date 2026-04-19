@@ -73,7 +73,6 @@ public class ServerAssembly
         System.out.printf("started architectured classes - Registers - DEFINE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot1_DEFINE_Framework_App(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_REG_boot1_DEFINE_App();
-        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Global().dyn_REG_boot1_DEFINE_Global();
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithims().dyn_REG_boot1_DEFINE_Algorithims(_stat_CLASS_framework);
         //stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_Data().dyn_REG_boot1_DEFINE_Data();
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot1_DEFINE_Execute();
@@ -82,7 +81,6 @@ public class ServerAssembly
         System.out.printf("started architectured classes - Registers - SUBSTANTIATE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot2_SUBSTANTIATE_Framework_App(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_REG_boot2_SUBSTANTIATE_App();
-        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Global().dyn_REG_boot2_SUBSTANTIATE_Global();
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithims().dyn_REG_boot2_SUBSTANTIATE_Algorithims(_stat_CLASS_framework);
         //stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_boot2_SUBSTANTIATE_Data(_stat_CLASS_framework);
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot2_SUBSTANTIATE_Execute(_stat_CLASS_framework);
@@ -91,7 +89,6 @@ public class ServerAssembly
         System.out.printf("started architectured classes - Registers - INITIALISE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot3_INITIALISE_Framework_App(stat_CLASS_get_Framework(), stat_CLASS_get_Framework().dyn_STRUCT_get_Input(), stat_CLASS_get_Framework().dyn_STRUCT_get_Output());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_REG_boot3_INITIALISE_App();
-        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Global().dyn_REG_boot3_INITIALISE_Global();
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithims().dyn_REG_boot3_INITIALISE_Algorithims(_stat_CLASS_framework);
         //stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_boot3_INITIALISE_Data(_stat_CLASS_framework);
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot3_INITIALISE_Execute(_stat_CLASS_framework);

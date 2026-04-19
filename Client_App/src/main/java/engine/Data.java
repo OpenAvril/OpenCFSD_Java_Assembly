@@ -166,7 +166,7 @@ public class Data
 	}
 	static private void stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output(Global objGlobal)
 	{
-		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output().  *** " + (objGlobal.dyn_REG_get_numberOfCores() - 1));//TESTBENCH
 		_stat_REG_Buffer_Reference_For_Core_Of_Output = new Output[(objGlobal.dyn_REG_get_numberOfCores() - 1)];
 		while (stat_REG_get_Item_On_Array_Of_Buffer_Reference_For_Core_Of_Output() == null) { }
 		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output().");//TESTBENCH
