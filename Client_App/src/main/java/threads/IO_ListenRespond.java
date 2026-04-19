@@ -11,7 +11,7 @@ public class IO_ListenRespond
 // public.
     public IO_ListenRespond()
     {
-        
+
     }
     public void app_Thread_IO_Listen_Respond(Framework obj, int threadId)
     {
@@ -29,8 +29,8 @@ public class IO_ListenRespond
         }
         while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
-            app_Do_Process_Of_Input(obj);
-            app_Do_Process_Of_Output(obj);
+            app_Do_Process_Of_Input_Send(obj);
+            app_Do_Process_Of_Output_Receive(obj);
         }
     }
 // private.
@@ -42,7 +42,8 @@ public class IO_ListenRespond
     {
         byte[] buffer = new byte[1024];//TESTBENCH
         Input input = new Input();
-        if (obj.Get_client().Get_data().Get_data_Control().Get_flag_IsLoaded_Stack_InputAction() == true)
+ /*
+        if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().().Get_flag_IsLoaded_Stack_InputAction() == true)
         {
             Avril_FSD.Library_For_WriteEnableForThreadsAt_CLIENTINPUTACTION.Write_Start(obj.Get_client().Get_execute().Get_program_WriteQue_C_IA(), 1);
             byte[] data = new byte[64];
@@ -52,12 +53,13 @@ public class IO_ListenRespond
             _client_SOCKET.SendMessageToConnection(_connection, data);
             Avril_FSD.Library_For_WriteEnableForThreadsAt_CLIENTINPUTACTION.Write_End(obj.Get_client().Get_execute().Get_program_WriteQue_C_IA(), 1);
         }
+  */
     }
     private void app_Do_Process_Of_Output_Receive(Framework obj)
     {
         byte[] buffer = new byte[1024];
         Output output = new Output();
-
+/*
         if (obj.Get_server().Get_data().Get_data_Control().Get_flag_IsLoaded_Stack_OutputAction())
         {
             Avril_FSD.Library_For_WriteEnableForThreadsAt_SERVEROUTPUTRECIEVE.Write_Start(Avril_FSD.Library_For_Server_Concurrency.Get_program_WriteEnableStack_ServerOutputRecieve(), 0);
@@ -70,63 +72,11 @@ public class IO_ListenRespond
             _server_SOCKET.SendMessageToConnection(connection, data);
             _server_SOCKET.CloseConnection(info.connection);
             Avril_FSD.Library_For_WriteEnableForThreadsAt_SERVEROUTPUTRECIEVE.Write_End(Avril_FSD.Library_For_Server_Concurrency.Get_program_WriteEnableStack_Serv
+        }
+ */
     }
     private void app_Encode_NetworkingSteam_At_Client_Input_Send(Input input, byte[] buffer)
     {
 
-    }
-    static private void dyn_CLASS_boot1_DEFINE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_CLASS_boot1_DEFINE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_CLASS_boot1_DEFINE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    static private void dyn_CLASS_boot3_INITIALISE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_CLASS_boot3_INITIALISE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_CLASS_boot3_INITIALISE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_REG_boot0_DECLAIRE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_REG_boot0_DECLAIRE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_REG_boot0_DECLAIRE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_REG_boot1_DEFINE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_REG_boot1_DEFINE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_REG_boot1_DEFINE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_REG_boot2_SUBSTANTIATE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_REG_boot2_SUBSTANTIATE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_REG_boot2_SUBSTANTIATE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_REG_boot3_INITIALISE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_REG_boot3_INITIALISE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_REG_boot3_INITIALISE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_PGM_boot4_INSTANCIATE_IO_Listen_Respond()
-    {
-        System.out.print("entered dyn_PGM_boot4_INSTANCIATE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting dyn_PGM_boot4_INSTANCIATE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_STRUCT_boot1_DEFINE_IO_Listen_Respond()
-    {
-        System.out.print("entered stat_STRUCT_boot1_DEFINE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting stat_STRUCT_boot1_DEFINE_IO_Listen_Respond().%n");//TESTBENCH
-    }
-    public void dyn_STRUCT_boot3_INITIALISE_IO_Listen_Respond()
-    {
-        System.out.print("entered stat_STRUCT_boot3_INITIALISE_IO_Listen_Respond().%n");//TESTBENCH
-
-        System.out.print("exiting stat_STRUCT_boot3_INITIALISE_IO_Listen_Respond().%n");//TESTBENCH
     }
 }

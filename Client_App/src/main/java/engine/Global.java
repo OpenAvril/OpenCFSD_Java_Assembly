@@ -2,10 +2,11 @@ package engine;
 
 import java.nio.ByteBuffer;
 import java.util.BitSet;
+
 public class Global
 {
-    private static char _stat_REG_numberOfCores;
-    private static char _stat_REG_numberOfPraises;
+    private static int _stat_REG_numberOfCores;
+    private static int _stat_REG_numberOfPraises;
 // public.
     public Global() 
     {
@@ -16,35 +17,37 @@ public class Global
             stat_REG_boot0_DECLAIRE_Global();
             System.out.printf("exiting Global()%n");
     }
-    public void dyn_REG_boot1_DEFINE_Global(Framework obj)
+    public void dyn_REG_boot1_DEFINE_Global()
     {
         System.out.printf("entered dyn_REG_boot1_DEFINE_Global().%n");
 
         System.out.printf("exiting dyn_REG_boot1_DEFINE_Global().%n");
     }
-    public void dyn_REG_boot2_SUBSTANTIATE_Global(Framework obj)
+    public void dyn_REG_boot2_SUBSTANTIATE_Global()
     {
         System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Global().%n");
-
+        stat_REG_boot2_SUBSTANTIATE_numberOfCores();
+        stat_REG_boot2_SUBSTANTIATE_numberOfPraises();
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Global().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_Global(Framework obj)
+    public void dyn_REG_boot3_INITIALISE_Global()
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_Global().%n");
-
+        stat_REG_boot3_INITIALISE_numberOfCores();
+        stat_REG_boot3_INITIALISE_numberOfPraises();
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_Global().%n");
     }
-    public void dyn_REG_boot4_INSTANTIATE_Global(Framework obj)
+    public void dyn_REG_boot4_INSTANTIATE_Global()
     {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Global().%n");
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
     }
-    public static char dyn_REG_get_numberOfCores()
+    public int dyn_REG_get_numberOfCores()
     {
         return stat_REG_get_numberOfCores();
     }
-    public static char dyn_REG_get_numberOfPraises()
+    public int dyn_REG_get_numberOfPraises()
     {
         return stat_REG_get_numberOfPraises();
     }
@@ -140,11 +143,27 @@ public class Global
 		System.out.printf("exiting stat_REG_boot0_DECLAIRE_Global().%n");
 	}
 // private.
-    public static char stat_REG_get_numberOfCores()
+    private static void stat_REG_boot2_SUBSTANTIATE_numberOfCores()
+    {
+        _stat_REG_numberOfCores = Integer.MAX_VALUE;
+    }
+    private static void stat_REG_boot2_SUBSTANTIATE_numberOfPraises()
+    {
+        _stat_REG_numberOfPraises = Integer.MAX_VALUE;
+    }
+    private static void stat_REG_boot3_INITIALISE_numberOfCores()
+    {
+        _stat_REG_numberOfCores = 4;
+    }
+    private static void stat_REG_boot3_INITIALISE_numberOfPraises()
+    {
+        _stat_REG_numberOfPraises = 4;
+    }
+    private static int stat_REG_get_numberOfCores()
 	{
 		return _stat_REG_numberOfCores;
 	}
-    public static char stat_REG_get_numberOfPraises()
+    private static int stat_REG_get_numberOfPraises()
 	{
 		return _stat_REG_numberOfPraises;
 	}

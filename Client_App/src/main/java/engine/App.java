@@ -5,7 +5,6 @@ public class App
     private static Algorithims _stat_CLASS_Algorithims;
     private static Data _stat_CLASS_Data;
     private static Execute _stat_CLASS_Execute;
-    private static Global _stat_CLASS_Global;
 // public.
     public App() 
     {
@@ -27,10 +26,6 @@ public class App
     public Execute dyn_CLASS_get_Execute()
     {
         return stat_CLASS_get_Execute();
-    }
-    public Global dyn_CLASS_get_Global()
-    {
-        return stat_CLASS_get_Global();
     }
     public void dyn_REG_boot1_DEFINE_App(Framework obj)
     {
@@ -68,7 +63,6 @@ public class App
         boot1_CLASS_DEFINE_Algorithims();
         boot1_CLASS_DEFINE_Data();
         boot1_CLASS_DEFINE_Execute();
-        boot1_CLASS_DEFINE_Global();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_App().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_App()
@@ -77,7 +71,6 @@ public class App
         boot3_CLASS_INITIALISE_Algorithms();
         boot3_CLASS_INITIALISE_Data();
         boot3_CLASS_INITIALISE_Execute();
-        boot3_CLASS_INITIALISE_Global();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
     }
     private static void stat_REG_boot0_DECLAIRE_App()
@@ -105,12 +98,7 @@ public class App
         _stat_CLASS_Execute = null;
         System.out.printf("exiting boot1_CLASS_DEFINE_Execute().%n");
     }
-    private static void boot1_CLASS_DEFINE_Global()
-    {
-        System.out.printf("entered boot1_CLASS_DEFINE_Global().%n");
-        _stat_CLASS_Global = null;
-        System.out.printf("exiting boot1_CLASS_DEFINE_Global().%n");
-    }
+
     private static void boot3_CLASS_INITIALISE_Algorithms()
     {
         System.out.printf("entered boot3_CLASS_INITIALISE_Algorithms().%n");
@@ -147,18 +135,7 @@ public class App
         }
         System.out.printf("exiting boot3_CLASS_INITIALISE_Execute().%n");
     }
-    private static void boot3_CLASS_INITIALISE_Global()
-    {
-        System.out.printf("entered boot3_CLASS_INITIALISE_Global().%n");
-        _stat_CLASS_Global = new Global();
-        try {
-                stat_CLASS_get_Global();
-        } 
-        catch (NullPointerException e) {
-                System.out.printf("NullPointerException.%n");
-        }
-        System.out.printf("exiting boot3_CLASS_INITIALISE_Global().%n");
-    }
+
     private static Algorithims stat_CLASS_get_Algorithims()
     {
         return _stat_CLASS_Algorithims;
@@ -171,8 +148,5 @@ public class App
     {
         return _stat_CLASS_Execute;
     }
-    private static Global stat_CLASS_get_Global()
-    {
-        return _stat_CLASS_Global;
-    }
+
 }

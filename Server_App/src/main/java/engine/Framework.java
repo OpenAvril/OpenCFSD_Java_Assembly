@@ -1,10 +1,13 @@
 package engine;
 import structs.*;
 import threads.IO_ListenRespond;
+import threads.PostProcess;
 
 public class Framework
 {
     private static App _stat_CLASS_App;
+    private static Global _stat_CLASS_Global;
+    static private PostProcess _stat_STRUCT_Concurrent;
     private static Algorithim _stat_STRUCT_Algorithim;
     private static Input _stat_STRUCT_Input;
     private static IO_ListenRespond _stat_STRUCT_IO_ListenRespond;
@@ -22,9 +25,18 @@ public class Framework
         stat_REG_boot0_DECLAIRE_Framework_App();
         System.out.printf("exiting CONSTRUCTOR Framework()%n");
     }
+    public void dyn_CLASS_create_Global_and_Settings()
+    {
+        boot1_CLASS_DEFINE_Global();
+        boot3_CLASS_INITIALISE_Global();
+    }
     public App dyn_CLASS_get_App()
     {
         return stat_CLASS_get_App();
+    }
+    public Global dyn_CLASS_get_Global()
+    {
+        return stat_CLASS_get_Global();
     }
     public void dyn_REG_boot1_DEFINE_Framework_App(Framework obj)
     {
@@ -50,35 +62,9 @@ public class Framework
         obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot4_INSTANTIATE_Execute();
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Framework_App().%n");
     }
-    public void dyn_STRUCT_boot0_DECLAIRE()
+    public PostProcess dyn_STRUCT_get_PostProcess()
     {
-        System.out.printf("entered stat_STRUCT_boot0_DECLAIRE().%n");
-        
-        System.out.printf("exiting stat_STRUCT_boot0_DECLAIRE().%n");
-    }
-    public void dyn_SRUCT_boot1_DEFINE()
-    {
-        System.out.printf("entered stat_STRUCT_boot1_DEFINE().%n");
-        stat_STRUCT_boot1_DEFINE_User_Input();
-        stat_STRUCT_boot1_DEFINE_User_Output();
-        stat_STRUCT_boot1_DEFINE_User_Algorithim();
-        stat_STRUCT_boot1_DEFINE_Algorithim();
-        stat_STRUCT_boot1_DEFINE_Input();
-        stat_STRUCT_boot1_DEFINE_Output();
-        stat_STRUCT_boot1_DEFINE_IO_ListenRespond();
-        System.out.printf("exiting stat_STRUCT_boot1_DEFINE().%n");
-    }
-    public void dyn_STRUCT_boot3_INITIALISE()
-    {
-        System.out.printf("entered stat_STRUCT_boot3_INITIALISE().%n");
-        stat_STRUCT_boot3_INITIALISE_User_Input();
-        stat_STRUCT_boot3_INITIALISE_User_Output();
-        stat_STRUCT_boot3_INITIALISE_User_Algorithim();
-        stat_STRUCT_boot3_INITIALISE_Algorithim();
-        stat_STRUCT_boot3_INITIALISE_Input();
-        stat_STRUCT_boot3_INITIALISE_Output();
-        stat_STRUCT_boot3_INITIALISE_IO_ListenRespond();
-        System.out.printf("exiting stat_STRUCT_boot3_INITIALISE().%n");
+        return stat_STRUCT_get_PostProcess();
     }
     public Algorithim dyn_STRUCT_get_Algorithim()
     {
@@ -108,6 +94,39 @@ public class Framework
     {
         return stat_STRUCT_get_IO_ListenRespond();
     }
+    public void dyn_STRUCT_boot0_DECLAIRE()
+    {
+        System.out.printf("entered stat_STRUCT_boot0_DECLAIRE().%n");
+
+        System.out.printf("exiting stat_STRUCT_boot0_DECLAIRE().%n");
+    }
+    public void dyn_SRUCT_boot1_DEFINE()
+    {
+        System.out.printf("entered stat_STRUCT_boot1_DEFINE().%n");
+        stat_STRUCT_boot1_DEFINE_User_Input();
+        stat_STRUCT_boot1_DEFINE_User_Output();
+        stat_STRUCT_boot1_DEFINE_User_Algorithim();
+        stat_STRUCT_boot1_DEFINE_Algorithim();
+        stat_STRUCT_boot1_DEFINE_Input();
+        stat_STRUCT_boot1_DEFINE_Output();
+        stat_STRUCT_boot1_DEFINE_IO_ListenRespond();
+        //todo.
+        System.out.printf("exiting stat_STRUCT_boot1_DEFINE().%n");
+    }
+    public void dyn_STRUCT_boot3_INITIALISE()
+    {
+        System.out.printf("entered stat_STRUCT_boot3_INITIALISE().%n");
+        stat_STRUCT_boot3_INITIALISE_User_Input();
+        stat_STRUCT_boot3_INITIALISE_User_Output();
+        stat_STRUCT_boot3_INITIALISE_User_Algorithim();
+        stat_STRUCT_boot3_INITIALISE_Algorithim();
+        stat_STRUCT_boot3_INITIALISE_Input();
+        stat_STRUCT_boot3_INITIALISE_Output();
+        stat_STRUCT_boot3_INITIALISE_IO_ListenRespond();
+        //todo.
+        System.out.printf("exiting stat_STRUCT_boot3_INITIALISE().%n");
+    }
+
 // private.
     private static void stat_CLASS_boot0_DECLAIRE_Framework_App()
     {
@@ -127,6 +146,12 @@ public class Framework
         stat_CLASS_boot1_DEFINE_App();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_Framework_App().%n");
     }
+    private static void boot1_CLASS_DEFINE_Global()
+    {
+        System.out.printf("entered boot1_CLASS_DEFINE_Global().%n");
+        _stat_CLASS_Global = null;
+        System.out.printf("exiting boot1_CLASS_DEFINE_Global().%n");
+    }
     private static void stat_CLASS_boot3_INITIALISE_App()
     {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_App().%n");
@@ -144,6 +169,18 @@ public class Framework
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Framework_App().%n");
         stat_CLASS_boot3_INITIALISE_App();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Framework_App().%n");
+    }
+    private static void boot3_CLASS_INITIALISE_Global()
+    {
+        System.out.printf("entered boot3_CLASS_INITIALISE_Global().%n");
+        _stat_CLASS_Global = new Global();
+        try {
+            stat_CLASS_get_Global();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        System.out.printf("exiting boot3_CLASS_INITIALISE_Global().%n");
     }
     private static App stat_CLASS_get_App()
     {
@@ -253,7 +290,10 @@ public class Framework
             System.out.printf("NullPointerException.%n");
         }
     }
-
+    public PostProcess stat_STRUCT_get_PostProcess()
+    {
+        return _stat_STRUCT_Concurrent;
+    }
     private static Algorithim stat_STRUCT_get_Algorithim()
     {
         return _stat_STRUCT_Algorithim;
@@ -281,5 +321,9 @@ public class Framework
     private static User_Algorithim stat_STRUCT_get_User_Algorithim()
     {
         return _stat_STRUCT_User_Algorithims;
+    }
+    private static Global stat_CLASS_get_Global()
+    {
+        return _stat_CLASS_Global;
     }
 }
