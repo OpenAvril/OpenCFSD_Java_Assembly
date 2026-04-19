@@ -9,6 +9,11 @@ public class ServerAssembly
     {
         System.out.printf("entered DESKTOP APPLICATION generate_Program().%n");
 
+        System.out.printf("started architectured classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");
+        stat_CLASS_boot1_DEFINE_framework();
+        stat_CLASS_boot3_INITIALISE_framework();
+        System.out.printf("done architectured classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");
+
         System.out.printf("started STRUCTS generate.%n");
         System.out.printf("started independent STRUCT classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");
         stat_CLASS_get_Framework().dyn_STRUCT_boot0_DECLAIRE();
@@ -58,11 +63,6 @@ public class ServerAssembly
         stat_CLASS_get_Framework().dyn_STRUCT_get_IO_ListenRespond().dyn_REG_boot3_INITIALISE_IO_Listen_Respond();
         System.out.printf("done independent STRUCT IO_ListenRespond() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
         System.out.printf("done STRUCTS generate.%n");
-
-        System.out.printf("started architectured classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");
-        stat_CLASS_boot1_DEFINE_framework();
-        stat_CLASS_boot3_INITIALISE_framework();
-        System.out.printf("done architectured classes - DECLAIRE, DEFINE INITIALISE, Registers - DECLAIRE.%n");
 
         System.out.printf("started ARCHITECTURE generate.%n");
         System.out.printf("started architectured classes - Registers - DEFINE.%n");
