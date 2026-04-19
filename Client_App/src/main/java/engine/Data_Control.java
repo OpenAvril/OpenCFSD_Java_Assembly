@@ -1,9 +1,10 @@
 package engine;
 
 import structs.Input;
-import structs.Output;
 
 import java.util.List;
+
+import structs.Output;
 import structs.praisesubsets.Output_praise0;
 import structs.praisesubsets.Output_praise1;
 import structs.praisesubsets.Output_praise2;

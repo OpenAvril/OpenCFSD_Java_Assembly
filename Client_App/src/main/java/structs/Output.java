@@ -1,15 +1,17 @@
 package structs;
+
+import engine.Framework;
 import structs.praisesubsets.Output_praise0;
 import structs.praisesubsets.Output_praise1;
 import structs.praisesubsets.Output_praise2;
 import structs.praisesubsets.Output_praise3;
+
 public class Output
 {
-    private static Output_Control _stat_CLASS_Output_Control;
     private static int _stat_REG_Output_paiseId;
     private static Object _stat_REG_OutputSubset;
-// public.
-    public Output() 
+    // public.
+    public Output()
     {
         System.out.printf("entered STRUCT_CLASS Output()%n");
         stat_CLASS_boot0_DECLAIRE_Output();
@@ -17,10 +19,6 @@ public class Output
         stat_CLASS_boot3_INITIALISE_Output();
         stat_REG_boot0_DECLAIRE_Output();
         System.out.printf("exiting STRUCT_CLASS Output()%n");
-    }
-    public Output_Control dyn_CLASS_get_Output_Control()
-    {
-        return stat_CLASS_get_Output_Control();
     }
     public void dyn_REG_boot1_DEFINE_Output()
     {
@@ -56,23 +54,34 @@ public class Output
     {
         return stat_REG_get_OutputSubset();
     }
-    public void dyn_REG_set_OutputSubset(Output_praise0 objOutputPraise0)
+    public void dyn_REG_set_Output_praiseId(int valuePraiseEventId)
     {
-        stat_REG_set_OutputSubset((Object)objOutputPraise0);
+        stat_REG_set_Output_praiseId(valuePraiseEventId);
     }
-    public void dyn_REG_set_OutputSubset(Output_praise1 objOutputPraise1)
+    public void dyn_REG_set_OutputSubset(Framework obj, int praiseId)
     {
-        stat_REG_set_OutputSubset((Object)objOutputPraise1);
+        User_Output userOutput = obj.dyn_STRUCT_get_User_Output();
+        switch(praiseId)
+        {
+            case 0:
+                stat_REG_set_OutputSubset((Output_praise0)userOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(praiseId));
+                break;
+
+            case 1:
+                stat_REG_set_OutputSubset((Output_praise1)userOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(praiseId));
+                break;
+
+            case 2:
+                stat_REG_set_OutputSubset((Output_praise2)userOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(praiseId));
+                break;
+
+            case 3:
+                stat_REG_set_OutputSubset((Output_praise3)userOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(praiseId));
+                break;
+
+        }
     }
-    public void dyn_REG_set_OutputSubset(Output_praise2 objOutputPraise2)
-    {
-        stat_REG_set_OutputSubset((Object)objOutputPraise2);
-    }
-    public void dyn_REG_set_OutputSubset(Output_praise3 objOutputPraise3)
-    {
-        stat_REG_set_OutputSubset((Object)objOutputPraise3);
-    }
-// private.
+    // private.
     private static void stat_CLASS_boot0_DECLAIRE_Output()
     {
         System.out.printf("entered stat_CLASS_boot0_DECLAIRE_Output().%n");
@@ -82,31 +91,14 @@ public class Output
     private static void stat_CLASS_boot1_DEFINE_Output()
     {
         System.out.printf("entered stat_CLASS_boot1_DEFINE_Output().%n");
-        stat_CLASS_boot1_DEFINE_Output_Control();
+
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_Output().%n");
-    }
-    private static void stat_CLASS_boot1_DEFINE_Output_Control()
-    {
-        System.out.printf("entered stat_CLASS_boot1_DEFINE_Output_Control().%n");
-        _stat_CLASS_Output_Control = null;
-        System.out.printf("exiting stat_CLASS_boot1_DEFINE_Output_Control().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_Output()
     {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Output().%n");
-        stat_CLASS_boot3_INITIALISE_Output_Control();
+
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Output().%n");
-    }
-    private static void stat_CLASS_boot3_INITIALISE_Output_Control()
-    {
-        System.out.printf("entered stat_CLASS_boot3_INITIALISE_Output_Control().%n");
-        _stat_CLASS_Output_Control = new Output_Control();
-        while(stat_CLASS_get_Output_Control() == null) { }
-        System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Output_Control().%n");
-    }
-    private static Output_Control stat_CLASS_get_Output_Control()
-    {
-        return _stat_CLASS_Output_Control;
     }
     private static void stat_REG_boot0_DECLAIRE_Output()
     {
@@ -129,8 +121,12 @@ public class Output
     private static void stat_REG_boot2_SUBSTANTIATE_OutputSubset()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_OutputSubset().%n");
-        _stat_REG_OutputSubset = new Object();
-        while(stat_REG_get_OutputSubset() == null) { }
+        try {
+            _stat_REG_OutputSubset = new Object();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.");
+        }
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_OutputSubset().%n");
     }
     private static void stat_REG_boot3_INITIALISE_Output_paiseId()
@@ -152,6 +148,10 @@ public class Output
     private static Object stat_REG_get_OutputSubset()
     {
         return _stat_REG_OutputSubset;
+    }
+    public static void stat_REG_set_Output_praiseId(int valuePraiseEventId)
+    {
+        _stat_REG_Output_paiseId = valuePraiseEventId;
     }
     private static void stat_REG_set_OutputSubset(Object objSubset)
     {

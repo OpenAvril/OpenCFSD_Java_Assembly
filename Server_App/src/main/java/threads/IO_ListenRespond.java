@@ -5,8 +5,7 @@ import main.IO.OpenEpiCentre;
 import main.IO.WriteQue_SERVERINPUTRECIEVE;
 import structs.Input;
 import structs.Output;
-import structs.praisesubsets.Input_praise0;
-import structs.praisesubsets.Output_praise0;
+import structs.praisesubsets.*;
 
 public class IO_ListenRespond
 {
@@ -63,14 +62,58 @@ public class IO_ListenRespond
                 break;
 
             case 1:
+                Input_praise1 subset_of_input_for_praise1 = (Input_praise1)input.dyn_REG_get_InputSubset();
+                temp = new byte[4];
+                for(int index = 0; index < 4; index++)
+                {
+                    temp[index] = buffer[4+index];
+                }
+                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueA(Global.stat_CONVERT_ByteArray_To_Float(temp));
+                temp = new byte[4];
+                for(int index = 0; index < 4; index++)
+                {
+                    temp[index] = buffer[8+index];
+                }
+                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueB(Global.stat_CONVERT_ByteArray_To_Float(temp));
+                break;
 
+            case 2:
+                Input_praise2 subset_of_input_for_praise2 = (Input_praise2)input.dyn_REG_get_InputSubset();
+                temp = new byte[4];
+                for(int index = 0; index < 4; index++)
+                {
+                    temp[index] = buffer[4+index];
+                }
+                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueA(Global.stat_CONVERT_ByteArray_To_Float(temp));
+                temp = new byte[4];
+                for(int index = 0; index < 4; index++)
+                {
+                    temp[index] = buffer[8+index];
+                }
+                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueB(Global.stat_CONVERT_ByteArray_To_Float(temp));
+                break;
+
+            case 3:
+                Input_praise3 subset_of_input_for_praise3 = (Input_praise3)input.dyn_REG_get_InputSubset();
+                temp = new byte[4];
+                for(int index = 0; index < 4; index++)
+                {
+                    temp[index] = buffer[4+index];
+                }
+                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueA(Global.stat_CONVERT_ByteArray_To_Float(temp));
+                temp = new byte[4];
+                for(int index = 0; index < 4; index++)
+                {
+                    temp[index] = buffer[8+index];
+                }
+                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueB(Global.stat_CONVERT_ByteArray_To_Float(temp));
                 break;
         }
     }
     private void app_Do_Process_Of_Input(Framework obj)
     {
         byte[] buffer = new byte[1024];//TESTBENCH
-        Input input = new Input();
+        Input input = obj.dyn_STRUCT_get_Input();//todo network capture.
         app_Decode_NetworkingSteam_At_Server_Input_Recieve(input, buffer);
         OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(input.dyn_REG_get_Input_praiseId());
         switch (input.dyn_REG_get_Input_praiseId())
@@ -83,7 +126,24 @@ public class IO_ListenRespond
                 break;
 
             case 1:
+                Input_praise1 subset_of_input_for_praise1 = (Input_praise1)input.dyn_REG_get_InputSubset();
+                OpenEpiCentre.io_PRAISE_set_PraiseEventId(input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
+                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
+                break;
 
+            case 2:
+                Input_praise2 subset_of_input_for_praise2 = (Input_praise2)input.dyn_REG_get_InputSubset();
+                OpenEpiCentre.io_PRAISE_set_PraiseEventId(input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
+                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
+                break;
+
+            case 3:
+                Input_praise3 subset_of_input_for_praise3 = (Input_praise3)input.dyn_REG_get_InputSubset();
+                OpenEpiCentre.io_PRAISE_set_PraiseEventId(input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
+                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
                 break;
         }
         OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
@@ -91,11 +151,43 @@ public class IO_ListenRespond
     }
     private void app_Do_Process_Of_Output(Framework obj)
     {
-        byte[] buffer = new byte[1024];
-        Output output = new Output();
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(0);
+        byte[] buffer = new byte[1024];//todo network send.
+        Output output = obj.dyn_STRUCT_get_Output();
+        if(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
+        {
+            WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(0);
+            while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
+            {
+                OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
+                output.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId());
+                output.dyn_REG_set_OutputSubset(obj, output.dyn_REG_get_Output_praiseId());
+                switch(output.dyn_REG_get_Output_praiseId())
+                {
+                    case 0:
+                        Output_praise0 subset_of_output_for_praise0 = (Output_praise0)output.dyn_REG_get_OutputSubset();
+                        subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value());
+                        break;
 
-        app_Encode_NetworkingSteam_At_Server_Output_Send(obj, output, buffer);
+                    case 1:
+                        Output_praise1 subset_of_output_for_praise1 = (Output_praise1)output.dyn_REG_get_OutputSubset();
+                        //subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value());//todo
+                        break;
+
+                    case 2:
+                        Output_praise0 subset_of_output_for_praise2 = (Output_praise0)output.dyn_REG_get_OutputSubset();
+                        //subset_of_output_for_praise2.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value());//todo
+                        break;
+
+                    case 3:
+                        Output_praise0 subset_of_output_for_praise3 = (Output_praise0)output.dyn_REG_get_OutputSubset();
+                        //subset_of_output_for_praise3.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value());//todo
+                        break;
+                }
+                app_Encode_NetworkingSteam_At_Server_Output_Send(obj, output, buffer);
+                //todo send.
+            }
+            WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
+        }
     }
     private void app_Encode_NetworkingSteam_At_Server_Output_Send(Framework obj, Output output, byte[] buffer)
     {
@@ -104,17 +196,43 @@ public class IO_ListenRespond
         {
             buffer[index] = temp[index];
         }
-
-        output.dyn_CLASS_get_Output_Control().SelectSetOutputSubset(output, obj.dyn_STRUCT_get_User_Output(), output.dyn_REG_get_Output_praiseId());
+        output.dyn_REG_set_OutputSubset(obj, output.dyn_REG_get_Output_praiseId());
         switch (output.dyn_REG_get_Output_praiseId())
         {
             case 0:
                 Output_praise0 subset_of_output_for_praise0 = (Output_praise0)output.dyn_REG_get_OutputSubset();
-                subset_of_output_for_praise0.dyn_REG_get_output_praise0_value();
+                temp = Global.stat_CONVERT_Double_To_ByteArray(subset_of_output_for_praise0.dyn_REG_get_output_praise0_value());
+                for(int index = 0; index < 4; index++)
+                {
+                    buffer[index] = temp[index];
+                }
                 break;
 
             case 1:
+                Output_praise1 subset_of_output_for_praise1 = (Output_praise1)output.dyn_REG_get_OutputSubset();
+                //temp = Global.stat_CONVERT_Double_To_ByteArray(subset_of_output_for_praise1.dyn_REG_get_output_praise0_value());//todo.
+                for(int index = 0; index < 4; index++)
+                {
+                    buffer[index] = temp[index];
+                }
+                break;
 
+            case 2:
+                Output_praise2 subset_of_output_for_praise2 = (Output_praise2)output.dyn_REG_get_OutputSubset();
+                //temp = Global.stat_CONVERT_Double_To_ByteArray(subset_of_output_for_praise2.dyn_REG_get_output_praise0_value());//todo.
+                for(int index = 0; index < 4; index++)
+                {
+                    buffer[index] = temp[index];
+                }
+                break;
+
+            case 3:
+                Output_praise3 subset_of_output_for_praise3 = (Output_praise3)output.dyn_REG_get_OutputSubset();
+                //temp = Global.stat_CONVERT_Double_To_ByteArray(subset_of_output_for_praise3.dyn_REG_get_output_praise0_value());//todo.
+                for(int index = 0; index < 4; index++)
+                {
+                    buffer[index] = temp[index];
+                }
                 break;
         }
     }

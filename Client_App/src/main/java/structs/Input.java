@@ -1,11 +1,13 @@
 package structs;
+
+import engine.Framework;
 import structs.praisesubsets.Input_praise0;
 import structs.praisesubsets.Input_praise1;
 import structs.praisesubsets.Input_praise2;
 import structs.praisesubsets.Input_praise3;
+
 public class Input
 {
-    private static Input_Control _stat_CLASS_Input_Control;
     private static int _stat_REG_Input_paiseId;
     private static Object _stat_REG_InputSubset;
 // public.
@@ -17,10 +19,6 @@ public class Input
         stat_CLASS_boot3_INITIALISE_Input();
         stat_REG_boot0_DECLAIRE_Input();
         System.out.printf("exiting STRUCT_CLASS Input()%n");
-    }
-    public Input_Control dyn_CLASS_get_Input_Control()
-    {
-        return stat_CLASS_get_Input_Control();
     }
     public void dyn_REG_boot1_DEFINE_Input()
     {
@@ -60,21 +58,28 @@ public class Input
     {
         stat_REG_set_Input_praiseId(valuePraiseEventId);
     }
-    public void dyn_REG_set_InputSubset(Input_praise0 objInputPraise0)
+    public void dyn_REG_set_InputSubset(Framework obj, int praiseId)
     {
-        stat_REG_set_InputSubset((Object)objInputPraise0);
-    }
-    public void dyn_REG_set_InputSubset(Input_praise1 objInputPraise1)
-    {
-        stat_REG_set_InputSubset((Object)objInputPraise1);
-    }
-    public void dyn_REG_set_InputSubset(Input_praise2 objInputPraise2)
-    {
-        stat_REG_set_InputSubset((Object)objInputPraise2);
-    }
-    public void dyn_REG_set_InputSubset(Input_praise3 objInputPraise3)
-    {
-        stat_REG_set_InputSubset((Object)objInputPraise3);
+        User_Input userInput = obj.dyn_STRUCT_get_User_Input();
+        switch(praiseId)
+        {
+            case 0:
+                stat_REG_set_InputSubset((Input_praise0)userInput.dyn_REG_get_Item_On_List_Of_InputSubsets(praiseId));
+                break;
+
+            case 1:
+                stat_REG_set_InputSubset((Input_praise1)userInput.dyn_REG_get_Item_On_List_Of_InputSubsets(praiseId));
+                break;
+
+            case 2:
+                stat_REG_set_InputSubset((Input_praise2)userInput.dyn_REG_get_Item_On_List_Of_InputSubsets(praiseId));
+                break;
+
+            case 3:
+                stat_REG_set_InputSubset((Input_praise3)userInput.dyn_REG_get_Item_On_List_Of_InputSubsets(praiseId));
+                break;
+
+        }
     }
 // private.
     private static void stat_CLASS_boot0_DECLAIRE_Input()
@@ -86,31 +91,14 @@ public class Input
     private static void stat_CLASS_boot1_DEFINE_Input()
     {
         System.out.printf("entered stat_CLASS_boot1_DEFINE_Input().%n");
-        stat_CLASS_boot1_DEFINE_Input_Control();
+
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_Input().%n");
-    }
-    private static void stat_CLASS_boot1_DEFINE_Input_Control()
-    {
-        System.out.printf("entered stat_CLASS_boot1_DEFINE_Input_Control().%n");
-        _stat_CLASS_Input_Control = null;
-        System.out.printf("exiting stat_CLASS_boot1_DEFINE_Input_Control().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_Input()
     {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Input().%n");
-        stat_CLASS_boot3_INITIALISE_Input_Control();
+
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Input().%n");
-    }
-    private static void stat_CLASS_boot3_INITIALISE_Input_Control()
-    {
-        System.out.printf("entered stat_CLASS_boot3_INITIALISE_Input_Control().%n");
-        _stat_CLASS_Input_Control = new Input_Control();
-        while(stat_CLASS_get_Input_Control() == null) { }
-        System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Input_Control().%n");
-    }
-    private static Input_Control stat_CLASS_get_Input_Control()
-    {
-        return _stat_CLASS_Input_Control;
     }
     private static void stat_REG_boot0_DECLAIRE_Input()
     {
@@ -133,8 +121,12 @@ public class Input
     private static void stat_REG_boot2_SUBSTANTIATE_InputSubset()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_InputSubset().%n");
-        _stat_REG_InputSubset = new Object();
-        while(stat_REG_get_InputSubset() == null) { }
+        try {
+            _stat_REG_InputSubset = new Object();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.");
+        }
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_InputSubset().%n");
     }
     private static void stat_REG_boot3_INITIALISE_Input_paiseId()
