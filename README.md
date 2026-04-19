@@ -4,10 +4,8 @@
 ### Ubuntu LINUX.
 version: Ubuntu 24.04.4 LTS
 
-### IntelliJ IDEA 2026.1
-Runtime version: 25.0.2+10-b329.72 amd64 (JCEF 137.0.17-261-b65)
-
-VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.
+### IntelliJ IDEA 2025.3.4
+Build #IU-253.32098.37, built on March 17, 2026
 
 ## Implements.
  - ### CLIBWriteQue dll(s).
