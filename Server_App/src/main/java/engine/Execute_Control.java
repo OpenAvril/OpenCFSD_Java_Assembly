@@ -34,6 +34,10 @@ public class Execute_Control
     {
         return stat_get_ptr_list_Of_flag_ThreadInitialised();
     }
+    public void dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised()
+    {
+        stat_REG_set_Item_On_List_Of_Flag_ThreadInitialised();
+    }
 // private.
     private static void stat_CLASS_boot0_DECLAIRE_Execute_Control()
     {
@@ -77,6 +81,22 @@ public class Execute_Control
     }
     private static void stat_REG_set_Flag_is_SystemInitialised(boolean newFlag)
     {
-
+        _stat_REG_ptr_Flag_isSystemInitialised = newFlag;
+        stat_REG_setCalc_Flag_is_SystemInitialised();
+    }
+    private static void stat_REG_setCalc_Flag_is_SystemInitialised()
+    {
+        _stat_REG_ptr_Flag_isSystemInitialised = false;
+        for(int index = 0; index < 1; index++)
+        {
+            if (_stat_REG_ptr_Flag_array_ThreadInitialised) {
+                _stat_REG_ptr_Flag_isSystemInitialised = true;
+                break;
+            }
+        }
+    }
+    private static void stat_REG_set_Item_On_List_Of_Flag_ThreadInitialised()
+    {
+        _stat_REG_ptr_Flag_array_ThreadInitialised = false;
     }
 }

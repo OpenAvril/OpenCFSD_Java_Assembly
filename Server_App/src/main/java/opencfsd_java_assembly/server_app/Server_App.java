@@ -1,4 +1,5 @@
 package opencfsd_java_assembly.server_app;
+import SIMULATION.Simulation;
 import engine.Framework;
 import main.IO.OpenEpiCentre;
 import main.IO.ServerAssembly;
@@ -8,6 +9,11 @@ public class Server_App
 // public.
     public static void main(String[] args) {
         System.out.printf("entered first member function, main()%n");
+
+        System.out.printf("loading SIMULATION static class.");
+        Simulation sim = new Simulation();
+        System.out.printf("done SIMULATION loading.");
+
         _stat_PGM_ClientAssembly = ServerAssembly.app_generate_Program();
         System.out.printf("%n");
         System.out.printf("        ,     \\      /      ,%n");
@@ -35,11 +41,7 @@ public class Server_App
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
 
-        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset((int)(0));
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A((float)(1.2));
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B((float)(2.6));
-        OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
-        OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
+
 
     }
 }

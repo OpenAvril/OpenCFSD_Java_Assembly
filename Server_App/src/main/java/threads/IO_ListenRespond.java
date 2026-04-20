@@ -29,22 +29,28 @@ public class IO_ListenRespond
     }
     public void app_Thread_IO_Listen_Respond(Framework obj, int threadId)
     {
+        System.out.print("Enter THREAD member function on thread: " + threadId);
         boolean doneOnce = true;
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised())
         {
             if (doneOnce)
             {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised();
                 doneOnce = false;
             }
         }
+        System.out.print("Initialised Thread: " + threadId);
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
 
         }
-        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
-        {
+        System.out.print("System Initialised - starting loop for thread " + threadId);
+        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
             app_Do_Process_Of_Input(obj);
-            app_Do_Process_Of_Output(obj);
+            if (OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())//SIMULATION
+            {
+                app_Do_Process_Of_Output(obj);
+            }
         }
     }
 // private.

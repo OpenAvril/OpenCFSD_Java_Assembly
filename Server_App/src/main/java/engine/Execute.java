@@ -7,6 +7,8 @@ import main.IO.WriteQue_SERVEROUTPUTSEND;
 import main.IO.OpenEpiCentre;
 import threads.IO_ListenRespond;
 
+import java.util.Scanner;
+
 public class Execute
 {
     private static Execute_Control _stat_CLASS_Execute_Control;
@@ -173,12 +175,16 @@ public class Execute
     }
     private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj)
     {
-        for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
-        {
-            int finalThreadId = threadId;
-            _stat_REG_List_Of_Threads[threadId] = new Thread(() -> obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, finalThreadId));
-            _stat_REG_List_Of_Threads[threadId].start();
-        }
+        System.out.printf("entered *** Launch Threads ***");
+        _stat_REG_List_Of_Threads[0] = new Thread(() -> obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0));
+        _stat_REG_List_Of_Threads[0].start();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt(); // Reads integer from user
+        scanner.close();
+
+        System.out.printf("exiting *** Launch Threads ***");
     }
     private static Thread[] stat_REG_get_ptr_List_Of_Threads()
     {
