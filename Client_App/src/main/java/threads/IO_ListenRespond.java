@@ -67,7 +67,6 @@ public class IO_ListenRespond
      }
     private void app_Do_Process_Of_Output_Receive(Framework obj)
     {
-
         if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_data_Control().dyn_REG_get_FlagIsLoaded_Stack_Client_OutputRecieve())
         {
             while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_data_Control().dyn_REG_get_FlagIsLoaded_Stack_Client_OutputRecieve())

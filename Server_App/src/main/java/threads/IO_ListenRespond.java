@@ -7,6 +7,9 @@ import main.IO.WriteQue_SERVEROUTPUTSEND;
 import structs.Input;
 import structs.Output;
 import structs.praisesubsets.*;
+import SIMULATION.Simulation;
+
+import java.util.Scanner;
 
 public class IO_ListenRespond
 {
@@ -124,8 +127,9 @@ public class IO_ListenRespond
     {
         WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(0);
         _stat_REG_input = obj.dyn_STRUCT_get_Input();
-        _stat_REG_Buffer_For_Input = new byte[1024]; //todo network capture and write to buffer.
-        app_Decode_NetworkingSteam_At_Server_Input_Recieve(_stat_REG_input, _stat_REG_Buffer_For_Input);
+        //_stat_REG_Buffer_For_Input = new byte[1024]; //todo network capture and write to buffer.
+        //app_Decode_NetworkingSteam_At_Server_Input_Recieve(_stat_REG_input, _stat_REG_Buffer_For_Input);
+        Simulation.Get_Praise_Event_Id_And_Data(_stat_REG_input);//SIMULATION
         OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(_stat_REG_input.dyn_REG_get_Input_praiseId());
         switch (_stat_REG_input.dyn_REG_get_Input_praiseId())
         {
@@ -196,6 +200,7 @@ public class IO_ListenRespond
                         break;
                 }
                 app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _stat_REG_output, _stat_REG_Buffer_For_Ouput);
+                Simulation.Print_PraiseEvent(_stat_REG_output);
                 //todo send.
             }
             WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
