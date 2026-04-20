@@ -121,8 +121,9 @@ public class Output
     private static void stat_REG_boot2_SUBSTANTIATE_OutputSubset()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_OutputSubset().%n");
+        _stat_REG_OutputSubset = new Object();
         try {
-            _stat_REG_OutputSubset = new Object();
+            stat_REG_get_OutputSubset();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.");

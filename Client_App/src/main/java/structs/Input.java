@@ -121,8 +121,9 @@ public class Input
     private static void stat_REG_boot2_SUBSTANTIATE_InputSubset()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_InputSubset().%n");
+        _stat_REG_InputSubset = new Object();
         try {
-            _stat_REG_InputSubset = new Object();
+            stat_REG_get_InputSubset();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.");
