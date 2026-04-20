@@ -4,7 +4,7 @@
 ### Ubuntu LINUX.
 version: Ubuntu 24.04.4 LTS
 
-### IntelliJ IDEA 2025.3.4
+### IntelliJ IDEA 2026.1.
 Build #IU-261.22158.277, built on March 25, 2026.
 
 ## Implements.
