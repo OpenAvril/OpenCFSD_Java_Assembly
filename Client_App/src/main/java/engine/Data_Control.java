@@ -19,12 +19,12 @@ public class Data_Control
     // public.
     public Data_Control()
     {
-        System.out.printf("entered CONSTRUCTOR Data_Control().");//TESTBENCH
+        System.out.printf("entered CONSTRUCTOR Data_Control().%n");//TESTBENCH
         stat_CLASS_boot0_DECLAIRE_Data_Control();
         stat_CLASS_boot1_DEFINE_Data_Control();
         stat_CLASS_boot3_INITIALISE_Data_Control();
         stat_REG_boot0_DECLAIRE_Data_Control();
-        System.out.printf("exiting CONSTRUCTOR Data_Control().");//TESTBENCH
+        System.out.printf("exiting CONSTRUCTOR Data_Control().%n");//TESTBENCH
     }
     public void dyn_APP_Do_Store_PraiseOutputRecieve_To_GameInstanceData(Framework obj, Output stackSlot)
     {
@@ -151,121 +151,121 @@ public class Data_Control
     }
     public void dyn_REG_boot1_DEFINE_Data_Control()
     {
-        System.out.printf("entered dyn_REG_boot1_DEFINE_Data_Control().");//TESTBENCH
+        System.out.printf("entered dyn_REG_boot1_DEFINE_Data_Control().%n");//TESTBENCH
 
-        System.out.printf("exiting dyn_REG_boot1_DEFINE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting dyn_REG_boot1_DEFINE_Data_Control().%n");//TESTBENCH
     }
     public void dyn_REG_boot2_SUBSTANTIATE_Data_Control()
     {
-        System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Data_Control().");//TESTBENCH
+        System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Data_Control().%n");//TESTBENCH
         stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend();
         stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve();
         stat_REG_boot2_SUBSTANTIATE_Stack_Client_InputSend();
         stat_REG_boot2_SUBSTANTIATE_Stack_Client_OutputRecieve();
-        System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Data_Control().%n");//TESTBENCH
     }
     public void dyn_REG_boot3_INITIALISE_Data_Control()
     {
-        System.out.printf("entered dyn_REG_boot3_INITIALISE_Data_Control().");//TESTBENCH
+        System.out.printf("entered dyn_REG_boot3_INITIALISE_Data_Control().%n");//TESTBENCH
         stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend();
         stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve();
         stat_REG_boot3_INITIALISE_Stack_Client_InputSend();
         stat_REG_boot3_INITIALISE_Stack_Client_OutputRecieve();
-        System.out.printf("exiting dyn_REG_boot3_INITIALISE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting dyn_REG_boot3_INITIALISE_Data_Control().%n");//TESTBENCH
     }
     public void dyn_PGM_boot4_INSTANCIATE_Data_Control()
     {
-        System.out.printf("entered dyn_PGM_boot4_INSTANCIATE_Data_Control().");//TESTBENCH
+        System.out.printf("entered dyn_PGM_boot4_INSTANCIATE_Data_Control().%n");//TESTBENCH
 
-        System.out.printf("exiting dyn_PGM_boot4_INSTANCIATE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting dyn_PGM_boot4_INSTANCIATE_Data_Control().%n");//TESTBENCH
     }
     static public void stat_CLASS_boot0_DECLAIRE_Data_Control()
     {
-        System.out.printf("entered stat_CLASS_boot0_DECLAIRE_Data_Control().");//TESTBENCH
+        System.out.printf("entered stat_CLASS_boot0_DECLAIRE_Data_Control().%n");//TESTBENCH
 
-        System.out.printf("exiting stat_CLASS_boot0_DECLAIRE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting stat_CLASS_boot0_DECLAIRE_Data_Control().%n");//TESTBENCH
     }
     static public void stat_CLASS_boot1_DEFINE_Data_Control()
     {
-        System.out.printf("entered stat_CLASS_boot1_DEFINE_Data_Control().");//TESTBENCH
+        System.out.printf("entered stat_CLASS_boot1_DEFINE_Data_Control().%n");//TESTBENCH
 
-        System.out.printf("exiting stat_CLASS_boot1_DEFINE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting stat_CLASS_boot1_DEFINE_Data_Control().%n");//TESTBENCH
     }
     static public void stat_CLASS_boot3_INITIALISE_Data_Control()
     {
-        System.out.printf("entered stat_CLASS_boot3_INITIALISE_Data_Control().");//TESTBENCH
+        System.out.printf("entered stat_CLASS_boot3_INITIALISE_Data_Control().%n");//TESTBENCH
 
-        System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Data_Control().%n");//TESTBENCH
     }
     static public void stat_REG_boot0_DECLAIRE_Data_Control()
     {
-        System.out.printf("entered stat_REG_boot0_DECLAIRE_Data_Control().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot0_DECLAIRE_Data_Control().%n");//TESTBENCH
 
-        System.out.printf("exiting stat_REG_boot0_DECLAIRE_Data_Control().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot0_DECLAIRE_Data_Control().%n");//TESTBENCH
     }
     // private.
     static private void stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend()
     {
-        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().%n");//TESTBENCH
         _stat_REG_StateWRITE_doublebuffer_Client_InputSend = true;
-        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().%n");//TESTBENCH
     }
     static private void stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve()
     {
-        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
         _stat_REG_StateWRITE_doublebuffer_Client_OutputRecieve = true;
-        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
     }
     static private void stat_REG_boot2_SUBSTANTIATE_Flag_Array_Of_IsWaitingOnPraiseDoWork(Framework obj)
     {
-        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Flag_Array_Of_IsWaitingOnPraiseDoWork().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Flag_Array_Of_IsWaitingOnPraiseDoWork().%n");//TESTBENCH
         _stat_REG_Flag_Array_Of_IsWaitingOnPraiseDoWork = new boolean[obj.dyn_CLASS_get_Global().dyn_REG_get_numberOfPraises()];
-        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Flag_Array_Of_IsWaitingOnPraiseDoWork().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Flag_Array_Of_IsWaitingOnPraiseDoWork().%n");//TESTBENCH
     }
     static private void stat_REG_boot2_SUBSTANTIATE_Stack_Client_InputSend()
     {
-        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_Client_InputSend().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_Client_InputSend().%n");//TESTBENCH
         _stat_REG_FlagIsLoaded_Stack_Client_InputSend = true;
-        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_Client_InputSend().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_Client_InputSend().%n");//TESTBENCH
     }
     static private void stat_REG_boot2_SUBSTANTIATE_Stack_Client_OutputRecieve()
     {
-        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_Client_OutputRecieve().%n");//TESTBENCH
         _stat_REG_FlagIsLoaded_Stack_Client_OutputRecieve = true;
-        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_Client_OutputRecieve().%n");//TESTBENCH
     }
     static private void stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend()
     {
-        System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().%n");//TESTBENCH
         _stat_REG_StateWRITE_doublebuffer_Client_InputSend = false;
-        System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().%n");//TESTBENCH
     }
     static private void stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve()
     {
-        System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
         _stat_REG_StateWRITE_doublebuffer_Client_OutputRecieve = false;
-        System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
     }
     static private void stat_REG_boot3_INITIALISE_Flag_Array_Of_IsWaitingOnPraiseDoWork()
     {
-        System.out.printf("entered stat_REG_boot3_INITIALISE_Flag_Array_Of_IsWaitingOnPraiseDoWork().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot3_INITIALISE_Flag_Array_Of_IsWaitingOnPraiseDoWork().%n");//TESTBENCH
         for (byte praiseId = 0; praiseId < _stat_REG_Flag_Array_Of_IsWaitingOnPraiseDoWork.length; praiseId++)
         {
             _stat_REG_Flag_Array_Of_IsWaitingOnPraiseDoWork[praiseId] = false;
         }
-        System.out.printf("exiting stat_REG_boot3_INITIALISE_Flag_Array_Of_IsWaitingOnPraiseDoWork().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot3_INITIALISE_Flag_Array_Of_IsWaitingOnPraiseDoWork().%n");//TESTBENCH
     }
     static private void stat_REG_boot3_INITIALISE_Stack_Client_InputSend()
     {
-        System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_Client_InputSend().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_Client_InputSend().%n");//TESTBENCH
         _stat_REG_FlagIsLoaded_Stack_Client_OutputRecieve = false;
-        System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_Client_InputSend().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_Client_InputSend().%n");//TESTBENCH
     }
     static private void stat_REG_boot3_INITIALISE_Stack_Client_OutputRecieve()
     {
-        System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_Client_OutputRecieve().%n");//TESTBENCH
         _stat_REG_FlagIsLoaded_Stack_Client_OutputRecieve = false;
-        System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_Client_OutputRecieve().");//TESTBENCH
+        System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_Client_OutputRecieve().%n");//TESTBENCH
     }
     static private boolean stat_REG_get_FlagIsLoaded_Stack_Client_InputSend()
     {

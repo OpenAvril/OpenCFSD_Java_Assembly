@@ -130,7 +130,7 @@ public class Data
 			stat_CLASS_get_data_Control();
 		}
 		catch(NullPointerException e) {
-			System.out.printf("NullPointerException.");
+			System.out.printf("NullPointerException.%n");
 		}
 	}
 	static private void stat_CLASS_boot3_INITIALISE_Game_Instance()
@@ -140,7 +140,7 @@ public class Data
 			stat_CLASS_get_Game_Instance();
 		}
 		catch(NullPointerException e) {
-			System.out.printf("NullPointerException.");
+			System.out.printf("NullPointerException.%n");
 		}
 	}
 	static private Data_Control stat_CLASS_get_data_Control()
@@ -169,74 +169,74 @@ public class Data
 		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output().  *** " + (objGlobal.dyn_REG_get_numberOfCores() - 1));//TESTBENCH
 		_stat_REG_Buffer_Reference_For_Core_Of_Output = new Output[(objGlobal.dyn_REG_get_numberOfCores() - 1)];
 		while (stat_REG_get_Item_On_Array_Of_Buffer_Reference_For_Core_Of_Output() == null) { }
-		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Buffer_Reference_For_Core_Of_Output().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend()
 	{
-		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().%n");//TESTBENCH
 		_stat_REG_doublebuffer_Client_InputSend = new Input[(byte)(2)];
 		while (stat_REG_get_doublebuffer_Client_InputSend() == null) { }
-		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_InputSend().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve()
 	{
-		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
 		_stat_REG_doublebuffer_Client_OutputRecieve = new Output[(byte)(2)];
 		while (stat_REG_get_doublebuffer_Client_InputSend() == null) { }
-		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_InputSend_List_Of_Input()
 	{
-		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_InputSend_List_Of_Input().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_InputSend_List_Of_Input().%n");//TESTBENCH
 		_stat_REG_Stack_At_Client_InputSend_List_Of_Input = new ArrayList<Input>();
 		while (stat_REG_get_doublebuffer_Client_InputSend() == null) { }
-		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_InputSend_List_Of_Input().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_InputSend_List_Of_Input().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_OutputRecieve_List_Of_Output()
 	{
-		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_OutputRecieve_List_Of_Output().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_OutputRecieve_List_Of_Output().%n");//TESTBENCH
 		_stat_REG_Stack_At_Client_OutputRecieve_List_Of_Output = new ArrayList<Output>();
 		while (stat_REG_get_doublebuffer_Client_InputSend() == null) { }
-		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_OutputRecieve_List_Of_Output().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Stack_At_Client_OutputRecieve_List_Of_Output().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot3_INITIALISE_Buffer_Reference_For_Core_Of_Output(Output objOutput)
 	{
-		System.out.printf("entered stat_REG_boot3_INITIALISE_Buffer_Reference_For_Core_Of_Output().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot3_INITIALISE_Buffer_Reference_For_Core_Of_Output().%n");//TESTBENCH
 		for (byte concurrentThreadId = 0; concurrentThreadId < _stat_REG_Buffer_Reference_For_Core_Of_Output.length; concurrentThreadId++)
 		{
 			_stat_REG_Buffer_Reference_For_Core_Of_Output[concurrentThreadId] = objOutput;
 		}
-		System.out.printf("exiting stat_REG_boot3_INITIALISE_Buffer_Reference_For_Core_Of_Output().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot3_INITIALISE_Buffer_Reference_For_Core_Of_Output().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend(Input objInput)
 	{
-		System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().%n");//TESTBENCH
 		for (byte concurrentThreadId = 0; concurrentThreadId < _stat_REG_doublebuffer_Client_InputSend.length; concurrentThreadId++)
 		{
 			_stat_REG_doublebuffer_Client_InputSend[concurrentThreadId] = objInput;
 		}
-		System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_InputSend().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve(Output objOutput)
 	{
-		System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
 		for (byte concurrentThreadId = 0; concurrentThreadId < _stat_REG_doublebuffer_Client_OutputRecieve.length; concurrentThreadId++)
 		{
 			_stat_REG_doublebuffer_Client_OutputRecieve[concurrentThreadId] = objOutput;
 		}
-		System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot3_INITIALISE_doublebuffer_Client_OutputRecieve().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot3_INITIALISE_Stack_At_Client_InputSend_List_Of_Input(Input objInput)
 	{
-		System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_At_Client_InputSend_List_Of_Input().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_At_Client_InputSend_List_Of_Input().%n");//TESTBENCH
 		stat_REG_get_Stack_At_Client_InputSend_List_Of_Input().add(objInput);
-		System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_At_Client_InputSend_List_Of_Input().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_At_Client_InputSend_List_Of_Input().%n");//TESTBENCH
 	}
 	static private void stat_REG_boot3_INITIALISE_Stack_At_Client_OutputRecieve_List_Of_Output(Output objOutput)
 	{
-		System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_At_Client_OutputRecieve_List_Of_Output().");//TESTBENCH
+		System.out.printf("entered stat_REG_boot3_INITIALISE_Stack_At_Client_OutputRecieve_List_Of_Output().%n");//TESTBENCH
 		stat_REG_get_Stack_At_Client_OutputRecieve_List_Of_Output().add(objOutput);
-		System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_At_Client_OutputRecieve_List_Of_Output().");//TESTBENCH
+		System.out.printf("exiting stat_REG_boot3_INITIALISE_Stack_At_Client_OutputRecieve_List_Of_Output().%n");//TESTBENCH
 	}
 	static private Output[] stat_REG_get_Item_On_Array_Of_Buffer_Reference_For_Core_Of_Output()
 	{

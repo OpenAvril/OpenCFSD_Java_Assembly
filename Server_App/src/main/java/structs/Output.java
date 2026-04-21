@@ -121,7 +121,7 @@ public class Output
             _stat_REG_OutputSubset = new Object();
         }
         catch (NullPointerException e) {
-            System.out.printf("NullPointerException.");
+            System.out.printf("NullPointerException.%n");
         }
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_OutputSubset().%n");
     }

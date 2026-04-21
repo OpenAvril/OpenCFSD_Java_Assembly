@@ -121,7 +121,7 @@ public class Input
             _stat_REG_InputSubset = new Object();
         }
         catch (NullPointerException e) {
-            System.out.printf("NullPointerException.");
+            System.out.printf("NullPointerException.%n");
         }
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_InputSubset().%n");
     }

@@ -1,9 +1,7 @@
 package threads;
 import engine.Framework;
 import engine.Global;
-import main.IO.OpenEpiCentre;
-import main.IO.WriteQue_SERVERINPUTRECIEVE;
-import main.IO.WriteQue_SERVEROUTPUTSEND;
+import main.IO.*;
 import structs.Input;
 import structs.Output;
 import structs.praisesubsets.*;
@@ -20,36 +18,76 @@ public class IO_ListenRespond
 // public.
     public IO_ListenRespond()
     {
-        byte[] buffer;
-        buffer = new byte[1024];
-        for(int index = 0; index < buffer.length; index++)
+        _stat_REG_Buffer_For_Input = null;
+        _stat_REG_Buffer_For_Input = new byte[1024];
+        for(int index = 0; index < _stat_REG_Buffer_For_Input.length; index++)
         {
-            buffer[index] = Byte.MAX_VALUE;
+            _stat_REG_Buffer_For_Input[index] = Byte.MAX_VALUE;
+        }
+
+        _stat_REG_Buffer_For_Ouput = null;
+        _stat_REG_Buffer_For_Ouput = new byte[1024];
+        for(int index = 0; index < _stat_REG_Buffer_For_Ouput.length; index++)
+        {
+            _stat_REG_Buffer_For_Ouput[index] = Byte.MAX_VALUE;
         }
     }
     public void app_Thread_IO_Listen_Respond(Framework obj, int threadId)
     {
-        System.out.print("Enter THREAD member function on thread: " + threadId);
-        boolean doneOnce = true;
-        while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised())
+        System.out.printf("Enter THREAD member function on thread: " + threadId + ".%n");
+        boolean doneOnce = false;
+        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised())
         {
-            if (doneOnce)
+            if (!doneOnce)
             {
-                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised();
-                doneOnce = false;
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised(true);
+                doneOnce = true;
             }
         }
-        System.out.print("Initialised Thread: " + threadId);
-        while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
+        System.out.printf("Initialised Thread: " + threadId + ".%n");
+        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
+            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(true);
+            for(int index = 0; index < Global.dyn_REG_get_numberOfCores(); index++)
+            {
+                if (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised()) {
+                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+                    break;
+                }
+            }
+            if(!WriteQue_SERVERINPUTRECIEVE.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+            }
+            if(!LaunchQue_Server.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+            }
+            if(!WriteQue_SERVEROUTPUTSEND.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+            }
+            if(!OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+            }
+            if(!WriteQue_Simulation_IO.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+            }
 
         }
-        System.out.print("System Initialised - starting loop for thread " + threadId);
-        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
+        System.out.printf("System Initialised - starting loop for thread " + threadId + ".%n");
+        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
+        {
+            WriteQue_Simulation_IO.app_FUNCT_write_Start(0);
             app_Do_Process_Of_Input(obj);
+            WriteQue_Simulation_IO.app_FUNCT_write_End(0);
             if (OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())//SIMULATION
             {
+                WriteQue_Simulation_IO.app_FUNCT_write_Start(1);
                 app_Do_Process_Of_Output(obj);
+                WriteQue_Simulation_IO.app_FUNCT_write_End(1);
             }
         }
     }

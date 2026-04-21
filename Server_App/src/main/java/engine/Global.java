@@ -43,11 +43,11 @@ public class Global
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
     }
-    public int dyn_REG_get_numberOfCores()
+    public static int dyn_REG_get_numberOfCores()
     {
         return stat_REG_get_numberOfCores();
     }
-    public int dyn_REG_get_numberOfPraises()
+    public static int dyn_REG_get_numberOfPraises()
     {
         return stat_REG_get_numberOfPraises();
     }
@@ -78,7 +78,7 @@ public class Global
     public static float stat_CONVERT_ByteArray_To_Float(byte[] byteArray) 
     {
         if (byteArray.length != 4) {
-            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.");
+            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         ByteBuffer buffer = ByteBuffer.wrap(byteArray);
         return buffer.getFloat();
@@ -86,7 +86,7 @@ public class Global
     public static int stat_CONVERT_ByteArray_To_int(byte[] byteArray) 
     {
         if (byteArray.length != 4) {
-            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.");
+            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         ByteBuffer buffer = ByteBuffer.wrap(byteArray);
         return buffer.getInt();
@@ -94,7 +94,7 @@ public class Global
     public static int stat_CONVERT_ByteArray_To_UnsignedInt(byte[] byteArray) 
     {
         if (byteArray.length != 1) {
-            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.");
+            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
          return Byte.toUnsignedInt(byteArray[0]);
     }

@@ -8,11 +8,11 @@ public class Server_App
     private static Framework _stat_PGM_ClientAssembly = null;
 // public.
     public static void main(String[] args) {
-        System.out.printf("entered first member function, main()%n");
+        System.out.printf("entered first member function, main().%n");
 
-        System.out.printf("loading SIMULATION static class.");
+        System.out.printf("loading SIMULATION static class.%n");
         Simulation sim = new Simulation();
-        System.out.printf("done SIMULATION loading.");
+        System.out.printf("done SIMULATION loading.%n");
 
         _stat_PGM_ClientAssembly = ServerAssembly.app_generate_Program();
         System.out.printf("%n");

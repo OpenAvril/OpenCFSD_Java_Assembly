@@ -25,6 +25,22 @@ public class LaunchQue_Server
         }
         return (Pointer)null;
     }
+    public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
+    {
+        try {
+            return Global.stat_CONVERT_ByteArray_To_boolean(JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+        }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return true;
+    }
     public static void app_FUNCT_request_Wait_launch(int threadId)
     {
         try {
