@@ -14,6 +14,7 @@ public class Simulation
     {
         _stat_REG_scanner = new Scanner(System.in);
     }
+
     public static void Get_Praise_Event_Id_And_Data(Input input)
     {
         System.out.printf("Enter PraiseEventId: ");
@@ -29,7 +30,6 @@ public class Simulation
                 input_suber0.dyn_REG_set_input_praise0_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
         }
-        _stat_REG_scanner.close();
     }
     public static void Print_PraiseEvent(Output output)
     {
@@ -60,7 +60,6 @@ public class Simulation
                     System.out.printf("output subset3 value: " + output_subset3.dyn_REG_get_output_praise3_value());
                     break;
             }
-            _stat_REG_scanner.close();
         }
     }
 }
