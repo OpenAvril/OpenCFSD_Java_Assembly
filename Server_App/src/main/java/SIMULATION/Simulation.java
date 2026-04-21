@@ -4,6 +4,7 @@ import structs.Input;
 import structs.Output;
 import structs.praisesubsets.*;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Simulation
@@ -34,7 +35,7 @@ public class Simulation
     {
         System.out.printf("Press enter to see next praise event data from server output:");
         String enterisFLAG = _stat_REG_scanner.nextLine();
-        if(enterisFLAG == "")
+        if(Objects.equals(enterisFLAG, ""))
         {
             System.out.printf("Enter PraiseEventId: " + output.dyn_REG_get_Output_praiseId());
             switch(output.dyn_REG_get_Output_praiseId())

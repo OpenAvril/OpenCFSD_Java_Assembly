@@ -101,6 +101,27 @@ public class ServerAssembly
         stat_CLASS_get_Framework().dyn_REG_boot4_INSTANTIATE_Framework_App(stat_CLASS_get_Framework());
         System.out.printf("done PROGRAM - INSTANTIATE.%n");
 
+        System.out.printf("%n");
+        System.out.printf("        ,     \\      /      ,%n");
+        System.out.printf("       / \\    )\\ __ /(     / \\ %n");
+        System.out.printf("      /   \\   (_\\  /_)    /   \\ %n");
+        System.out.printf("____ / ____\\__ \\@  @/ ___/_____\\_____%n");
+        System.out.printf("|              |\\../|               |%n");
+        System.out.printf("|               \\VV/                |%n");
+        System.out.printf("|           OpenEpiCentre           |%n");
+        System.out.printf("|          Open Source MIT          |%n");
+        System.out.printf("| Concurrent Full Stack Development |%n");
+        System.out.printf("|___________________________________|%n");
+        System.out.printf("|    / \\ /        \\\\        \\ /\\    |%n");
+        System.out.printf("|  /    V          ))        V   \\  |%n");
+        System.out.printf("|/                //               \\|%n");
+        System.out.printf("`                 V                 '%n");
+        System.out.printf("%n");
+
+        System.out.printf("started PROGRAM - LAUNCH THREADS.%n");
+        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_APP_Launch_Threads(stat_CLASS_get_Framework());
+        System.out.printf("exiting PROGRAM - LAUNCH THREADS.%n");
+
         System.out.printf("exiting DESKTOP APPLICATION generate_Program().%n");
 
         return stat_CLASS_get_Framework();

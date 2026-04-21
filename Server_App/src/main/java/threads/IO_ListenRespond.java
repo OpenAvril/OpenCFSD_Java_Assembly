@@ -78,7 +78,7 @@ public class IO_ListenRespond
 
         }
         System.out.printf("System Initialised - starting loop for thread " + threadId + ".%n");
-        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
+        while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
             WriteQue_Simulation_IO.app_FUNCT_write_Start(0);
             app_Do_Process_Of_Input(obj);

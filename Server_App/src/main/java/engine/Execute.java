@@ -26,9 +26,9 @@ public class Execute
         stat_REG_boot0_DECLAIRE_Execute();
         System.out.printf("exiting CLASS Execute()%n");
     }
-    private static void dyn_APP_Launch_Threads(Framework obj)
+    public void dyn_APP_Launch_Threads(Framework obj)
     {
-
+        stat_APP_Launch_Threads(obj);
     }
     public Execute_Control dyn_CLASS_get_Execute_Control()
     {
@@ -44,13 +44,12 @@ public class Execute
     {
         System.out.printf("entered dyn_REG_boot2_SUBSTANTIATE_Execute().%n");
         stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(obj);
-
         System.out.printf("exiting dyn_REG_boot2_SUBSTANTIATE_Execute().%n");
     }
     public void dyn_REG_boot3_INITIALISE_Execute(Framework obj)
     {
         System.out.printf("entered dyn_REG_boot3_INITIALISE_Execute().%n");
-
+        stat_REG_boot3_INITIALISE_List_Of_Threads(obj);
         System.out.printf("exiting dyn_REG_boot3_INITIALISE_Execute().%n");
     }
     public void dyn_REG_boot4_INSTANTIATE_Execute()
@@ -156,7 +155,10 @@ public class Execute
 // private.
     private static void stat_APP_Launch_Threads(Framework obj)
     {
+        System.out.printf("entered *** Launch Threads ***.%n");
 
+        _stat_REG_List_Of_Threads[0].start();
+        System.out.printf("exiting *** Launch Threads ***.%n");
     }
     private static void stat_CLASS_boot1_DEFINE_Execute_Control()
     {
@@ -200,10 +202,9 @@ public class Execute
     }
     private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj)
     {
-        System.out.printf("entered *** Launch Threads ***.%n");
+        System.out.printf("entered Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0));
-        _stat_REG_List_Of_Threads[0].start();
-        System.out.printf("exiting *** Launch Threads ***.%n");
+        System.out.printf("exiting Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
     }
     private static Thread[] stat_REG_get_ptr_List_Of_Threads()
     {
