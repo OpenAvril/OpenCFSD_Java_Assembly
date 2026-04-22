@@ -23,14 +23,10 @@ Build #IU-261.22158.277, built on March 25, 2026.
 
 Terminal install of the above.
 ````
-sudo apt update
-sudo apt upgrade
 sudo apt install openjdk-8-jdk
 sudo apt install openjdk-8-jre
 sudo apt install build-essential gdb
 sudo snap install intellij-idea --channel=2026.1/stable --classic
-sudo apt update
-sudo apt upgrade
 ````
 
 #### Java Native Access Library.
