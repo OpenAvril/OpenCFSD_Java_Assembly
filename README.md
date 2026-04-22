@@ -14,6 +14,41 @@ version: Ubuntu 24.04.4 LTS
 ### IntelliJ IDEA 2026.1.
 Build #IU-261.22158.277, built on March 25, 2026.
 
+### Dependencies.
+#### The Java Development Kit (JDK).
+#### Java Runtime Eenvironment (JRE).
+#### GCC toolchain.
+#### IntelliJ-idea.
+#### Apache Maven. 
+
+Terminal install of the above.
+````
+sudo apt update
+sudo apt upgrade
+sudo apt install openjdk-8-jdk
+sudo apt install openjdk-8-jre
+sudo apt install build-essential gdb
+sudo snap install intellij-idea --channel=2026.1/stable --classic
+sudo apt update
+sudo apt upgrade
+````
+
+#### Java Native Access Library.
+ - https://github.com/java-native-access/jna
+##### edit pom.xml.
+````
+ <dependency>
+	    <groupId>net.java.dev.jna</groupId>
+	    <artifactId>jna</artifactId>
+	    <version>5.18.1</version> <!-- Use the latest version -->
+	</dependency>
+	<dependency>
+	    <groupId>net.java.dev.jna</groupId>
+	    <artifactId>jna-platform</artifactId>
+	    <version>5.18.1</version> <!-- Use the latest version -->
+	</dependency>
+````
+
 ---
 ## Implements.
  - ### CLIBWriteQue dll(s).
@@ -27,29 +62,3 @@ Build #IU-261.22158.277, built on March 25, 2026.
 
 ### Wrapper Imports / Exports and Native IO.
  - [Wrapper Imports and Native IO](https://github.com/OpenAvril/OpenAvrilCFSD_APP_Templates/edit/master/blob/Wrapper_Imports.md)
-
----
-## Dependencies.
-### The Java Development Kit (JDK).
-Version: 25.0.2.
- - https://www.oracle.com/anz/java/technologies/downloads/#java25
-
-### Apache Maven. 
- - https://maven.apache.org/install.html
-
-### Java Native Access Library.
- - https://github.com/java-native-access/jna
-
-#### edit pom.xml.
-````
- <dependency>
-	    <groupId>net.java.dev.jna</groupId>
-	    <artifactId>jna</artifactId>
-	    <version>5.18.1</version> <!-- Use the latest version -->
-	</dependency>
-	<dependency>
-	    <groupId>net.java.dev.jna</groupId>
-	    <artifactId>jna-platform</artifactId>
-	    <version>5.18.1</version> <!-- Use the latest version -->
-	</dependency>
-````
