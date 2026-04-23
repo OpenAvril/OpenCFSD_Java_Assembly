@@ -128,10 +128,6 @@ public class ServerAssembly
 
         return stat_CLASS_get_Framework();
     }
-    public static Framework dyn_CLASS_get_Framework()
-    {
-        return stat_CLASS_get_Framework();
-    }
 // private.
     private static void stat_CLASS_boot1_DEFINE_framework()
     {

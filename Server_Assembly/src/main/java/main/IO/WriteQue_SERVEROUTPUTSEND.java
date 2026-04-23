@@ -3,6 +3,7 @@ package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
 import lib.JavaLIBWriteQueSERVEROUTPUTSEND;
+import lib.JavaLIBWriteQueSERVEROUTPUTSEND;
 
 public class WriteQue_SERVEROUTPUTSEND
 {
@@ -14,81 +15,64 @@ public class WriteQue_SERVEROUTPUTSEND
     {
         try {
             return JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_generate_Program();
-        }
-        catch (NoClassDefFoundError e) {
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return (Pointer)null;
-        }
-        catch (NullPointerException e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
             return (Pointer)null;
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
-            return (Pointer)null;
+        } catch (NullPointerException e) {
+            throw new NullPointerException("NullPointerException.%n");
         }
     }
     public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
             return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
-        }
-        catch (NoClassDefFoundError e) {
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
-        }
-        catch (NullPointerException e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
             return true;
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
-            return true;
+        } catch (NullPointerException e) {
+            throw new NullPointerException("NullPointerException.%n");
         }
     }
     public static void app_FUNCT_terminate_Program()
     {
         try {
             JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_terminate_Program();
-        }
-        catch (NoClassDefFoundError e) {
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
+        } catch (NullPointerException e) {
+            throw new NullPointerException("NullPointerException.%n");
         }
     }
     public static void app_FUNCT_write_End(int threadId)
     {
         try {
             JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
-        }
-        catch (NoClassDefFoundError e) {
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
+        } catch (NullPointerException e) {
+            throw new NullPointerException("NullPointerException.%n");
         }
     }
     public static void app_FUNCT_write_Start(int threadId)
     {
         try {
             JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_int_To_ByteArray(threadId));
-        }
-        catch (NoClassDefFoundError e) {
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
+        } catch (NullPointerException e) {
+            throw new NullPointerException("NullPointerException.%n");
         }
     }
 }
