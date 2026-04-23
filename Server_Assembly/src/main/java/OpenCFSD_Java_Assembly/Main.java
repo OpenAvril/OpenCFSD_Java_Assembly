@@ -45,5 +45,10 @@ public class Main
         System.out.printf("isStackLoaded_Server_InputAction ByteArray: " + Arrays.toString(temp) + ".%n");
         System.out.printf("CONVERT_MsbByteArray_To_LsbBoolean: " + Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp) + ".%n");
         System.out.printf("isStackLoaded_Server_InputAction: " + OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction() + ".%n");
+
+        while(_stat_PGM_ClientAssembly.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
+        {
+
+        }
     }
 }

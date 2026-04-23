@@ -2,11 +2,7 @@ package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
 import lib.JavaLIB_OpenEpiCentre;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
-
 public class OpenEpiCentre
 {
 // public.
@@ -40,18 +36,19 @@ public class OpenEpiCentre
         }
     }
     public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED() throws ClassNotFoundException {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
         } catch (NullPointerException e) {
             //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static void app_FUNCT_select_set_Intput_Subset(int praiseId)
     {
@@ -137,122 +134,126 @@ public class OpenEpiCentre
     }
     public static boolean dyn_REG_get_flag_isStackLoaded_Server_InputAction()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
         } catch (NullPointerException e) {
             //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static boolean dyn_REG_get_flag_isStackLoaded_Server_OutputSend()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
+            temp[0] = Byte.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
+            temp[0] = Byte.MAX_VALUE;
         } catch (NullPointerException e) {
             //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static boolean dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise0_Value()
     {
+        byte[] temp;
+        temp = new byte[8];
         try {
-            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise0_Value());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise0_Value();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return Double.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return Double.MAX_VALUE;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_ByteArray_To_Double(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise1_Value() {
+        byte[] temp;
+        temp = new byte[8];
         try {
-            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise1_Value());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise1_Value();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return Double.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return Double.MAX_VALUE;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_ByteArray_To_Double(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise2_Value()
     {
+        byte[] temp;
+        temp = new byte[8];
         try {
-            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise2_Value());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise2_Value();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return Double.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return Double.MAX_VALUE;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_ByteArray_To_Double(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise3_Value()
     {
+        byte[] temp;
+        temp = new byte[8];
         try {
-            return Global.stat_CONVERT_ByteArray_To_Double(JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise3_Value());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_get_Item_Output_praise3_Value();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return Double.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return Double.MAX_VALUE;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_ByteArray_To_Double(temp);
     }
     public static int io_RPRAISE_get_ptr_PraiseEventId()
     {
+        byte[] temp;
+        temp = new byte[4];
         try {
             return Global.stat_CONVERT_ByteArray_To_int(JavaLIB_OpenEpiCentre.INSTANCE.io_RPRAISE_get_MetaData_PraiseEventId());
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return Integer.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return Integer.MAX_VALUE;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_ByteArray_To_int(temp);
     }
     public static void io_PRAISE_set_Item_Input_praise0_Value_A(float inputValueA)
     {
@@ -263,7 +264,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -276,7 +276,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }

@@ -12,6 +12,14 @@ public class Execute_Control
         stat_CLASS_boot3_INITIALISE_Execute_Control();
         stat_REG_boot0_DECLAIRE_Execute_Control();
     }
+    public void app_Terminate_All_Threads(Framework obj)
+    {
+        for(int threadId = 0; threadId < Global.dyn_REG_get_numberOfCores(); threadId++)
+        {
+            stat_REG_set_Item_On_List_Of_Flag_ThreadInitialised(false);
+        }
+        stat_REG_set_Flag_is_SystemInitialised(false);
+    }
     public void dyn_REG_boot1_DEFINE_Execute_Control()
     {
 

@@ -79,12 +79,12 @@ public class IO_ListenRespond
         System.out.printf("System Initialised - starting loop for thread " + threadId + ".%n");
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
-            //app_Do_Process_Of_Input(obj);
+            app_Do_Process_Of_Input(obj);
             while (!OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())//SIMULATION
             {
             }
-            //app_Do_Process_Of_Output(obj);
-            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//SIMULATION
+            app_Do_Process_Of_Output(obj);
+            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);//SIMULATION
         }
         Simulation.Terminate_stat_REG_scanner();//SIMULATION
     }
