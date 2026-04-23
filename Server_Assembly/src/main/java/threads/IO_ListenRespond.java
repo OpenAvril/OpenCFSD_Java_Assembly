@@ -72,10 +72,13 @@ public class IO_ListenRespond
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
             app_Do_Process_Of_Input(obj);
-            app_Do_Process_Of_Output(obj);
-            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);//SIMULATION
+            if(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
+            {
+                app_Do_Process_Of_Output(obj);
+            }
         }
         Simulation.Terminate_stat_REG_scanner();//SIMULATION
+        obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);//SIMULATION
     }
 // private.
     private void app_Decode_NetworkingSteam_At_Server_Input_Recieve(Input input, byte[] buffer)
@@ -202,8 +205,8 @@ public class IO_ListenRespond
             WriteQue_SERVEROUTPUTSEND.app_FUNCT_write_Start(0);
             _stat_REG_Buffer_For_Ouput = new byte[1024];
             _stat_REG_output = obj.dyn_STRUCT_get_Output();
-            while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
-            {
+            //while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
+            //{
                 OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
                 _stat_REG_output.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId());
                 _stat_REG_output.dyn_REG_set_OutputSubset(obj, _stat_REG_output.dyn_REG_get_Output_praiseId());
@@ -232,7 +235,7 @@ public class IO_ListenRespond
                 app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _stat_REG_output, _stat_REG_Buffer_For_Ouput);
                 Simulation.Print_PraiseEvent(_stat_REG_output);
                 //todo send.
-            }
+            //}
             WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
         }
     }
