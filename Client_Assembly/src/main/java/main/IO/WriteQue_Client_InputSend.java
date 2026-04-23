@@ -6,7 +6,7 @@ public class WriteQue_Client_InputSend
 {
     public WriteQue_Client_InputSend()
     {
-        
+
     }
     public static Pointer app_FUNCT_generate_Program()
     {
@@ -24,8 +24,11 @@ public class WriteQue_Client_InputSend
     }
     public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
+        byte[] temp;
+        temp = new byte[1];
+        temp[0] = Byte.MAX_VALUE;
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBWriteQue_ClientInputSend.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+            temp = JavaLIBWriteQue_ClientInputSend.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
@@ -35,6 +38,7 @@ public class WriteQue_Client_InputSend
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static void app_FUNCT_terminate_Program()
     {

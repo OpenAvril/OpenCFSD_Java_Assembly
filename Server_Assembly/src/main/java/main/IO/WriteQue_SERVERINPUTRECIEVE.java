@@ -26,8 +26,11 @@ public class WriteQue_SERVERINPUTRECIEVE
     }
     public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
+        byte[] temp;
+        temp = new byte[1];
+        temp[0] = Byte.MAX_VALUE;
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+            temp = JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
@@ -37,6 +40,7 @@ public class WriteQue_SERVERINPUTRECIEVE
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static void app_FUNCT_terminate_Program()
     {

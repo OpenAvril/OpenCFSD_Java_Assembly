@@ -11,31 +11,33 @@ public class LaunchQue_Server
     }
     public static Pointer app_FUNCT_generate_Program()
     {
+        Pointer temp;
+        temp = (Pointer)null;
         try {
-            return JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_generate_Program();
+            temp = JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_generate_Program();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return (Pointer)null;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return (Pointer)null;
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return temp;
     }
     public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED());
+            temp = JavaLIBLaunchQue_Server.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static void app_FUNCT_request_Wait_launch(int threadId)
     {
@@ -75,50 +77,55 @@ public class LaunchQue_Server
     }
     public static int app_REG_get_coreId_To_launch()
     {
+        byte[] temp;
+        temp = new byte[4];
         try {
-            return Global.stat_CONVERT_ByteArray_To_int(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_coreId_To_launch());
+            temp = JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_coreId_To_launch();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return Integer.MAX_VALUE;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return Integer.MAX_VALUE;
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_ByteArray_To_int(temp);
     }
     public static boolean app_REG_get_Flag_Active()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Active());
+            JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Active();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static boolean app_REG_get_Flag_ConcurrentCoreState(int threadId)
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(threadId)));
+            JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(threadId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-            return true;
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
-            return true;
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static boolean app_REG_get_Flag_Idle()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Idle());
+            JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_Flag_Idle();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
@@ -128,11 +135,14 @@ public class LaunchQue_Server
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static boolean app_REG_get_State_launchBit()
     {
+        byte[] temp;
+        temp = new byte[1];
         try {
-            return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_State_launchBit());
+            temp = JavaLIBLaunchQue_Server.INSTANCE.app_REG_get_State_launchBit();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
@@ -142,6 +152,7 @@ public class LaunchQue_Server
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
+        return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
     }
     public static void app_REG_set_Flag_ConcurrentCoreState(int concurrentThreadId, boolean state)
     {
