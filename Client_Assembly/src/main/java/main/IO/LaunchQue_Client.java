@@ -4,6 +4,7 @@ import engine.Global;
 import lib.JavaLIBLaunchQue_Client;
 public class LaunchQue_Client 
 {
+    // public.
     public LaunchQue_Client()
     {
 
@@ -41,7 +42,7 @@ public class LaunchQue_Client
     public static void app_FUNCT_request_Wait_launch(int threadId)
     {
         try {
-            JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_request_Wait_launch(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_request_Wait_launch(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -65,7 +66,7 @@ public class LaunchQue_Client
     public static void app_FUNCT_thread_End(int threadId)
     {
         try {
-            JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_thread_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBLaunchQue_Client.INSTANCE.app_FUNCT_thread_End(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -87,7 +88,7 @@ public class LaunchQue_Client
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_ByteArray_To_int(temp);
+        return Global.stat_CONVERT_MsbByteArray_To_LsbInt(temp);
     }
     public static boolean app_REG_get_Flag_Active()
     {
@@ -109,7 +110,7 @@ public class LaunchQue_Client
         byte[] temp;
         temp = new byte[1];
         try {
-            JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBLaunchQue_Client.INSTANCE.app_REG_get_Flag_ConcurrentCoreState(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -156,7 +157,7 @@ public class LaunchQue_Client
     public static void app_REG_set_Flag_ConcurrentCoreState(int concurrentThreadId, boolean state)
     {
         try {
-            JavaLIBLaunchQue_Client.INSTANCE.app_REG_set_Flag_ConcurrentCoreState(Global.stat_CONVERT_int_To_ByteArray(concurrentThreadId), Global.stat_CONVERT_LsbBoolean_To_MsbByteArray(state));
+            JavaLIBLaunchQue_Client.INSTANCE.app_REG_set_Flag_ConcurrentCoreState(Global.stat_CONVERT_LsbInt_To_MsbByteArray(concurrentThreadId), Global.stat_CONVERT_LsbBoolean_To_MsbByteArray(state));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {

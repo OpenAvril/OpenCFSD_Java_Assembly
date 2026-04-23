@@ -53,7 +53,7 @@ public class OpenEpiCentre
     public static void app_FUNCT_select_set_Intput_Subset(int praiseId)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_select_set_Intput_Subset(Global.stat_CONVERT_int_To_ByteArray(praiseId));
+            JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_select_set_Intput_Subset(Global.stat_CONVERT_LsbInt_To_MsbByteArray(praiseId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -186,7 +186,7 @@ public class OpenEpiCentre
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_ByteArray_To_Double(temp);
+        return Global.stat_CONVERT_MsbByteArray_To_LsbDouble(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise1_Value() {
         byte[] temp;
@@ -200,7 +200,7 @@ public class OpenEpiCentre
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_ByteArray_To_Double(temp);
+        return Global.stat_CONVERT_MsbByteArray_To_LsbDouble(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise2_Value()
     {
@@ -215,7 +215,7 @@ public class OpenEpiCentre
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_ByteArray_To_Double(temp);
+        return Global.stat_CONVERT_MsbByteArray_To_LsbDouble(temp);
     }
     public static double io_PRAISE_get_Item_Output_praise3_Value()
     {
@@ -230,7 +230,7 @@ public class OpenEpiCentre
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_ByteArray_To_Double(temp);
+        return Global.stat_CONVERT_MsbByteArray_To_LsbDouble(temp);
     }
     public static int io_RPRAISE_get_MetaData_PraiseEventId()
     {
@@ -245,12 +245,12 @@ public class OpenEpiCentre
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_ByteArray_To_int(temp);
+        return Global.stat_CONVERT_MsbByteArray_To_LsbInt(temp);
     }
     public static void io_PRAISE_set_Item_Input_praise0_Value_A(float inputValueA)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_A(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueA));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -262,7 +262,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise0_Value_B(float inputValueB)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise0_Value_B(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueB));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -274,7 +274,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise1_Value_A(float inputValueA)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise1_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise1_Value_A(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueA));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -286,7 +286,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise1_Value_B(float inputValueB)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise1_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise1_Value_B(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueB));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -298,7 +298,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise2_Value_A(float inputValueA)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise2_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise2_Value_A(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueA));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -310,7 +310,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise2_Value_B(float inputValueB)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise2_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise2_Value_B(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueB));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -322,7 +322,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise3_Value_A(float inputValueA)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise3_Value_A(Global.stat_CONVERT_Float_To_ByteArray(inputValueA));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise3_Value_A(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueA));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -334,7 +334,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_Item_Input_praise3_Value_B(float inputValueB)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise3_Value_B(Global.stat_CONVERT_Float_To_ByteArray(inputValueB));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_Item_Input_praise3_Value_B(Global.stat_CONVERT_LsbFloat_To_MsbByteArray(inputValueB));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -346,7 +346,7 @@ public class OpenEpiCentre
     public static void io_PRAISE_set_MetaData_PraiseEventId(int praiseId)
     {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_MetaData_PraiseEventId(Global.stat_CONVERT_int_To_ByteArray(praiseId));
+            JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_MetaData_PraiseEventId(Global.stat_CONVERT_LsbInt_To_MsbByteArray(praiseId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {

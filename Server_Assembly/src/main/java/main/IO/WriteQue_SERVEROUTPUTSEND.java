@@ -51,7 +51,7 @@ public class WriteQue_SERVEROUTPUTSEND {
     }
     public static void app_FUNCT_write_End(int threadId) {
         try {
-            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -62,7 +62,7 @@ public class WriteQue_SERVEROUTPUTSEND {
     }
     public static void app_FUNCT_write_Start(int threadId) {
         try {
-            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {

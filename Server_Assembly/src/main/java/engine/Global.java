@@ -85,57 +85,45 @@ public class Global
         }
         return bit;
     }
-    public static double stat_CONVERT_ByteArray_To_Double(byte[] byteArray) 
+    public static double stat_CONVERT_MsbByteArray_To_LsbDouble(byte[] byteArray)
     {
         if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have a length of 8");
         }
-        ByteBuffer buffer = ByteBuffer.wrap(byteArray);
-        return buffer.getDouble();
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getDouble();
     }
-    public static float stat_CONVERT_ByteArray_To_Float(byte[] byteArray) 
+    public static float stat_CONVERT_MsbByteArray_To_LsbFloat(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-        ByteBuffer buffer = ByteBuffer.wrap(byteArray);
-        return buffer.getFloat();
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getFloat();
     }
-    public static int stat_CONVERT_ByteArray_To_int(byte[] byteArray) 
+    public static int stat_CONVERT_MsbByteArray_To_LsbInt(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-        ByteBuffer buffer = ByteBuffer.wrap(byteArray);
-        return buffer.getInt();
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getInt();
     }
-    public static int stat_CONVERT_ByteArray_To_UnsignedInt(byte[] byteArray) 
+    public static int stat_CONVERT_MsbByteArray_To_LsbUnsignedInt(byte[] byteArray)
     {
         if (byteArray.length != 1) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-         return Byte.toUnsignedInt(byteArray[0]);
+        return Byte.toUnsignedInt(ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).get());
     }
-    public static byte[] stat_CONVERT_int_To_ByteArray(int value)
+    public static byte[] stat_CONVERT_LsbInt_To_MsbByteArray(int value)
     {
-        ByteBuffer buffer = ByteBuffer.allocate(4);
-        buffer.order(ByteOrder.LITTLE_ENDIAN);
-        buffer.putInt(value);
-        return buffer.array();
+        return ByteBuffer.allocate(8).order(ByteOrder.BIG_ENDIAN).putDouble(value).array();
     }
-    public static byte[] stat_CONVERT_Float_To_ByteArray(float value) 
+    public static byte[] stat_CONVERT_LsbFloat_To_MsbByteArray(float value)
     {
-        ByteBuffer buffer = ByteBuffer.allocate(Float.BYTES);
-        buffer.order(ByteOrder.LITTLE_ENDIAN);
-        buffer.putFloat(value);
-        return buffer.array();
+        return ByteBuffer.allocate(4).order(ByteOrder.BIG_ENDIAN).putFloat(value).array();
     }
-    public static byte[] stat_CONVERT_Double_To_ByteArray(double value) 
+    public static byte[] stat_CONVERT_LsbDouble_To_MsbByteArray(double value)
     {
-        ByteBuffer buffer = ByteBuffer.allocate(Double.BYTES);
-        buffer.order(ByteOrder.LITTLE_ENDIAN);
-        buffer.putDouble(value);
-        return buffer.array();
+        return ByteBuffer.allocate(8).order(ByteOrder.BIG_ENDIAN).putDouble(value).array();
     }
 	public static void stat_CLASS_boot0_DECLAIRE_Global()
 	{

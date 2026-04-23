@@ -55,7 +55,7 @@ public class WriteQue_Simulation_IO
     public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaLIBWriteQue_Simulation_IO.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBWriteQue_Simulation_IO.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -70,7 +70,7 @@ public class WriteQue_Simulation_IO
     public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaLIBWriteQue_Simulation_IO.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_int_To_ByteArray(threadId));
+            JavaLIBWriteQue_Simulation_IO.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbInt_To_MsbByteArray(threadId));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
