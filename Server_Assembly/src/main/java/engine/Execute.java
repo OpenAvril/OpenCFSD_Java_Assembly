@@ -53,21 +53,22 @@ public class Execute
 
         System.out.printf("entered CHECK member function OpenEpiCentre().%n");
         OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
-        //OpenEpiCentre.app_FUNCT_generate_Program();
+        //app_FUNCT_generate_Program();
+        OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(intPrimeDEFAULT);
         OpenEpiCentre.app_FUNCT_terminate_Program();
         OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
         OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
-        Pointer tempD0 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
-        Pointer tempD1 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
-        boolean tempD2 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
-        boolean tempD3 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
-        boolean tempD4 = OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
-        double tempD5 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
-        double tempD6 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value();
-        double tempD7 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value();
-        double tempD8 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value();
-        int tempD9 = OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId();
+        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
+        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
+        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
+        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
+        OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+        OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
+        OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value();
+        OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value();
+        OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value();
+        OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId();
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(intPrimeDEFAULT);
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(intPrimeDEFAULT);
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise1_Value_A(intPrimeDEFAULT);
@@ -76,7 +77,7 @@ public class Execute
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise2_Value_B(intPrimeDEFAULT);
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise3_Value_A(intPrimeDEFAULT);
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise3_Value_B(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_PraiseEventId(intPrimeDEFAULT);
+        OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(intPrimeDEFAULT);
         System.out.printf("done CHECK member function OpenEpiCentre().%n");
 
         System.out.printf("entered CHECK member function WriteQue_Simulation_IO().%n");
@@ -128,12 +129,7 @@ public class Execute
     {
         System.out.printf("entered *** Launch Threads ***.%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> {
-            try {
-                obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0);
-            }
-            catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
+            obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0);
         });
         _stat_REG_List_Of_Threads[0].start();
         System.out.printf("exiting *** Launch Threads ***.%n");

@@ -22,7 +22,7 @@ public class OpenEpiCentre
             throw new NullPointerException("NullPointerException.%n");
         }
     }
-    public static Pointer app_FUNCT_generate_Program() throws IOException {
+    public static Pointer app_FUNCT_generate_Program() {
         try {
             return JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_generate_Program();
         } catch (NoClassDefFoundError e) {
@@ -35,7 +35,7 @@ public class OpenEpiCentre
             throw new NullPointerException("NullPointerException.%n");
         }
     }
-    public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED() throws ClassNotFoundException {
+    public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED() {
         byte[] temp;
         temp = new byte[1];
         try {
@@ -240,7 +240,7 @@ public class OpenEpiCentre
         }
         return Global.stat_CONVERT_ByteArray_To_Double(temp);
     }
-    public static int io_RPRAISE_get_ptr_PraiseEventId()
+    public static int io_RPRAISE_get_MetaData_PraiseEventId()
     {
         byte[] temp;
         temp = new byte[4];
@@ -357,7 +357,7 @@ public class OpenEpiCentre
             throw new NullPointerException("NullPointerException.%n");
         }
     }
-    public static void io_PRAISE_set_PraiseEventId(int praiseId)
+    public static void io_PRAISE_set_MetaData_PraiseEventId(int praiseId)
     {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.io_PRAISE_set_MetaData_PraiseEventId(Global.stat_CONVERT_int_To_ByteArray(praiseId));

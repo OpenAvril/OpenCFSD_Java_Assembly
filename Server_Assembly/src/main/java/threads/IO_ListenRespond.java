@@ -32,7 +32,7 @@ public class IO_ListenRespond
             _stat_REG_Buffer_For_Ouput[index] = Byte.MAX_VALUE;
         }
     }
-    public void app_Thread_IO_Listen_Respond(Framework obj, int threadId) throws ClassNotFoundException {
+    public void app_Thread_IO_Listen_Respond(Framework obj, int threadId) {
         System.out.printf("Enter THREAD member function on thread: " + threadId + ".%n");
         boolean doneOnce = false;
         while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised())
@@ -54,27 +54,19 @@ public class IO_ListenRespond
                     break;
                 }
             }
-            if(!WriteQue_SERVERINPUTRECIEVE.app_FUNCT_get_flag_isPGM_INSTNATIATED())
-            {
-                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
-            }
-            if(!LaunchQue_Server.app_FUNCT_get_flag_isPGM_INSTNATIATED())
-            {
-                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
-            }
-            if(!WriteQue_SERVEROUTPUTSEND.app_FUNCT_get_flag_isPGM_INSTNATIATED())
-            {
-                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
-            }
+            System.out.printf("INSTANTIATION Thread: " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");
+
             if(!OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED())
             {
                 obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
             }
+            System.out.printf("INSTANTIATION OpenEpiCentre: " + OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED() + ".%n");
+
             if(!WriteQue_Simulation_IO.app_FUNCT_get_flag_isPGM_INSTNATIATED())
             {
                 obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
             }
-            System.out.printf("INSTANTIATION_FAILED - trying again on thread: " + threadId + ".%n");
+            System.out.printf("INSTANTIATIO WriteQue_Simulation_IO: " + WriteQue_Simulation_IO.app_FUNCT_get_flag_isPGM_INSTNATIATED() + ".%n");
         }
         System.out.printf("System Initialised - starting loop for thread " + threadId + ".%n");
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
@@ -173,28 +165,28 @@ public class IO_ListenRespond
         {
             case 0:
                 Input_praise0 subset_of_input_for_praise0 = (Input_praise0)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
                 break;
 
             case 1:
                 Input_praise1 subset_of_input_for_praise1 = (Input_praise1)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
                 break;
 
             case 2:
                 Input_praise2 subset_of_input_for_praise2 = (Input_praise2)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
                 break;
 
             case 3:
                 Input_praise3 subset_of_input_for_praise3 = (Input_praise3)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
+                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
                 break;
@@ -213,7 +205,7 @@ public class IO_ListenRespond
             while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
             {
                 OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
-                _stat_REG_output.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_ptr_PraiseEventId());
+                _stat_REG_output.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId());
                 _stat_REG_output.dyn_REG_set_OutputSubset(obj, _stat_REG_output.dyn_REG_get_Output_praiseId());
                 switch(_stat_REG_output.dyn_REG_get_Output_praiseId())
                 {
