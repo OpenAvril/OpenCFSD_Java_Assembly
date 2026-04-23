@@ -30,18 +30,17 @@ sudo snap install intellij-idea --channel=2026.1/stable --classic
 ````
 
 #### Java Native Access Library.
- - https://github.com/java-native-access/jna
 ##### edit pom.xml.
 ````
  <dependency>
 	    <groupId>net.java.dev.jna</groupId>
 	    <artifactId>jna</artifactId>
-	    <version>5.18.1</version> <!-- Use the latest version -->
+	    <version>5.13.0</version> <!-- Use the latest version -->
 	</dependency>
 	<dependency>
 	    <groupId>net.java.dev.jna</groupId>
 	    <artifactId>jna-platform</artifactId>
-	    <version>5.18.1</version> <!-- Use the latest version -->
+	    <version>5.13.0</version> <!-- Use the latest version -->
 	</dependency>
 ````
 
