@@ -166,28 +166,28 @@ public class IO_ListenRespond
         OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(_stat_REG_input.dyn_REG_get_Input_praiseId());
         switch (_stat_REG_input.dyn_REG_get_Input_praiseId())
         {
-            case 0:
+            case (int)0:
                 Input_praise0 subset_of_input_for_praise0 = (Input_praise0)_stat_REG_input.dyn_REG_get_InputSubset();
                 OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
                 break;
 
-            case 1:
+            case (int)1:
                 Input_praise1 subset_of_input_for_praise1 = (Input_praise1)_stat_REG_input.dyn_REG_get_InputSubset();
                 OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
                 break;
 
-            case 2:
+            case (int)2:
                 Input_praise2 subset_of_input_for_praise2 = (Input_praise2)_stat_REG_input.dyn_REG_get_InputSubset();
                 OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
                 break;
 
-            case 3:
+            case (int)3:
                 Input_praise3 subset_of_input_for_praise3 = (Input_praise3)_stat_REG_input.dyn_REG_get_InputSubset();
                 OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());

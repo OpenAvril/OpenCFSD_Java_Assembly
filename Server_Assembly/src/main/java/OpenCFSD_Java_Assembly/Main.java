@@ -28,6 +28,7 @@ public class Main
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
+        Simulation.Prime(_stat_PGM_ClientAssembly);
         byte[] temp = new byte[1];
         try {
             temp = JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();

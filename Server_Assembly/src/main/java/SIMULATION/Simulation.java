@@ -1,5 +1,5 @@
 package SIMULATION;
-
+import engine.Framework;
 import main.IO.WriteQue_Simulation_IO;
 import structs.Input;
 import structs.Output;
@@ -16,10 +16,16 @@ import java.util.Scanner;
 
 public class Simulation
 {
+    private static Framework obj;
     private static Scanner _stat_REG_scanner;
     public Simulation()
     {
         _stat_REG_scanner = new Scanner(System.in);
+    }
+    public static void Prime(Framework objPtr)
+    {
+        obj = null;
+        obj = objPtr;
     }
     public static void Terminate_stat_REG_scanner()
     {
@@ -31,6 +37,7 @@ public class Simulation
         System.out.printf("Enter PraiseEventId: ");
         int praiseEventId = _stat_REG_scanner.nextInt(); // Program waits here
         input.dyn_REG_set_Input_praiseId(praiseEventId);
+        input.dyn_REG_set_InputSubset(obj, praiseEventId);
         switch(input.dyn_REG_get_Input_praiseId())
         {
             case (int)0:
