@@ -54,21 +54,21 @@ public class Execute
         System.out.printf("entered CHECK member function OpenEpiCentre().%n");
         OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
         //app_FUNCT_generate_Program();
-        OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        boolean tempA0 = OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(intPrimeDEFAULT);
         OpenEpiCentre.app_FUNCT_terminate_Program();
         OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
         OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
-        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
-        OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
-        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
-        OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
-        OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
-        OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
-        OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value();
-        OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value();
-        OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value();
-        OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId();
+        Pointer tempA1 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
+        Pointer tempA2 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
+        boolean tempA3 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
+        boolean tempA4 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
+        boolean tempA5 = OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
+        double tempA6 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
+        double tempA7 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value();
+        double tempA8 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value();
+        double tempA9 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value();
+        int tempA10 = OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId();
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(intPrimeDEFAULT);
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(intPrimeDEFAULT);
         OpenEpiCentre.io_PRAISE_set_Item_Input_praise1_Value_A(intPrimeDEFAULT);
@@ -129,7 +129,7 @@ public class Execute
     {
         System.out.printf("entered *** Launch Threads ***.%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> {
-            obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0);
+                obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0);
         });
         _stat_REG_List_Of_Threads[0].start();
         System.out.printf("exiting *** Launch Threads ***.%n");
