@@ -38,6 +38,7 @@ public class OpenEpiCentre
     public static boolean app_FUNCT_get_flag_isPGM_INSTNATIATED() {
         byte[] temp;
         temp = new byte[1];
+        temp[0] = Byte.MAX_VALUE;
         try {
             temp = JavaLIB_OpenEpiCentre.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         } catch (NoClassDefFoundError e) {
@@ -45,7 +46,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
         return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
@@ -59,7 +59,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -72,7 +71,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -85,7 +83,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -98,7 +95,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -113,7 +109,6 @@ public class OpenEpiCentre
             System.out.printf("NullPointerException.%n");
             return (Pointer)null;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -128,7 +123,6 @@ public class OpenEpiCentre
             System.out.printf("NullPointerException.%n");
             return (Pointer)null;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -143,7 +137,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
         return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
@@ -161,7 +154,6 @@ public class OpenEpiCentre
             System.out.printf("NullPointerException.%n");
             temp[0] = Byte.MAX_VALUE;
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
         return Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp);
@@ -245,7 +237,7 @@ public class OpenEpiCentre
         byte[] temp;
         temp = new byte[4];
         try {
-            return Global.stat_CONVERT_ByteArray_To_int(JavaLIB_OpenEpiCentre.INSTANCE.io_RPRAISE_get_MetaData_PraiseEventId());
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.io_RPRAISE_get_MetaData_PraiseEventId();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -288,7 +280,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -301,7 +292,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -314,7 +304,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -327,7 +316,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -340,7 +328,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -353,7 +340,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
@@ -366,7 +352,6 @@ public class OpenEpiCentre
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("NullPointerException.%n");
         } catch (NullPointerException e) {
-            //System.out.printf("NullPointerException.%n");
             throw new NullPointerException("NullPointerException.%n");
         }
     }
