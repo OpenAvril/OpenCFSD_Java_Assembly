@@ -74,6 +74,7 @@ public class IO_ListenRespond
             app_Do_Process_Of_Input(obj);
             if(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
             {
+                System.out.printf("isStackLoaded_Server_InputAction: " + OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction() + ".%n");
                 app_Do_Process_Of_Output(obj);
             }
         }

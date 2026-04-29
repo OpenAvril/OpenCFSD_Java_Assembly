@@ -111,11 +111,11 @@ public class Global
         if (byteArray.length != 1) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-        return Byte.toUnsignedInt(ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).get());
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getInt();
     }
     public static byte[] stat_CONVERT_LsbInt_To_MsbByteArray(int value)
     {
-        return ByteBuffer.allocate(8).order(ByteOrder.BIG_ENDIAN).putDouble(value).array();
+        return ByteBuffer.allocate(4).order(ByteOrder.BIG_ENDIAN).putInt(value).array();
     }
     public static byte[] stat_CONVERT_LsbFloat_To_MsbByteArray(float value)
     {
