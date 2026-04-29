@@ -51,91 +51,59 @@ public class Global
     {
         return stat_REG_get_numberOfPraises();
     }
-    public static byte[] stat_CONVERT_LsbBoolean_To_MsbByteArray(boolean bool)
+    static byte[] stat_CONVERT_MsbByteArray_To_LsbByteArray(byte[] buffer)
     {
-        byte[] bytes = new byte[1];
-        for (int i = 0; i < 1; i++)
-        {
-            byte b = 0;
-            for (int bit = 0; bit < 8; bit++)
-            {
-                int boolIdx = 8 + bit;
-                if (boolIdx < 1 && bool)
-                {
-                    b |= (1 << bit);
-                }
-            }
-            bytes[i] = b;
-        }
-        return bytes;
+        return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN).array();
     }
-    public static boolean stat_CONVERT_MsbByteArray_To_LsbBoolean(byte[] bytesBool)
+    static byte[] stat_CONVERT_LsbByteArray_To_MsbByteArray(byte[] buffer)
     {
-        boolean bit = false;
-        //For each byte, extract bits 0 through 7
-        for (int j = 0; j < 8; j++) {
-            // MSB bit order: (1 << (7 - j))
-            // LSB bit order: (1 << j)
-            bit = (bytesBool[0] != 0);
+        byte[] msbArray = new byte[buffer.length];
+        for (int i = 0; i < buffer.length; i++) {
+            msbArray[i] = buffer[buffer.length - 1 - i];
         }
-        return bit;
+        return msbArray;
     }
-    public static double stat_CONVERT_MsbByteArray_To_LsbDouble(byte[] byteArray)
+    byte[] stat_CONVERT_Boolean_To_MsbByteArray(boolean bool)
+    {
+        byte[] byteArray = new byte[] { (byte) (bool ? 1 : 0) };
+        return stat_CONVERT_LsbByteArray_To_MsbByteArray(byteArray);
+    }
+    boolean stat_CONVERT_MsbByteArray_To_LsbBoolean(byte[] bytesBool)
+    {
+        return (bytesBool[0] != 0);
+    }
+    double stat_CONVERT_MsbByteArray_To_LsbDouble(byte[] byteArray)
     {
         if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-        byte[] lsbBytes = new byte[8];
-        for (int i = 0; i < 8; i++) {
-            lsbBytes[i] = byteArray[7 - i];
-        }
-        return ByteBuffer.wrap(lsbBytes).order(ByteOrder.LITTLE_ENDIAN).getDouble();
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getDouble();
     }
-    public static float stat_CONVERT_MsbByteArray_To_LsbFloat(byte[] byteArray)
+    float stat_CONVERT_MsbByteArray_To_LsbFloat(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-        byte[] lsbBytes = new byte[4];
-        for (int i = 0; i < 4; i++) {
-            lsbBytes[i] = byteArray[3 - i];
-        }
-        return ByteBuffer.wrap(lsbBytes).order(ByteOrder.LITTLE_ENDIAN).getFloat();
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getFloat();
     }
-    public static int stat_CONVERT_MsbByteArray_To_LsbInt(byte[] byteArray)
+    int stat_CONVERT_MsbByteArray_To_LsbInt(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
-        return (buffer[0] & 0xFF) | 
-             ((buffer[1] & 0xFF) << 8) | 
-             ((buffer[2] & 0xFF) << 16) | 
-             ((buffer[3] & 0xFF) << 24);
+        return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getInt();
     }
-
-    public static byte[] stat_CONVERT_LsbInt_To_MsbByteArray(int value)
+    byte[] stat_CONVERT_Int_To_MsbByteArray(int value)
     {
-        byte[] byteArray = new byte[4]
-        byteArray[0] = (lsb_int >> 24) & 0xFF;
-        byteArray[1] = (lsb_int >> 16) & 0xFF;
-        byteArray[2] = (lsb_int >> 8) & 0xFF;
-        byteArray[3] = lsb_int & 0xFF;
-        return byteArray;
-
+        return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putInt(value).array());
     }
-    public static byte[] stat_CONVERT_LsbFloat_To_MsbByteArray(float value)
+    public static byte[] stat_CONVERT_Float_To_MsbByteArray(float value)
     {
-        unsigned char* bytes = new unsigned char[4];
-        std::memcpy(bytes, &value, 4);
-        std::reverse(bytes, bytes + 4);
-        return bytes;
+        return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putFloat(value).array());
     }
-    public static byte[] stat_CONVERT_LsbDouble_To_MsbByteArray(double value)
+    public static byte[] stat_CONVERT_MsbDouble_To_LsbByteArray(double value)
     {
-        unsigned char* byteArray = new unsigned char[8];
-        std::memcpy(byteArray, &value, 8);
-        std::reverse(byteArray, byteArray + 8);  
-        return byteArray;
+        return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(8).putDouble(value).array());
     }
 	public static void stat_CLASS_boot0_DECLAIRE_Global()
 	{
