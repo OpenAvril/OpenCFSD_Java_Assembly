@@ -89,7 +89,7 @@ public class IO_ListenRespond
         {
             temp[0] = buffer[0];
         }
-        input.dyn_REG_set_Input_praiseId(Global.stat_CONVERT_MsbByteArray_To_LsbInt(temp));
+        input.dyn_REG_set_Input_praiseId(Global.stat_CONVERT_LsbByteArray_To_LsbInt(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
         switch (input.dyn_REG_get_Input_praiseId())
         {
             case 0:
@@ -99,13 +99,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
 
             case 1:
@@ -115,13 +115,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueA(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueB(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
 
             case 2:
@@ -131,13 +131,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueA(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueB(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
 
             case 3:
@@ -147,13 +147,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueA(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueB(Global.stat_CONVERT_MsbByteArray_To_LsbFloat(temp));
+                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
         }
     }
@@ -220,17 +220,17 @@ public class IO_ListenRespond
 
                     case 1:
                         Output_praise1 subset_of_output_for_praise1 = (Output_praise1)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value());//todo
+                        subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value());
                         break;
 
                     case 2:
                         Output_praise0 subset_of_output_for_praise2 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise2.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value());//todo
+                        subset_of_output_for_praise2.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value());
                         break;
 
                     case 3:
                         Output_praise0 subset_of_output_for_praise3 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise3.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value());//todo
+                        subset_of_output_for_praise3.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value());
                         break;
                 }
                 app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _stat_REG_output, _stat_REG_Buffer_For_Ouput);
@@ -242,7 +242,7 @@ public class IO_ListenRespond
     }
     private void app_Encode_NetworkingSteam_At_Server_Output_Send(Framework obj, Output output, byte[] buffer)
     {
-        byte[] temp = Global.stat_CONVERT_LsbInt_To_MsbByteArray(output.dyn_REG_get_Output_praiseId());
+        byte[] temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(output.dyn_REG_get_Output_praiseId()));
         for(int index = 0; index < 4; index++)
         {
             buffer[index] = temp[index];
@@ -252,7 +252,7 @@ public class IO_ListenRespond
         {
             case 0:
                 Output_praise0 subset_of_output_for_praise0 = (Output_praise0)output.dyn_REG_get_OutputSubset();
-                temp = Global.stat_CONVERT_LsbDouble_To_MsbByteArray(subset_of_output_for_praise0.dyn_REG_get_output_praise0_value());
+                temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbDouble_To_LsbByteArray(subset_of_output_for_praise0.dyn_REG_get_output_praise0_value()));
                 for(int index = 0; index < 4; index++)
                 {
                     buffer[index] = temp[index];
@@ -261,7 +261,7 @@ public class IO_ListenRespond
 
             case 1:
                 Output_praise1 subset_of_output_for_praise1 = (Output_praise1)output.dyn_REG_get_OutputSubset();
-                temp = Global.stat_CONVERT_LsbDouble_To_MsbByteArray(subset_of_output_for_praise1.dyn_REG_get_output_praise1_value());//todo.
+                temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbDouble_To_LsbByteArray(subset_of_output_for_praise1.dyn_REG_get_output_praise1_value()));
                 for(int index = 0; index < 4; index++)
                 {
                     buffer[index] = temp[index];
@@ -270,7 +270,7 @@ public class IO_ListenRespond
 
             case 2:
                 Output_praise2 subset_of_output_for_praise2 = (Output_praise2)output.dyn_REG_get_OutputSubset();
-                temp = Global.stat_CONVERT_LsbDouble_To_MsbByteArray(subset_of_output_for_praise2.dyn_REG_get_output_praise2_value());//todo.
+                temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbDouble_To_LsbByteArray(subset_of_output_for_praise2.dyn_REG_get_output_praise2_value()));
                 for(int index = 0; index < 4; index++)
                 {
                     buffer[index] = temp[index];
@@ -279,7 +279,7 @@ public class IO_ListenRespond
 
             case 3:
                 Output_praise3 subset_of_output_for_praise3 = (Output_praise3)output.dyn_REG_get_OutputSubset();
-                temp = Global.stat_CONVERT_LsbDouble_To_MsbByteArray(subset_of_output_for_praise3.dyn_REG_get_output_praise3_value());//todo.
+                temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbDouble_To_LsbByteArray(subset_of_output_for_praise3.dyn_REG_get_output_praise3_value()));
                 for(int index = 0; index < 4; index++)
                 {
                     buffer[index] = temp[index];

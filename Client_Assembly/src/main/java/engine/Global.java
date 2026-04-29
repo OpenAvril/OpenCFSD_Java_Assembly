@@ -51,11 +51,11 @@ public class Global
     {
         return stat_REG_get_numberOfPraises();
     }
-    static byte[] stat_CONVERT_MsbByteArray_To_LsbByteArray(byte[] buffer)
+    public static byte[] stat_CONVERT_MsbByteArray_To_LsbByteArray(byte[] buffer)
     {
         return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN).array();
     }
-    static byte[] stat_CONVERT_LsbByteArray_To_MsbByteArray(byte[] buffer)
+    public static byte[] stat_CONVERT_LsbByteArray_To_MsbByteArray(byte[] buffer)
     {
         byte[] msbArray = new byte[buffer.length];
         for (int i = 0; i < buffer.length; i++) {
@@ -63,45 +63,45 @@ public class Global
         }
         return msbArray;
     }
-    byte[] stat_CONVERT_Boolean_To_MsbByteArray(boolean bool)
+    public static byte[] stat_CONVERT_LsbBoolean_To_LsbByteArray(boolean bool)
     {
         byte[] byteArray = new byte[] { (byte) (bool ? 1 : 0) };
         return stat_CONVERT_LsbByteArray_To_MsbByteArray(byteArray);
     }
-    boolean stat_CONVERT_MsbByteArray_To_LsbBoolean(byte[] bytesBool)
+    public static boolean stat_CONVERT_LsbByteArray_To_LsbBoolean(byte[] bytesBool)
     {
         return (bytesBool[0] != 0);
     }
-    double stat_CONVERT_MsbByteArray_To_LsbDouble(byte[] byteArray)
+    public static double stat_CONVERT_LsbByteArray_To_LsbDouble(byte[] byteArray)
     {
         if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getDouble();
     }
-    float stat_CONVERT_MsbByteArray_To_LsbFloat(byte[] byteArray)
+    public static float stat_CONVERT_LsbByteArray_To_LsbFloat(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getFloat();
     }
-    int stat_CONVERT_MsbByteArray_To_LsbInt(byte[] byteArray)
+    public static int stat_CONVERT_LsbByteArray_To_LsbInt(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getInt();
     }
-    byte[] stat_CONVERT_Int_To_MsbByteArray(int value)
+    public static byte[] stat_CONVERT_LsbInt_To_LsbByteArray(int value)
     {
         return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putInt(value).array());
     }
-    public static byte[] stat_CONVERT_Float_To_MsbByteArray(float value)
+    public static byte[] stat_CONVERT_LsbFloat_To_LsbByteArray(float value)
     {
         return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putFloat(value).array());
     }
-    public static byte[] stat_CONVERT_MsbDouble_To_LsbByteArray(double value)
+    public static byte[] stat_CONVERT_LsbDouble_To_LsbByteArray(double value)
     {
         return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(8).putDouble(value).array());
     }

@@ -44,7 +44,6 @@ public class Main
         }
 
         System.out.printf("isStackLoaded_Server_InputAction ByteArray: " + Arrays.toString(temp) + ".%n");
-        System.out.printf("CONVERT_MsbByteArray_To_LsbBoolean: " + Global.stat_CONVERT_MsbByteArray_To_LsbBoolean(temp) + ".%n");
         System.out.printf("isStackLoaded_Server_InputAction: " + OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction() + ".%n");
     }
 }

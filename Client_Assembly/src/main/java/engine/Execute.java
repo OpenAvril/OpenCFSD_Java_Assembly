@@ -1,8 +1,8 @@
 package engine;
 import main.IO.LaunchQue_Client;
-import main.IO.WriteQue_Client_InputSend;
-import main.IO.WriteQue_Client_OutputRecieve;
+import main.IO.WriteQueCLIENTINPUTSEND;
 import com.sun.jna.Pointer;
+import main.IO.WriteQueCLIENTOUTPUTRECIEVE;
 
 
 public class Execute
@@ -52,10 +52,10 @@ public class Execute
 
         System.out.printf("entered CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
         //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
-        Boolean tempA0 = WriteQue_Client_InputSend.app_FUNCT_get_flag_isPGM_INSTNATIATED();
-        WriteQue_Client_InputSend.app_FUNCT_terminate_Program();
-        WriteQue_Client_InputSend.app_FUNCT_write_End(intPrimeDEFAULT);
-        WriteQue_Client_InputSend.app_FUNCT_write_Start(intPrimeDEFAULT);
+        Boolean tempA0 = WriteQueCLIENTINPUTSEND.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQueCLIENTINPUTSEND.app_FUNCT_terminate_Program();
+        WriteQueCLIENTINPUTSEND.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQueCLIENTINPUTSEND.app_FUNCT_write_Start(intPrimeDEFAULT);
         System.out.printf("done CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
 
         System.out.printf("entered CHECK member function LaunchQue_Server().%n");
@@ -73,10 +73,10 @@ public class Execute
 
         System.out.printf("entered CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
         //WriteQue_SERVERINPUTRECIEVE.app_FUNCT_generate_Program();
-        Boolean tempC0 = WriteQue_Client_OutputRecieve.app_FUNCT_get_flag_isPGM_INSTNATIATED();
-        WriteQue_Client_OutputRecieve.app_FUNCT_terminate_Program();
-        WriteQue_Client_OutputRecieve.app_FUNCT_write_End(intPrimeDEFAULT);
-        WriteQue_Client_OutputRecieve.app_FUNCT_write_Start(intPrimeDEFAULT);
+        Boolean tempC0 = WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_terminate_Program();
+        WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_write_Start(intPrimeDEFAULT);
         System.out.printf("done CHECK member function WriteQue_SERVERINPUTRECIEVE().%n");
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Execute().%n");
@@ -206,13 +206,13 @@ public class Execute
     private static void stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend()
     {
         System.out.printf("entered stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
-        _stat_PGM_WriteQue_Client_InputSend = WriteQue_Client_InputSend.app_FUNCT_generate_Program();
+        _stat_PGM_WriteQue_Client_InputSend = WriteQueCLIENTINPUTSEND.app_FUNCT_generate_Program();
         System.out.printf("exiting stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
     }
     private static void stat_PGM_boot3_INITIALISE_WriteQue_Client_OutputRecieve()
     {
         System.out.printf("entered stat_PGM_boot3_INITIALISE_WriteQue_Client_OutputRecieve().%n");
-        _stat_PGM_WriteQue_Client_OutputRecieve = WriteQue_Client_OutputRecieve.app_FUNCT_generate_Program();
+        _stat_PGM_WriteQue_Client_OutputRecieve = WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_generate_Program();
         System.out.printf("exiting stat_PGM_boot3_INITIALISE_WriteQue_Client_OutputRecieve().%n");
     }
     private static Pointer stat_PGM_get_LaunchQue_Client()

@@ -1,7 +1,7 @@
 package threads;
 import engine.Framework;
-import main.IO.WriteQue_Client_InputSend;
-import main.IO.WriteQue_Client_OutputRecieve;
+import main.IO.WriteQueCLIENTINPUTSEND;
+import main.IO.WriteQueCLIENTOUTPUTRECIEVE;
 import structs.Input;
 import structs.Output;
 
@@ -55,14 +55,14 @@ public class IO_ListenRespond
     {
         if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_data_Control().dyn_REG_get_FlagIsLoaded_Stack_Client_InputSend())
         {
-            WriteQue_Client_InputSend.app_FUNCT_write_Start(1);
+            WriteQueCLIENTINPUTSEND.app_FUNCT_write_Start(1);
             _stat_REG_Buffer_For_Input= new byte[1024];//TESTBENCH
             _stat_REG_input = obj.dyn_STRUCT_get_Input();//todo 3d graphics scanner capture of keyboard and mouse, write of data-struct input and sub set for praise event id.
             obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_data_Control().dyn_APP_Pop_Stack_Client_InputAction(obj, obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_get_doublebuffer_Client_InputSend_WRITE(obj), obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_get_Stack_At_Client_InputSend_List_Of_Input());
             obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_data_Control().dyn_APP_Flip_InputBufferToWrite();
             app_Encode_NetworkingSteam_At_Client_Input_Send(_stat_REG_input, _stat_REG_Buffer_For_Input);
             //todo send
-            WriteQue_Client_InputSend.app_FUNCT_write_End(1);
+            WriteQueCLIENTINPUTSEND.app_FUNCT_write_End(1);
         }
      }
     private void app_Do_Process_Of_Output_Receive(Framework obj)
@@ -71,14 +71,14 @@ public class IO_ListenRespond
         {
             while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_CLASS_get_data_Control().dyn_REG_get_FlagIsLoaded_Stack_Client_OutputRecieve())
             {
-                WriteQue_Client_OutputRecieve.app_FUNCT_write_Start(1);
+                WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_write_Start(1);
                 _stat_REG_Buffer_For_Ouput = new byte[1024];
                 _stat_REG_output = obj.dyn_STRUCT_get_Output();
                 _stat_REG_output = obj.dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_get_doublebuffer_Client_OutputRecieve_READ(obj);
                 _stat_REG_output.dyn_REG_set_OutputSubset(obj, _stat_REG_output.dyn_REG_get_Output_praiseId());
                 app_Decode_NetworkingSteam_At_CLeint_Output_Recieve(_stat_REG_output, _stat_REG_Buffer_For_Ouput);
                 //todo write data struct input to game instance.
-                WriteQue_Client_OutputRecieve.app_FUNCT_write_End(1);
+                WriteQueCLIENTOUTPUTRECIEVE.app_FUNCT_write_End(1);
             }
         }
     }

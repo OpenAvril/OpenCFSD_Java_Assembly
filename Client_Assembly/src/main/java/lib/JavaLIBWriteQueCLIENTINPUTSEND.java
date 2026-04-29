@@ -3,9 +3,9 @@ import com.sun.jna.Library;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 
-public interface JavaLIBWriteQue_ClientInputSend extends Library
+public interface JavaLIBWriteQueCLIENTINPUTSEND extends Library
 {
-    JavaLIBWriteQue_ClientInputSend INSTANCE = (JavaLIBWriteQue_ClientInputSend) Native.load("LIB_WriteEnableForThreadsAt_CLIENTINPUTACTION", JavaLIBWriteQue_ClientInputSend.class);
+    JavaLIBWriteQueCLIENTINPUTSEND INSTANCE = (JavaLIBWriteQueCLIENTINPUTSEND) Native.load("LIB_WriteEnableForThreadsAt_CLIENTINPUTACTION", JavaLIBWriteQueCLIENTINPUTSEND.class);
     Pointer app_FUNCT_generate_Program();
     byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();
     void app_FUNCT_terminate_Program();
