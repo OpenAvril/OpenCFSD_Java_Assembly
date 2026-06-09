@@ -11,23 +11,31 @@
 ### Ubuntu LINUX.
 version: Ubuntu 24.04.4 LTS
 
-### IntelliJ IDEA 2026.1.
-Build #IU-261.22158.277, built on March 25, 2026.
+### IntelliJ IDEA
+version: 2026.1.3.
 
+---
 ### Dependencies.
 #### The Java Development Kit (JDK).
-#### Java Runtime Eenvironment (JRE).
-#### GCC toolchain.
-#### IntelliJ-idea.
-#### Apache Maven. 
-
-Terminal install of the above.
 ````
 sudo apt install openjdk-8-jdk
-sudo apt install openjdk-8-jre
-sudo apt install build-essential gdb
-sudo snap install intellij-idea --channel=2026.1/stable --classic
 ````
+#### Java Runtime Eenvironment (JRE).
+````
+sudo apt install openjdk-8-jre
+````
+#### GCC toolchain.
+```` 
+sudo apt install build-essential gdb
+````
+#### snapd.
+```` 
+sudo apt install snapd
+````
+#### IntelliJ-idea.
+````` 
+sudo snap install intellij-idea --channel=2026.1/stable --classic
+`````
 
 #### Java Native Access Library.
 ##### edit pom.xml.
