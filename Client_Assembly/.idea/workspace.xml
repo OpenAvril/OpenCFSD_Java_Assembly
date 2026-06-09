@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bb9ca42-8e68-44fe-81bb-d7b03925a10a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenCFSD_Java_Assembly/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/OpenCFSD_Java_Assembly/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Algorithims.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Algorithims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Data_Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Data_Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Execute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Execute_Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Execute_Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Framework.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Framework.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engine/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/engine/Global.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/CLIB_LaunchEnableForConcurrentThreadsAt_CLIENT.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/CLIB_WriteEnableForThreadsAt_CLIENTINPUTSEND.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/CLIB_WriteQueForThreadsAt_CLIENTOUTPUTRECEIVE.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/JavaLIBLaunchQue_Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/lib/JavaLIBLaunchQue_Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/JavaLIBWriteQueCLIENTINPUTSEND.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/lib/JavaLIBWriteQueCLIENTINPUTSEND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lib/JavaLIBWriteQueCLIENTOUTPUTRECIEVE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/lib/JavaLIBWriteQueCLIENTOUTPUTRECIEVE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/IO/ClientAssembly.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/main/IO/ClientAssembly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/IO/LaunchQue_Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/main/IO/LaunchQue_Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/IO/WriteQueCLIENTINPUTSEND.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/main/IO/WriteQueCLIENTINPUTSEND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/IO/WriteQueCLIENTOUTPUTRECIEVE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/main/IO/WriteQueCLIENTOUTPUTRECIEVE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/Algorithim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/Algorithim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/Algorithim_Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/Algorithim_Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/Game_Instance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/Game_Instance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/User_Algorithim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/User_Algorithim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/User_Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/User_Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/User_Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/User_Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Algorithim_praise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Algorithim_praise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Algorithim_praise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Algorithim_praise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Input_praise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Input_praise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Input_praise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Input_praise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Output_praise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Output_praise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Output_praise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structs/praisesubsets/Output_praise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/threads/IO_ListenRespond.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/threads/IO_ListenRespond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/threads/PostProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/src/main/java/threads/PostProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OpenCFSD_Java_Assembly/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/OpenCFSD_Java_Assembly/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Algorithims.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Algorithims.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Data_Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Data_Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Execute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Execute_Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Execute_Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Framework.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Framework.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/engine/Global.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/engine/Global.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/JavaLIBLaunchQue_Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/lib/JavaLIBLaunchQue_Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/JavaLIBWriteQueCLIENTINPUTSEND.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/lib/JavaLIBWriteQueCLIENTINPUTSEND.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lib/JavaLIBWriteQueCLIENTOUTPUTRECIEVE.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/lib/JavaLIBWriteQueCLIENTOUTPUTRECIEVE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/IO/ClientAssembly.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/main/IO/ClientAssembly.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/IO/LaunchQue_Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/main/IO/LaunchQue_Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/IO/WriteQueCLIENTINPUTSEND.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/main/IO/WriteQueCLIENTINPUTSEND.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/IO/WriteQueCLIENTOUTPUTRECIEVE.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/main/IO/WriteQueCLIENTOUTPUTRECIEVE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/Algorithim.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/Algorithim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/Algorithim_Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/Algorithim_Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/Game_Instance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/Game_Instance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/Output.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/Output.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/User_Algorithim.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/User_Algorithim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/User_Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/User_Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/User_Output.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/User_Output.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Algorithim_praise0.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Algorithim_praise1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Algorithim_praise2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Algorithim_praise3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Input_praise0.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Input_praise1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Input_praise2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Input_praise3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Output_praise0.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Output_praise1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Output_praise2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structs/praisesubsets/Output_praise3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/threads/IO_ListenRespond.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/threads/IO_ListenRespond.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/threads/PostProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client_Assembly_OLD/target/classes/threads/PostProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/OpenCFSD_Java_Assembly/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/OpenCFSD_Java_Assembly/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/SIMULATION/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/SIMULATION/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/Algorithims.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/Algorithims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/Execute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/Execute_Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/Execute_Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/Framework.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/Framework.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/engine/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/engine/Global.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/CLIB_LaunchEnableForConcurrentThreadsAt_SERVER.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/CLIB_OpenEpiCentre.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/CLIB_WriteEnableForThreadsAt_SERVERINPUTRECEIVE.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/CLIB_WriteEnableForThreadsAt_SERVEROUTPUTSEND.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/CLIB_WriteEnableFor_Simulation_IO.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/JavaLIBLaunchQue_Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/lib/JavaLIBLaunchQue_Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/JavaLIBWriteQueSERVERINPUTRECIEVE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/lib/JavaLIBWriteQueSERVERINPUTRECIEVE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/JavaLIBWriteQueSERVEROUTPUTSEND.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/lib/JavaLIBWriteQueSERVEROUTPUTSEND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/JavaLIBWriteQue_Simulation_IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/lib/JavaLIBWriteQue_Simulation_IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/lib/JavaLIB_OpenEpiCentre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/lib/JavaLIB_OpenEpiCentre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/main/IO/LaunchQue_Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/main/IO/LaunchQue_Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/main/IO/OpenEpiCentre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/main/IO/OpenEpiCentre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/main/IO/ServerAssembly.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/main/IO/ServerAssembly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/main/IO/WriteQue_SERVERINPUTRECIEVE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/main/IO/WriteQue_SERVERINPUTRECIEVE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/main/IO/WriteQue_SERVEROUTPUTSEND.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/main/IO/WriteQue_SERVEROUTPUTSEND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/main/IO/WriteQue_Simulation_IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/main/IO/WriteQue_Simulation_IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/Algorithim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/Algorithim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/Algorithim_Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/Algorithim_Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/User_Algorithim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/User_Algorithim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/User_Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/User_Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/User_Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/User_Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Algorithim_praise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Algorithim_praise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Algorithim_praise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Algorithim_praise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Algorithim_praise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Input_praise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Input_praise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Input_praise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Input_praise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Input_praise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Output_praise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Output_praise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Output_praise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/structs/praisesubsets/Output_praise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/structs/praisesubsets/Output_praise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/src/main/java/threads/IO_ListenRespond.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/src/main/java/threads/IO_ListenRespond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/OpenCFSD_Java_Assembly/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/OpenCFSD_Java_Assembly/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/SIMULATION/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/SIMULATION/Simulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/Algorithims.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/Algorithims.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/Execute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/Execute_Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/Execute_Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/Framework.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/Framework.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/engine/Global.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/engine/Global.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/lib/JavaLIBLaunchQue_Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/lib/JavaLIBLaunchQue_Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/lib/JavaLIBWriteQueSERVERINPUTRECIEVE.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/lib/JavaLIBWriteQueSERVERINPUTRECIEVE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/lib/JavaLIBWriteQueSERVEROUTPUTSEND.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/lib/JavaLIBWriteQueSERVEROUTPUTSEND.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/lib/JavaLIBWriteQue_Simulation_IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/lib/JavaLIBWriteQue_Simulation_IO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/lib/JavaLIB_OpenEpiCentre.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/lib/JavaLIB_OpenEpiCentre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/main/IO/LaunchQue_Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/main/IO/LaunchQue_Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/main/IO/OpenEpiCentre.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/main/IO/OpenEpiCentre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/main/IO/ServerAssembly.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/main/IO/ServerAssembly.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/main/IO/WriteQue_SERVERINPUTRECIEVE.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/main/IO/WriteQue_SERVERINPUTRECIEVE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/main/IO/WriteQue_SERVEROUTPUTSEND.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/main/IO/WriteQue_SERVEROUTPUTSEND.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/main/IO/WriteQue_Simulation_IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/main/IO/WriteQue_Simulation_IO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/Algorithim.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/Algorithim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/Algorithim_Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/Algorithim_Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/Output.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/Output.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/User_Algorithim.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/User_Algorithim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/User_Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/User_Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/User_Output.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/User_Output.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Algorithim_praise0.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Algorithim_praise1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Algorithim_praise2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Algorithim_praise3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Algorithim_praise3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Input_praise0.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Input_praise1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Input_praise2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Input_praise3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Input_praise3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Output_praise0.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Output_praise1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Output_praise2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/structs/praisesubsets/Output_praise3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/structs/praisesubsets/Output_praise3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server_Assembly/target/classes/threads/IO_ListenRespond.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly_OLD/target/classes/threads/IO_ListenRespond.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3EsNCVlNMv1ev1W5X6XzJpvVG3W" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/brenton-james/IdeaProjects/OpenCFSD_Java_Assembly",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bb9ca42-8e68-44fe-81bb-d7b03925a10a" name="Changes" comment="" />
+      <created>1780963192127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780963192127</updated>
+      <workItem from="1780963193239" duration="58000" />
+      <workItem from="1780963278507" duration="110000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

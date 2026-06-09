@@ -5,7 +5,7 @@ import com.sun.jna.Pointer;
 
 public interface JavaLIB_OpenEpiCentre extends Library
 {
-    JavaLIB_OpenEpiCentre INSTANCE = (JavaLIB_OpenEpiCentre) Native.load("CLIB_OpenEpiCentre", JavaLIB_OpenEpiCentre.class);
+    JavaLIB_OpenEpiCentre INSTANCE = (JavaLIB_OpenEpiCentre) Native.load("libCLIB_OpenEpiCentre", JavaLIB_OpenEpiCentre.class);
     void app_FUNCT_flip_Input_DoubleBuffer();
     Pointer app_FUNCT_generate_Program();
     byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();

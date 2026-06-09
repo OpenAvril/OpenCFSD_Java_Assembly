@@ -5,7 +5,7 @@ import com.sun.jna.Pointer;
 
 public interface JavaLIBWriteQue_Simulation_IO extends Library
 {
-    JavaLIBWriteQue_Simulation_IO INSTANCE = (JavaLIBWriteQue_Simulation_IO) Native.load("CLIB_WriteEnableForThreadsAt_STACK", JavaLIBWriteQue_Simulation_IO.class);
+    JavaLIBWriteQue_Simulation_IO INSTANCE = (JavaLIBWriteQue_Simulation_IO) Native.load("libCLIB_WriteQueForThreadsAt_SIMULATION", JavaLIBWriteQue_Simulation_IO.class);
     Pointer app_FUNCT_generate_Program();
     byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();
     void app_FUNCT_terminate_Program();

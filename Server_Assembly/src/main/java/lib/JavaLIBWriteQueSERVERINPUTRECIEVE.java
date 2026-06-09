@@ -6,7 +6,7 @@ import com.sun.jna.Pointer;
 
 public interface JavaLIBWriteQueSERVERINPUTRECIEVE extends Library
 {
-    JavaLIBWriteQueSERVERINPUTRECIEVE INSTANCE = (JavaLIBWriteQueSERVERINPUTRECIEVE) Native.load("CLIB_WriteEnableForThreadsAt_SERVERINPUTRECIEVE", JavaLIBWriteQueSERVERINPUTRECIEVE.class);
+    JavaLIBWriteQueSERVERINPUTRECIEVE INSTANCE = (JavaLIBWriteQueSERVERINPUTRECIEVE) Native.load("libCLIB_WriteQueForThreadsAt_ServerInputReceive", JavaLIBWriteQueSERVERINPUTRECIEVE.class);
     Pointer app_FUNCT_generate_Program();
     byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();
     void app_FUNCT_terminate_Program();

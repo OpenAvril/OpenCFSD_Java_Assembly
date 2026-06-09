@@ -6,7 +6,7 @@ import com.sun.jna.Pointer;
 
 public interface JavaLIBLaunchQue_Server extends Library
 {
-    JavaLIBLaunchQue_Server INSTANCE = (JavaLIBLaunchQue_Server) Native.load("CLIB_LaunchEnableForConcurrentThreadsAt_SERVER", JavaLIBLaunchQue_Server.class);
+    JavaLIBLaunchQue_Server INSTANCE = (JavaLIBLaunchQue_Server) Native.load("libCLIB_LaunchQueForThreadsAt_Server", JavaLIBLaunchQue_Server.class);
     Pointer app_FUNCT_generate_Program();
     byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();
     void app_FUNCT_request_Wait_launch(byte[] bytes);

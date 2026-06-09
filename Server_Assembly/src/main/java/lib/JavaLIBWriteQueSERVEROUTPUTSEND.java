@@ -6,7 +6,7 @@ import com.sun.jna.Pointer;
 
 public interface JavaLIBWriteQueSERVEROUTPUTSEND extends Library
 {
-    JavaLIBWriteQueSERVEROUTPUTSEND INSTANCE = (JavaLIBWriteQueSERVEROUTPUTSEND) Native.load("CLIB_WriteEnableForThreadsAt_SERVEROUTPUTSEND", JavaLIBWriteQueSERVEROUTPUTSEND.class);
+    JavaLIBWriteQueSERVEROUTPUTSEND INSTANCE = (JavaLIBWriteQueSERVEROUTPUTSEND) Native.load("libCLIB_WriteQueForThreadsAt_ServerOutputSend", JavaLIBWriteQueSERVEROUTPUTSEND.class);
     Pointer app_FUNCT_generate_Program();
     byte[] app_FUNCT_get_flag_isPGM_INSTNATIATED();
     void app_FUNCT_terminate_Program();
