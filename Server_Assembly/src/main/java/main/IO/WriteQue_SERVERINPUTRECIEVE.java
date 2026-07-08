@@ -13,7 +13,7 @@ public class WriteQue_SERVERINPUTRECIEVE
     public static Pointer app_FUNCT_generate_Program()
     {
         try {
-            return JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_generate_Program();
+            return JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerInputReceive__App_FUNCT_generate_Program();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return (Pointer)null;
@@ -30,7 +30,7 @@ public class WriteQue_SERVERINPUTRECIEVE
         temp = new byte[1];
         temp[0] = Byte.MAX_VALUE;
         try {
-            temp = JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+            temp = JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerInputReceive__App_FUNCT_get_flag_isPGM_INSTANTIATED();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
@@ -45,7 +45,7 @@ public class WriteQue_SERVERINPUTRECIEVE
     public static void app_FUNCT_terminate_Program()
     {
         try {
-            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_terminate_Program();
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerInputReceive__App_FUNCT_terminate_Program();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -57,7 +57,7 @@ public class WriteQue_SERVERINPUTRECIEVE
     public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerInputReceive__App_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -69,7 +69,7 @@ public class WriteQue_SERVERINPUTRECIEVE
     public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
+            JavaLIBWriteQueSERVERINPUTRECIEVE.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerInputReceive__App_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {

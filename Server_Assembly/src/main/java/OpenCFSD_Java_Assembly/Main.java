@@ -29,21 +29,5 @@ public class Main
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
         Simulation.Prime(_stat_PGM_ClientAssembly);
-        byte[] temp = new byte[1];
-        try {
-            temp = JavaLIB_OpenEpiCentre.INSTANCE.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
-        }
-        catch (NoClassDefFoundError e) {
-            System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
-            System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
-            System.out.printf("UnsatisfiedLinkError.%n");
-        }
-
-        System.out.printf("isStackLoaded_Server_InputAction ByteArray: " + Arrays.toString(temp) + ".%n");
-        System.out.printf("isStackLoaded_Server_InputAction: " + OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction() + ".%n");
     }
 }
