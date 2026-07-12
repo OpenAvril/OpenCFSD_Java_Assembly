@@ -15,7 +15,7 @@ public class Main
         System.out.printf("entered first member function, main().%n");
 
         System.out.printf("loading SIMULATION static class.%n");
-        Simulation sim = new Simulation();//SIMULATION
+        //Simulation sim = new Simulation();//SIMULATION
         System.out.printf("done SIMULATION loading.%n");
 
         _stat_PGM_ClientAssembly = ServerAssembly.app_generate_Program();
@@ -28,6 +28,6 @@ public class Main
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
-        Simulation.Prime(_stat_PGM_ClientAssembly);
+        //Simulation.Prime(_stat_PGM_ClientAssembly);
     }
 }
