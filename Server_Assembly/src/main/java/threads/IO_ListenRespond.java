@@ -13,8 +13,7 @@ public class IO_ListenRespond
 {
     private static byte[] _stat_REG_Buffer_For_Input;
     private static byte[] _stat_REG_Buffer_For_Ouput;
-    private static Input _stat_REG_input;
-    private static Output _stat_REG_output;
+
 // public.
     public IO_ListenRespond()
     {
@@ -72,7 +71,7 @@ public class IO_ListenRespond
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
             app_Do_Process_Of_Input(obj);
-            if(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
+            while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
             {
                 System.out.printf("isStackLoaded_Server_InputAction: " + OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction() + ".%n");
                 app_Do_Process_Of_Output(obj);
@@ -157,89 +156,7 @@ public class IO_ListenRespond
                 break;
         }
     }
-    private void app_Do_Process_Of_Input(Framework obj)
-    {
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(0);
-        _stat_REG_input = obj.dyn_STRUCT_get_Input();
-        //_stat_REG_Buffer_For_Input = new byte[1024]; //todo network capture and write to buffer.
-        //app_Decode_NetworkingSteam_At_Server_Input_Recieve(_stat_REG_input, _stat_REG_Buffer_For_Input);
-        Simulation.Get_Praise_Event_Id_And_Data(_stat_REG_input);//SIMULATION
-        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(_stat_REG_input.dyn_REG_get_Input_praiseId());
-        switch (_stat_REG_input.dyn_REG_get_Input_praiseId())
-        {
-            case (int)0:
-                Input_praise0 subset_of_input_for_praise0 = (Input_praise0)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
-                break;
 
-            case (int)1:
-                Input_praise1 subset_of_input_for_praise1 = (Input_praise1)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
-                break;
-
-            case (int)2:
-                Input_praise2 subset_of_input_for_praise2 = (Input_praise2)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
-                break;
-
-            case (int)3:
-                Input_praise3 subset_of_input_for_praise3 = (Input_praise3)_stat_REG_input.dyn_REG_get_InputSubset();
-                OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_input.dyn_REG_get_Input_praiseId());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
-                OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
-                break;
-        }
-        OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
-        OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
-    }
-    private void app_Do_Process_Of_Output(Framework obj)
-    {
-        if(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
-        {
-            WriteQue_SERVEROUTPUTSEND.app_FUNCT_write_Start(0);
-            _stat_REG_Buffer_For_Ouput = new byte[1024];
-            _stat_REG_output = obj.dyn_STRUCT_get_Output();
-            //while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
-            //{
-                OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
-                _stat_REG_output.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId());
-                _stat_REG_output.dyn_REG_set_OutputSubset(obj, _stat_REG_output.dyn_REG_get_Output_praiseId());
-                switch(_stat_REG_output.dyn_REG_get_Output_praiseId())
-                {
-                    case 0:
-                        Output_praise0 subset_of_output_for_praise0 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value());
-                        break;
-
-                    case 1:
-                        Output_praise1 subset_of_output_for_praise1 = (Output_praise1)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value());
-                        break;
-
-                    case 2:
-                        Output_praise0 subset_of_output_for_praise2 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise2.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value());
-                        break;
-
-                    case 3:
-                        Output_praise0 subset_of_output_for_praise3 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                        subset_of_output_for_praise3.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value());
-                        break;
-                }
-                app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _stat_REG_output, _stat_REG_Buffer_For_Ouput);
-                Simulation.Print_PraiseEvent(_stat_REG_output);
-                //todo send.
-            //}
-            WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
-        }
-    }
     private void app_Encode_NetworkingSteam_At_Server_Output_Send(Framework obj, Output output, byte[] buffer)
     {
         byte[] temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(output.dyn_REG_get_Output_praiseId()));
