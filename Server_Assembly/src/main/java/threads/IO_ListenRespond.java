@@ -68,16 +68,11 @@ public class IO_ListenRespond
             System.out.printf("INSTANTIATIO WriteQue_Simulation_IO: " + WriteQue_Simulation_IO.app_FUNCT_get_flag_isPGM_INSTNATIATED() + ".%n");
         }
         System.out.printf("System Initialised - starting loop for thread " + threadId + ".%n");
+
         while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
         {
-            app_Do_Process_Of_Input(obj);
-            while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
-            {
-                System.out.printf("isStackLoaded_Server_InputAction: " + OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction() + ".%n");
-                app_Do_Process_Of_Output(obj);
-            }
+
         }
-        Simulation.Terminate_stat_REG_scanner();//SIMULATION
         obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);//SIMULATION
     }
 // private.

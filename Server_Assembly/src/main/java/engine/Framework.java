@@ -1,4 +1,5 @@
 package engine;
+import SIMULATION.Simulation;
 import structs.*;
 import threads.IO_ListenRespond;
 import java.io.IOException;
@@ -13,14 +14,17 @@ public class Framework
     private static User_Algorithim _stat_STRUCT_User_Algorithims;
     private static User_Input _stat_STRUCT_User_Inputs;
     private static User_Output _stat_STRUCT_User_Outputs;
+    private static Simulation SIMULATION;
 // public.
-    public Framework() throws IOException {
+    public Framework() {
         System.out.printf("entered CONSTRUCTOR Framework()%n");
         stat_CLASS_boot0_DECLAIRE_Framework_App();
         stat_CLASS_boot1_DEFINE_Framework_App();
-        stat_CLASS_boot3_INITIALISE_Framework_App();
         stat_REG_boot0_DECLAIRE_Framework_App();
         System.out.printf("exiting CONSTRUCTOR Framework()%n");
+    }
+    public void dyn_boot_create_Framework(Framework obj) {
+        stat_CLASS_boot3_INITIALISE_Framework(obj);
     }
     public void dyn_CLASS_create_Global_and_Settings()
     {
@@ -142,9 +146,9 @@ public class Framework
         _stat_CLASS_Global = null;
         System.out.printf("exiting boot1_CLASS_DEFINE_Global().%n");
     }
-    private static void stat_CLASS_boot3_INITIALISE_App() throws IOException {
+    private static void stat_CLASS_boot3_INITIALISE_App(Framework obj) {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_App().%n");
-        _stat_CLASS_App = new App();
+        _stat_CLASS_App = new App(obj);
         try {
                 stat_CLASS_get_App();
         } 
@@ -153,9 +157,9 @@ public class Framework
         }
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
     }
-    private static void stat_CLASS_boot3_INITIALISE_Framework_App() throws IOException {
+    private static void stat_CLASS_boot3_INITIALISE_Framework(Framework obj)  {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Framework_App().%n");
-        stat_CLASS_boot3_INITIALISE_App();
+        stat_CLASS_boot3_INITIALISE_App(obj);
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Framework_App().%n");
     }
     private static void boot3_CLASS_INITIALISE_Global()
@@ -309,5 +313,20 @@ public class Framework
     private static Global stat_CLASS_get_Global()
     {
         return _stat_CLASS_Global;
+    }
+
+    public void dyn_boot_SIMULATION(Framework obj) {
+        stat_CLASS_boot1_DEFINE_SIMULATION();
+        stat_CLASS_boot3_INITIALISE_SIMULATION(obj);
+    }
+    private static void stat_CLASS_boot1_DEFINE_SIMULATION() {
+        SIMULATION = null;
+    }
+    private static void stat_CLASS_boot3_INITIALISE_SIMULATION(Framework obj) {
+        SIMULATION = new Simulation(obj, obj.dyn_STRUCT_get_Input(), obj.dyn_STRUCT_get_Output());
+        while(stat_CLASS_get_SIMULATION() == null) { }
+    }
+    public static Simulation stat_CLASS_get_SIMULATION() {
+        return SIMULATION;
     }
 }

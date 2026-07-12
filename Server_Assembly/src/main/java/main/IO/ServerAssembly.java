@@ -73,6 +73,13 @@ public class ServerAssembly
         System.out.printf("done independent STRUCT IO_ListenRespond() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
         System.out.printf("done STRUCTS generate.%n");
 
+        stat_CLASS_get_Framework().dyn_boot_SIMULATION(stat_CLASS_get_Framework());//todo SIMULATION
+        stat_CLASS_get_Framework().stat_CLASS_get_SIMULATION().stat_REG_boot1_DEFINE__SIMULATION();
+        stat_CLASS_get_Framework().stat_CLASS_get_SIMULATION().stat_REG_boot2_SUBSTANTIATE__SIMULATION(stat_CLASS_get_Framework().dyn_STRUCT_get_Input());
+        stat_CLASS_get_Framework().stat_CLASS_get_SIMULATION().stat_REG_boot3_INITIALISE__SIMULATION(stat_CLASS_get_Framework().dyn_STRUCT_get_Input());
+
+        stat_CLASS_get_Framework().dyn_boot_create_Framework(stat_CLASS_get_Framework());
+
         System.out.printf("started ARCHITECTURE generate.%n");
         System.out.printf("started architectured classes - Registers - DEFINE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot1_DEFINE_Framework_App(stat_CLASS_get_Framework());

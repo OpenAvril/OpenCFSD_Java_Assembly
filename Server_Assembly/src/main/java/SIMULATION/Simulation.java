@@ -1,5 +1,6 @@
 package SIMULATION;
 import engine.Framework;
+import engine.Global;
 import main.IO.OpenEpiCentre;
 import main.IO.WriteQue_SERVERINPUTRECIEVE;
 import main.IO.WriteQue_SERVEROUTPUTSEND;
@@ -37,6 +38,51 @@ public class Simulation
         _SIM_stat_REG_output_Sample = _DEFAULT_outputSample;
         _stat_REG_scanner = null;
         _stat_REG_scanner = new Scanner(System.in);
+    }
+    public static void Thread(Framework obj, int threadId) {
+        System.out.printf("Enter THREAD member function on thread: " + threadId + ".%n");
+        boolean doneOnce = false;
+        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised())
+        {
+            if (!doneOnce)
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised(true);
+                doneOnce = true;
+            }
+        }
+        System.out.printf("Initialised Thread: " + threadId + ".%n");
+        while (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
+        {
+            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(true);
+            for(int index = 0; index < Global.dyn_REG_get_numberOfCores(); index++)
+            {
+                if (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised()) {
+                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+                    break;
+                }
+            }
+            System.out.printf("INSTANTIATION Thread: " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");
+
+            if(!OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+            }
+            System.out.printf("INSTANTIATION OpenEpiCentre: " + OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED() + ".%n");
+
+            if(!WriteQue_Simulation_IO.app_FUNCT_get_flag_isPGM_INSTNATIATED())
+            {
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);
+                System.out.printf("INSTANTIATION failed.%n");
+            }
+        }
+        System.out.printf("System Initialised - starting loop for thread " + threadId + ".%n");
+        while (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised())
+        {
+            app_Do_Process_Of_Input(obj);
+            app_Do_Process_Of_Output(obj);      
+        }
+        obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);
+        Terminate_stat_REG_scanner();
     }
     public static void Terminate_stat_REG_scanner()
     {
@@ -86,33 +132,32 @@ public class Simulation
     }
     public static void Print_PraiseEvent(Output output) {
         WriteQue_Simulation_IO.app_FUNCT_write_Start(1);//SIMULATION
-        System.out.printf("PraiseEventId: " + output.dyn_REG_get_Output_praiseId());
+        System.out.printf("PraiseEventId: " + output.dyn_REG_get_Output_praiseId() + ".%n");
         switch(output.dyn_REG_get_Output_praiseId())
         {
             case 0:
                 Output_praise0 output_subset0 = (Output_praise0)output.dyn_REG_get_OutputSubset();
-                System.out.printf("output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value());
+                System.out.printf("output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value() + ".%n");
                 break;
 
             case 1:
                 Output_praise1 output_subset1 = (Output_praise1)output.dyn_REG_get_OutputSubset();
-                System.out.printf("output subset1 value: " + output_subset1.dyn_REG_get_output_praise1_value());
+                System.out.printf("output subset1 value: " + output_subset1.dyn_REG_get_output_praise1_value() + ".%n");
                 break;
 
             case 2:
                 Output_praise2 output_subset2 = (Output_praise2)output.dyn_REG_get_OutputSubset();
-                System.out.printf("output subset2 value: " + output_subset2.dyn_REG_get_output_praise2_value());
+                System.out.printf("output subset2 value: " + output_subset2.dyn_REG_get_output_praise2_value() + ".%n");
                 break;
 
             case 3:
                 Output_praise3 output_subset3 = (Output_praise3)output.dyn_REG_get_OutputSubset();
-                System.out.printf("output subset3 value: " + output_subset3.dyn_REG_get_output_praise3_value());
+                System.out.printf("output subset3 value: " + output_subset3.dyn_REG_get_output_praise3_value() + ".%n");
                 break;
         }
         WriteQue_Simulation_IO.app_FUNCT_write_End(1);//SIMULATION
     }
-    private void app_Do_Process_Of_Input(Framework obj)
-    {
+    private static void app_Do_Process_Of_Input(Framework obj) {
         WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(0);
         _SIM_stat_REG_input_Sample = obj.dyn_STRUCT_get_Input();
         //_stat_REG_Buffer_For_Input = new byte[1024]; //todo network capture and write to buffer.
@@ -153,44 +198,41 @@ public class Simulation
         OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
         WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
     }
-    private void app_Do_Process_Of_Output(Framework obj)
-    {
+    private static void app_Do_Process_Of_Output(Framework obj) {
         if(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
         {
             WriteQue_SERVEROUTPUTSEND.app_FUNCT_write_Start(0);
-            _stat_REG_Buffer_For_Ouput = new byte[1024];
-            _stat_REG_output = obj.dyn_STRUCT_get_Output();
-            //while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend())
-            //{
-            OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
-            _stat_REG_output.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId());
-            _stat_REG_output.dyn_REG_set_OutputSubset(obj, _stat_REG_output.dyn_REG_get_Output_praiseId());
-            switch(_stat_REG_output.dyn_REG_get_Output_praiseId())
-            {
-                case 0:
-                    Output_praise0 subset_of_output_for_praise0 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                    subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value());
-                    break;
+            //_stat_REG_Buffer_For_Ouput = new byte[1024];
+            _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_Output();
+            while(OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend()) {
+                OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
+                _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId());
+                _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId());
+                switch (_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId()) {
+                    case 0:
+                        Output_praise0 subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value());
+                        break;
 
-                case 1:
-                    Output_praise1 subset_of_output_for_praise1 = (Output_praise1)_stat_REG_output.dyn_REG_get_OutputSubset();
-                    subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value());
-                    break;
+                    case 1:
+                        Output_praise1 subset_of_output_for_praise1 = (Output_praise1) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value());
+                        break;
 
-                case 2:
-                    Output_praise0 subset_of_output_for_praise2 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                    subset_of_output_for_praise2.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value());
-                    break;
+                    case 2:
+                        Output_praise0 subset_of_output_for_praise2 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        subset_of_output_for_praise2.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value());
+                        break;
 
-                case 3:
-                    Output_praise0 subset_of_output_for_praise3 = (Output_praise0)_stat_REG_output.dyn_REG_get_OutputSubset();
-                    subset_of_output_for_praise3.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value());
-                    break;
+                    case 3:
+                        Output_praise0 subset_of_output_for_praise3 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        subset_of_output_for_praise3.dyn_REG_set_output_praise0_value(OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value());
+                        break;
+                }
+                //app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, _stat_REG_Buffer_For_Ouput);
+                Simulation.Print_PraiseEvent(_SIM_stat_REG_output_Sample);
+                //todo send.
             }
-            app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _stat_REG_output, _stat_REG_Buffer_For_Ouput);
-            Simulation.Print_PraiseEvent(_stat_REG_output);
-            //todo send.
-            //}
             WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
         }
     }

@@ -8,11 +8,11 @@ public class App
     private static Data _stat_CLASS_Data;
     private static Execute _stat_CLASS_Execute;
 // public.
-    public App() throws IOException {
+    public App(Framework obj) {
         System.out.printf("entered CONSTRUCTOR App().%n");
         stat_CLASS_boot0_DECLAIRE_App();
         stat_CLASS_boot1_DEFINE_App();
-        stat_CLASS_boot3_INITIALISE_App();
+        stat_CLASS_boot3_INITIALISE_App(obj);
 
         System.out.printf("exiting CONSTRUCTOR App().%n");
     }
@@ -66,11 +66,11 @@ public class App
         boot1_CLASS_DEFINE_Execute();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_App().%n");
     }
-    private static void stat_CLASS_boot3_INITIALISE_App() throws IOException {
+    private static void stat_CLASS_boot3_INITIALISE_App(Framework obj) {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_App().%n");
         boot3_CLASS_INITIALISE_Algorithms();
         boot3_CLASS_INITIALISE_Data();
-        boot3_CLASS_INITIALISE_Execute();
+        boot3_CLASS_INITIALISE_Execute(obj);
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
     }
 // private.
@@ -116,9 +116,9 @@ public class App
         }
         System.out.printf("exiting boot3_CLASS_INITIALISE_Data().%n");
     }
-    private static void boot3_CLASS_INITIALISE_Execute() throws IOException {
+    private static void boot3_CLASS_INITIALISE_Execute(Framework obj) {
         System.out.printf("entered boot3_CLASS_INITIALISE_Execute().%n");
-        _stat_CLASS_Execute = new Execute();
+        _stat_CLASS_Execute = new Execute(obj);
         try {
                 stat_CLASS_get_Execute();
         } 
