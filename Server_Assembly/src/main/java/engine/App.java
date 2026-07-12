@@ -13,7 +13,7 @@ public class App
         stat_CLASS_boot0_DECLAIRE_App();
         stat_CLASS_boot1_DEFINE_App();
         stat_CLASS_boot3_INITIALISE_App();
-        stat_REG_boot0_DECLAIRE_App();
+
         System.out.printf("exiting CONSTRUCTOR App().%n");
     }
     public Algorithims dyn_CLASS_get_Algorithims()
@@ -72,12 +72,6 @@ public class App
         boot3_CLASS_INITIALISE_Data();
         boot3_CLASS_INITIALISE_Execute();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
-    }
-    private static void stat_REG_boot0_DECLAIRE_App()
-    {
-        System.out.printf("entered stat_REG_boot0_DECLAIRE_App().%n");
-
-        System.out.printf("exiting stat_REG_boot0_DECLAIRE_App().%n");
     }
 // private.
     private static void boot1_CLASS_DEFINE_Algorithims()
