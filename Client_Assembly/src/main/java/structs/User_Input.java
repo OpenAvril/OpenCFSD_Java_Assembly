@@ -1,4 +1,5 @@
 package structs;
+import engine.Framework;
 import structs.praise_sets.Input_praise0;
 import structs.praise_sets.Input_praise1;
 import structs.praise_sets.Input_praise2;
@@ -10,8 +11,8 @@ public class User_Input
     private static Input_praise2 _stat_CLASS_Subest_praise2;
     private static Input_praise3 _stat_CLASS_Subest_praise3;
     private static Object[] _stat_REG_List_Of_InputSubsets;
-// public.
-    public User_Input() 
+    // public.
+    public User_Input()
     {
         System.out.printf("entered STRUCT_CLASS User_Input()%n");
         stat_CLASS_boot0_DECLAIRE_User_Input();
@@ -48,7 +49,7 @@ public class User_Input
     {
         return stat_REG_get_List_Of_InputSubsets()[praiseId];
     }
-// private.
+    // private.
     private static void stat_CLASS_boot0_DECLAIRE_User_Input()
     {
         System.out.printf("entered stat_CLASS_boot0_DECLAIRE_User_Input().%n");
@@ -89,7 +90,7 @@ public class User_Input
         stat_CLASS_boot3_INITIALISE_Subest_praise3();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_User_Input().%n");
     }
-        private static void stat_CLASS_boot3_INITIALISE_Subest_praise0()
+    private static void stat_CLASS_boot3_INITIALISE_Subest_praise0()
     {
         _stat_CLASS_Subest_praise0 = new Input_praise0();
         while(stat_CLASS_get_Subest_praise0() == null) { }
@@ -109,7 +110,7 @@ public class User_Input
         _stat_CLASS_Subest_praise3 = new Input_praise3();
         while(stat_CLASS_get_Subest_praise3() == null) { }
     }
-        private static Input_praise0 stat_CLASS_get_Subest_praise0()
+    private static Input_praise0 stat_CLASS_get_Subest_praise0()
     {
         return _stat_CLASS_Subest_praise0;
     }
@@ -140,7 +141,7 @@ public class User_Input
         _stat_REG_List_Of_InputSubsets[1] = stat_CLASS_get_Subest_praise1();
         _stat_REG_List_Of_InputSubsets[2] = stat_CLASS_get_Subest_praise2();
         _stat_REG_List_Of_InputSubsets[3] = stat_CLASS_get_Subest_praise3();
-        
+
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_User_Input_paiseId().%n");
     }
     private static Object[] stat_REG_get_List_Of_InputSubsets()

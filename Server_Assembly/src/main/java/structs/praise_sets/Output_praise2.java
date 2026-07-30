@@ -1,11 +1,9 @@
 package structs.praise_sets;
-
 import engine.Framework;
-
 public class Output_praise2
 {
     private static double _output_praise2_value;
-// public.
+    // public.
     public void dyn_REG_boot1_DEFINE_Output_praise2(Framework obj)
     {
         System.out.printf("entered dyn_REG_boot1_DEFINE_Output_praise2().%n");
@@ -34,9 +32,9 @@ public class Output_praise2
     {
         return stat_REG_get_output_praise2_value();
     }
-    public void dyn_REG_set_output_praise2_value(double newFloat)
+    public void dyn_REG_set_output_praise2_value(double newDouble)
     {
-        stat_REG_set_output_praise2_value(newFloat);
+        stat_REG_set_output_praise2_value(newDouble);
     }
 
     public static void stat_CLASS_boot2_DECLAIRE_Output_praise2()
@@ -63,7 +61,7 @@ public class Output_praise2
 
         System.out.printf("exiting stat_REG_boot2_DECLAIRE_Output_praise2().%n");
     }
-// private.
+    // private.
     private static void stat_REG_boot2_SUBSTANTIATE_Output_value()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Output_valueA().%n");
@@ -80,8 +78,8 @@ public class Output_praise2
     {
         return _output_praise2_value;
     }
-    private static void stat_REG_set_output_praise2_value(double newFloat)
+    private static void stat_REG_set_output_praise2_value(double newDouble)
     {
-        _output_praise2_value = newFloat;
+        _output_praise2_value = newDouble;
     }
 }
