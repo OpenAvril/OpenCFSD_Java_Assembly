@@ -1,9 +1,9 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import lib.JavaLIBWriteQue_Simulation_IO;
+import libs.JavaLIBWriteQue_Simulation_IO;
 
-public class WriteQue_Simulation_IO 
+public class WriteQue_Simulation_IO
 {
     public static Pointer app_FUNCT_generate_Program()
     {

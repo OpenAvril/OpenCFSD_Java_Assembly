@@ -1,10 +1,10 @@
 package structs;
 
 import engine.Framework;
-import structs.praisesubsets.Input_praise0;
-import structs.praisesubsets.Input_praise1;
-import structs.praisesubsets.Input_praise2;
-import structs.praisesubsets.Input_praise3;
+import structs.praise_sets.Input_praise0;
+import structs.praise_sets.Input_praise1;
+import structs.praise_sets.Input_praise2;
+import structs.praise_sets.Input_praise3;
 
 public class Input
 {

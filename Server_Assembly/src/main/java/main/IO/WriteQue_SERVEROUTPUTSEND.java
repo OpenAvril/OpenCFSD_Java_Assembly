@@ -1,10 +1,8 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import lib.JavaLIBWriteQueSERVEROUTPUTSEND;
-import lib.JavaLIBWriteQueSERVEROUTPUTSEND;
-import lib.JavaLIBWriteQueSERVEROUTPUTSEND;
-import lib.JavaLIBWriteQueSERVEROUTPUTSEND;
+import libs.JavaLIBWriteQueSERVEROUTPUTSEND;
+
 public class WriteQue_SERVEROUTPUTSEND {
     public WriteQue_SERVEROUTPUTSEND() {
 

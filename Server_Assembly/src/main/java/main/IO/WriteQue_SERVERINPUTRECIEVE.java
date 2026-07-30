@@ -2,7 +2,7 @@ package main.IO;
 
 import com.sun.jna.Pointer;
 import engine.Global;
-import lib.JavaLIBWriteQueSERVERINPUTRECIEVE;
+import libs.JavaLIBWriteQueSERVERINPUTRECIEVE;
 
 public class WriteQue_SERVERINPUTRECIEVE
 {

@@ -1,12 +1,8 @@
 package OpenCFSD_Java_Assembly;
-import SIMULATION.Simulation;
 import engine.Framework;
-import engine.Global;
-import lib.JavaLIB_OpenEpiCentre;
-import main.IO.OpenEpiCentre;
 import main.IO.ServerAssembly;
 import java.io.IOException;
-import java.util.Arrays;
+
 public class Main
 {
     private static Framework _stat_PGM_ClientAssembly = null;

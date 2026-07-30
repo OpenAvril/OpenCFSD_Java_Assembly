@@ -1,9 +1,8 @@
 package structs;
-import engine.Framework;
-import structs.praisesubsets.Algorithim_praise0;
-import structs.praisesubsets.Algorithim_praise1;
-import structs.praisesubsets.Algorithim_praise2;
-import structs.praisesubsets.Algorithim_praise3;
+import structs.praise_sets.Algorithim_praise0;
+import structs.praise_sets.Algorithim_praise1;
+import structs.praise_sets.Algorithim_praise2;
+import structs.praise_sets.Algorithim_praise3;
 public class Algorithim
 {
     private static Algorithim_Control _stat_CLASS_Algorithim_Control;

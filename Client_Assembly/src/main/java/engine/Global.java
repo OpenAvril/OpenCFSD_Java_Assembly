@@ -140,7 +140,7 @@ public class Global
     }
     private static void stat_REG_boot3_INITIALISE_numberOfCores()
     {
-        _stat_REG_numberOfCores = 1;
+        _stat_REG_numberOfCores = 3;
     }
     private static void stat_REG_boot3_INITIALISE_numberOfPraises()
     {

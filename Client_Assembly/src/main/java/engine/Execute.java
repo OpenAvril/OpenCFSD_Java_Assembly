@@ -168,9 +168,9 @@ public class Execute
     }
     private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj)
     {
-        for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
+        for (byte threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
         {
-            int finalThreadId = threadId;
+            byte finalThreadId = threadId;
             _stat_REG_List_Of_Threads[threadId] = new Thread(() -> obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, finalThreadId));
             _stat_REG_List_Of_Threads[threadId].start();
         }

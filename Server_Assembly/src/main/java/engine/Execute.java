@@ -2,7 +2,7 @@ package engine;
 import SIMULATION.Simulation;
 import com.sun.jna.Pointer;
 import main.IO.OpenEpiCentre;
-import main.IO.WriteQue_Simulation_IO;
+import main.IO.WriteQue_SimulationIO;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ public class Execute
     private static Execute_Control _stat_CLASS_Execute_Control;
     private static Thread[] _stat_REG_List_Of_Threads;
     private static Pointer _stat_PGM_ConcurrentIOServer;
-    private static Pointer _stat_PGM_WriteQue_Simulation_IO;//SIMULATION
+    private static Pointer _stat_PGM_WriteQue_SimulationIO;//SIMULATION
 // public.
     public Execute(Framework obj)  {
         System.out.printf("entered CLASS Execute()%n");
@@ -77,13 +77,13 @@ public class Execute
         OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(intPrimeDEFAULT);
         System.out.printf("done CHECK member function OpenEpiCentre().%n");
 
-        System.out.printf("entered CHECK member function WriteQue_Simulation_IO().%n");
-        //WriteQue_Simulation_IO.app_FUNCT_generate_Program();
-        Boolean tempE0 = WriteQue_Simulation_IO.app_FUNCT_get_flag_isPGM_INSTNATIATED();
-        WriteQue_Simulation_IO.app_FUNCT_terminate_Program();
-        WriteQue_Simulation_IO.app_FUNCT_write_End(intPrimeDEFAULT);
-        WriteQue_Simulation_IO.app_FUNCT_write_Start(intPrimeDEFAULT);
-        System.out.printf("done CHECK member function WriteQue_Simulation_IO().%n");
+        System.out.printf("entered CHECK member function WriteQue_SimulationIO().%n");
+        //WriteQue_SimulationIO.app_FUNCT_generate_Program();
+        Boolean tempE0 = WriteQue_SimulationIO.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQue_SimulationIO.app_FUNCT_terminate_Program();
+        WriteQue_SimulationIO.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_SimulationIO.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function WriteQue_SimulationIO().%n");
 
         //todo simulation write que for sampled; input, output.
 
@@ -106,7 +106,7 @@ public class Execute
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Execute().%n");
         stat_CLASS_boot3_INITIALISE_Execute_Control();
         stat_PGM_boot3_INITIALISE_ConcurrentIOServer();
-        stat_PGM_boot3_INITIALISE_WriteQue_Simulation_IO();
+        stat_PGM_boot3_INITIALISE_WriteQue_SimulationIO();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Execute().%n");
     }
     private static void stat_REG_boot0_DECLAIRE_Execute() {
@@ -166,10 +166,10 @@ public class Execute
     {
         System.out.printf("entered Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> {
-            obj.dyn_STRUCT_get_IO_ListenRespond().app_Thread_IO_Listen_Respond(obj, 0);
+            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_IO_Listen_Respond(obj, (byte) 0);
         });
         _stat_REG_List_Of_Threads[1] = new Thread(() -> {
-            Simulation.Thread(obj, 1);
+            Simulation.Thread_Input_Peripheral_Scanner(obj, (byte) 1);
         });
         System.out.printf("exiting Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
     }
@@ -185,14 +185,14 @@ public class Execute
     }
     private static void stat_PGM_boot3_INITIALISE_ConcurrentIOServer() {
         System.out.printf("entered stat_PGM_boot3_INITIALISE_ConcurrentIOServer().%n");
-        _stat_PGM_ConcurrentIOServer = OpenEpiCentre.app_FUNCT_generate_Program();
+        _stat_PGM_ConcurrentIOServer = OpenEpiCentre.CLIB_WriteEnableForThreadsAt_SIMULATION__App_FUNCT_generate_Program();
         System.out.printf("exiting stat_PGM_boot3_INITIALISE_ConcurrentIOServer().%n");
     }
-    private static void stat_PGM_boot3_INITIALISE_WriteQue_Simulation_IO()
+    private static void stat_PGM_boot3_INITIALISE_WriteQue_SimulationIO()
     {
         System.out.printf("entered stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
         try {
-            _stat_PGM_WriteQue_Simulation_IO = WriteQue_Simulation_IO.app_FUNCT_generate_Program();
+            _stat_PGM_WriteQue_SimulationIO = WriteQue_SimulationIO.app_FUNCT_generate_Program();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
@@ -204,9 +204,9 @@ public class Execute
     {
         return _stat_PGM_ConcurrentIOServer;
     }
-    private static Pointer stat_PGM_get_WriteQue_Simulation_IO()
+    private static Pointer stat_PGM_get_WriteQue_SimulationIO()
     {
-        return _stat_PGM_WriteQue_Simulation_IO;
+        return _stat_PGM_WriteQue_SimulationIO;
     }
     private static void stat_PGM_Launch_Threads(Framework obj)
     {

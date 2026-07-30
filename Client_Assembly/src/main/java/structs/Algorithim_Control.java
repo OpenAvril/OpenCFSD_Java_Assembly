@@ -1,8 +1,8 @@
 package structs;
-import structs.praisesubsets.Algorithim_praise0;
-import structs.praisesubsets.Algorithim_praise1;
-import structs.praisesubsets.Algorithim_praise2;
-import structs.praisesubsets.Algorithim_praise3;
+import structs.praise_sets.Algorithim_praise0;
+import structs.praise_sets.Algorithim_praise1;
+import structs.praise_sets.Algorithim_praise2;
+import structs.praise_sets.Algorithim_praise3;
 public class Algorithim_Control 
 {
     public Algorithim_Control()
