@@ -1,8 +1,8 @@
 package structs;
-import structs.praisesubsets.Output_praise0;
-import structs.praisesubsets.Output_praise1;
-import structs.praisesubsets.Output_praise2;
-import structs.praisesubsets.Output_praise3;
+import structs.praise_sets.Output_praise0;
+import structs.praise_sets.Output_praise1;
+import structs.praise_sets.Output_praise2;
+import structs.praise_sets.Output_praise3;
 public class User_Output
 {
     private static Output_praise0 _stat_CLASS_Subest_praise0;

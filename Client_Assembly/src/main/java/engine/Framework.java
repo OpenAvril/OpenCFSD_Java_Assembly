@@ -2,7 +2,7 @@ package engine;
 import structs.*;
 import threads.IO_ListenRespond;
 import threads.PostProcess;
-
+import SIMULATION.Simulation;
 public class Framework
 {
     private static App _stat_CLASS_App;
@@ -15,6 +15,7 @@ public class Framework
     private static User_Algorithim _stat_STRUCT_User_Algorithims;
     private static User_Input _stat_STRUCT_User_Inputs;
     private static User_Output _stat_STRUCT_User_Outputs;
+    private static Simulation SIMULATION;
 // public.
     public Framework() 
     {

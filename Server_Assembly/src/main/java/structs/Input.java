@@ -1,6 +1,6 @@
 package structs;
 import engine.Framework;
-import structs.praisesubsets.*;
+import structs.praise_sets.*;
 
 public class Input
 {

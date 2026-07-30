@@ -1,7 +1,7 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import lib.JavaLIBWriteQueCLIENTOUTPUTRECIEVE;
+import libs.JavaLIBWriteQueCLIENTOUTPUTRECIEVE;
 
 public class WriteQueCLIENTOUTPUTRECIEVE
 {

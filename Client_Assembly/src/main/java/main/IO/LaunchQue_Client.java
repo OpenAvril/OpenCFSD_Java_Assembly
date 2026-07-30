@@ -1,7 +1,7 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import lib.JavaLIBLaunchQue_Client;
+import libs.JavaLIBLaunchQue_Client;
 public class LaunchQue_Client 
 {
     // public.
