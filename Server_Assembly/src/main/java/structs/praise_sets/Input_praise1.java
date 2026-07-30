@@ -1,12 +1,10 @@
 package structs.praise_sets;
-
 import engine.Framework;
-
 public class Input_praise1
 {
-    private static float _input_praise1_valueA;
-    private static float _input_praise1_valueB;
-// public.
+    private static double _input_praise1_valueA;
+    private static double _input_praise1_valueB;
+    // public.
     public void dyn_REG_boot1_DEFINE_Input_praise1(Framework obj)
     {
         System.out.printf("entered dyn_REG_boot1_DEFINE_Input_praise1().%n");
@@ -33,21 +31,21 @@ public class Input_praise1
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Input_praise1().%n");
     }
-    public float dyn_REG_get_input_praise1_valueA()
+    public double dyn_REG_get_input_praise1_valueA()
     {
         return stat_REG_get_input_praise1_valueA();
     }
-    public float dyn_REG_get_input_praise1_valueB()
+    public double dyn_REG_get_input_praise1_valueB()
     {
         return stat_REG_get_input_praise1_valueB();
     }
-    public void dyn_REG_set_input_praise1_valueA(float newFloat)
+    public void dyn_REG_set_input_praise1_valueA(double newDouble)
     {
-        stat_REG_set_input_praise1_valueA(newFloat);
+        stat_REG_set_input_praise1_valueA(newDouble);
     }
-    public void dyn_REG_set_input_praise1_valueB(float newFloat)
+    public void dyn_REG_set_input_praise1_valueB(double newDouble)
     {
-        stat_REG_set_input_praise1_valueB(newFloat);
+        stat_REG_set_input_praise1_valueB(newDouble);
     }
     public static void stat_CLASS_boot1_DECLAIRE_Input_praise1()
     {
@@ -73,45 +71,45 @@ public class Input_praise1
 
         System.out.printf("exiting stat_REG_boot1_DECLAIRE_Input_praise1().%n");
     }
-// private.
+    // private.
     private static void stat_REG_boot2_SUBSTANTIATE_Input_valueA()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Input_valueA().%n");
-        _input_praise1_valueA = (float)(Float.MAX_VALUE);
+        _input_praise1_valueA = (double)(Double.MAX_VALUE);
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Input_valueA().%n");
     }
     private static void stat_REG_boot2_SUBSTANTIATE_Input_valueB()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Input_valueA().%n");
-        _input_praise1_valueB = (float)(Float.MAX_VALUE);
+        _input_praise1_valueB = (double)(Double.MAX_VALUE);
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Input_valueA().%n");
     }
     private static void stat_REG_boot3_INITIALISE_Input_valueA()
     {
         System.out.printf("entered stat_REG_boot3_INITIALISE_Input_valueA().%n");
-        _input_praise1_valueA = (float)(1.2);
+        _input_praise1_valueA = (double)(1.2);
         System.out.printf("exiting stat_REG_boot3_INITIALISE_Input_valueA().%n");
     }
     private static void stat_REG_boot3_INITIALISE_Input_valueB()
     {
         System.out.printf("entered stat_REG_boot3_INITIALISE_Input_valueA().%n");
-        _input_praise1_valueB = (float)(2.6);
+        _input_praise1_valueB = (double)(2.6);
         System.out.printf("exiting stat_REG_boot3_INITIALISE_Input_valueA().%n");
     }
-    private static float stat_REG_get_input_praise1_valueA()
+    private static double stat_REG_get_input_praise1_valueA()
     {
         return _input_praise1_valueA;
     }
-    private static float stat_REG_get_input_praise1_valueB()
+    private static double stat_REG_get_input_praise1_valueB()
     {
         return _input_praise1_valueB;
     }
-    private static void stat_REG_set_input_praise1_valueA(float newFloat)
+    private static void stat_REG_set_input_praise1_valueA(double newDouble)
     {
-        _input_praise1_valueA = newFloat;
+        _input_praise1_valueA = newDouble;
     }
-    private static void stat_REG_set_input_praise1_valueB(float newFloat)
+    private static void stat_REG_set_input_praise1_valueB(double newDouble)
     {
-        _input_praise1_valueB = newFloat;
+        _input_praise1_valueB = newDouble;
     }
 }

@@ -1,11 +1,6 @@
 package structs;
-
 import engine.Framework;
-import structs.praise_sets.Output_praise0;
-import structs.praise_sets.Output_praise1;
-import structs.praise_sets.Output_praise2;
-import structs.praise_sets.Output_praise3;
-
+import structs.praise_sets.*;
 public class Output
 {
     private static int _stat_REG_Output_paiseId;
@@ -121,9 +116,8 @@ public class Output
     private static void stat_REG_boot2_SUBSTANTIATE_OutputSubset()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_OutputSubset().%n");
-        _stat_REG_OutputSubset = new Object();
         try {
-            stat_REG_get_OutputSubset();
+            _stat_REG_OutputSubset = new Object();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");

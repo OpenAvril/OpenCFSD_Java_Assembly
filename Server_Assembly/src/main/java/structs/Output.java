@@ -1,7 +1,6 @@
 package structs;
 import engine.Framework;
 import structs.praise_sets.*;
-
 public class Output
 {
     private static int _stat_REG_Output_paiseId;

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class App
 {
-    private static Algorithims _stat_CLASS_Algorithims;
+    private static Algorithms _stat_CLASS_Algorithms;
     private static Data _stat_CLASS_Data;
     private static Execute _stat_CLASS_Execute;
 // public.
@@ -16,9 +16,9 @@ public class App
 
         System.out.printf("exiting CONSTRUCTOR App().%n");
     }
-    public Algorithims dyn_CLASS_get_Algorithims()
+    public Algorithms dyn_CLASS_get_Algorithms()
     {
-        return stat_CLASS_get_Algorithims();
+        return stat_CLASS_get_Algorithms();
     }
     public Data dyn_CLASS_get_Data()
     {
@@ -61,7 +61,7 @@ public class App
     private static void stat_CLASS_boot1_DEFINE_App()
     {
         System.out.printf("entered stat_CLASS_boot1_DEFINE_App().%n");
-        boot1_CLASS_DEFINE_Algorithims();
+        boot1_CLASS_DEFINE_Algorithms();
         boot1_CLASS_DEFINE_Data();
         boot1_CLASS_DEFINE_Execute();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_App().%n");
@@ -74,10 +74,10 @@ public class App
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
     }
 // private.
-    private static void boot1_CLASS_DEFINE_Algorithims()
+    private static void boot1_CLASS_DEFINE_Algorithms()
     {
         System.out.printf("entered boot1_CLASS_DEFINE_Algorithms().%n");
-        _stat_CLASS_Algorithims = null;
+        _stat_CLASS_Algorithms = null;
         System.out.printf("exiting boot1_CLASS_DEFINE_Algorithms().%n");
     }
     private static void boot1_CLASS_DEFINE_Data()
@@ -95,9 +95,9 @@ public class App
     private static void boot3_CLASS_INITIALISE_Algorithms()
     {
         System.out.printf("entered boot3_CLASS_INITIALISE_Algorithms().%n");
-        _stat_CLASS_Algorithims = new Algorithims();
+        _stat_CLASS_Algorithms = new Algorithms();
         try {
-                stat_CLASS_get_Algorithims();
+                stat_CLASS_get_Algorithms();
         } 
         catch (NullPointerException e) {
                 System.out.printf("NullPointerException.%n");
@@ -127,9 +127,9 @@ public class App
         }
         System.out.printf("exiting boot3_CLASS_INITIALISE_Execute().%n");
     }
-    private static Algorithims stat_CLASS_get_Algorithims()
+    private static Algorithms stat_CLASS_get_Algorithms()
     {
-        return _stat_CLASS_Algorithims;
+        return _stat_CLASS_Algorithms;
     }
     private static Data stat_CLASS_get_Data()
     {

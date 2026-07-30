@@ -1,4 +1,5 @@
 package structs;
+import engine.Framework;
 import structs.praise_sets.Output_praise0;
 import structs.praise_sets.Output_praise1;
 import structs.praise_sets.Output_praise2;
@@ -10,8 +11,8 @@ public class User_Output
     private static Output_praise2 _stat_CLASS_Subest_praise2;
     private static Output_praise3 _stat_CLASS_Subest_praise3;
     private static Object[] _stat_REG_List_Of_OutputSubsets;
-// public.
-    public User_Output() 
+    // public.
+    public User_Output()
     {
         System.out.printf("entered STRUCT_CLASS User_Output()%n");
         stat_CLASS_boot0_DECLAIRE_User_Output();
@@ -48,7 +49,7 @@ public class User_Output
     {
         return stat_REG_get_List_Of_OutputSubsets()[praiseId];
     }
-// private.
+    // private.
     private static void stat_CLASS_boot0_DECLAIRE_User_Output()
     {
         System.out.printf("entered stat_CLASS_boot0_DECLAIRE_User_Output().%n");
@@ -89,7 +90,7 @@ public class User_Output
         stat_CLASS_boot3_INITIALISE_Subest_praise3();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_User_Output().%n");
     }
-        private static void stat_CLASS_boot3_INITIALISE_Subest_praise0()
+    private static void stat_CLASS_boot3_INITIALISE_Subest_praise0()
     {
         _stat_CLASS_Subest_praise0 = new Output_praise0();
         while(stat_CLASS_get_Subest_praise0() == null) { }
@@ -109,7 +110,7 @@ public class User_Output
         _stat_CLASS_Subest_praise3 = new Output_praise3();
         while(stat_CLASS_get_Subest_praise3() == null) { }
     }
-        private static Output_praise0 stat_CLASS_get_Subest_praise0()
+    private static Output_praise0 stat_CLASS_get_Subest_praise0()
     {
         return _stat_CLASS_Subest_praise0;
     }
@@ -140,7 +141,7 @@ public class User_Output
         _stat_REG_List_Of_OutputSubsets[1] = stat_CLASS_get_Subest_praise1();
         _stat_REG_List_Of_OutputSubsets[2] = stat_CLASS_get_Subest_praise2();
         _stat_REG_List_Of_OutputSubsets[3] = stat_CLASS_get_Subest_praise3();
-        
+
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_User_Output_paiseId().%n");
     }
     private static Object[] stat_REG_get_List_Of_OutputSubsets()

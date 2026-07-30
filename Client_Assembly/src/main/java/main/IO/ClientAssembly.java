@@ -31,11 +31,11 @@ public class ClientAssembly
         stat_CLASS_get_Framework().dyn_STRUCT_get_User_Input().dyn_REG_boot3_INITIALISE_User_Input();
         System.out.printf("done independent STRUCT User_Input() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
 
-        System.out.printf("started independent STRUCT User_Algorithim() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
-        stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithim().dyn_REG_boot1_DEFINE_User_Algorithim();
-        stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithim().dyn_REG_boot2_SUBSTANTIATE_User_Algorithim();
-        stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithim().dyn_REG_boot3_INITIALISE_User_Algorithim();
-        System.out.printf("done independent STRUCT User_Algorithim() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
+        System.out.printf("started independent STRUCT User_Algorithm() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
+        stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithm().dyn_REG_boot1_DEFINE_User_Algorithm();
+        stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithm().dyn_REG_boot2_SUBSTANTIATE_User_Algorithm();
+        stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithm().dyn_REG_boot3_INITIALISE_User_Algorithm();
+        System.out.printf("done independent STRUCT User_Algorithm() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
 
         System.out.printf("started independent STRUCT User_Output(() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
         stat_CLASS_get_Framework().dyn_STRUCT_get_User_Output().dyn_REG_boot1_DEFINE_User_Output();
@@ -49,11 +49,11 @@ public class ClientAssembly
         stat_CLASS_get_Framework().dyn_STRUCT_get_Input().dyn_REG_boot3_INITIALISE_Input(stat_CLASS_get_Framework().dyn_STRUCT_get_User_Input());
         System.out.printf("done independent STRUCT Input() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
 
-        System.out.printf("started independent STRUCT Algorithim(() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
-        stat_CLASS_get_Framework().dyn_STRUCT_get_Algorithim().dyn_REG_boot1_DEFINE_Algorithim();
-        stat_CLASS_get_Framework().dyn_STRUCT_get_Algorithim().dyn_REG_boot2_SUBSTANTIATE_Algorithim();
-        stat_CLASS_get_Framework().dyn_STRUCT_get_Algorithim().dyn_REG_boot3_INITIALISE_Algorithim(stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithim());
-        System.out.printf("done independent STRUCT Algorithim(() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
+        System.out.printf("started independent STRUCT Algorithm(() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
+        stat_CLASS_get_Framework().dyn_STRUCT_get_Algorithm().dyn_REG_boot1_DEFINE_Algorithm();
+        stat_CLASS_get_Framework().dyn_STRUCT_get_Algorithm().dyn_REG_boot2_SUBSTANTIATE_Algorithm();
+        stat_CLASS_get_Framework().dyn_STRUCT_get_Algorithm().dyn_REG_boot3_INITIALISE_Algorithm(stat_CLASS_get_Framework().dyn_STRUCT_get_User_Algorithm());
+        System.out.printf("done independent STRUCT Algorithm(() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
 
         System.out.printf("started independent STRUCT Output() - Registers - DEFINE, SUBSTANTIATE, INITIALISE.%n");
         stat_CLASS_get_Framework().dyn_STRUCT_get_Output().dyn_REG_boot1_DEFINE_Output();
@@ -78,7 +78,7 @@ public class ClientAssembly
         System.out.printf("started architectured classes - Registers - DEFINE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot1_DEFINE_Framework_App(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_REG_boot1_DEFINE_App(stat_CLASS_get_Framework());
-        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithims().dyn_REG_boot1_DEFINE_Algorithims(stat_CLASS_get_Framework());
+        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithms().dyn_REG_boot1_DEFINE_Algorithms(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_boot1_DEFINE_Data();
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot1_DEFINE_Execute(stat_CLASS_get_Framework());
         System.out.printf("done architectured classes -Registers - DEFINE.%n");
@@ -86,7 +86,7 @@ public class ClientAssembly
         System.out.printf("started architectured classes - Registers - SUBSTANTIATE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot2_SUBSTANTIATE_Framework_App(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_REG_boot2_SUBSTANTIATE_App(stat_CLASS_get_Framework());
-        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithims().dyn_REG_boot2_SUBSTANTIATE_Algorithims(stat_CLASS_get_Framework());
+        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithms().dyn_REG_boot2_SUBSTANTIATE_Algorithms(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_boot2_SUBSTANTIATE_Data(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot2_SUBSTANTIATE_Execute(stat_CLASS_get_Framework());
         System.out.printf("done architectured classes -Registers - SUBSTANTIATE.%n");
@@ -94,7 +94,7 @@ public class ClientAssembly
         System.out.printf("started architectured classes - Registers - INITIALISE.%n");
         stat_CLASS_get_Framework().dyn_REG_boot3_INITIALISE_Framework_App(stat_CLASS_get_Framework(), stat_CLASS_get_Framework().dyn_STRUCT_get_Input(), stat_CLASS_get_Framework().dyn_STRUCT_get_Output());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_REG_boot3_INITIALISE_App(stat_CLASS_get_Framework());
-        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithims().dyn_REG_boot3_INITIALISE_Algorithims(stat_CLASS_get_Framework());
+        stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Algorithms().dyn_REG_boot3_INITIALISE_Algorithms(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Data().dyn_REG_boot3_INITIALISE_Data(stat_CLASS_get_Framework());
         stat_CLASS_get_Framework().dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot3_INITIALISE_Execute(stat_CLASS_get_Framework());
         System.out.printf("done architectured classes - Registers - INITIALISE.%n");

@@ -7,11 +7,11 @@ public class Framework
 {
     private static App _stat_CLASS_App;
     private static Global _stat_CLASS_Global;
-    private static Algorithim _stat_STRUCT_Algorithim;
+    private static Algorithm _stat_STRUCT_Algorithm;
     private static Input _stat_STRUCT_Input;
     private static IO_ListenRespond _stat_STRUCT_IO_ListenRespond;
     private static Output _stat_STRUCT_Output;
-    private static User_Algorithim _stat_STRUCT_User_Algorithims;
+    private static User_Algorithm _stat_STRUCT_User_Algorithms;
     private static User_Input _stat_STRUCT_User_Inputs;
     private static User_Output _stat_STRUCT_User_Outputs;
     private static Simulation SIMULATION;
@@ -62,9 +62,9 @@ public class Framework
         obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_REG_boot4_INSTANTIATE_Execute();
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Framework_App().%n");
     }
-    public Algorithim dyn_STRUCT_get_Algorithim()
+    public Algorithm dyn_STRUCT_get_Algorithm()
     {
-        return stat_STRUCT_get_Algorithim();
+        return stat_STRUCT_get_Algorithm();
     }
     public Input dyn_STRUCT_get_Input()
     {
@@ -74,9 +74,9 @@ public class Framework
     {
         return stat_STRUCT_get_Output();
     }
-    public User_Algorithim dyn_STRUCT_get_User_Algorithim()
+    public User_Algorithm dyn_STRUCT_get_User_Algorithm()
     {
-        return stat_STRUCT_get_User_Algorithim();
+        return stat_STRUCT_get_User_Algorithm();
     }
     public User_Input dyn_STRUCT_get_User_Input()
     {
@@ -101,8 +101,8 @@ public class Framework
         System.out.printf("entered stat_STRUCT_boot1_DEFINE().%n");
         stat_STRUCT_boot1_DEFINE_User_Input();
         stat_STRUCT_boot1_DEFINE_User_Output();
-        stat_STRUCT_boot1_DEFINE_User_Algorithim();
-        stat_STRUCT_boot1_DEFINE_Algorithim();
+        stat_STRUCT_boot1_DEFINE_User_Algorithm();
+        stat_STRUCT_boot1_DEFINE_Algorithm();
         stat_STRUCT_boot1_DEFINE_Input();
         stat_STRUCT_boot1_DEFINE_Output();
         stat_STRUCT_boot1_DEFINE_IO_ListenRespond();
@@ -113,8 +113,8 @@ public class Framework
         System.out.printf("entered stat_STRUCT_boot3_INITIALISE().%n");
         stat_STRUCT_boot3_INITIALISE_User_Input();
         stat_STRUCT_boot3_INITIALISE_User_Output();
-        stat_STRUCT_boot3_INITIALISE_User_Algorithim();
-        stat_STRUCT_boot3_INITIALISE_Algorithim();
+        stat_STRUCT_boot3_INITIALISE_User_Algorithm();
+        stat_STRUCT_boot3_INITIALISE_Algorithm();
         stat_STRUCT_boot3_INITIALISE_Input();
         stat_STRUCT_boot3_INITIALISE_Output();
         stat_STRUCT_boot3_INITIALISE_IO_ListenRespond();
@@ -184,9 +184,9 @@ public class Framework
 
         System.out.printf("exiting stat_REG_boot0_DECLAIRE_Framework_App().%n");
     }
-    private static void stat_STRUCT_boot1_DEFINE_Algorithim()
+    private static void stat_STRUCT_boot1_DEFINE_Algorithm()
     {
-        _stat_STRUCT_Algorithim = null;
+        _stat_STRUCT_Algorithm = null;
     }
     private static void stat_STRUCT_boot1_DEFINE_Input()
     {
@@ -196,9 +196,9 @@ public class Framework
     {
         _stat_STRUCT_Output = null;
     }
-    private static void stat_STRUCT_boot1_DEFINE_User_Algorithim()
+    private static void stat_STRUCT_boot1_DEFINE_User_Algorithm()
     {
-        _stat_STRUCT_User_Algorithims = null;
+        _stat_STRUCT_User_Algorithms = null;
     }
     private static void stat_STRUCT_boot1_DEFINE_User_Input()
     {
@@ -212,11 +212,11 @@ public class Framework
     {
         _stat_STRUCT_IO_ListenRespond = null;
     }
-    private static void stat_STRUCT_boot3_INITIALISE_Algorithim()
+    private static void stat_STRUCT_boot3_INITIALISE_Algorithm()
     {
-        _stat_STRUCT_Algorithim = new Algorithim();
+        _stat_STRUCT_Algorithm = new Algorithm();
         try {
-            stat_STRUCT_get_Algorithim();
+            stat_STRUCT_get_Algorithm();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
@@ -242,11 +242,11 @@ public class Framework
             System.out.printf("NullPointerException.%n");
         }
     }
-    private static void stat_STRUCT_boot3_INITIALISE_User_Algorithim()
+    private static void stat_STRUCT_boot3_INITIALISE_User_Algorithm()
     {
-        _stat_STRUCT_User_Algorithims = new User_Algorithim();
+        _stat_STRUCT_User_Algorithms = new User_Algorithm();
         try {
-            stat_STRUCT_get_User_Algorithim();
+            stat_STRUCT_get_User_Algorithm();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
@@ -282,9 +282,9 @@ public class Framework
             System.out.printf("NullPointerException.%n");
         }
     }
-    private static Algorithim stat_STRUCT_get_Algorithim()
+    private static Algorithm stat_STRUCT_get_Algorithm()
     {
-        return _stat_STRUCT_Algorithim;
+        return _stat_STRUCT_Algorithm;
     }
     private static Input stat_STRUCT_get_Input()
     {
@@ -306,9 +306,9 @@ public class Framework
     {
         return _stat_STRUCT_User_Outputs;
     }
-    private static User_Algorithim stat_STRUCT_get_User_Algorithim()
+    private static User_Algorithm stat_STRUCT_get_User_Algorithm()
     {
-        return _stat_STRUCT_User_Algorithims;
+        return _stat_STRUCT_User_Algorithms;
     }
     private static Global stat_CLASS_get_Global()
     {

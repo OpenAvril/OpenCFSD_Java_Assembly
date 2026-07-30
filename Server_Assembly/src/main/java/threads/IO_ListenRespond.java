@@ -208,13 +208,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbInt(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
 
             case 1:
@@ -224,13 +224,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise1.dyn_REG_set_input_praise1_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
 
             case 2:
@@ -240,13 +240,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise2.dyn_REG_set_input_praise2_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
 
             case 3:
@@ -256,13 +256,13 @@ public class IO_ListenRespond
                 {
                     temp[index] = buffer[4+index];
                 }
-                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueA(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 temp = new byte[4];
                 for(int index = 0; index < 4; index++)
                 {
                     temp[index] = buffer[8+index];
                 }
-                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbFloat(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+                subset_of_input_for_praise3.dyn_REG_set_input_praise3_valueB(Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
                 break;
         }
     }

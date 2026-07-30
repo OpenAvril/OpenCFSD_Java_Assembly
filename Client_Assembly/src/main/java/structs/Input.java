@@ -1,17 +1,12 @@
 package structs;
-
 import engine.Framework;
-import structs.praise_sets.Input_praise0;
-import structs.praise_sets.Input_praise1;
-import structs.praise_sets.Input_praise2;
-import structs.praise_sets.Input_praise3;
-
+import structs.praise_sets.*;
 public class Input
 {
     private static int _stat_REG_Input_paiseId;
     private static Object _stat_REG_InputSubset;
-// public.
-    public Input() 
+    // public.
+    public Input()
     {
         System.out.printf("entered STRUCT_CLASS Input()%n");
         stat_CLASS_boot0_DECLAIRE_Input();
@@ -81,7 +76,7 @@ public class Input
 
         }
     }
-// private.
+    // private.
     private static void stat_CLASS_boot0_DECLAIRE_Input()
     {
         System.out.printf("entered stat_CLASS_boot0_DECLAIRE_Input().%n");
@@ -121,9 +116,8 @@ public class Input
     private static void stat_REG_boot2_SUBSTANTIATE_InputSubset()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_InputSubset().%n");
-        _stat_REG_InputSubset = new Object();
         try {
-            stat_REG_get_InputSubset();
+            _stat_REG_InputSubset = new Object();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
