@@ -229,7 +229,7 @@ public class Simulation
         WriteQue_SimulationIO.app_FUNCT_write_End(1);//SIMULATION
     }
     private static void app_Do_Process_Of_Input(Framework obj) {
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_Start(0);
+        WriteQue_ServerInputReceive.app_FUNCT_write_Start(0);
         _SIM_stat_REG_input_Sample = obj.dyn_STRUCT_get_Input();
         //_stat_REG_Buffer_For_Input = new byte[1024]; //todo network capture and write to buffer.
         //app_Decode_NetworkingSteam_At_Server_Input_Recieve(_SIM_stat_REG_input_Sample, _stat_REG_Buffer_For_Input);
@@ -267,12 +267,12 @@ public class Simulation
         }
         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();
         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
-        WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
+        WriteQue_ServerInputReceive.app_FUNCT_write_End(0);
     }
     private static void app_Do_Process_Of_Output(Framework obj) {
         if(OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend())
         {
-            WriteQue_SERVEROUTPUTSEND.app_FUNCT_write_Start(0);
+            WriteQue_ServerInputReceive.app_FUNCT_write_Start(0);
             //_stat_REG_Buffer_For_Ouput = new byte[1024];
             _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_Output();
             while(OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
@@ -304,7 +304,7 @@ public class Simulation
                 Simulation.Print_PraiseEvent(_SIM_stat_REG_output_Sample);
                 //todo send.
             }
-            WriteQue_SERVERINPUTRECIEVE.app_FUNCT_write_End(0);
+            WriteQue_ServerInputReceive.app_FUNCT_write_End(0);
         }
     }
     public void dyn_REG_boot1_DEFINE__SIMULATION() {

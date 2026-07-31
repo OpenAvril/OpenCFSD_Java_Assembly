@@ -1,16 +1,18 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import libs.JavaLIBWriteQueSERVEROUTPUTSEND;
+import libs.JavaLIBWriteQue_ServerInputReceive;
 
-public class WriteQue_SERVEROUTPUTSEND {
-    public WriteQue_SERVEROUTPUTSEND() {
+public class WriteQue_ServerInputReceive
+{
+    public WriteQue_ServerInputReceive()
+    {
 
     }
     public static Pointer app_FUNCT_generate_Program()
     {
         try {
-            return JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_generate_Program();
+            return JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_generate_Program();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return (Pointer)null;
@@ -27,7 +29,7 @@ public class WriteQue_SERVEROUTPUTSEND {
         temp = new byte[1];
         temp[0] = Byte.MAX_VALUE;
         try {
-            temp = JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_get_flag_isPGM_INSTANTIATED();
+            temp = JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
             return true;
@@ -42,7 +44,7 @@ public class WriteQue_SERVEROUTPUTSEND {
     public static void app_FUNCT_terminate_Program()
     {
         try {
-            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_terminate_Program();
+            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_terminate_Program();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -54,7 +56,7 @@ public class WriteQue_SERVEROUTPUTSEND {
     public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
+            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -66,7 +68,7 @@ public class WriteQue_SERVEROUTPUTSEND {
     public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaLIBWriteQueSERVEROUTPUTSEND.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
+            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {

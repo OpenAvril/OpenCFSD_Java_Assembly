@@ -1,18 +1,19 @@
 package engine;
 import SIMULATION.Simulation;
+import threads.IO_ListenRespond;
 import com.sun.jna.Pointer;
-import main.IO.OpenEpiCentre;
-import main.IO.WriteQue_SimulationIO;
-
-import java.io.IOException;
+import main.IO.*;
 
 public class Execute
 {
     private static Execute_Control _stat_CLASS_Execute_Control;
     private static Thread[] _stat_REG_List_Of_Threads;
-    private static Pointer _stat_PGM_ConcurrentIOServer;
-    private static Pointer _stat_PGM_WriteQue_SimulationIO;//SIMULATION
-// public.
+    private static Pointer _stat_PGM_ConditionCode;
+    private static Pointer _stat_PGM_OpenEPiCentre;
+    private static Pointer _stat_PGM_SimulationIO;
+    private static Pointer _stat_PGM_WriteQue_Simulation_InputSamples;
+    private static Pointer _stat_PGM_WriteQue_Simulation_OutputSamples;//SIMULATION
+    // public.
     public Execute(Framework obj)  {
         System.out.printf("entered CLASS Execute()%n");
         stat_CLASS_boot0_DECLAIRE_Execute();
@@ -47,66 +48,94 @@ public class Execute
     public void dyn_REG_boot4_INSTANTIATE_Execute() {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
         int intPrimeDEFAULT = Integer.MAX_VALUE;
+        double doublePRimeDEFAULT = Double.MAX_VALUE;
 
-        System.out.printf("entered CHECK member function OpenEpiCentre().%n");
-        OpenEpiCentre.app_FUNCT_flip_Input_DoubleBuffer();
-        //app_FUNCT_generate_Program();
-        boolean tempA0 = OpenEpiCentre.app_FUNCT_get_flag_isPGM_INSTNATIATED();
-        OpenEpiCentre.app_FUNCT_select_set_Intput_Subset(intPrimeDEFAULT);
-        OpenEpiCentre.app_FUNCT_terminate_Program();
-        OpenEpiCentre.app_FUNCT_pop_From_Stack_Of_Output();
-        OpenEpiCentre.app_FUNCT_push_To_STACK_Of_Input();
-        Pointer tempA1 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerInputAction();
-        Pointer tempA2 = OpenEpiCentre.dyn_PGM_get_program_WriteEnableStack_ServerOutputRecieve();
-        boolean tempA3 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_InputAction();
-        boolean tempA4 = OpenEpiCentre.dyn_REG_get_flag_isStackLoaded_Server_OutputSend();
-        boolean tempA5 = OpenEpiCentre.dyn_REG_get_flag_IsInitialised_OpenAvrilConcurrency();
-        double tempA6 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise0_Value();
-        double tempA7 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise1_Value();
-        double tempA8 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise2_Value();
-        double tempA9 = OpenEpiCentre.io_PRAISE_get_Item_Output_praise3_Value();
-        int tempA10 = OpenEpiCentre.io_RPRAISE_get_MetaData_PraiseEventId();
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_A(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise0_Value_B(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise1_Value_A(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise1_Value_B(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise2_Value_A(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise2_Value_B(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise3_Value_A(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_Item_Input_praise3_Value_B(intPrimeDEFAULT);
-        OpenEpiCentre.io_PRAISE_set_MetaData_PraiseEventId(intPrimeDEFAULT);
-        System.out.printf("done CHECK member function OpenEpiCentre().%n");
+        System.out.printf("entered CHECK member function WriteQue_Simulation_InputSamples().%n");
+        //WriteQue_Simulation_InputSamples.app_FUNCT_generate_Program();
+        Boolean tempA0 = WriteQue_Simulation_InputSamples.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQue_Simulation_InputSamples.app_FUNCT_terminate_Program();
+        WriteQue_Simulation_InputSamples.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_Simulation_InputSamples.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member function WriteQue_Simulation_InputSamples().%n");
 
-        System.out.printf("entered CHECK member function WriteQue_SimulationIO().%n");
+        System.out.printf("entered CHECK member functions in WriteQue_Simulation_OutputSamples.%n");
+        //WriteQue_Simulation_OutputSamples.app_FUNCT_generate_Program();
+        Boolean tempB0 = WriteQue_Simulation_OutputSamples.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQue_Simulation_OutputSamples.app_FUNCT_terminate_Program();
+        WriteQue_Simulation_OutputSamples.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_Simulation_OutputSamples.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member functions in WriteQue_Simulation_OutputSamples.%n");
+
+        System.out.printf("entered CHECK member functions in WriteQue_SimulationIO.%n");
         //WriteQue_SimulationIO.app_FUNCT_generate_Program();
-        Boolean tempE0 = WriteQue_SimulationIO.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        Boolean tempC0 = WriteQue_SimulationIO.app_FUNCT_get_flag_isPGM_INSTNATIATED();
         WriteQue_SimulationIO.app_FUNCT_terminate_Program();
         WriteQue_SimulationIO.app_FUNCT_write_End(intPrimeDEFAULT);
         WriteQue_SimulationIO.app_FUNCT_write_Start(intPrimeDEFAULT);
-        System.out.printf("done CHECK member function WriteQue_SimulationIO().%n");
+        System.out.printf("done CHECK member functions in WriteQue_SimulationIO.%n");
 
-        //todo simulation write que for sampled; input, output.
+        System.out.printf("entered CHECK member functions in WriteQue_ConditionCode.%n");
+        //WriteQue_ConditionCode.app_FUNCT_generate_Program();
+        Boolean tempD0 = WriteQue_ConditionCode.app_FUNCT_get_flag_isPGM_INSTNATIATED();
+        WriteQue_ConditionCode.app_FUNCT_terminate_Program();
+        WriteQue_ConditionCode.app_FUNCT_write_End(intPrimeDEFAULT);
+        WriteQue_ConditionCode.app_FUNCT_write_Start(intPrimeDEFAULT);
+        System.out.printf("done CHECK member functions in WriteQue_ConditionCode.%n");
+
+        System.out.printf("entered CHECK member functions in OpenEPiCentre.%n");
+        OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();
+        //Pointer tempE0 = OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_generate_Program();
+        boolean tempE1 = OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_get_flag_isPGM_INSTANTIATED();
+        OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(intPrimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_terminate_Program();
+        OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
+        OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
+        Pointer tempE2 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerInputReceive();
+        Pointer tempE3 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerOutputSend();
+        boolean tempE4 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerInputReceive();
+        boolean tempE5 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend();
+        boolean tempE6 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_IsInitialised_CLIBOpenEpiCentre();
+        double tempE7 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value();
+        double tempE8 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise1_Value();
+        double tempE9 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise2_Value();
+        double tempE10 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise3_Value();
+        int tempE11 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_A(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_B(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_A(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_B(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_A(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_B(doublePRimeDEFAULT);
+        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(intPrimeDEFAULT);
+        System.out.printf("entered CHECK member functions in OpenEPiCentre.%n");
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Execute().%n");
     }
-    static private void stat_CLASS_boot0_DECLAIRE_Execute()
-    {
+    static private void stat_CLASS_boot0_DECLAIRE_Execute() {
         System.out.printf("entered stat_CLASS_boot0_DECLAIRE_Execute().%n");
 
         System.out.printf("exiting stat_CLASS_boot0_DECLAIRE_Execute().%n");
     }
-    private static void stat_CLASS_boot1_DEFINE_Execute()
-    {
+    private static void stat_CLASS_boot1_DEFINE_Execute() {
         System.out.printf("entered stat_CLASS_boot1_DEFINE_Execute().%n");
         stat_CLASS_boot1_DEFINE_Execute_Control();
-        stat_PGM_boot1_DEFINE_ConcurrentIOServer();
+        stat_PGM_boot1_DEFINE_ConditionCode();
+        stat_PGM_boot1_DEFINE_WriteQue_Simulation_InputSamples();//TODO SIMULATION
+        stat_PGM_boot1_DEFINE_WriteQue_Simulation_OutputSamples();//TODO SIMULATION
+        stat_PGM_boot1_DEFINE_MyDLL();
+        stat_PGM_boot1_DEFINE_SimulationIO();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_Execute().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_Execute(Framework obj) {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_Execute().%n");
         stat_CLASS_boot3_INITIALISE_Execute_Control();
-        stat_PGM_boot3_INITIALISE_ConcurrentIOServer();
-        stat_PGM_boot3_INITIALISE_WriteQue_SimulationIO();
+        stat_PGM_boot3_INITIALISE_ConditionCode();
+        stat_PGM_boot3_INITIALISE_WriteQue_Simulation_InputSamples();//TODO SIMULATION
+        stat_PGM_boot3_INITIALISE_WriteQue_Simulation_OutputSamples();//TODO SIMULATION
+        stat_PGM_boot3_INITIALISE_MyDLL();
+        stat_PGM_boot3_INITIALISE_SimulationIO();//TODO SIMULATION
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Execute().%n");
     }
     private static void stat_REG_boot0_DECLAIRE_Execute() {
@@ -114,7 +143,7 @@ public class Execute
 
         System.out.printf("exiting stat_REG_boot0_DECLAIRE_Execute().%n");
     }
-// private.
+    // private.
     private static void stat_APP_Launch_Threads(Framework obj) {
         System.out.printf("entered *** Launch Threads ***.%n");
         for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
@@ -148,8 +177,7 @@ public class Execute
     {
         _stat_REG_List_Of_Threads = null;
     }
-    private static void stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(Framework obj)
-    {
+    private static void stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(Framework obj) {
         try {
             _stat_REG_List_Of_Threads = new Thread[Global.dyn_REG_get_numberOfCores()];
         }
@@ -162,37 +190,81 @@ public class Execute
             _stat_REG_List_Of_Threads[threadId] = null;
         }
     }
-    private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj)
-    {
+    private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj) {
         System.out.printf("entered Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> {
-            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_IO_Listen_Respond(obj, (byte) 0);
+            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_IO_Listen_Respond(obj, (byte)0);
         });
         _stat_REG_List_Of_Threads[1] = new Thread(() -> {
-            Simulation.Thread_Input_Peripheral_Scanner(obj, (byte) 1);
+            obj.dyn_CLASS_get_SIMULATION().Thread_Input_Peripheral_Scanner(obj, (byte)1);
+        });
+        _stat_REG_List_Of_Threads[2] = new Thread(() -> {
+            obj.dyn_CLASS_get_SIMULATION().Thread_Output_Draw(obj, (byte)2);
         });
         System.out.printf("exiting Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
     }
-    private static Thread[] stat_REG_get_ptr_List_Of_Threads()
-    {
-        return _stat_REG_List_Of_Threads;
+    private static void stat_PGM_boot1_DEFINE_MyDLL() {
+        System.out.printf("entered Execute stat_PGM_boot1_DEFINE_MyDLL().%n");
+        _stat_PGM_OpenEPiCentre = null;
+        System.out.printf("exiting Execute stat_PGM_boot1_DEFINE_MyDLL().%n");
     }
-    private static void stat_PGM_boot1_DEFINE_ConcurrentIOServer()
-    {
+    private static void stat_PGM_boot1_DEFINE_ConditionCode() {
+        System.out.printf("entered Execute stat_PGM_boot1_DEFINE_ConditionCode().%n");
+        _stat_PGM_ConditionCode = null;
+        System.out.printf("exiting Execute stat_PGM_boot1_DEFINE_ConditionCode().%n");
+    }
+    private static void stat_PGM_boot1_DEFINE_SimulationIO() {
+        System.out.printf("entered Execute stat_PGM_boot1_DEFINE_SimulationIO().%n");
+        _stat_PGM_SimulationIO = null;
+        System.out.printf("exiting Execute stat_PGM_boot1_DEFINE_SimulationIO().%n");
+    }
+    private static void stat_PGM_boot1_DEFINE_WriteQue_Simulation_InputSamples() {
         System.out.printf("entered Execute stat_PGM_boot1_DEFINE_ConcurrentIOServer().%n");
-        _stat_PGM_ConcurrentIOServer = null;
+        _stat_PGM_WriteQue_Simulation_InputSamples = null;
         System.out.printf("exiting Execute stat_PGM_boot1_DEFINE_ConcurrentIOServer().%n");
     }
-    private static void stat_PGM_boot3_INITIALISE_ConcurrentIOServer() {
-        System.out.printf("entered stat_PGM_boot3_INITIALISE_ConcurrentIOServer().%n");
-        _stat_PGM_ConcurrentIOServer = OpenEpiCentre.CLIB_WriteEnableForThreadsAt_SIMULATION__App_FUNCT_generate_Program();
-        System.out.printf("exiting stat_PGM_boot3_INITIALISE_ConcurrentIOServer().%n");
+    private static void stat_PGM_boot1_DEFINE_WriteQue_Simulation_OutputSamples() {
+        System.out.printf("entered Execute stat_PGM_boot1_DEFINE_ConcurrentIOServer().%n");
+        _stat_PGM_WriteQue_Simulation_OutputSamples = null;
+        System.out.printf("exiting Execute stat_PGM_boot1_DEFINE_ConcurrentIOServer().%n");
     }
-    private static void stat_PGM_boot3_INITIALISE_WriteQue_SimulationIO()
-    {
+    private static void stat_PGM_boot3_INITIALISE_MyDLL() {
+        System.out.printf("entered stat_PGM_boot3_INITIALISE_MyDLL().%n");
+        try {
+            _stat_PGM_OpenEPiCentre = OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_generate_Program();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+            throw new RuntimeException("NullPointerException.%n", e);
+        }
+        System.out.printf("exiting stat_PGM_boot3_INITIALISE_MyDLL().%n");
+    }
+    private static void stat_PGM_boot3_INITIALISE_ConditionCode() {
+        System.out.printf("entered stat_PGM_boot3_INITIALISE_ConditionCode().%n");
+        try {
+            _stat_PGM_ConditionCode = WriteQue_ConditionCode.app_FUNCT_generate_Program();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+            throw new RuntimeException("NullPointerException.%n", e);
+        }
+        System.out.printf("exiting stat_PGM_boot3_INITIALISE_ConditionCode().%n");
+    }
+    private static void stat_PGM_boot3_INITIALISE_SimulationIO() {
+        System.out.printf("entered stat_PGM_boot3_INITIALISE_SimulationIO().%n");
+        try {
+            _stat_PGM_SimulationIO = WriteQue_SimulationIO.app_FUNCT_generate_Program();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+            throw new RuntimeException("NullPointerException.%n", e);
+        }
+        System.out.printf("exiting stat_PGM_boot3_INITIALISE_SimulationIO().%n");
+    }
+    private static void stat_PGM_boot3_INITIALISE_WriteQue_Simulation_InputSamples() {
         System.out.printf("entered stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
         try {
-            _stat_PGM_WriteQue_SimulationIO = WriteQue_SimulationIO.app_FUNCT_generate_Program();
+            _stat_PGM_WriteQue_Simulation_InputSamples = WriteQue_Simulation_InputSamples.app_FUNCT_generate_Program();
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
@@ -200,16 +272,15 @@ public class Execute
         }
         System.out.printf("exiting stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
     }
-    private static Pointer stat_PGM_get_ConcurrentIOServer()
-    {
-        return _stat_PGM_ConcurrentIOServer;
-    }
-    private static Pointer stat_PGM_get_WriteQue_SimulationIO()
-    {
-        return _stat_PGM_WriteQue_SimulationIO;
-    }
-    private static void stat_PGM_Launch_Threads(Framework obj)
-    {
-
+    private static void stat_PGM_boot3_INITIALISE_WriteQue_Simulation_OutputSamples() {
+        System.out.printf("entered stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
+        try {
+            _stat_PGM_WriteQue_Simulation_OutputSamples = WriteQue_Simulation_OutputSamples.app_FUNCT_generate_Program();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+            throw new RuntimeException("NullPointerException.%n", e);
+        }
+        System.out.printf("exiting stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
     }
 }

@@ -1,8 +1,7 @@
 package OpenCFSD_Java_Assembly;
 import engine.Framework;
-import main.IO.ServerAssembly;
 import java.io.IOException;
-
+import main.IO.ServerAssembly;
 public class Main
 {
     private static Framework _stat_PGM_ClientAssembly = null;

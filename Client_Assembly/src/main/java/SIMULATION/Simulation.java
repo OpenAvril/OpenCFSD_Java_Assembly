@@ -1,13 +1,16 @@
 package SIMULATION;
-
 import engine.Framework;
-import main.IO.WriteQue_ConditionCode;
-import main.IO.WriteQue_SimulationIO;
-import main.IO.WriteQue_Simulation_InputSamples;
-import main.IO.WriteQue_Simulation_OutputSamples;
+import main.IO.*;
 import structs.Input;
 import structs.Output;
-import structs.praise_sets.*;
+import structs.praise_sets.Input_praise0;
+import structs.praise_sets.Input_praise1;
+import structs.praise_sets.Input_praise2;
+import structs.praise_sets.Input_praise3;
+import structs.praise_sets.Output_praise0;
+import structs.praise_sets.Output_praise1;
+import structs.praise_sets.Output_praise2;
+import structs.praise_sets.Output_praise3;
 
 import java.util.Scanner;
 
@@ -30,7 +33,7 @@ public class Simulation
         _stat_REG_scanner = null;
         _stat_REG_scanner = new Scanner(System.in);
     }
-    public static void Thread_Input_Peripheral_Scanner(Framework obj, byte threadId) {
+    public void Thread_Input_Peripheral_Scanner(Framework obj, byte threadId) {
         System.out.printf("thread " + threadId + ": Enter THREAD member function on thread.%n");
         boolean doneOnce = false;
         boolean checkPass = false;
@@ -224,23 +227,6 @@ public class Simulation
                 break;
         }
         WriteQue_SimulationIO.app_FUNCT_write_End(1);//SIMULATION
-    }
-    private static void app_Do_Process_Of_Input(Framework obj) {
-        WriteQue_Simulation_InputSamples.app_FUNCT_write_Start(0);
-        _SIM_stat_REG_input_Sample = obj.dyn_STRUCT_get_Input();
-        Simulation.Get_Praise_Event_Id_And_Data(_SIM_stat_REG_input_Sample);//SIMULATION
-        //_stat_REG_Buffer_For_Input = new byte[1024]; //todo network capture and write to buffer.
-        //app_Decode_NetworkingSteam_At_Server_Input_Recieve(_SIM_stat_REG_input_Sample, _stat_REG_Buffer_For_Input);
-       WriteQue_Simulation_InputSamples.app_FUNCT_write_End(0);
-    }
-    private static void app_Do_Process_Of_Output(Framework obj) {
-        WriteQue_Simulation_OutputSamples.app_FUNCT_write_Start(0);
-        //_stat_REG_Buffer_For_Ouput = new byte[1024];
-        _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_Output();
-            //app_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, _stat_REG_Buffer_For_Ouput);
-            Simulation.Print_PraiseEvent(_SIM_stat_REG_output_Sample);
-            //todo send.
-        WriteQue_Simulation_OutputSamples.app_FUNCT_write_End(0);
     }
     public void dyn_REG_boot1_DEFINE__SIMULATION() {
         stat_REG_boot1_DEFINE__SIMULATION();

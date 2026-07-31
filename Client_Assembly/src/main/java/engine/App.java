@@ -1,18 +1,17 @@
 package engine;
 
-public class App 
+public class App
 {
     private static Algorithms _stat_CLASS_Algorithms;
     private static Data _stat_CLASS_Data;
     private static Execute _stat_CLASS_Execute;
 // public.
-    public App() 
-    {
+    public App(Framework obj) {
         System.out.printf("entered CONSTRUCTOR App().%n");
         stat_CLASS_boot0_DECLAIRE_App();
         stat_CLASS_boot1_DEFINE_App();
-        stat_CLASS_boot3_INITIALISE_App();
-        stat_REG_boot0_DECLAIRE_App();
+        stat_CLASS_boot3_INITIALISE_App(obj);
+
         System.out.printf("exiting CONSTRUCTOR App().%n");
     }
     public Algorithms dyn_CLASS_get_Algorithms()
@@ -27,25 +26,25 @@ public class App
     {
         return stat_CLASS_get_Execute();
     }
-    public void dyn_REG_boot1_DEFINE_App(Framework obj)
+    public void dyn_REG_boot1_DEFINE_App()
     {
         System.out.printf("entered dyn_boot1_REG_DEFINE_App().%n");
 
         System.out.printf("exiting dyn_boot1_REG_DEFINE_App().%n");
     }
-    public void dyn_REG_boot2_SUBSTANTIATE_App(Framework obj)
+    public void dyn_REG_boot2_SUBSTANTIATE_App()
     {
         System.out.printf("entered dyn_boot2_REG_SUBSTANTIATE_App().%n");
 
         System.out.printf("exiting dyn_boot2_REG_SUBSTANTIATE_App().%n");
     }
-    public void dyn_REG_boot3_INITIALISE_App(Framework obj)
+    public void dyn_REG_boot3_INITIALISE_App()
     {
         System.out.printf("entered dyn_boot3_REG_INITIALISE_App().%n");
 
         System.out.printf("exiting dyn_boot3_REG_INITIALISE_App().%n");
     }
-    public void dyn_PGM_boot4_INSTANTIATE_App(Framework obj)
+    public void dyn_PGM_boot4_INSTANTIATE_App()
     {
         System.out.printf("entered dyn_boot4_PGM_INSTANTIATE_App().%n");
 
@@ -65,19 +64,12 @@ public class App
         boot1_CLASS_DEFINE_Execute();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_App().%n");
     }
-    private static void stat_CLASS_boot3_INITIALISE_App()
-    {
+    private static void stat_CLASS_boot3_INITIALISE_App(Framework obj) {
         System.out.printf("entered stat_CLASS_boot3_INITIALISE_App().%n");
         boot3_CLASS_INITIALISE_Algorithms();
         boot3_CLASS_INITIALISE_Data();
-        boot3_CLASS_INITIALISE_Execute();
+        boot3_CLASS_INITIALISE_Execute(obj);
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_App().%n");
-    }
-    private static void stat_REG_boot0_DECLAIRE_App()
-    {
-        System.out.printf("entered stat_REG_boot0_DECLAIRE_App().%n");
-
-        System.out.printf("exiting stat_REG_boot0_DECLAIRE_App().%n");
     }
 // private.
     private static void boot1_CLASS_DEFINE_Algorithms()
@@ -98,7 +90,6 @@ public class App
         _stat_CLASS_Execute = null;
         System.out.printf("exiting boot1_CLASS_DEFINE_Execute().%n");
     }
-
     private static void boot3_CLASS_INITIALISE_Algorithms()
     {
         System.out.printf("entered boot3_CLASS_INITIALISE_Algorithms().%n");
@@ -123,10 +114,9 @@ public class App
         }
         System.out.printf("exiting boot3_CLASS_INITIALISE_Data().%n");
     }
-    private static void boot3_CLASS_INITIALISE_Execute()
-    {
+    private static void boot3_CLASS_INITIALISE_Execute(Framework obj) {
         System.out.printf("entered boot3_CLASS_INITIALISE_Execute().%n");
-        _stat_CLASS_Execute = new Execute();
+        _stat_CLASS_Execute = new Execute(obj);
         try {
                 stat_CLASS_get_Execute();
         } 
@@ -135,7 +125,6 @@ public class App
         }
         System.out.printf("exiting boot3_CLASS_INITIALISE_Execute().%n");
     }
-
     private static Algorithms stat_CLASS_get_Algorithms()
     {
         return _stat_CLASS_Algorithms;
@@ -148,5 +137,4 @@ public class App
     {
         return _stat_CLASS_Execute;
     }
-
 }
