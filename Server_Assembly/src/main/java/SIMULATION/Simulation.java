@@ -80,7 +80,16 @@ public class Simulation
             System.out.printf("thread " + threadId + ": OPEN ACCESS 'WriteQue_SimulationIO' @id=1.%n");
             WriteQue_ConditionCode.app_FUNCT_write_Start(1);
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
-                //todo process of input
+                _SIM_stat_REG_input_Sample.dyn_REG_set_Input_praiseId(0);//todo process of input
+                _SIM_stat_REG_input_Sample.dyn_REG_set_InputSubset(obj, _SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());//todo process of input
+                Input_praise0 subset_of_input_for_praise0 = (Input_praise0)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();//todo process of input
+                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(2.2);//todo process of input
+                subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(3.7);//todo process of input
+                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());//todo process of input
+                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());//todo process of input
+                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());//todo process of input
+                OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();//todo process of input
+                OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();//todo process of input
                 obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
             }
             if(!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
@@ -159,6 +168,7 @@ public class Simulation
     {
         _stat_REG_scanner.close();
     }
+    /*
     public static void Get_Praise_Event_Id_And_Data(Input input) {
         WriteQue_SimulationIO.app_FUNCT_write_Start(0);//SIMULATION
         System.out.printf("Enter PraiseEventId: ");
@@ -307,6 +317,7 @@ public class Simulation
             WriteQue_ServerInputReceive.app_FUNCT_write_End(0);
         }
     }
+    */
     public void dyn_REG_boot1_DEFINE__SIMULATION() {
         stat_REG_boot1_DEFINE__SIMULATION();
     }
