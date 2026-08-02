@@ -151,33 +151,16 @@ public class IO_ListenRespond
 
                 WriteQue_SimulationIO.app_FUNCT_write_Start(0);
                 System.out.printf("thread " + threadId + " OUTPUT: ACCESS WriteQue_SimulationIO at Id=0.%n");
-                if (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
-                    OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
-                    _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
-                    _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
-                    switch (OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId())
-                    {
-                        case (int)0:
-                            Output_praise0 subset_of_output_for_praise0 = (Output_praise0)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                            subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
-                            break;
-
-                        case (int)1:
-                            Output_praise1 subset_of_output_for_praise1 = (Output_praise1)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                            subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise1_Value());
-                            break;
-
-                        case (int)2:
-                            Output_praise2 subset_of_output_for_praise2 = (Output_praise2)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                            subset_of_output_for_praise2.dyn_REG_set_output_praise2_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
-                            break;
-
-                        case (int)3:
-                            Output_praise3 subset_of_output_for_praise3 = (Output_praise3)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                            subset_of_output_for_praise3.dyn_REG_set_output_praise3_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
-                            break;
+                while (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
+                    if(!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
+                        OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
+                        _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
+                        _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
+                        Output_praise0 subset_of_output_for_praise0 = (Output_praise0)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
+                        obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
+                        //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());
                     }
-                    //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());
                 }
             }
             WriteQue_ConditionCode.app_FUNCT_write_Start(0);

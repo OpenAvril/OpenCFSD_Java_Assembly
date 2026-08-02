@@ -149,7 +149,30 @@ public class Simulation
             System.out.printf("thread " + threadId + ": OPEN ACCESS 'WriteQue_SimulationIO' @id=2.%n");
             WriteQue_ConditionCode.app_FUNCT_write_Start(2);
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
-                //todo process of output.
+                if(obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("PraiseEventId: " + _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId() + ".%n");
+                    Output_praise0 output_subset0 = (Output_praise0)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                    System.out.printf("output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value() + ".%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    System.out.printf("********%n");
+                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(false);
+                }
             }
             if(!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 checkPass = true;
