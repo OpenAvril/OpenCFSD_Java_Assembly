@@ -152,7 +152,13 @@ public class IO_ListenRespond {
                         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
                         _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
                         _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
-                        Output_praise0 subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        Output_praise0 subset_of_output_for_praise0 = null;
+                        try {
+                            subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        }
+                        catch (NoClassDefFoundError e) {
+                            System.out.printf("NoClassDefFoundError.%n");
+                        }
                         subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
                         obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
                         //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());
