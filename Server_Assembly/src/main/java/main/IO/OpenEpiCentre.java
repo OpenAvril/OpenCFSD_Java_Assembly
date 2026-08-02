@@ -289,13 +289,16 @@ public class OpenEpiCentre {
         }
         return Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
-    public static Byte CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() {
+    public static int CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() {
         byte[]  temp;
         temp = null;
-        temp = new byte[1];
-        temp[0] = Byte.MAX_VALUE;
+        temp = new byte[4];
+        for(int index = 0; index < 4; index++) {
+            temp[index] = Byte.MAX_VALUE;
+        }
         try {
             temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();
+            System.out.printf("temp = " + temp + "%n");//todo SIMULATION
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -306,7 +309,7 @@ public class OpenEpiCentre {
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)[0];
+        return Global.stat_CONVERT_LsbByteArray_To_LsbInt(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(double value) {
         try {

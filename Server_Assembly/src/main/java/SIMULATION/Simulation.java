@@ -80,6 +80,7 @@ public class Simulation
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 if(!doneOnce2) {
                     WriteQue_ConditionCode.app_FUNCT_write_End(1);
+                    _SIM_stat_REG_input_Sample = obj.dyn_STRUCT_get_Input();
                     System.out.printf("<=%n");
                     System.out.printf("<=%n");
                     System.out.printf("<=%n");
@@ -95,14 +96,14 @@ public class Simulation
                     Input_praise0 subset_of_input_for_praise0 = null;
                     try {
                         subset_of_input_for_praise0 = (Input_praise0)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();//todo process of input
+                        subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(2.2);//todo process of input
+                        subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(3.7);//todo process of input
+                        System.out.printf("value_A: " + subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA() + ".%n");
+                        System.out.printf("value_B: " + subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB() + ".%n");
                     }
                     catch (NoClassDefFoundError e) {
                         System.out.printf("NoClassDefFoundError.%n");
                     }
-                    subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(2.2);//todo process of input
-                    subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(3.7);//todo process of input
-                    System.out.printf("value_A: " + subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA() + ".%n");
-                    System.out.printf("value_B: " + subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB() + ".%n");
                     System.out.printf("<=%n");
                     System.out.printf("<=%n");
                     System.out.printf("<=%n");
@@ -176,6 +177,7 @@ public class Simulation
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 if(obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
                     WriteQue_ConditionCode.app_FUNCT_write_End(2);
+                    _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_Output();
                     System.out.printf("=>%n");
                     System.out.printf("=>%n");
                     System.out.printf("=>%n");
@@ -189,11 +191,14 @@ public class Simulation
                     Output_praise0 output_subset0 = null;
                     try {
                         output_subset0 = (Output_praise0)_SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                        System.out.printf("output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value() + ".%n");
                     }
                     catch (NoClassDefFoundError e) {
                         System.out.printf("NoClassDefFoundError.%n");
                     }
-                    System.out.printf("output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value() + ".%n");
+                    catch (ClassCastException e) {
+                        System.out.printf("ClassCastException.%n");
+                    }
                     System.out.printf("=>%n");
                     System.out.printf("=>%n");
                     System.out.printf("=>%n");

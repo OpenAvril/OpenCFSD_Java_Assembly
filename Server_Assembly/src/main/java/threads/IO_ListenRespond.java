@@ -159,6 +159,9 @@ public class IO_ListenRespond {
                         catch (NoClassDefFoundError e) {
                             System.out.printf("NoClassDefFoundError.%n");
                         }
+                        catch (ClassCastException e) {
+                            System.out.printf("ClassCastException.%n");
+                        }
                         subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
                         obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
                         //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());
