@@ -53,10 +53,10 @@ public class WriteQue_SimulationIO {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_End(int threadId)
+    public static void app_FUNCT_write_End(long threadId)
     {
         try {
-            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
+            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -68,10 +68,10 @@ public class WriteQue_SimulationIO {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_Start(int threadId)
+    public static void app_FUNCT_write_Start(long threadId)
     {
         try {
-            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(threadId)));
+            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

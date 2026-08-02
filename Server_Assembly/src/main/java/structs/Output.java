@@ -3,7 +3,7 @@ import engine.Framework;
 import structs.praise_sets.*;
 public class Output
 {
-    private static int _stat_REG_Output_paiseId;
+    private static long _stat_REG_Output_paiseId;
     private static Object _stat_REG_OutputSubset;
     // public.
     public Output()
@@ -41,7 +41,7 @@ public class Output
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Output().%n");
     }
-    public int dyn_REG_get_Output_praiseId()
+    public long dyn_REG_get_Output_praiseId()
     {
         return stat_REG_get_Output_praiseId();
     }
@@ -49,14 +49,14 @@ public class Output
     {
         return stat_REG_get_OutputSubset();
     }
-    public void dyn_REG_set_Output_praiseId(int valuePraiseEventId)
+    public void dyn_REG_set_Output_praiseId(long valuePraiseEventId)
     {
         stat_REG_set_Output_praiseId(valuePraiseEventId);
     }
-    public void dyn_REG_set_OutputSubset(Framework obj, int praiseId)
+    public void dyn_REG_set_OutputSubset(Framework obj, long praiseId)
     {
         User_Output userOutput = obj.dyn_STRUCT_get_User_Output();
-        switch(praiseId)
+        switch((int) praiseId)
         {
             case 0:
                 stat_REG_set_OutputSubset((Output_praise0)userOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(praiseId));
@@ -127,7 +127,7 @@ public class Output
     private static void stat_REG_boot3_INITIALISE_Output_paiseId()
     {
         System.out.printf("entered stat_REG_boot3_INITIALISE_Output_paiseId().%n");
-        _stat_REG_Output_paiseId = (int)(0);
+        _stat_REG_Output_paiseId = (long)(0);
         System.out.printf("exiting stat_REG_boot3_INITIALISE_Output_paiseId().%n");
     }
     private static void stat_REG_boot3_INITIALISE_OutputSubset(User_Output objUserOutput)
@@ -136,7 +136,7 @@ public class Output
         _stat_REG_OutputSubset = objUserOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(0);
         System.out.printf("exiting stat_REG_boot3_INITIALISE_OutputSubset().%n");
     }
-    private static int stat_REG_get_Output_praiseId()
+    private static long stat_REG_get_Output_praiseId()
     {
         return _stat_REG_Output_paiseId;
     }
@@ -144,7 +144,7 @@ public class Output
     {
         return _stat_REG_OutputSubset;
     }
-    public static void stat_REG_set_Output_praiseId(int valuePraiseEventId)
+    public static void stat_REG_set_Output_praiseId(long valuePraiseEventId)
     {
         _stat_REG_Output_paiseId = valuePraiseEventId;
     }

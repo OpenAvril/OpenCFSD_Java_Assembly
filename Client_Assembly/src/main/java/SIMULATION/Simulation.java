@@ -162,12 +162,12 @@ public class Simulation
     public static void Get_Praise_Event_Id_And_Data(Input input) {
         WriteQue_SimulationIO.app_FUNCT_write_Start(0);//SIMULATION
         System.out.printf("Enter PraiseEventId: ");
-        int praiseEventId = _stat_REG_scanner.nextInt(); // Program waits here
+        long praiseEventId = _stat_REG_scanner.nextInt(); // Program waits here
         input.dyn_REG_set_Input_praiseId(praiseEventId);
         input.dyn_REG_set_InputSubset(obj, praiseEventId);
         switch(input.dyn_REG_get_Input_praiseId())
         {
-            case (int)0:
+            case (long)0:
                 Input_praise0 input_subset0 = (Input_praise0)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset0 valueA: ");
                 input_subset0.dyn_REG_set_input_praise0_valueA(_stat_REG_scanner.nextFloat());
@@ -175,7 +175,7 @@ public class Simulation
                 input_subset0.dyn_REG_set_input_praise0_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (int)1:
+            case (long)1:
                 Input_praise1 input_subset1 = (Input_praise1)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset1 valueA: ");
                 input_subset1.dyn_REG_set_input_praise1_valueA(_stat_REG_scanner.nextFloat());
@@ -183,7 +183,7 @@ public class Simulation
                 input_subset1.dyn_REG_set_input_praise1_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (int)2:
+            case (long)2:
                 Input_praise2 input_suber2 = (Input_praise2)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset2 valueA: ");
                 input_suber2.dyn_REG_set_input_praise2_valueA(_stat_REG_scanner.nextFloat());
@@ -191,7 +191,7 @@ public class Simulation
                 input_suber2.dyn_REG_set_input_praise2_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (int)3:
+            case (long)3:
                 Input_praise3 input_suber3 = (Input_praise3)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset3 valueA: ");
                 input_suber3.dyn_REG_set_input_praise3_valueA(_stat_REG_scanner.nextFloat());

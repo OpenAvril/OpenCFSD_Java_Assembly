@@ -171,8 +171,8 @@ public class IO_ListenRespond
         {
             temp[0] = buffer[0];
         }
-        input.dyn_REG_set_Input_praiseId(Global.stat_CONVERT_LsbByteArray_To_LsbInt(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
-        input.dyn_REG_set_InputSubset(obj, Global.stat_CONVERT_LsbByteArray_To_LsbInt(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+        input.dyn_REG_set_Input_praiseId(Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+        input.dyn_REG_set_InputSubset(obj, Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
         switch (input.dyn_REG_get_Input_praiseId())
         {
             case 0:
@@ -241,7 +241,7 @@ public class IO_ListenRespond
         }
     }
     private void stat_App_Encode_NetworkingSteam_At_Server_Output_Send(Framework obj, Output output, byte[] buffer) {
-        byte[] temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LsbInt_To_LsbByteArray(output.dyn_REG_get_Output_praiseId()));
+        byte[] temp = Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(output.dyn_REG_get_Output_praiseId()));
         for(byte index = 0; index < 4; index++)
         {
             buffer[index] = temp[index];

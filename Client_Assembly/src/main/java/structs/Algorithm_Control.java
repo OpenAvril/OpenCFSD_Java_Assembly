@@ -9,7 +9,7 @@ public class Algorithm_Control
     {
 
     }
-    public void SelectSetAlgorithmsubset(Algorithm objAlgorithm, User_Algorithm objUserAlgorithm, int praiseId)
+    public void SelectSetAlgorithmsubset(Algorithm objAlgorithm, User_Algorithm objUserAlgorithm, long praiseId)
     {
         switch(praiseId)
         {

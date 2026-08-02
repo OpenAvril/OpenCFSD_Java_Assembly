@@ -145,7 +145,7 @@ public class Data_Control
     {
         return stat_REG_get_StateWRITE_doublebuffer_Client_OutputRecieve();
     }
-    public void dyn_REG_set_Item_On_Array_Of_IsWaitingOnPraiseDoWork(int praiseId, boolean newSTATE)
+    public void dyn_REG_set_Item_On_Array_Of_IsWaitingOnPraiseDoWork(long praiseId, boolean newSTATE)
     {
         stat_REG_get_Flag_Array_Of_IsWaitingOnPraiseDoWork()[praiseId] = newSTATE;
     }

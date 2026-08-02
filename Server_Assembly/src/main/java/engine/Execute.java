@@ -47,7 +47,7 @@ public class Execute
     }
     public void dyn_REG_boot4_INSTANTIATE_Execute() {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
-        int intPrimeDEFAULT = Integer.MAX_VALUE;
+        long intPrimeDEFAULT = Integer.MAX_VALUE;
         double doublePRimeDEFAULT = Double.MAX_VALUE;
 
         System.out.printf("entered CHECK member function WriteQue_Simulation_InputSamples().%n");
@@ -99,7 +99,7 @@ public class Execute
         double tempE8 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise1_Value();
         double tempE9 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise2_Value();
         double tempE10 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise3_Value();
-        int tempE11 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();
+        long tempE11 = OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();
         OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(doublePRimeDEFAULT);
         OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(doublePRimeDEFAULT);
         OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_A(doublePRimeDEFAULT);
@@ -179,7 +179,7 @@ public class Execute
     }
     private static void stat_REG_boot2_SUBSTANTIATE_List_Of_Threads(Framework obj) {
         try {
-            _stat_REG_List_Of_Threads = new Thread[Global.dyn_REG_get_numberOfCores()];
+            _stat_REG_List_Of_Threads = new Thread[Math.toIntExact(Global.dyn_REG_get_numberOfCores())];
         }
         catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");

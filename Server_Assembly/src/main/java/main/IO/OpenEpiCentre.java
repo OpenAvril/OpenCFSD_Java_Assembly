@@ -54,12 +54,12 @@ public class OpenEpiCentre {
         }
         return Global.stat_CONVERT_LsbByteArray_To_LsbBoolean(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
-    public static void CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(int praiseId) {
+    public static void CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(long praiseId) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbInt_To_LsbByteArray(praiseId)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(praiseId)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -289,7 +289,7 @@ public class OpenEpiCentre {
         }
         return Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
-    public static int CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() {
+    public static long CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() {
         byte[]  temp;
         temp = null;
         temp = new byte[4];
@@ -309,14 +309,14 @@ public class OpenEpiCentre {
         catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return Global.stat_CONVERT_LsbByteArray_To_LsbInt(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
+        return Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -332,9 +332,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -350,9 +350,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_A(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_A(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -368,9 +368,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_B(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_B(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -386,9 +386,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_A(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_A(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -404,9 +404,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_B(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_B(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -422,9 +422,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_A(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_A(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -440,9 +440,9 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_B(double value) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_B(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LsbDouble_To_LsbByteArray(value)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {
@@ -455,12 +455,12 @@ public class OpenEpiCentre {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(int praiseId) {
+    public static void CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(long praiseId) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(
-                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                    Global.stat_CONVERT_LsbInt_To_LsbByteArray(praiseId)
-                )
+                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                            Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(praiseId)
+                    )
             );
         }
         catch (NoClassDefFoundError e) {

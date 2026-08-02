@@ -4,8 +4,8 @@ import java.nio.ByteOrder;
 
 public class Global
 {
-    private static int _stat_REG_numberOfCores;
-    private static int _stat_REG_numberOfPraises;
+    private static long _stat_REG_numberOfCores;
+    private static long _stat_REG_numberOfPraises;
     // public.
     public Global()
     {
@@ -42,11 +42,11 @@ public class Global
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
     }
-    public static int dyn_REG_get_numberOfCores()
+    public static long dyn_REG_get_numberOfCores()
     {
         return stat_REG_get_numberOfCores();
     }
-    public static int dyn_REG_get_numberOfPraises()
+    public static long dyn_REG_get_numberOfPraises()
     {
         return stat_REG_get_numberOfPraises();
     }
@@ -83,14 +83,14 @@ public class Global
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getDouble();
     }
-    public static int stat_CONVERT_LsbByteArray_To_LsbInt(byte[] byteArray)
+    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getInt();
     }
-    public static byte[] stat_CONVERT_LsbInt_To_LsbByteArray(int value)
+    public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value)
     {
         return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putInt(value).array());
     }
@@ -139,11 +139,11 @@ public class Global
     {
         _stat_REG_numberOfPraises = 4;
     }
-    private static int stat_REG_get_numberOfCores()
+    private static long stat_REG_get_numberOfCores()
     {
         return _stat_REG_numberOfCores;
     }
-    private static int stat_REG_get_numberOfPraises()
+    private static long stat_REG_get_numberOfPraises()
     {
         return _stat_REG_numberOfPraises;
     }

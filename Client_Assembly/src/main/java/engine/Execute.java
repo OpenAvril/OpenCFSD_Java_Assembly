@@ -48,7 +48,7 @@ public class Execute
     }
     public void dyn_REG_boot4_INSTANTIATE_Execute() {
         System.out.printf("entered dyn_REG_boot4_INSTANTIATE_Execute().%n");
-        int intPrimeDEFAULT = Integer.MAX_VALUE;
+        long intPrimeDEFAULT = Integer.MAX_VALUE;
         double doublePRimeDEFAULT = Double.MAX_VALUE;
 
         System.out.printf("entered CHECK member function WriteQue_Simulation_InputSamples().%n");

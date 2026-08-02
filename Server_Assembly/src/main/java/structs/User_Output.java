@@ -45,9 +45,9 @@ public class User_Output
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_User_Output().%n");
     }
-    public Object dyn_REG_get_Item_On_List_Of_OutputSubsets(int praiseId)
+    public Object dyn_REG_get_Item_On_List_Of_OutputSubsets(long praiseId)
     {
-        return stat_REG_get_List_Of_OutputSubsets()[praiseId];
+        return stat_REG_get_List_Of_OutputSubsets()[Math.toIntExact(praiseId)];
     }
     // private.
     private static void stat_CLASS_boot0_DECLAIRE_User_Output()

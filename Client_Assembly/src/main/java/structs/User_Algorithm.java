@@ -45,7 +45,7 @@ public class User_Algorithm {
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_User_Algorithm().%n");
     }
-    public Object dyn_REG_get_Item_On_List_Of_Algorithmsubsets(int praiseId)
+    public Object dyn_REG_get_Item_On_List_Of_Algorithmsubsets(long praiseId)
     {
         return stat_REG_get_List_Of_Algorithmsubsets()[praiseId];
     }

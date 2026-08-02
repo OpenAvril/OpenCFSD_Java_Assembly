@@ -234,12 +234,12 @@ public class Simulation
     public static void Get_Praise_Event_Id_And_Data(Input input) {
         WriteQue_SimulationIO.app_FUNCT_write_Start(0);//SIMULATION
         System.out.printf("Enter PraiseEventId: ");
-        int praiseEventId = _stat_REG_scanner.nextInt(); // Program waits here
+        long praiseEventId = _stat_REG_scanner.nextInt(); // Program waits here
         input.dyn_REG_set_Input_praiseId(praiseEventId);
         input.dyn_REG_set_InputSubset(obj, praiseEventId);
         switch(input.dyn_REG_get_Input_praiseId())
         {
-            case (int)0:
+            case (long)0:
                 Input_praise0 input_subset0 = (Input_praise0)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset0 valueA: ");
                 input_subset0.dyn_REG_set_input_praise0_valueA(_stat_REG_scanner.nextFloat());
@@ -247,7 +247,7 @@ public class Simulation
                 input_subset0.dyn_REG_set_input_praise0_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (int)1:
+            case (long)1:
                 Input_praise1 input_subset1 = (Input_praise1)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset1 valueA: ");
                 input_subset1.dyn_REG_set_input_praise1_valueA(_stat_REG_scanner.nextFloat());
@@ -255,7 +255,7 @@ public class Simulation
                 input_subset1.dyn_REG_set_input_praise1_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (int)2:
+            case (long)2:
                 Input_praise2 input_suber2 = (Input_praise2)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset2 valueA: ");
                 input_suber2.dyn_REG_set_input_praise2_valueA(_stat_REG_scanner.nextFloat());
@@ -263,7 +263,7 @@ public class Simulation
                 input_suber2.dyn_REG_set_input_praise2_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (int)3:
+            case (long)3:
                 Input_praise3 input_suber3 = (Input_praise3)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset3 valueA: ");
                 input_suber3.dyn_REG_set_input_praise3_valueA(_stat_REG_scanner.nextFloat());
@@ -309,28 +309,28 @@ public class Simulation
         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
         switch (_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId())
         {
-            case (int)0:
+            case (long)0:
                 Input_praise0 subset_of_input_for_praise0 = (Input_praise0)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
                 break;
 
-            case (int)1:
+            case (long)1:
                 Input_praise1 subset_of_input_for_praise1 = (Input_praise1)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
                 break;
 
-            case (int)2:
+            case (long)2:
                 Input_praise2 subset_of_input_for_praise2 = (Input_praise2)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
                 break;
 
-            case (int)3:
+            case (long)3:
                 Input_praise3 subset_of_input_for_praise3 = (Input_praise3)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
                 OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
