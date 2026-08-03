@@ -18,3 +18,9 @@
 **Date:** 2026-08-03.
 **Platform:** Ubuntu 24.04.4 LTS.
 **source:** https://www.google.com/search?q=java.+convert+a+LSB+32bit+byte%5B%5D+to+LSB+64+bit+boolean%5B%5D+to+LSB+unsignedlong&sca_esv=116fbbabb84b96cf&sxsrf=APpeQnug4clVq21Mibv16FtcVFoI30LT_w%3A1785712120477&ei=-M1varbjHKyMnesP6-2r8QM&biw=913&bih=925&ved=0ahUKEwi2v_KEiIOWAxUsRmcHHev2Kj4Q4dUDCBA&uact=5&oq=java.+convert+a+LSB+32bit+byte%5B%5D+to+LSB+64+bit+boolean%5B%5D+to+LSB+unsignedlong&gs_lp=Egxnd3Mtd2l6LXNlcnAiTGphdmEuIGNvbnZlcnQgYSBMU0IgMzJiaXQgYnl0ZVtdIHRvIExTQiA2NCBiaXQgYm9vbGVhbltdIHRvIExTQiB1bnNpZ25lZGxvbmdI9NoDUMgJWN2SA3ADeACQAQCYAccCoAGURaoBCTAuMTYuMjIuM7gBA8gBAPgBAZgCFqACpiLCAg4QABiABBiKBRiGAxiwA8ICCBAAGO8FGLADwgILEAAYiQUYogQYsAPCAgoQIRgKGKABGMMEwgIIECEYoAEYwwTCAgUQABjvBcICCBAAGIkFGKIEmAMAiAYBkAYHkgcIMy42LjEwLjOgB4N1sgcIMC42LjEwLjO4B5YiwgcGMC42LjE2yAdKgAgB&sclient=gws-wiz-serp
+
+### Gemini search: 
+**text:** "java. convert a LSB unsignedlong to LSB 64 bit boolean[] to LSB 32bit byte[]".
+**Date:** 2026-08-03.
+**Platform:** Ubuntu 24.04.4 LTS.
+**source:** https://www.google.com/search?q=java.+convert+a+LSB+unsignedlong+to+LSB+64+bit+boolean%5B%5D+to+LSB+32bit+byte%5B%5D&sca_esv=116fbbabb84b96cf&biw=913&bih=925&sxsrf=APpeQnsiX_2gjm7eCl1yez-KzdPS6gxovQ%3A1785712245668&ei=dc5vatK2KIHgseMPjeG4-A8&ved=0ahUKEwiSxcvAiIOWAxUBcGwGHY0wDv8Q4dUDCBA&oq=java.+convert+a+LSB+unsignedlong+to+LSB+64+bit+boolean%5B%5D+to+LSB+32bit+byte%5B%5D&gs_lp=Egxnd3Mtd2l6LXNlcnAiTGphdmEuIGNvbnZlcnQgYSBMU0IgdW5zaWduZWRsb25nIHRvIExTQiA2NCBiaXQgYm9vbGVhbltdIHRvIExTQiAzMmJpdCBieXRlW10yBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FSLVkUABYtDtwAHgBkAEAmAGCAqABlAaqAQUwLjIuMrgBDMgBAPgBAfgBApgCBKACrwaYAwCSBwUwLjIuMqAHvA2yBwUwLjIuMrgHrwbCBwMyLTTIBxGACAE&sclient=gws-wiz-serp
