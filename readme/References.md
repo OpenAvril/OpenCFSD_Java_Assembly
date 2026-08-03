@@ -24,3 +24,15 @@
 **Date:** 2026-08-03.
 **Platform:** Ubuntu 24.04.4 LTS.
 **source:** https://www.google.com/search?q=java.+convert+a+LSB+unsignedlong+to+LSB+64+bit+boolean%5B%5D+to+LSB+32bit+byte%5B%5D&sca_esv=116fbbabb84b96cf&biw=913&bih=925&sxsrf=APpeQnsiX_2gjm7eCl1yez-KzdPS6gxovQ%3A1785712245668&ei=dc5vatK2KIHgseMPjeG4-A8&ved=0ahUKEwiSxcvAiIOWAxUBcGwGHY0wDv8Q4dUDCBA&oq=java.+convert+a+LSB+unsignedlong+to+LSB+64+bit+boolean%5B%5D+to+LSB+32bit+byte%5B%5D&gs_lp=Egxnd3Mtd2l6LXNlcnAiTGphdmEuIGNvbnZlcnQgYSBMU0IgdW5zaWduZWRsb25nIHRvIExTQiA2NCBiaXQgYm9vbGVhbltdIHRvIExTQiAzMmJpdCBieXRlW10yBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FSLVkUABYtDtwAHgBkAEAmAGCAqABlAaqAQUwLjIuMrgBDMgBAPgBAfgBApgCBKACrwaYAwCSBwUwLjIuMqAHvA2yBwUwLjIuMrgHrwbCBwMyLTTIBxGACAE&sclient=gws-wiz-serp
+
+### Gemini search: 
+**text:** "java. lsb boolean[] to lsb long".
+**Date:** 2026-08-03.
+**Platform:** Ubuntu 24.04.4 LTS.
+**source:** https://www.google.com/search?q=java.+lsb+boolean%5B%5D+to+lsb+long&sca_esv=8971b996c47cdb49&biw=913&bih=925&sxsrf=APpeQnsc54pSl9aHPyitfPAoh52n59BvnA%3A1785730935807&ei=dxdwavT0MIXLkPIPgb7awA8&ved=0ahUKEwi0jN-QzoOWAxWFJUQIHQGfFvgQ4dUDCBA&uact=5&oq=java.+lsb+boolean%5B%5D+to+lsb+long&gs_lp=Egxnd3Mtd2l6LXNlcnAiH2phdmEuIGxzYiBib29sZWFuW10gdG8gbHNiIGxvbmcyBRAAGO8FMggQABiJBRiiBDIFEAAY7wUyBRAAGO8FSPsqUP8IWKkpcAF4AJABAJgB8QGgAZcLqgEFMC40LjO4AQPIAQD4AQGYAgWgAokHwgIHEAAYHhiwA8ICCRAAGAgYHhiwA8ICCBAAGO8FGLADwgIGEAAYHhgNmAMAiAYBkAYEkgcFMS4xLjOgB5kUsgcFMC4xLjO4B4MHwgcDMi01yAcTgAgB&sclient=gws-wiz-serp
+
+### Gemini search: 
+**text:** "java. lsb boolean[] to lsb byte[]".
+**Date:** 2026-08-03.
+**Platform:** Ubuntu 24.04.4 LTS.
+**source:** https://www.google.com/search?q=java.+lsb+boolean%5B%5D+to+lsb+byte%5B%5D&oq=java.+lsb+boolean%5B%5D+to+lsb+byte%5B%5D&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiABBiiBDIHCAMQABjvBTIHCAQQABjvBTIHCAUQABjvBdIBCTM2NTI4ajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8
