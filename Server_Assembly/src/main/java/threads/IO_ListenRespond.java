@@ -151,6 +151,19 @@ public class IO_ListenRespond {
                         WriteQue_ConditionCode.app_FUNCT_write_End(0);
                         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
                         _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("thread " + threadId + " : OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() = " + OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() + ".%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
+                        System.out.printf("******%n");
                         _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
                         Output_praise0 subset_of_output_for_praise0 = null;
                         try {

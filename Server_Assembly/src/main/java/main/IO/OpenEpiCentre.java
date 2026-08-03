@@ -294,7 +294,7 @@ public class OpenEpiCentre {
         temp = null;
         temp = new byte[4];
         for(int index = 0; index < 4; index++) {
-            temp[index] = Byte.MAX_VALUE;
+            temp[index] = 0;
         }
         try {
             temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();

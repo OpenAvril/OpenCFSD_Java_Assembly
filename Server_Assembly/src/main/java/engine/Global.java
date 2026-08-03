@@ -89,18 +89,26 @@ public class Global
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         boolean[] bits = new boolean[64];
-        for (int byteId = 0; byteId < 4; byteId++) {
+        for (int byteId1 = 0; byteId1 < 4; byteId1++) {
             for (int bitId1 = 0; bitId1 < 8; bitId1++) {
-                bits[(byteId*8) + bitId1] = ((byteArray[byteId] >> bitId1) & 1) == 1;
+                bits[(byteId1*8) + bitId1] = ((byteArray[byteId1] >> bitId1) & 1) == 1;
             }
         }
-        long unsignedLong = Long.MAX_VALUE;
-        for (int bitId2 = 0; bitId2 < 64; bitId2++) {
-            if (bits[bitId2]) {
-                unsignedLong |= (1L << bitId2);
+        for (int byteId2 = 0; byteId2 < 4; byteId2++) {
+            for (int bitId2 = 0; bitId2 < 8; bitId2++) {
+                bits[32 + (byteId2*8) + bitId2] = false;
+                if(byteId2 == 3 && bitId2 ==7) {
+                    bits[63] = false;
+                }
             }
         }
-        return unsignedLong;
+        long result = 0L;
+        for (int i = 0; i < 64; i++) {
+            if (bits[i]) {
+                result |= (1L << i);
+            }
+        }
+        return result;
 
     }
     public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value)
@@ -109,15 +117,12 @@ public class Global
         for (int bitId1 = 0; bitId1 < 64; bitId1++) {
             bits[bitId1] = ((value >> bitId1) & 1L) != 0;
         }
-        byte[] bytes = new byte[4];
-        for (int byteId = 0; byteId < 4; byteId++) {
-            int currentByte = 0;
-            for (int bitId2 = 0; bitId2 < 8; bitId2++) {
-                if (bits[(byteId * 8) + bitId2]) {
-                    currentByte |= (1 << bitId2);
-                }
+        byte[] bytes = new byte[8];
+        for (int i = 0; i < 32; i++) {
+            if (bits[i]) {
+                int bitIndex = (i%8);
+                bytes[(i/8)] |= (byte) (1 << bitIndex);
             }
-            bytes[byteId] = (byte) currentByte;
         }
         return bytes;
     }
