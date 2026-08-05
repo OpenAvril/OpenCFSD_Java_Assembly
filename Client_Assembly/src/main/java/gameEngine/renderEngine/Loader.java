@@ -194,7 +194,7 @@ public class Loader {
         GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texID);
 
         for (int i = 0; i < textureFiles.length; i++) {
-            TextureData data = decodeTextureFile("res/" + textureFiles[i] + ".png");
+            TextureData data = decodeTextureFile("/resources/" + textureFiles[i] + ".png");
             GL11.glTexImage2D(GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL11.GL_RGBA, data.getWidth(), data.getHeight(), 0,
                     GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, data.getBuffer());
         }
@@ -236,22 +236,27 @@ public class Loader {
     }
 
     private TextureData decodeTextureFile(String fileName) {
+        TextureData temp = null;
         int width = 0;
         int height = 0;
         ByteBuffer buffer = null;
-        try (FileInputStream in = new FileInputStream(fileName)) {
-            PNGDecoder decoder = new PNGDecoder(in);
+        try {
+            InputStream is = getClass().getResourceAsStream(fileName);
+            PNGDecoder decoder = new PNGDecoder(is);
             width = decoder.getWidth();
             height = decoder.getHeight();
             buffer = ByteBuffer.allocateDirect(4 * width * height);
             decoder.decode(buffer, width * 4, Format.RGBA);
             buffer.flip();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println("Tried to load texture " + fileName + ", didn't work");
-            System.exit(-1);
+            temp = new TextureData(buffer, width, height);
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        } catch (IllegalArgumentException e) {
+            System.out.printf("IllegalArgumentException.%n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        return new TextureData(buffer, width, height);
+        return temp;
     }
 
     private int createVAO() {
