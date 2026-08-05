@@ -4,8 +4,8 @@ import java.nio.ByteOrder;
 
 public class Global
 {
-    private static long _stat_REG_numberOfCores;
-    private static long _stat_REG_numberOfPraises;
+    private static byte _stat_REG_numberOfCores;
+    private static int _stat_REG_numberOfPraises;
     // public.
     public Global()
     {
@@ -42,11 +42,11 @@ public class Global
 
         System.out.printf("exiting dyn_REG_boot4_INSTANTIATE_Global().%n");
     }
-    public static long dyn_REG_get_numberOfCores()
+    public static byte dyn_REG_get_numberOfCores()
     {
         return stat_REG_get_numberOfCores();
     }
-    public static long dyn_REG_get_numberOfPraises()
+    public static int dyn_REG_get_numberOfPraises()
     {
         return stat_REG_get_numberOfPraises();
     }
@@ -92,7 +92,7 @@ public class Global
     }
     public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value)
     {
-        return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putInt(value).array());
+        return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putLong(value).array());
     }
     public static byte[] stat_CONVERT_LsbDouble_To_LsbByteArray(double value)
     {
@@ -125,7 +125,7 @@ public class Global
     // private.
     private static void stat_REG_boot2_SUBSTANTIATE_numberOfCores()
     {
-        _stat_REG_numberOfCores = Integer.MAX_VALUE;
+        _stat_REG_numberOfCores = Byte.MAX_VALUE;
     }
     private static void stat_REG_boot2_SUBSTANTIATE_numberOfPraises()
     {
@@ -139,11 +139,11 @@ public class Global
     {
         _stat_REG_numberOfPraises = 4;
     }
-    private static long stat_REG_get_numberOfCores()
+    private static byte stat_REG_get_numberOfCores()
     {
         return _stat_REG_numberOfCores;
     }
-    private static long stat_REG_get_numberOfPraises()
+    private static int stat_REG_get_numberOfPraises()
     {
         return _stat_REG_numberOfPraises;
     }

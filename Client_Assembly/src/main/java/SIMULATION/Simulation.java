@@ -165,9 +165,9 @@ public class Simulation
         long praiseEventId = _stat_REG_scanner.nextInt(); // Program waits here
         input.dyn_REG_set_Input_praiseId(praiseEventId);
         input.dyn_REG_set_InputSubset(obj, praiseEventId);
-        switch(input.dyn_REG_get_Input_praiseId())
+        switch((int) input.dyn_REG_get_Input_praiseId())
         {
-            case (long)0:
+            case 0:
                 Input_praise0 input_subset0 = (Input_praise0)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset0 valueA: ");
                 input_subset0.dyn_REG_set_input_praise0_valueA(_stat_REG_scanner.nextFloat());
@@ -175,7 +175,7 @@ public class Simulation
                 input_subset0.dyn_REG_set_input_praise0_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (long)1:
+            case 1:
                 Input_praise1 input_subset1 = (Input_praise1)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset1 valueA: ");
                 input_subset1.dyn_REG_set_input_praise1_valueA(_stat_REG_scanner.nextFloat());
@@ -183,7 +183,7 @@ public class Simulation
                 input_subset1.dyn_REG_set_input_praise1_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (long)2:
+            case 2:
                 Input_praise2 input_suber2 = (Input_praise2)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset2 valueA: ");
                 input_suber2.dyn_REG_set_input_praise2_valueA(_stat_REG_scanner.nextFloat());
@@ -191,7 +191,7 @@ public class Simulation
                 input_suber2.dyn_REG_set_input_praise2_valueB(_stat_REG_scanner.nextFloat()); // Program waits here
                 break;
 
-            case (long)3:
+            case 3:
                 Input_praise3 input_suber3 = (Input_praise3)input.dyn_REG_get_InputSubset();
                 System.out.printf("Enter input Subset3 valueA: ");
                 input_suber3.dyn_REG_set_input_praise3_valueA(_stat_REG_scanner.nextFloat());
@@ -204,7 +204,7 @@ public class Simulation
     public static void Print_PraiseEvent(Output output) {
         WriteQue_SimulationIO.app_FUNCT_write_Start(1);//SIMULATION
         System.out.printf("PraiseEventId: " + output.dyn_REG_get_Output_praiseId() + ".%n");
-        switch(output.dyn_REG_get_Output_praiseId())
+        switch((int) output.dyn_REG_get_Output_praiseId())
         {
             case 0:
                 Output_praise0 output_subset0 = (Output_praise0)output.dyn_REG_get_OutputSubset();

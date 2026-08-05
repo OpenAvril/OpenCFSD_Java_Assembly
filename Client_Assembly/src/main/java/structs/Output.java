@@ -56,7 +56,7 @@ public class Output
     public void dyn_REG_set_OutputSubset(Framework obj, long praiseId)
     {
         User_Output userOutput = obj.dyn_STRUCT_get_User_Output();
-        switch(praiseId)
+        switch((int) praiseId)
         {
             case 0:
                 stat_REG_set_OutputSubset((Output_praise0)userOutput.dyn_REG_get_Item_On_List_Of_OutputSubsets(praiseId));

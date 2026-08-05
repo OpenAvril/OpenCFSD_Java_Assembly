@@ -128,7 +128,7 @@ public class Global
     }
     public static byte[] stat_CONVERT_LsbDouble_To_LsbByteArray(double value)
     {
-        return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(8).putDouble(value).array());
+        return ByteBuffer.allocate(8).putDouble(value).array();
     }
     public static void stat_CLASS_boot0_DECLAIRE_Global()
     {

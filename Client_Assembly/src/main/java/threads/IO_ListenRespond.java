@@ -173,7 +173,7 @@ public class IO_ListenRespond
         }
         input.dyn_REG_set_Input_praiseId(Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
         input.dyn_REG_set_InputSubset(obj, Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
-        switch (input.dyn_REG_get_Input_praiseId())
+        switch ((int) input.dyn_REG_get_Input_praiseId())
         {
             case 0:
                 Input_praise0 subset_of_input_for_praise0 = (Input_praise0)input.dyn_REG_get_InputSubset();
@@ -247,7 +247,7 @@ public class IO_ListenRespond
             buffer[index] = temp[index];
         }
         output.dyn_REG_set_OutputSubset(obj, output.dyn_REG_get_Output_praiseId());
-        switch (output.dyn_REG_get_Output_praiseId())
+        switch ((int) output.dyn_REG_get_Output_praiseId())
         {
             case 0:
                 Output_praise0 subset_of_output_for_praise0 = (Output_praise0)output.dyn_REG_get_OutputSubset();

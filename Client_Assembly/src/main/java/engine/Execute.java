@@ -1,6 +1,7 @@
 package engine;
 
 import com.sun.jna.Pointer;
+import game.MainGameLoop;
 import main.IO.WriteQue_ConditionCode;
 import main.IO.WriteQue_SimulationIO;
 import main.IO.WriteQue_Simulation_InputSamples;
@@ -13,7 +14,8 @@ public class Execute
     private static Pointer _stat_PGM_ConditionCode;
     private static Pointer _stat_PGM_SimulationIO;
     private static Pointer _stat_PGM_WriteQue_Simulation_InputSamples;
-    private static Pointer _stat_PGM_WriteQue_Simulation_OutputSamples;//SIMULATION
+    private static Pointer _stat_PGM_WriteQue_Simulation_OutputSamples;//todo SIMULATION
+    private static MainGameLoop _stat_THREAD_3dGraphics;
     // public.
     public Execute(Framework obj)  {
         System.out.printf("entered CLASS Execute()%n");
@@ -22,6 +24,11 @@ public class Execute
         stat_CLASS_boot3_INITIALISE_Execute(obj);
         stat_REG_boot0_DECLAIRE_Execute();
         System.out.printf("exiting CLASS Execute()%n");
+    }
+    public void dyn_APP_Draw3dGraphics(String[] args) {
+        System.out.printf("entered *** dyn_APP_Draw3dGraphics ***.%n");
+        stat_APP_Draw3dGraphics(args);
+        System.out.printf("exiting *** dyn_APP_Draw3dGraphics ***.%n");
     }
     public void dyn_APP_Launch_Threads(Framework obj)
     {
@@ -97,6 +104,7 @@ public class Execute
         stat_PGM_boot1_DEFINE_WriteQue_Simulation_InputSamples();//TODO SIMULATION
         stat_PGM_boot1_DEFINE_WriteQue_Simulation_OutputSamples();//TODO SIMULATION
         stat_PGM_boot1_DEFINE_SimulationIO();//TODO SIMULATION
+        stat_PGM_boot1_DEFINE_MainGameLoop();
         System.out.printf("exiting stat_CLASS_boot1_DEFINE_Execute().%n");
     }
     private static void stat_CLASS_boot3_INITIALISE_Execute(Framework obj) {
@@ -106,6 +114,7 @@ public class Execute
         stat_PGM_boot3_INITIALISE_WriteQue_Simulation_InputSamples();//TODO SIMULATION
         stat_PGM_boot3_INITIALISE_WriteQue_Simulation_OutputSamples();//TODO SIMULATION
         stat_PGM_boot3_INITIALISE_SimulationIO();//TODO SIMULATION
+        stat_PGM_boot3_INITIALISE_MainGameLoop();
         System.out.printf("exiting stat_CLASS_boot3_INITIALISE_Execute().%n");
     }
     private static void stat_REG_boot0_DECLAIRE_Execute() {
@@ -114,6 +123,11 @@ public class Execute
         System.out.printf("exiting stat_REG_boot0_DECLAIRE_Execute().%n");
     }
     // private.
+    private static void stat_APP_Draw3dGraphics(String[] args) {
+        System.out.printf("entered *** stat_APP_Draw3dGraphics ***.%n");
+        //_stat_THREAD_3dGraphics.thread_Draw3dGraphics(args);
+        System.out.printf("exiting *** stat_APP_Draw3dGraphics ***.%n");
+    }
     private static void stat_APP_Launch_Threads(Framework obj) {
         System.out.printf("entered *** Launch Threads ***.%n");
         for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
@@ -236,5 +250,17 @@ public class Execute
             throw new RuntimeException("NullPointerException.%n", e);
         }
         System.out.printf("exiting stat_PGM_boot3_INITIALISE_WriteQue_Client_InputSend().%n");
+    }
+    private static void stat_PGM_boot1_DEFINE_MainGameLoop() {
+        _stat_THREAD_3dGraphics = null;
+    }
+    private static void stat_PGM_boot3_INITIALISE_MainGameLoop() {
+        try {
+            _stat_THREAD_3dGraphics = new MainGameLoop();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+            throw new RuntimeException("NullPointerException.%n", e);
+        }
     }
 }
