@@ -124,20 +124,23 @@ public abstract class ShaderProgram {
 
     private static int loadShader(String fileName, int type) {
         StringBuilder shaderSource = new StringBuilder();
+        int shaderID = Integer.MAX_VALUE;
         try {
             InputStream is = ShaderProgram.class.getResourceAsStream(fileName);
-            if (is == null) {
-                throw new IllegalArgumentException("InputStream NULL, " + fileName + ".%n");
-            }
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            if (reader == null) {
-                throw new IllegalArgumentException("No buffered input steam! " + fileName + ".%n");
-            }
             String line;
             while ((line = reader.readLine()) != null) {
                 shaderSource.append(line).append("\n");
             }
             reader.close();
+            shaderID = GL20.glCreateShader(type);
+            GL20.glShaderSource(shaderID, shaderSource);
+            GL20.glCompileShader(shaderID);
+            if (GL20.glGetShaderi(shaderID, GL20.GL_COMPILE_STATUS) == GL11.GL_FALSE) {
+                System.out.println(GL20.glGetShaderInfoLog(shaderID, 500));
+                System.err.println("Could not compile shader!");
+                System.exit(-1);
+            }
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(-1);
@@ -147,14 +150,6 @@ public abstract class ShaderProgram {
         }
         catch (IllegalArgumentException e) {
             System.out.printf("IllegalArgumentException.%n");
-        }
-        int shaderID = GL20.glCreateShader(type);
-        GL20.glShaderSource(shaderID, shaderSource);
-        GL20.glCompileShader(shaderID);
-        if (GL20.glGetShaderi(shaderID, GL20.GL_COMPILE_STATUS) == GL11.GL_FALSE) {
-            System.out.println(GL20.glGetShaderInfoLog(shaderID, 500));
-            System.err.println("Could not compile shader!");
-            System.exit(-1);
         }
         return shaderID;
     }

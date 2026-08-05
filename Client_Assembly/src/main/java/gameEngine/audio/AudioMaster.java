@@ -62,23 +62,11 @@ public class AudioMaster {
     public static int loadSound(String fileName) {
         int buffer = AL10.alGenBuffers();
         buffers.add(buffer);
-        String i = null;
-        InputStream is = null;
-        InputStream bis = null;
         WaveData waveFile = null;
         try {
-            is = AudioMaster.class.getResourceAsStream(fileName);
-            if (is == null) {
-                throw new IllegalArgumentException("File not found in resources folder! " + fileName + ".%n");
-            }
-            bis = new BufferedInputStream(is);
-            if (bis == null) {
-                throw new IllegalArgumentException("No buffered input steam! " + fileName + ".%n");
-            }
+            InputStream is = AudioMaster.class.getResourceAsStream(fileName);
+            InputStream bis = new BufferedInputStream(is);
             waveFile = WaveData.create(bis);
-            if (waveFile == null) {
-                throw new IllegalArgumentException("File .wav not created! " + fileName + ".%n");
-            }
             AL10.alBufferData(buffer, waveFile.format, waveFile.data, waveFile.samplerate);
             waveFile.dispose();
         }

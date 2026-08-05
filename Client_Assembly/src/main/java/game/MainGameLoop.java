@@ -73,21 +73,21 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class MainGameLoop {
 
-    private static final String ENTITIES_PATH = "entities/";
-    private static final String MAPS_PATH = "maps/";
-    private static final String CHARACTERS_PATH = ENTITIES_PATH + "character/";
-    private static final String FONTS_PATH = "fonts/";
-    private static final String TERRAINS_PATH = "terrains/";
-    private static final String BLENDMAPS_PATH = MAPS_PATH + "blendmaps/";
-    private static final String OBJECTS_PATH = ENTITIES_PATH + "objects/";
-    private static final String HEIGHTMAPS_PATH = MAPS_PATH + "heightmaps/";
+    private static final String ENTITIES_PATH = "/entities/";
+    private static final String MAPS_PATH = "/maps/";
+    private static final String CHARACTERS_PATH = ENTITIES_PATH + "/character/";
+    private static final String FONTS_PATH = "/fonts/";
+    private static final String TERRAINS_PATH = "/terrains/";
+    private static final String BLENDMAPS_PATH = MAPS_PATH + "/blendmaps/";
+    private static final String OBJECTS_PATH = ENTITIES_PATH + "/objects/";
+    private static final String HEIGHTMAPS_PATH = MAPS_PATH + "/heightmaps/";
     private static final String AUDIO_THEMES_PATH = "/audio/themes/";
-    private static final String FLORA_PATH = ENTITIES_PATH + "flora/";
-    private static final String FLOWERS_PATH = FLORA_PATH + "flowers/";
+    private static final String FLORA_PATH = ENTITIES_PATH + "/flora/";
+    private static final String FLOWERS_PATH = FLORA_PATH + "/flowers/";
 
-    private static final String TEST_TERRAINS_PATH = "testTerrains/";
-    private static final String TEST_MAPS_PATH = "testMaps/";
-    private static final String TEST_GUIS_PATH = "testGuis/";
+    private static final String TEST_TERRAINS_PATH = "/testTerrains/";
+    private static final String TEST_MAPS_PATH = "/testMaps/";
+    private static final String TEST_GUIS_PATH = "/testGuis/";
 
     public static void main(String[] args) {
      
