@@ -132,7 +132,7 @@ public class Execute
         System.out.printf("entered *** Launch Threads ***.%n");
         for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
         {
-            _stat_REG_List_Of_Threads[threadId].start();
+            //_stat_REG_List_Of_Threads[threadId].start();//todo simulation 3d graphics
         }
         System.out.printf("exiting *** Launch Threads ***.%n");
     }

@@ -118,7 +118,6 @@ public class Loader {
             } else {
                 System.out.println("filter_anisotropic not supported");
             }
-            textures.add(texture.getTextureID());
         } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
         } catch (IllegalArgumentException e) {
@@ -126,6 +125,7 @@ public class Loader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        textures.add(texture.getTextureID());
         return texture.getTextureID();
     }
     
