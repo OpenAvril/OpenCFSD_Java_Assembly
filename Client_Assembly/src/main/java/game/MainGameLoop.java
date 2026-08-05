@@ -33,6 +33,7 @@ import java.util.Random;
 
 import gameEngine.models.TexturedModel;
 
+import main.IO.WriteQue_SimulationIO;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL30;
@@ -90,6 +91,7 @@ public class MainGameLoop {
     private static final String TEST_GUIS_PATH = "/testGuis/";
 
     public void run_Thread_Draw3dGraphics() {
+        WriteQue_SimulationIO.app_FUNCT_write_Start(3);
         System.out.printf("******%n");//todo SIMULATION
         System.out.printf("******%n");//todo SIMULATION
         System.out.printf("******%n");//todo SIMULATION
@@ -273,6 +275,7 @@ public class MainGameLoop {
         System.out.printf("******%n");//todo SIMULATION
         System.out.printf("******%n");//todo SIMULATION
         System.out.printf("******%n");//todo SIMULATION
+        WriteQue_SimulationIO.app_FUNCT_write_End(3);
         //****************Game Loop Below*********************
         while (!Display.isCloseRequested()) {
             player.move(currentTerrain);

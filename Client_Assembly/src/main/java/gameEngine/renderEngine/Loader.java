@@ -25,6 +25,7 @@
 package gameEngine.renderEngine;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
@@ -113,15 +114,17 @@ public class Loader {
             if (GLContext.getCapabilities().GL_EXT_texture_filter_anisotropic) {
                 float amount = Math.min(4f, GL11.glGetFloat(EXTTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT));
                 GL11.glTexParameterf(GL11.GL_TEXTURE_2D, EXTTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY_EXT, amount);
-                
+
             } else {
                 System.out.println("filter_anisotropic not supported");
             }
             textures.add(texture.getTextureID());
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println("Tried to load texture " + fileName + ".png , didn't work");
-            System.exit(-1);
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        } catch (IllegalArgumentException e) {
+            System.out.printf("IllegalArgumentException.%n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         return texture.getTextureID();
     }
