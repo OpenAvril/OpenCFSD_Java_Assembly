@@ -104,6 +104,7 @@ public class Loader {
 
     public int loadGameTexture(String fileName) {
         Texture texture = null;
+        int textureID = Integer.MAX_VALUE;
         try {
             InputStream is = AudioMaster.class.getResourceAsStream(fileName);
             texture = TextureLoader.getTexture("PNG", is);
@@ -118,6 +119,8 @@ public class Loader {
             } else {
                 System.out.println("filter_anisotropic not supported");
             }
+            textures.add(texture.getTextureID());
+            textureID = texture.getTextureID();
         } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
         } catch (IllegalArgumentException e) {
@@ -125,8 +128,7 @@ public class Loader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        textures.add(texture.getTextureID());
-        return texture.getTextureID();
+        return textureID;
     }
     
     public int loadFontTextureAtlas(String fileName) {

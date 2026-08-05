@@ -24,14 +24,12 @@
 
 package gameEngine.objConverter;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import gameEngine.audio.AudioMaster;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 
@@ -43,20 +41,15 @@ public class OBJFileLoader {
     private static final String RES_LOC = "res/";
 
     public static RawModel loadOBJ(String objFileName, Loader loader) {
-        FileReader isr = null;
-        File objFile = new File(RES_LOC + objFileName + ".obj");
+        RawModel temp = null;
         try {
-            isr = new FileReader(objFile);
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found in res; don't use any extention");
-        }
-        BufferedReader reader = new BufferedReader(isr);
-        String line;
-        List<Vertex> vertices = new ArrayList<Vertex>();
-        List<Vector2f> textures = new ArrayList<Vector2f>();
-        List<Vector3f> normals = new ArrayList<Vector3f>();
-        List<Integer> indices = new ArrayList<Integer>();
-        try {
+            InputStream is = OBJFileLoader.class.getResourceAsStream(objFileName);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+            String line;
+            List<Vertex> vertices = new ArrayList<Vertex>();
+            List<Vector2f> textures = new ArrayList<Vector2f>();
+            List<Vector3f> normals = new ArrayList<Vector3f>();
+            List<Integer> indices = new ArrayList<Integer>();
             while (true) {
                 line = reader.readLine();
                 if (line.startsWith("v ")) {
@@ -94,21 +87,26 @@ public class OBJFileLoader {
                 line = reader.readLine();
             }
             reader.close();
+            removeUnusedVertices(vertices);
+            float[] verticesArray = new float[vertices.size() * 3];
+            float[] texturesArray = new float[vertices.size() * 2];
+            float[] normalsArray = new float[vertices.size() * 3];
+            float[] tangentsArray = new float[vertices.size() * 3];
+            float furthest = convertDataToArrays(vertices, textures, normals, verticesArray,
+            texturesArray, normalsArray, tangentsArray);
+            int[] indicesArray = convertIndicesListToArray(indices);
+            // ModelData data = new ModelData(verticesArray, texturesArray,
+            // normalsArray, tangentsArray, indicesArray,
+            // furthest);
+            temp = loader.loadToVAO(verticesArray, texturesArray, normalsArray, indicesArray);
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        } catch (IllegalArgumentException e) {
+            System.out.printf("IllegalArgumentException.%n");
         } catch (IOException e) {
             System.err.println("Error reading the file");
         }
-        removeUnusedVertices(vertices);
-        float[] verticesArray = new float[vertices.size() * 3];
-        float[] texturesArray = new float[vertices.size() * 2];
-        float[] normalsArray = new float[vertices.size() * 3];
-        float[] tangentsArray = new float[vertices.size() * 3];
-        float furthest = convertDataToArrays(vertices, textures, normals, verticesArray,
-                texturesArray, normalsArray, tangentsArray);
-        int[] indicesArray = convertIndicesListToArray(indices);
-        // ModelData data = new ModelData(verticesArray, texturesArray,
-        // normalsArray, tangentsArray, indicesArray,
-        // furthest);
-        return loader.loadToVAO(verticesArray, texturesArray, normalsArray, indicesArray);
+        return temp;
     }
 
     private static void calculateTangents(Vertex v0, Vertex v1, Vertex v2,
