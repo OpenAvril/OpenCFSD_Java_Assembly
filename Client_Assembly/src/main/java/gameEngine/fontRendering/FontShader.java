@@ -30,8 +30,8 @@ import org.lwjgl.util.vector.Vector3f;
 
 public class FontShader extends ShaderProgram {
 
-    private static final String VERTEX_FILE = "src/gameEngine/fontRendering/fontVertex.txt";
-    private static final String FRAGMENT_FILE = "src/gameEngine/fontRendering/fontFragment.txt";
+    private static final String VERTEX_FILE = "gameEngine/fontRendering/fontVertex.txt";
+    private static final String FRAGMENT_FILE = "gameEngine/fontRendering/fontFragment.txt";
     
     private int location_colour;
     private int location_translation;

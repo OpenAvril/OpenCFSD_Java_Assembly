@@ -122,18 +122,31 @@ public abstract class ShaderProgram {
         GL20.glUniformMatrix4(location, false, matrixBuffer);
     }
 
-    private static int loadShader(String file, int type) {
+    private static int loadShader(String fileName, int type) {
         StringBuilder shaderSource = new StringBuilder();
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+            InputStream is = ShaderProgram.class.getResourceAsStream(fileName);
+            if (is == null) {
+                throw new IllegalArgumentException("InputStream NULL, " + fileName + ".%n");
+            }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            if (reader == null) {
+                throw new IllegalArgumentException("No buffered input steam! " + fileName + ".%n");
+            }
             String line;
             while ((line = reader.readLine()) != null) {
-                shaderSource.append(line).append("//\n");
+                shaderSource.append(line).append("\n");
             }
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(-1);
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (IllegalArgumentException e) {
+            System.out.printf("IllegalArgumentException.%n");
         }
         int shaderID = GL20.glCreateShader(type);
         GL20.glShaderSource(shaderID, shaderSource);
