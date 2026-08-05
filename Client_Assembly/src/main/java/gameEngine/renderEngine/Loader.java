@@ -25,12 +25,14 @@
 package gameEngine.renderEngine;
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+import gameEngine.audio.AudioMaster;
 import gameEngine.models.RawModel;
 
 import org.lwjgl.BufferUtils;
@@ -102,8 +104,8 @@ public class Loader {
     public int loadGameTexture(String fileName) {
         Texture texture = null;
         try {
-            texture = TextureLoader.getTexture("PNG", new FileInputStream("res/" + fileName
-                    + ".png"));
+            InputStream is = AudioMaster.class.getResourceAsStream(fileName);
+            texture = TextureLoader.getTexture("PNG", is);
             GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
             GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER,
                     GL11.GL_LINEAR_MIPMAP_LINEAR);
@@ -115,12 +117,12 @@ public class Loader {
             } else {
                 System.out.println("filter_anisotropic not supported");
             }
+            textures.add(texture.getTextureID());
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Tried to load texture " + fileName + ".png , didn't work");
             System.exit(-1);
         }
-        textures.add(texture.getTextureID());
         return texture.getTextureID();
     }
     

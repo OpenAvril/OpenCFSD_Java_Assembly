@@ -125,7 +125,7 @@ public class Execute
     // private.
     private static void stat_APP_Draw3dGraphics(String[] args) {
         System.out.printf("entered *** stat_APP_Draw3dGraphics ***.%n");
-        //_stat_THREAD_3dGraphics.thread_Draw3dGraphics(args);
+        _stat_THREAD_3dGraphics.run_Thread_Draw3dGraphics();
         System.out.printf("exiting *** stat_APP_Draw3dGraphics ***.%n");
     }
     private static void stat_APP_Launch_Threads(Framework obj) {

@@ -89,8 +89,20 @@ public class MainGameLoop {
     private static final String TEST_MAPS_PATH = "/testMaps/";
     private static final String TEST_GUIS_PATH = "/testGuis/";
 
-    public static void main(String[] args) {
-     
+    public void run_Thread_Draw3dGraphics() {
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("entered MainGameLoop.run_Thread_Draw3dGraphics().%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
         DisplayManager.createDisplay();
         
         Loader loader = new Loader();
@@ -104,7 +116,20 @@ public class MainGameLoop {
         AudioMaster.init();
         AudioMaster.setListenerData(0, 0, 0);
         AL10.alDistanceModel(AL11.AL_LINEAR_DISTANCE);
-        
+
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("ALPHA.%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
         int alvaeThemeBuffer = AudioMaster.loadSound(AUDIO_THEMES_PATH + "alvaeTheme.wav");
         Source alvaeTheme = new Source();
         alvaeTheme.play(alvaeThemeBuffer);
@@ -112,6 +137,19 @@ public class MainGameLoop {
         
         TextMaster.init(loader);
 
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("BRAVO.%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
         TexturedModel person = loader.loadTexturedModel(CHARACTERS_PATH + "person/person");
         Player player = new Player(new EntityBuilder(person, new Vector3f(300, 5, -400), 0, 0, 0, 0.6f));
 
@@ -222,7 +260,19 @@ public class MainGameLoop {
         //Effects
         Effect fire = new Fire();
         Effect cosmic = new Cosmic();
-
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("3d Graphics INITIALISED.%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
+        System.out.printf("******%n");//todo SIMULATION
         //****************Game Loop Below*********************
         while (!Display.isCloseRequested()) {
             player.move(currentTerrain);
