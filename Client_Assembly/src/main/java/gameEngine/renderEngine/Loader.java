@@ -24,6 +24,7 @@
 
 package gameEngine.renderEngine;
 
+import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,6 +58,8 @@ import gameEngine.textures.ModelTexture;
 import org.lwjgl.opengl.EXTTextureFilterAnisotropic;
 import org.lwjgl.opengl.GL33;
 import org.lwjgl.opengl.GLContext;
+
+import javax.imageio.ImageIO;
 
 public class Loader {
 
@@ -193,11 +196,32 @@ public class Loader {
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texID);
 
+        int[] targets = {
+                GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_X,
+                GL13.GL_TEXTURE_CUBE_MAP_NEGATIVE_X,
+                GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_Y,
+                GL13.GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,
+                GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_Z,
+                GL13.GL_TEXTURE_CUBE_MAP_NEGATIVE_Z
+        };
+
         for (int i = 0; i < textureFiles.length; i++) {
-            TextureData data = decodeTextureFile("/resources/" + textureFiles[i] + ".png");
-            GL11.glTexImage2D(GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL11.GL_RGBA, data.getWidth(), data.getHeight(), 0,
-                    GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, data.getBuffer());
+            try {
+                InputStream is = AudioMaster.class.getResourceAsStream(textureFiles[i]);
+                BufferedImage image = ImageIO.read(is);
+                ByteBuffer buffer = convertImageToByteBuffer(image);
+                GL11.glTexImage2D(targets[i], 0, GL11.GL_RGBA8,
+                    image.getWidth(), image.getHeight(), 0,
+                    GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
+            } catch (NullPointerException e) {
+                System.out.printf("NullPointerException.%n");
+            } catch (IllegalArgumentException e) {
+                System.out.printf("IllegalArgumentException.%n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+
 
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
@@ -206,7 +230,25 @@ public class Loader {
         textures.add(texID);
         return texID;
     }
-    
+    private static ByteBuffer convertImageToByteBuffer(BufferedImage image) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+        int[] pixels = new int[width * height];
+        image.getRGB(0, 0, width, height, pixels, 0, width);
+
+        ByteBuffer buffer = BufferUtils.createByteBuffer(width * height * 4);
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int pixel = pixels[y * width + x];
+                buffer.put((byte) ((pixel >> 16) & 0xFF)); // Red
+                buffer.put((byte) ((pixel >> 8) & 0xFF));  // Green
+                buffer.put((byte) (pixel & 0xFF));         // Blue
+                buffer.put((byte) ((pixel >> 24) & 0xFF)); // Alpha
+            }
+        }
+        buffer.flip();
+        return buffer;
+    }
     public int createEmptyVbo(int floatCount) {
         int vbo = GL15.glGenBuffers();
         vbos.add(vbo);
