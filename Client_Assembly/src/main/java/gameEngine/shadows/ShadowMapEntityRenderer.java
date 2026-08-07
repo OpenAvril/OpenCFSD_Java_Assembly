@@ -62,26 +62,30 @@ public class ShadowMapEntityRenderer {
      * @param entities - the entities to be rendered to the shadow map.
      */
     protected void render(Map<TexturedModel, List<Entity>> entities) {
-        for (TexturedModel model : entities.keySet()) {
-            RawModel rawModel = model.getRawModel();
-            bindModel(rawModel);
-            GL13.glActiveTexture(GL13.GL_TEXTURE0);
-            GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
-            if (model.getTexture().isHasTransparency()) {
-                MasterRenderer.disableCulling();
+        try {
+            for (TexturedModel model : entities.keySet()) {
+                RawModel rawModel = model.getRawModel();
+                bindModel(rawModel);
+                GL13.glActiveTexture(GL13.GL_TEXTURE0);
+                GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
+                if (model.getTexture().isHasTransparency()) {
+                    MasterRenderer.disableCulling();
+                }
+                for (Entity entity : entities.get(model)) {
+                    prepareInstance(entity);
+                    GL11.glDrawElements(GL11.GL_TRIANGLES, rawModel.getVertexCount(),
+                            GL11.GL_UNSIGNED_INT, 0);
+                }
+                if (model.getTexture().isHasTransparency()) {
+                    MasterRenderer.enableCulling();
+                }
             }
-            for (Entity entity : entities.get(model)) {
-                prepareInstance(entity);
-                GL11.glDrawElements(GL11.GL_TRIANGLES, rawModel.getVertexCount(),
-                        GL11.GL_UNSIGNED_INT, 0);
-            }
-            if (model.getTexture().isHasTransparency()) {
-                MasterRenderer.enableCulling();
-            }
+            GL20.glDisableVertexAttribArray(0);
+            GL20.glDisableVertexAttribArray(1);
+            GL30.glBindVertexArray(0);
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
         }
-        GL20.glDisableVertexAttribArray(0);
-        GL20.glDisableVertexAttribArray(1);
-        GL30.glBindVertexArray(0);
     }
 
     /**

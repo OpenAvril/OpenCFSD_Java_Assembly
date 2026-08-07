@@ -53,24 +53,32 @@ public class TerrainRenderer {
     }
 
     public void render(List<Terrain> terrains, Matrix4f toShadowSpace) {
-        shader.loadToShadowSpaceMatrix(toShadowSpace);
-        for (Terrain terrain : terrains) {
-            prepareTerrain(terrain);
-            loadModelMatrix(terrain);
-            GL11.glDrawElements(GL11.GL_TRIANGLES, terrain.getModel().getVertexCount(),
-                    GL11.GL_UNSIGNED_INT, 0);
-            unbindTexturedModel();
+        try {
+            shader.loadToShadowSpaceMatrix(toShadowSpace);
+            for (Terrain terrain : terrains) {
+                prepareTerrain(terrain);
+                loadModelMatrix(terrain);
+                GL11.glDrawElements(GL11.GL_TRIANGLES, terrain.getModel().getVertexCount(),
+                        GL11.GL_UNSIGNED_INT, 0);
+                unbindTexturedModel();
+            }
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
         }
     }
 
     private void prepareTerrain(Terrain terrain) {
-        RawModel rawModel = terrain.getModel();
-        GL30.glBindVertexArray(rawModel.getVaoID());
-        GL20.glEnableVertexAttribArray(0);
-        GL20.glEnableVertexAttribArray(1);
-        GL20.glEnableVertexAttribArray(2);
-        bindTextures(terrain);
-        shader.loadShineVariables(1, 0);
+        try {
+            RawModel rawModel = terrain.getModel();
+            GL30.glBindVertexArray(rawModel.getVaoID());
+            GL20.glEnableVertexAttribArray(0);
+            GL20.glEnableVertexAttribArray(1);
+            GL20.glEnableVertexAttribArray(2);
+            bindTextures(terrain);
+            shader.loadShineVariables(1, 0);
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
     }
 
     private void bindTextures(Terrain terrain) {

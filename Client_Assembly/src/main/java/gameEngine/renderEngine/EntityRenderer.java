@@ -53,37 +53,45 @@ public class EntityRenderer {
     }
 
     public void render(Map<TexturedModel, List<Entity>> entities) {
-        for (TexturedModel model : entities.keySet()) {
-            prepareTexturedModel(model);
-            List<Entity> batch = entities.get(model);
-            for (Entity entity : batch) {
-                prepareInstance(entity);
-                GL11.glDrawElements(GL11.GL_TRIANGLES, model.getRawModel().getVertexCount(),
-                        GL11.GL_UNSIGNED_INT, 0);
+        try {
+            for (TexturedModel model : entities.keySet()) {
+                prepareTexturedModel(model);
+                List<Entity> batch = entities.get(model);
+                for (Entity entity : batch) {
+                    prepareInstance(entity);
+                    GL11.glDrawElements(GL11.GL_TRIANGLES, model.getRawModel().getVertexCount(),
+                            GL11.GL_UNSIGNED_INT, 0);
+                }
+                unbindTexturedModel();
             }
-            unbindTexturedModel();
+        } catch (NullPointerException e) {
+                System.out.printf("NullPointerException.%n");
         }
     }
 
     private void prepareTexturedModel(TexturedModel model) {
-        RawModel rawModel = model.getRawModel();
-        GL30.glBindVertexArray(rawModel.getVaoID());
-        GL20.glEnableVertexAttribArray(0);
-        GL20.glEnableVertexAttribArray(1);
-        GL20.glEnableVertexAttribArray(2);
-        ModelTexture texture = model.getTexture();
-        shader.loadNumberOfRows(texture.getNumberOfRows());
-        if (texture.isHasTransparency()) {
-            MasterRenderer.disableCulling();
-        }
-        shader.loadFakeLightingVariable(texture.isUseFakeLighting());
-        shader.loadShineVariables(texture.getShineDamper(), texture.getReflectivity());
-        GL13.glActiveTexture(GL13.GL_TEXTURE0);
-        GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
-        shader.loadUseSpecularMap(texture.isHasSpecularMap());
-        if (texture.isHasSpecularMap()) {
-            GL13.glActiveTexture(GL13.GL_TEXTURE1);
-            GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture.getSpecularMap());
+        try {
+            RawModel rawModel = model.getRawModel();
+            GL30.glBindVertexArray(rawModel.getVaoID());
+            GL20.glEnableVertexAttribArray(0);
+            GL20.glEnableVertexAttribArray(1);
+            GL20.glEnableVertexAttribArray(2);
+            ModelTexture texture = model.getTexture();
+            shader.loadNumberOfRows(texture.getNumberOfRows());
+            if (texture.isHasTransparency()) {
+                MasterRenderer.disableCulling();
+            }
+            shader.loadFakeLightingVariable(texture.isUseFakeLighting());
+            shader.loadShineVariables(texture.getShineDamper(), texture.getReflectivity());
+            GL13.glActiveTexture(GL13.GL_TEXTURE0);
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
+            shader.loadUseSpecularMap(texture.isHasSpecularMap());
+            if (texture.isHasSpecularMap()) {
+                GL13.glActiveTexture(GL13.GL_TEXTURE1);
+                GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture.getSpecularMap());
+            }
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
         }
     }
 
