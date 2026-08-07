@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package game;
+package threads;
 
 import game.effects.Cosmic;
 import game.effects.Effect;
@@ -72,7 +72,7 @@ import org.lwjgl.openal.AL10;
 import org.lwjgl.openal.AL11;
 import org.lwjgl.util.vector.Vector2f;
 
-public class MainGameLoop {
+public class GraphicsEngine {
 
     private static final String ENTITIES_PATH = "/entities/";
     private static final String MAPS_PATH = "/maps/";
@@ -90,42 +90,94 @@ public class MainGameLoop {
     private static final String TEST_MAPS_PATH = "/testMaps/";
     private static final String TEST_GUIS_PATH = "/testGuis/";
 
-    public void run_Thread_Draw3dGraphics() {
+
+    private static Source alvaeTheme;
+    private static WaterFrameBuffers buffers;
+    private static Camera camera;
+    private static Effect cosmic;
+    private static Terrain currentTerrain;
+    private static List<Entity> entities;
+    private static Effect fire;
+    private static GuiRenderer guiRenderer;
+    private static List<GuiTexture> guiTextures;
+    private static List<Light> lights;
+    private static Loader loader;
+    private static Fbo multisampleFbo;
+    private static List<Entity> normalMapEntities;
+    private static Fbo outputFbo;
+    private static Fbo outputFbo2;
+    private static MousePicker picker;
+    private static Player player;
+    private static MasterRenderer renderer;
+    private static Light sun;
+    private static List<Terrain> terrains;
+    private static List<WaterTile> waters;
+    private static WaterRenderer waterRenderer;
+    private static WaterShader waterShader;
+
+    public GraphicsEngine() {
+        alvaeTheme = null;
+        buffers = null;
+        camera = null;
+        cosmic = null;
+        currentTerrain = null;
+        entities = null;
+        fire = null;
+        guiRenderer = null;
+        guiTextures = null;
+        lights = null;
+        loader = null;
+        multisampleFbo = null;
+        normalMapEntities = null;
+        outputFbo = null;
+        outputFbo2 = null;
+        picker = null;
+        player = null;
+        renderer = null;
+        sun = null;
+        terrains = null;
+        waters = null;
+        waterRenderer = null;
+        waterShader = null;
+    }
+
+    public void dyn_APP_boot3_INITIALISE_3dGraphics() {
         WriteQue_SimulationIO.app_FUNCT_write_Start(3);
-        System.out.printf("entered MainGameLoop.run_Thread_Draw3dGraphics().%n");//todo SIMULATION
+        System.out.printf("entered GraphicsEngine.run_Thread_Draw3dGraphics().%n");//todo SIMULATION
+
         DisplayManager.createDisplay();
 
-        Loader loader = new Loader();
-        
-        List<GuiTexture> guiTextures = new ArrayList<>();
+        loader = new Loader();
+
+        guiTextures = new ArrayList<>();
         //guiTextures.add(new GuiTexture(loader.loadGameTexture("loadingPage"), new Vector2f(-2f, 1f), new Vector2f(5f, 5f)));
-        GuiRenderer guiRenderer = new GuiRenderer(loader);
+        guiRenderer = new GuiRenderer(loader);
         guiRenderer.render(guiTextures);
-        
+
         //Init sound
         AudioMaster.init();
         AudioMaster.setListenerData(0, 0, 0);
         AL10.alDistanceModel(AL11.AL_LINEAR_DISTANCE);
 
         int alvaeThemeBuffer = AudioMaster.loadSound(AUDIO_THEMES_PATH + "alvaeTheme.wav");
-        Source alvaeTheme = new Source();
+        alvaeTheme = new Source();
         alvaeTheme.play(alvaeThemeBuffer);
         alvaeTheme.setLooping(true);
-        
+
         TextMaster.init(loader);
 
         TexturedModel person = loader.loadTexturedModel(CHARACTERS_PATH + "person/person");
-        Player player = new Player(new EntityBuilder(person, new Vector3f(300, 5, -400), 0, 0, 0, 0.6f));
+        player = new Player(new EntityBuilder(person, new Vector3f(300, 5, -400), 0, 0, 0, 0.6f));
 
-        Camera camera = new Camera(player);
-        MasterRenderer renderer = new MasterRenderer(loader, camera);
+        camera = new Camera(player);
+        renderer = new MasterRenderer(loader, camera);
         ParticleMaster.init(loader, renderer.getProjectionMatrix());
 
         //FontType font = new FontType(loader.loadFontTextureAtlas(FONTS_PATH + "candara"), new File("res/" + FONTS_PATH + "candara.fnt"));
         //GUIText text = new GUIText("swa", 3f, font, new Vector2f(0.0f, 0.4f), 1f, true);
         //text.setColour(0.1f, 0.1f, 0.1f);
 
-        List<Terrain> terrains = new ArrayList<>();
+        terrains = new ArrayList<>();
 
         // Plains
         TerrainTexturePack plainsPack = new TerrainTexturePack(
@@ -138,15 +190,15 @@ public class MainGameLoop {
 
         Terrain plains1 = new Terrain(0, -1, loader, plainsPack, TEST_MAPS_PATH + "plains1BlendMap", TEST_MAPS_PATH + "plains1HM");
 
-        Terrain currentTerrain = plains1;
+        currentTerrain = (Terrain)plains1;
 
         terrains.add(plains1);
 
-        List<Entity> entities = new ArrayList<>();
-        List<Entity> normalMapEntities = new ArrayList<>();
+        entities = new ArrayList<>();
+        normalMapEntities = new ArrayList<>();
 
         // Entities
-        
+
         int h = 0; // height of objects at the moment
         Random random = new Random(5666778);
 
@@ -185,29 +237,29 @@ public class MainGameLoop {
         }
 
         entities.add(new Lantern(loader, new Vector3f(300, -10, -400), random));
-        
+
         // LAMP
         Entity lamp = new Entity(new EntityBuilder(loader.loadTexturedModel("entities/objects/lamp/lamp"), new Vector3f(100, h, 180), 0, 0, 0, 1));
         lamp.getModel().getTexture().setShineDamper(40);
-        
+
         Entity rock1 = new Entity(new EntityBuilder(loader.loadTexturedModel("rocks/rock1"), new Vector3f(100, h, 200), 0, 0, 0, 5f));
         entities.add(rock1);
-        
-        List<Light> lights = new ArrayList<>();
-        Light sun = new Light(new Vector3f(10000, 15000, -10000), new Vector3f(1.3f, 1.3f, 1.3f));
+
+        lights = new ArrayList<>();
+        sun = new Light(new Vector3f(10000, 15000, -10000), new Vector3f(1.3f, 1.3f, 1.3f));
         lights.add(sun);
 
         entities.add(player);
 
-        MousePicker picker = new MousePicker(camera, renderer.getProjectionMatrix(), currentTerrain);
-        
+        picker = new MousePicker(camera, renderer.getProjectionMatrix(), currentTerrain);
+
         guiTextures.addAll(setUpGUI(loader));
 
         //**********Water Renderer Set-up************************
-        WaterFrameBuffers buffers = new WaterFrameBuffers();
-        WaterShader waterShader = new WaterShader();
-        WaterRenderer waterRenderer = new WaterRenderer(loader, waterShader, renderer.getProjectionMatrix(), buffers);
-        List<WaterTile> waters = new ArrayList<>();
+        buffers = new WaterFrameBuffers();
+        waterShader = new WaterShader();
+        waterRenderer = new WaterRenderer(loader, waterShader, renderer.getProjectionMatrix(), buffers);
+        waters = new ArrayList<>();
         waters.add(new WaterTile(300, 5, -1.5f));
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
@@ -216,35 +268,32 @@ public class MainGameLoop {
         }
 
         //PostProcessing
-        Fbo multisampleFbo = new Fbo(Display.getWidth(), Display.getHeight());
-        Fbo outputFbo = new Fbo(Display.getWidth(), Display.getHeight(), Fbo.DEPTH_TEXTURE);
-        Fbo outputFbo2 = new Fbo(Display.getWidth(), Display.getHeight(), Fbo.DEPTH_TEXTURE);
+        multisampleFbo = new Fbo(Display.getWidth(), Display.getHeight());
+        outputFbo = new Fbo(Display.getWidth(), Display.getHeight(), Fbo.DEPTH_TEXTURE);
+        outputFbo2 = new Fbo(Display.getWidth(), Display.getHeight(), Fbo.DEPTH_TEXTURE);
         PostProcessing.init(loader);
 
         //Effects
-        Effect fire = new Fire();
-        Effect cosmic = new Cosmic();
+        fire = new Fire();
+        cosmic = new Cosmic();
 
         System.out.printf("3d Graphics INITIALISED.%n");//todo SIMULATION
         WriteQue_SimulationIO.app_FUNCT_write_End(3);
+    }
+    public void run_Thread_Draw3dGraphics() {
         //****************Game Loop Below*********************
         while (!Display.isCloseRequested()) {
             System.out.printf("ALPHA.%n");//todo SIMULATION
             player.move(currentTerrain);
-            
-            camera.move();
-
+            camera.move(currentTerrain);
             picker.update();
-
             if (Keyboard.isKeyDown(Keyboard.KEY_1)) {
                 fire.generate(new Vector3f(player.getPosition()));
             }
             if (Keyboard.isKeyDown(Keyboard.KEY_2)) {
                 cosmic.generate(new Vector3f(player.getPosition()));
             }
-
             ParticleMaster.update(camera);
-
             renderer.renderShadowMap(entities, sun);
             GL11.glEnable(GL30.GL_CLIP_DISTANCE0);
 

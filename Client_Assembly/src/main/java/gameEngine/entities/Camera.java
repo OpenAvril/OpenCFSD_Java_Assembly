@@ -44,7 +44,7 @@ public class Camera {
         this.player = player;
     }
 
-    public void move() {
+    public void move(Object currentTerrain) {
         calculateZoom();
         calculatePitch();
         calculateAngleAroundPlayer();

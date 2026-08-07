@@ -81,7 +81,7 @@ public class Simulation
             WriteQue_ConditionCode.app_FUNCT_write_Start(1);
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 //todo process of input
-                obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
+                obj.dyn_THREAD_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
             }
             if(!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 checkPass = true;
