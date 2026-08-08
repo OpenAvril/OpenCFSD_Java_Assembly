@@ -62,11 +62,10 @@ public class AudioMaster {
     public static int loadSound(String fileName) {
         int buffer = AL10.alGenBuffers();
         buffers.add(buffer);
-        WaveData waveFile = null;
         try {
             InputStream is = AudioMaster.class.getResourceAsStream(fileName);
             InputStream bis = new BufferedInputStream(is);
-            waveFile = WaveData.create(bis);
+            WaveData waveFile = WaveData.create(bis);
             AL10.alBufferData(buffer, waveFile.format, waveFile.data, waveFile.samplerate);
             waveFile.dispose();
         }

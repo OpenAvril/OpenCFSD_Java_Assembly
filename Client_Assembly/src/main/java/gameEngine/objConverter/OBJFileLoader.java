@@ -38,79 +38,88 @@ import gameEngine.renderEngine.Loader;
 
 public class OBJFileLoader {
 
-    private static final String RES_LOC = "res/";
+    private static final String RES_LOC = "/resources/";
 
     public static RawModel loadOBJ(String objFileName, Loader loader) {
-        RawModel temp = null;
+        InputStream is = OBJFileLoader.class.getResourceAsStream(objFileName);
+        BufferedReader reader = null;
         try {
-            InputStream is = OBJFileLoader.class.getResourceAsStream(objFileName);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-            String line;
-            List<Vertex> vertices = new ArrayList<Vertex>();
-            List<Vector2f> textures = new ArrayList<Vector2f>();
-            List<Vector3f> normals = new ArrayList<Vector3f>();
-            List<Integer> indices = new ArrayList<Integer>();
-            while (true) {
-                line = reader.readLine();
-                if (line.startsWith("v ")) {
-                    String[] currentLine = line.split(" ");
-                    Vector3f vertex = new Vector3f((float) Float.valueOf(currentLine[1]),
-                            (float) Float.valueOf(currentLine[2]),
-                            (float) Float.valueOf(currentLine[3]));
-                    Vertex newVertex = new Vertex(vertices.size(), vertex);
-                    vertices.add(newVertex);
-
-                } else if (line.startsWith("vt ")) {
-                    String[] currentLine = line.split(" ");
-                    Vector2f texture = new Vector2f((float) Float.valueOf(currentLine[1]),
-                            (float) Float.valueOf(currentLine[2]));
-                    textures.add(texture);
-                } else if (line.startsWith("vn ")) {
-                    String[] currentLine = line.split(" ");
-                    Vector3f normal = new Vector3f((float) Float.valueOf(currentLine[1]),
-                            (float) Float.valueOf(currentLine[2]),
-                            (float) Float.valueOf(currentLine[3]));
-                    normals.add(normal);
-                } else if (line.startsWith("f ")) {
-                    break;
-                }
-            }
-            while (line != null && line.startsWith("f ")) {
-                String[] currentLine = line.split(" ");
-                String[] vertex1 = currentLine[1].split("/");
-                String[] vertex2 = currentLine[2].split("/");
-                String[] vertex3 = currentLine[3].split("/");
-                Vertex v0 = processVertex(vertex1, vertices, indices);
-                Vertex v1 = processVertex(vertex2, vertices, indices);
-                Vertex v2 = processVertex(vertex3, vertices, indices);
-                calculateTangents(v0, v1, v2, textures);
-                line = reader.readLine();
-            }
-            reader.close();
-            removeUnusedVertices(vertices);
-            float[] verticesArray = new float[vertices.size() * 3];
-            float[] texturesArray = new float[vertices.size() * 2];
-            float[] normalsArray = new float[vertices.size() * 3];
-            float[] tangentsArray = new float[vertices.size() * 3];
-            float furthest = convertDataToArrays(vertices, textures, normals, verticesArray,
-            texturesArray, normalsArray, tangentsArray);
-            int[] indicesArray = convertIndicesListToArray(indices);
-            // ModelData data = new ModelData(verticesArray, texturesArray,
-            // normalsArray, tangentsArray, indicesArray,
-            // furthest);
-            temp = loader.loadToVAO(verticesArray, texturesArray, normalsArray, indicesArray);
+            reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
         } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        } catch (IllegalArgumentException e) {
-            System.out.printf("IllegalArgumentException.%n");
-        } catch (IOException e) {
-            System.err.println("Error reading the file");
         }
-        return temp;
+        String line = "";
+        List<Vertex> vertices = new ArrayList<Vertex>();
+        List<Vector2f> textures = new ArrayList<Vector2f>();
+        List<Vector3f> normals = new ArrayList<Vector3f>();
+        List<Integer> indices = new ArrayList<Integer>();
+        while (true) {
+            try {
+                line = reader.readLine();
+            }catch (NullPointerException e) {
+                System.out.printf("NullPointerException.%n");
+            }
+            catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            if (line.startsWith("v ")) {
+                String[] currentLine = line.split(" ");
+                Vector3f vertex = new Vector3f((float) Float.valueOf(currentLine[1]),
+                        (float) Float.valueOf(currentLine[2]),
+                        (float) Float.valueOf(currentLine[3]));
+                Vertex newVertex = new Vertex(vertices.size(), vertex);
+                vertices.add(newVertex);
+
+            } else if (line.startsWith("vt ")) {
+                String[] currentLine = line.split(" ");
+                Vector2f texture = new Vector2f((float) Float.valueOf(currentLine[1]),
+                        (float) Float.valueOf(currentLine[2]));
+                textures.add(texture);
+            } else if (line.startsWith("vn ")) {
+                String[] currentLine = line.split(" ");
+                Vector3f normal = new Vector3f((float) Float.valueOf(currentLine[1]),
+                        (float) Float.valueOf(currentLine[2]),
+                        (float) Float.valueOf(currentLine[3]));
+                normals.add(normal);
+            } else if (line.startsWith("f ")) {
+                break;
+            }
+        }
+        while (line != null && line.startsWith("f ")) {
+            String[] currentLine = line.split(" ");
+            String[] vertex1 = currentLine[1].split("/");
+            String[] vertex2 = currentLine[2].split("/");
+            String[] vertex3 = currentLine[3].split("/");
+            Vertex v0 = processVertex(vertex1, vertices, indices);
+            Vertex v1 = processVertex(vertex2, vertices, indices);
+            Vertex v2 = processVertex(vertex3, vertices, indices);
+            calculateTangents(v0, v1, v2, textures);
+            try {
+                line = reader.readLine();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        try {
+            reader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        removeUnusedVertices(vertices);
+        float[] verticesArray = new float[vertices.size() * 3];
+        float[] texturesArray = new float[vertices.size() * 2];
+        float[] normalsArray = new float[vertices.size() * 3];
+        float[] tangentsArray = new float[vertices.size() * 3];
+        float furthest = convertDataToArrays(vertices, textures, normals, verticesArray,
+        texturesArray, normalsArray, tangentsArray);
+        int[] indicesArray = convertIndicesListToArray(indices);
+        // ModelData data = new ModelData(verticesArray, texturesArray,
+        // normalsArray, tangentsArray, indicesArray,
+        // furthest);
+        return loader.loadToVAO(verticesArray, texturesArray, normalsArray, indicesArray);
     }
 
-    private static void calculateTangents(Vertex v0, Vertex v1, Vertex v2,
-            List<Vector2f> textures) {
+    private static void calculateTangents(Vertex v0, Vertex v1, Vertex v2, List<Vector2f> textures) {
         Vector3f delatPos1 = Vector3f.sub(v1.getPosition(), v0.getPosition(), null);
         Vector3f delatPos2 = Vector3f.sub(v2.getPosition(), v0.getPosition(), null);
         Vector2f uv0 = textures.get(v0.getTextureIndex());
@@ -129,8 +138,7 @@ public class OBJFileLoader {
         v2.addTangent(tangent);
     }
 
-    private static Vertex processVertex(String[] vertex, List<Vertex> vertices,
-            List<Integer> indices) {
+    private static Vertex processVertex(String[] vertex, List<Vertex> vertices, List<Integer> indices) {
         int index = Integer.parseInt(vertex[0]) - 1;
         Vertex currentVertex = vertices.get(index);
         int textureIndex = Integer.parseInt(vertex[1]) - 1;
@@ -154,9 +162,7 @@ public class OBJFileLoader {
         return indicesArray;
     }
 
-    private static float convertDataToArrays(List<Vertex> vertices, List<Vector2f> textures,
-            List<Vector3f> normals, float[] verticesArray, float[] texturesArray,
-            float[] normalsArray, float[] tangentsArray) {
+    private static float convertDataToArrays(List<Vertex> vertices, List<Vector2f> textures, List<Vector3f> normals, float[] verticesArray, float[] texturesArray, float[] normalsArray, float[] tangentsArray) {
         float furthestPoint = 0;
         for (int i = 0; i < vertices.size(); i++) {
             Vertex currentVertex = vertices.get(i);
@@ -183,8 +189,7 @@ public class OBJFileLoader {
         return furthestPoint;
     }
 
-    private static Vertex dealWithAlreadyProcessedVertex(Vertex previousVertex, int newTextureIndex,
-            int newNormalIndex, List<Integer> indices, List<Vertex> vertices) {
+    private static Vertex dealWithAlreadyProcessedVertex(Vertex previousVertex, int newTextureIndex, int newNormalIndex, List<Integer> indices, List<Vertex> vertices) {
         if (previousVertex.hasSameTextureAndNormal(newTextureIndex, newNormalIndex)) {
             indices.add(previousVertex.getIndex());
             return previousVertex;

@@ -40,7 +40,7 @@ import gameEngine.renderEngine.Loader;
 
 public class NormalMappedObjLoader {
 
-    private static final String RES_LOC = "res/";
+    private static final String RES_LOC = "/resources/";
 
     public static RawModel loadOBJ(String objFileName, Loader loader) {
         FileReader isr = null;

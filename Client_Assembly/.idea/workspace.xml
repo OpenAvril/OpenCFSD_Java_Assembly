@@ -5,359 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bb9ca42-8e68-44fe-81bb-d7b03925a10a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/3rdparty/jinput_license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/3rdparty/jogl_license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/3rdparty/lzma_license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/3rdparty/openal_license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/jinput.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/lwjgl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/lwjgl_util.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/linux/libjinput-linux.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/linux/libjinput-linux64.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/linux/liblwjgl.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/linux/liblwjgl64.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/linux/libopenal.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/linux/libopenal64.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/macosx/libjinput-osx.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/macosx/liblwjgl.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/macosx/openal.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/solaris/liblwjgl.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/solaris/liblwjgl64.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/solaris/libopenal.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/solaris/libopenal64.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/OpenAL32.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/OpenAL64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/jinput-dx8.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/jinput-dx8_64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/jinput-raw.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/jinput-raw_64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/lwjgl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/native/windows/lwjgl64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/LWJGL-2.9.3/slick-util.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/PNGDecoder/PNGDecoder.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/lib/nblibraries.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/audio/skills/cosmic.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/audio/skills/fireExplosion.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/audio/themes/acid8000Theme.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/audio/themes/alvaeTheme.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/effects/cosmic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/effects/fire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/effects/particleAtlas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/effects/particleStar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/effects/smoke.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/character/person/person.blend" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/character/person/person.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/character/person/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/ferns/fern.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/ferns/fern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/ferns/fern0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/flowers/flower.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/flowers/flower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/grasses/grass.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/grasses/grassModel.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/grasses/grassTexture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/cherry/cherry.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/cherry/cherry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/cherry/cherryS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/lowPolyTree/lowPolyTree.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/lowPolyTree/lowPolyTree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/pine/pine.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/pine/pine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/tree/tree.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/flora/trees/tree/tree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/barrel/barrel.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/barrel/barrel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/barrel/barrelNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/barrel/barrelS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/boulder/boulder.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/boulder/boulder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/boulder/boulderNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/box/Box2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/box/box.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/box/box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/crate/crate.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/crate/crate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/crate/crateNormal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/lamp/lamp.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/lamp/lamp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/lamp/lamp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/lantern/lantern.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/lantern/lantern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/lantern/lanternS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/rock/newRock.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/rock/rock.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/entities/objects/rock/rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/candara.fnt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/candara.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/coucou.fnt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/coucou.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/crazyFont.fnt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/crazyFont.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/harrington.fnt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/harrington.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/harry.fnt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/harry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/verdana.fnt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/fonts/verdana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/guis/health.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/loadingPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/blendmaps/blendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/blendmaps/blendMap2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/blendmaps/plains1BM2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/bricks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/heightmaps/heightmap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/heightmaps/heightmap_perlin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/heightmaps/heightmap_test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/matchingNormalMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/normalMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/waters/dudv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/waters/dudvMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/waters/normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/maps/waters/waterDUDV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/sBack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/sDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/sFront.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/sLeft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/sRight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/sUp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/day/cloud/top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/night/nightBack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/night/nightBottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/night/nightFront.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/night/nightLeft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/night/nightRight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/skybox/night/nightTop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/terrains/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/terrains/grassFlowers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/terrains/grassy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/terrains/grassy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/terrains/mud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/terrains/path.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock1.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock3.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock4.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock5.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock6.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testEntities/rocks/rock6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/ab9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/abEnergy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/abFrame.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/abHealth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/cosmic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/filler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/fillerFrame.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testGuis/fire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/exampleBlendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/flatHM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/hillyHM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/mineEntranceBlendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/mineEntranceHM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/originCityBlendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/originCityHM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/plains1BlendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/plains1HM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/plains2BlendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/plains2HM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/plains3BlendMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testMaps/plains3HM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/desertPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/desertRock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/desertSand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/desertSandstone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/evilBlood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/evilMain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/evilMainSupport.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/evilPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/jungleGrass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/jungleGrassDark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/junglePath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/junglePathSupport.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/mountainMud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/mountainPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/mountainRock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/mountainStone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/plainsDirt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/plainsGrass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/plainsGrass2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/plainsPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/snowIce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/snowMain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/snowPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/res/testTerrains/snowPathSupport.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/MainGameLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/effects/Cosmic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/effects/Effect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/effects/Fire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/entities/AliveEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/entities/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/entities/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/entities/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/entities/NonPlayerCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/entities/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/equipments/Equipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/equipments/MonsterEquipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/equipments/NPCEquipement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/equipments/PlayerEquipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/fauna/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/flora/ferns/Fern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/flora/flowers/Flower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/flora/trees/Cherry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/flora/trees/Pine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/flora/trees/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/gauges/Energy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/gauges/Fatigue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/gauges/Health.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/gauges/Magicka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/gauges/Vitality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/inventory/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/items/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/keymapping/ActionbarKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/keymapping/ControlsKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/keymapping/Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/keymapping/Shortcut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/keymapping/WindowKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/objects/Barrel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/objects/Boulder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/objects/Crate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/objects/Lamp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/objects/Lantern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/skills/CosmicBubbles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/skills/Fireball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/skills/Skill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/game/skills/TestSkill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/RawModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/TexturedModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/audio/AudioMaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/audio/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/audio/Source.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/audio/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/audio/bounce.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/BrightFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/BrightFilterShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/CombineFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/CombineShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/brightFilterFragment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/combineFragment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/bloom/simpleVertex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/entities/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/entities/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/entities/EntityBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/entities/Light.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/FontType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/GUIText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/MetaFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/TextMeshCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/TextMeshData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontMeshCreator/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontRendering/FontRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontRendering/FontShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontRendering/TextMaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontRendering/fontFragment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/fontRendering/fontVertex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/HorizontalBlur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/HorizontalBlurShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/VerticalBlur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/VerticalBlurShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/blurFragment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/horizontalBlurVertex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/gaussianBlur/verticalBlurVertex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/guis/GuiRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/guis/GuiShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/guis/GuiTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/guis/guiFragmentShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/guis/guiVertexShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/models/RawModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/models/TexturedModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingObjConverter/ModelDataNM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingObjConverter/NormalMappedObjLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingObjConverter/VertexNM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingRenderer/NormalMappingRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingRenderer/NormalMappingShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingRenderer/normalMapFShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/normalMappingRenderer/normalMapVShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/objConverter/ModelData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/objConverter/OBJFileLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/objConverter/Vertex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/InsertionSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/Particle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/ParticleMaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/ParticleRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/ParticleShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/ParticleSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/ParticleTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/particleFShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/particles/particleVShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/ContrastChanger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/ContrastShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/Fbo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/ImageRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/PostProcessing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/contrastFragment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/postProcessing/contrastVertex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/renderEngine/DisplayManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/renderEngine/EntityRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/renderEngine/Loader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/renderEngine/MasterRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/renderEngine/OBJLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/renderEngine/TerrainRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/ShaderProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/StaticShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/TerrainShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/fragmentShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/terrainFragmentShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/terrainVertexShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shaders/vertexShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/ShadowBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/ShadowFrameBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/ShadowMapEntityRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/ShadowMapMasterRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/ShadowShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/shadowFragmentShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/shadows/shadowVertexShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/skybox/SkyboxRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/skybox/SkyboxShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/skybox/skyboxFragmentShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/skybox/skyboxVertexShader.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/terrains/HeightsGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/terrains/Terrain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/textures/ModelTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/textures/TerrainTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/textures/TerrainTexturePack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/textures/TextureData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/toolbox/Maths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/toolbox/MousePicker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/water/WaterFrameBuffers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/water/WaterRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/water/WaterShader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/water/WaterTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/water/waterFragment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lwjgl/src/gameEngine/water/waterVertex.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server_Assembly/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server_Assembly/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gameEngine/audio/AudioMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gameEngine/audio/AudioMaster.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -365,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="DEVELOPMENT" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -396,9 +50,9 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "DEVELOPMENT",
+    "git-widget-placeholder": "43a16a99",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/brenton-james/IdeaProjects/OpenCFSD_Java_Assembly/Server_Assembly",
+    "last_opened_file_path": "/home/brenton-james/IdeaProjects/OpenCFSD_Java_Assembly",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -436,10 +90,22 @@
       <workItem from="1785740396294" duration="2709000" />
       <workItem from="1785743636113" duration="1404000" />
       <workItem from="1785746985848" duration="79000" />
+      <workItem from="1786157885349" duration="1282000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

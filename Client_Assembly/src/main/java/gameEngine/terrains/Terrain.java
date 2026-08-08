@@ -65,8 +65,7 @@ public class Terrain {
 
     private float[][] heights;
 
-    public Terrain(int gridX, int gridZ, Loader loader, TerrainTexturePack texturePack,
-            String blendMap, String heightMap) {
+    public Terrain(int gridX, int gridZ, Loader loader, TerrainTexturePack texturePack, String blendMap, String heightMap) {
         this.texturePack = texturePack;
         this.blendMap = new TerrainTexture(loader.loadGameTexture(blendMap));
         this.gridX = gridX;
@@ -143,62 +142,53 @@ public class Terrain {
     }
 
     private RawModel generateTerrain(Loader loader, String heightMap) {
-        RawModel temp = null;
-        float[][] floatArray = null;
-        floatArray = new float[1][1];
+        InputStream is = getClass().getResourceAsStream("/resources/" + heightMap + ".png");
+        BufferedImage image = null;
         try {
-            InputStream is = getClass().getResourceAsStream("/resources/" + heightMap + ".png");
-            assert is != null;
-            BufferedImage image = ImageIO.read(is);
-            int vertexCount = image.getHeight();
-            int count = vertexCount * vertexCount;
-            floatArray = new float[vertexCount][vertexCount];
-            float[] vertices = new float[count * 3];
-            float[] normals = new float[count * 3];
-            float[] textureCoords = new float[count * 2];
-            int[] indices = new int[6 * (vertexCount - 1) * (vertexCount * 1)];
-            int vertexPointer = 0;
-            for (int i = 0; i < vertexCount; i++) {
-                for (int j = 0; j < vertexCount; j++) {
-                    vertices[vertexPointer * 3] = (float) j / ((float) vertexCount - 1) * size;
-                    float height = getHeight(j, i, heightsGenerator);
-                    vertices[vertexPointer * 3 + 1] = height;
-                    floatArray[j][i] = height;
-                    vertices[vertexPointer * 3 + 2] = (float) i / ((float) vertexCount - 1) * size;
-                    Vector3f normal = calculateNormal(j, i, heightsGenerator);
-                    normals[vertexPointer * 3] = normal.x;
-                    normals[vertexPointer * 3 + 1] = normal.y;
-                    normals[vertexPointer * 3 + 2] = normal.z;
-                    textureCoords[vertexPointer * 2] = (float) j / ((float) vertexCount - 1);
-                    textureCoords[vertexPointer * 2 + 1] = (float) i / ((float) vertexCount - 1);
-                    vertexPointer++;
-                }
-            }
-            int pointer = 0;
-            for (int gz = 0; gz < vertexCount - 1; gz++) {
-                for (int gx = 0; gx < vertexCount - 1; gx++) {
-                    int topLeft = (gz * vertexCount) + gx;
-                    int topRight = topLeft + 1;
-                    int bottomLeft = ((gz + 1) * vertexCount) + gx;
-                    int bottomRight = bottomLeft + 1;
-                    indices[pointer++] = topLeft;
-                    indices[pointer++] = bottomLeft;
-                    indices[pointer++] = topRight;
-                    indices[pointer++] = topRight;
-                    indices[pointer++] = bottomLeft;
-                    indices[pointer++] = bottomRight;
-                }
-            }
-            temp = loader.loadToVAO(vertices, textureCoords, normals, indices);
-        } catch (NullPointerException e) {
-            System.out.printf("NullPointerException.%n");
-        } catch (IllegalArgumentException e) {
-            System.out.printf("IllegalArgumentException.%n");
+            image = ImageIO.read(is);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        heights = floatArray;
-        return temp;
+        int vertexCount = image.getHeight();
+        int count = vertexCount * vertexCount;
+        heights = new float[vertexCount][vertexCount];
+        float[] vertices = new float[count * 3];
+        float[] normals = new float[count * 3];
+        float[] textureCoords = new float[count * 2];
+        int[] indices = new int[6 * (vertexCount - 1) * (vertexCount * 1)];
+        int vertexPointer = 0;
+        for (int i = 0; i < vertexCount; i++) {
+            for (int j = 0; j < vertexCount; j++) {
+                vertices[vertexPointer * 3] = (float) j / ((float) vertexCount - 1) * size;
+                float height = getHeight(j, i, heightsGenerator);
+                vertices[vertexPointer * 3 + 1] = height;
+                heights[j][i] = height;
+                vertices[vertexPointer * 3 + 2] = (float) i / ((float) vertexCount - 1) * size;
+                Vector3f normal = calculateNormal(j, i, heightsGenerator);
+                normals[vertexPointer * 3] = normal.x;
+                normals[vertexPointer * 3 + 1] = normal.y;
+                normals[vertexPointer * 3 + 2] = normal.z;
+                textureCoords[vertexPointer * 2] = (float) j / ((float) vertexCount - 1);
+                textureCoords[vertexPointer * 2 + 1] = (float) i / ((float) vertexCount - 1);
+                vertexPointer++;
+            }
+        }
+        int pointer = 0;
+        for (int gz = 0; gz < vertexCount - 1; gz++) {
+            for (int gx = 0; gx < vertexCount - 1; gx++) {
+                int topLeft = (gz * vertexCount) + gx;
+                int topRight = topLeft + 1;
+                int bottomLeft = ((gz + 1) * vertexCount) + gx;
+                int bottomRight = bottomLeft + 1;
+                indices[pointer++] = topLeft;
+                indices[pointer++] = bottomLeft;
+                indices[pointer++] = topRight;
+                indices[pointer++] = topRight;
+                indices[pointer++] = bottomLeft;
+                indices[pointer++] = bottomRight;
+            }
+        }
+        return loader.loadToVAO(vertices, textureCoords, normals, indices);
     }
 
     private RawModel generateTerrain(Loader loader) {

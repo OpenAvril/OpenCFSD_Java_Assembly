@@ -67,8 +67,7 @@ public class Loader {
     private List<Integer> vbos = new ArrayList<Integer>();
     private List<Integer> textures = new ArrayList<Integer>();
 
-    public RawModel loadToVAO(float[] positions, float[] textureCoords, float[] normals,
-            int[] indices) {
+    public RawModel loadToVAO(float[] positions, float[] textureCoords, float[] normals, int[] indices) {
         int vaoID = createVAO();
         bindIndicesBuffer(indices);
         storeDataInAttributeList(0, 3, positions);
@@ -86,8 +85,7 @@ public class Loader {
         return vaoID;
     }
 
-    public RawModel loadToVAO(float[] positions, float[] textureCoords, float[] normals, float[] tangents,
-            int[] indices) {
+    public RawModel loadToVAO(float[] positions, float[] textureCoords, float[] normals, float[] tangents, int[] indices) {
         int vaoID = createVAO();
         bindIndicesBuffer(indices);
         storeDataInAttributeList(0, 3, positions);
@@ -107,23 +105,9 @@ public class Loader {
 
     public int loadGameTexture(String fileName) {
         Texture texture = null;
-        int textureID = Integer.MAX_VALUE;
         try {
             InputStream is = AudioMaster.class.getResourceAsStream(fileName);
             texture = TextureLoader.getTexture("PNG", is);
-            GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
-            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER,
-                    GL11.GL_LINEAR_MIPMAP_LINEAR);
-            GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL14.GL_TEXTURE_LOD_BIAS, -0.4f);
-            if (GLContext.getCapabilities().GL_EXT_texture_filter_anisotropic) {
-                float amount = Math.min(4f, GL11.glGetFloat(EXTTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT));
-                GL11.glTexParameterf(GL11.GL_TEXTURE_2D, EXTTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY_EXT, amount);
-
-            } else {
-                System.out.println("filter_anisotropic not supported");
-            }
-            textures.add(texture.getTextureID());
-            textureID = texture.getTextureID();
         } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
         } catch (IllegalArgumentException e) {
@@ -131,23 +115,40 @@ public class Loader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return textureID;
+        GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
+        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER,
+                GL11.GL_LINEAR_MIPMAP_LINEAR);
+        GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL14.GL_TEXTURE_LOD_BIAS, -0.4f);
+        if (GLContext.getCapabilities().GL_EXT_texture_filter_anisotropic) {
+            float amount = Math.min(4f, GL11.glGetFloat(EXTTextureFilterAnisotropic.GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT));
+            GL11.glTexParameterf(GL11.GL_TEXTURE_2D, EXTTextureFilterAnisotropic.GL_TEXTURE_MAX_ANISOTROPY_EXT, amount);
+
+        } else {
+            System.out.println("filter_anisotropic not supported");
+        }
+        int temp = Integer.MAX_VALUE;
+        try {
+            textures.add(texture.getTextureID());
+            temp = texture.getTextureID();
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        return temp;
     }
     
     public int loadFontTextureAtlas(String fileName) {
         Texture texture = null;
         try {
-            texture = TextureLoader.getTexture("PNG", new FileInputStream("res/" + fileName
-                    + ".png"));
-            GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
-            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER,
-                    GL11.GL_LINEAR_MIPMAP_LINEAR);
-            GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL14.GL_TEXTURE_LOD_BIAS, 0);
+            texture = TextureLoader.getTexture("PNG", new FileInputStream("/resources/" + fileName + ".png"));
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Tried to load texture " + fileName + ".png , didn't work");
             System.exit(-1);
         }
+        GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
+        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER,
+                GL11.GL_LINEAR_MIPMAP_LINEAR);
+        GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL14.GL_TEXTURE_LOD_BIAS, 0);
         textures.add(texture.getTextureID());
         return texture.getTextureID();
     }
@@ -195,7 +196,6 @@ public class Loader {
         int texID = GL11.glGenTextures();
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texID);
-
         int[] targets = {
                 GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_X,
                 GL13.GL_TEXTURE_CUBE_MAP_NEGATIVE_X,
@@ -204,15 +204,13 @@ public class Loader {
                 GL13.GL_TEXTURE_CUBE_MAP_POSITIVE_Z,
                 GL13.GL_TEXTURE_CUBE_MAP_NEGATIVE_Z
         };
-
         for (int i = 0; i < textureFiles.length; i++) {
+            BufferedImage image = null;
+            ByteBuffer buffer = null;
             try {
                 InputStream is = AudioMaster.class.getResourceAsStream(textureFiles[i]);
-                BufferedImage image = ImageIO.read(is);
-                ByteBuffer buffer = convertImageToByteBuffer(image);
-                GL11.glTexImage2D(targets[i], 0, GL11.GL_RGBA8,
-                    image.getWidth(), image.getHeight(), 0,
-                    GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
+                image = ImageIO.read(is);
+                buffer = convertImageToByteBuffer(image);
             } catch (NullPointerException e) {
                 System.out.printf("NullPointerException.%n");
             } catch (IllegalArgumentException e) {
@@ -220,9 +218,10 @@ public class Loader {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            GL11.glTexImage2D(targets[i], 0, GL11.GL_RGBA8,
+                    image.getWidth(), image.getHeight(), 0,
+                    GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
         }
-
-
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_WRAP_S, GL12.GL_CLAMP_TO_EDGE);
@@ -278,27 +277,24 @@ public class Loader {
     }
 
     private TextureData decodeTextureFile(String fileName) {
-        TextureData temp = null;
-        int width = 0;
-        int height = 0;
-        ByteBuffer buffer = null;
+        PNGDecoder decoder = null;
+        InputStream is = getClass().getResourceAsStream(fileName);
         try {
-            InputStream is = getClass().getResourceAsStream(fileName);
-            PNGDecoder decoder = new PNGDecoder(is);
-            width = decoder.getWidth();
-            height = decoder.getHeight();
-            buffer = ByteBuffer.allocateDirect(4 * width * height);
-            decoder.decode(buffer, width * 4, Format.RGBA);
-            buffer.flip();
-            temp = new TextureData(buffer, width, height);
-        } catch (NullPointerException e) {
-            System.out.printf("NullPointerException.%n");
-        } catch (IllegalArgumentException e) {
-            System.out.printf("IllegalArgumentException.%n");
+            decoder = new PNGDecoder(is);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return temp;
+        int width = decoder.getWidth();
+        int height = decoder.getHeight();
+        ByteBuffer buffer = null;
+        buffer = ByteBuffer.allocateDirect(4 * width * height);
+        try {
+            decoder.decode(buffer, width * 4, Format.RGBA);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        buffer.flip();
+        return new TextureData(buffer, width, height);
     }
 
     private int createVAO() {

@@ -79,8 +79,8 @@ public class SkyboxRenderer {
         SIZE, -SIZE, SIZE
     };
     
-    private static final String DAY_CLOUD_PATH = "/skybox/day/cloud/";
-    private static final String NIGHT_PATH = "/skybox/night/";
+    private static final String DAY_CLOUD_PATH = "skybox/day/cloud/";
+    private static final String NIGHT_PATH = "skybox/night/";
     
     private static String[] TEXTURE_FILES = { DAY_CLOUD_PATH + "right", 
                                               DAY_CLOUD_PATH + "left", 

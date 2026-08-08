@@ -173,7 +173,7 @@ public class GraphicsEngine {
         renderer = new MasterRenderer(loader, camera);
         ParticleMaster.init(loader, renderer.getProjectionMatrix());
 
-        //FontType font = new FontType(loader.loadFontTextureAtlas(FONTS_PATH + "candara"), new File("res/" + FONTS_PATH + "candara.fnt"));
+        //FontType font = new FontType(loader.loadFontTextureAtlas(FONTS_PATH + "candara"), new File("/resources/" + FONTS_PATH + "candara.fnt"));
         //GUIText text = new GUIText("swa", 3f, font, new Vector2f(0.0f, 0.4f), 1f, true);
         //text.setColour(0.1f, 0.1f, 0.1f);
 
