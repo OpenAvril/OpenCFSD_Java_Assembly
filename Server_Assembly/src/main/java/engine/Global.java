@@ -143,32 +143,31 @@ public class Global
     }
     public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(byte[] byteArray)
     {
+        long temp = Long.MAX_VALUE;
+        boolean[] bits = new boolean[64];
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
-        }
-        boolean[] bits = new boolean[64];
-        for (int byteId1 = 0; byteId1 < 4; byteId1++) {
-            for (int bitId1 = 0; bitId1 < 8; bitId1++) {
-                bits[(byteId1*8) + bitId1] = ((byteArray[byteId1] >> bitId1) & 1) == 1;
+        } else {
+            int bitsId1 = 0;
+            for (int byteId1 = 0; byteId1 < 8; byteId1++) {
+                for (int bitId1 = 0; bitId1 < 8; bitId1++) {
+                    bitsId1 = ((byteId1*8) + bitId1);
+                    if(bitsId1 < 32) {
+                        bits[bitsId1] = ((byteArray[byteId1] >> bitId1) & 1) == 1;
+                    } else if (bitsId1 == 63) {
+                        bits[bitsId1] = false;
+                    } else {
+                        bits[bitsId1] = false;
+                    }
+                }
             }
-        }
-        for (int byteId2 = 0; byteId2 < 4; byteId2++) {
-            for (int bitId2 = 0; bitId2 < 8; bitId2++) {
-                if(byteId2 == 3 && bitId2 ==7) {
-                    bits[63] = false;
-                } else {
-                    bits[32 + (byteId2*8) + bitId2] = false;
+            for (int i = 0; i < 64; i++) {
+                if (bits[i]) {
+                    temp |= (1L << i);
                 }
             }
         }
-        long result = 0L;
-        for (int i = 0; i < 64; i++) {
-            if (bits[i]) {
-                result |= (1L << i);
-            }
-        }
-        return result;
-
+        return temp;
     }
     public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value)
     {
