@@ -74,21 +74,21 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class GraphicsEngine {
 
-    private static final String ENTITIES_PATH = "/entities/";
-    private static final String MAPS_PATH = "/maps/";
-    private static final String CHARACTERS_PATH = ENTITIES_PATH + "/character/";
-    private static final String FONTS_PATH = "/fonts/";
-    private static final String TERRAINS_PATH = "/terrains/";
-    private static final String BLENDMAPS_PATH = MAPS_PATH + "/blendmaps/";
-    private static final String OBJECTS_PATH = ENTITIES_PATH + "/objects/";
-    private static final String HEIGHTMAPS_PATH = MAPS_PATH + "/heightmaps/";
-    private static final String AUDIO_THEMES_PATH = "/audio/themes/";
-    private static final String FLORA_PATH = ENTITIES_PATH + "/flora/";
-    private static final String FLOWERS_PATH = FLORA_PATH + "/flowers/";
+    private static final String ENTITIES_PATH = "entities/";
+    private static final String MAPS_PATH = "maps/";
+    private static final String CHARACTERS_PATH = ENTITIES_PATH + "character/";
+    private static final String FONTS_PATH = "fonts/";
+    private static final String TERRAINS_PATH = "terrains/";
+    private static final String BLENDMAPS_PATH = MAPS_PATH + "blendmaps/";
+    private static final String OBJECTS_PATH = ENTITIES_PATH + "objects/";
+    private static final String HEIGHTMAPS_PATH = MAPS_PATH + "heightmaps/";
+    private static final String AUDIO_THEMES_PATH = "audio/themes/";
+    private static final String FLORA_PATH = ENTITIES_PATH + "flora/";
+    private static final String FLOWERS_PATH = FLORA_PATH + "flowers/";
 
-    private static final String TEST_TERRAINS_PATH = "/testTerrains/";
-    private static final String TEST_MAPS_PATH = "/testMaps/";
-    private static final String TEST_GUIS_PATH = "/testGuis/";
+    private static final String TEST_TERRAINS_PATH = "testTerrains/";
+    private static final String TEST_MAPS_PATH = "testMaps/";
+    private static final String TEST_GUIS_PATH = "testGuis/";
 
 
     private static Source alvaeTheme;
@@ -143,17 +143,17 @@ public class GraphicsEngine {
 
     public void dyn_APP_boot3_INITIALISE_3dGraphics() {
         WriteQue_SimulationIO.app_FUNCT_write_Start(3);
-        System.out.printf("entered GraphicsEngine.run_Thread_Draw3dGraphics().%n");//todo SIMULATION
+        System.out.printf("entered GraphicsEngine.dyn_APP_boot3_INITIALISE_3dGraphics().%n");//todo SIMULATION
 
         DisplayManager.createDisplay();
 
         loader = new Loader();
-
+        System.out.printf("ALPHA.%n");//todo SIMULATION
         guiTextures = new ArrayList<>();
         //guiTextures.add(new GuiTexture(loader.loadGameTexture("loadingPage"), new Vector2f(-2f, 1f), new Vector2f(5f, 5f)));
         guiRenderer = new GuiRenderer(loader);
         guiRenderer.render(guiTextures);
-
+        System.out.printf("BRAVO.%n");//todo SIMULATION
         //Init sound
         AudioMaster.init();
         AudioMaster.setListenerData(0, 0, 0);
@@ -163,7 +163,7 @@ public class GraphicsEngine {
         alvaeTheme = new Source();
         alvaeTheme.play(alvaeThemeBuffer);
         alvaeTheme.setLooping(true);
-
+        System.out.printf("CHARLIE.%n");//todo SIMULATION
         TextMaster.init(loader);
 
         TexturedModel person = loader.loadTexturedModel(CHARACTERS_PATH + "person/person");
@@ -178,7 +178,7 @@ public class GraphicsEngine {
         //text.setColour(0.1f, 0.1f, 0.1f);
 
         terrains = new ArrayList<>();
-
+        System.out.printf("DELTA.%n");//todo SIMULATION
         // Plains
         TerrainTexturePack plainsPack = new TerrainTexturePack(
                 loader,
@@ -196,7 +196,7 @@ public class GraphicsEngine {
 
         entities = new ArrayList<>();
         normalMapEntities = new ArrayList<>();
-
+        System.out.printf("ECHO.%n");//todo SIMULATION
         // Entities
 
         int h = 0; // height of objects at the moment
@@ -237,7 +237,7 @@ public class GraphicsEngine {
         }
 
         entities.add(new Lantern(loader, new Vector3f(300, -10, -400), random));
-
+        System.out.printf("FOXTROT.%n");//todo SIMULATION
         // LAMP
         Entity lamp = new Entity(new EntityBuilder(loader.loadTexturedModel("entities/objects/lamp/lamp"), new Vector3f(100, h, 180), 0, 0, 0, 1));
         lamp.getModel().getTexture().setShineDamper(40);
@@ -283,7 +283,7 @@ public class GraphicsEngine {
     public void run_Thread_Draw3dGraphics() {
         //****************Game Loop Below*********************
         while (!Display.isCloseRequested()) {
-            System.out.printf("ALPHA.%n");//todo SIMULATION
+            System.out.printf("loop => run_Thread_Draw3dGraphics().%n");//todo SIMULATION
             player.move(currentTerrain);
             camera.move(currentTerrain);
             picker.update();

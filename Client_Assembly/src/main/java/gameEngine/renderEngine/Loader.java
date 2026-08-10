@@ -205,12 +205,14 @@ public class Loader {
                 GL13.GL_TEXTURE_CUBE_MAP_NEGATIVE_Z
         };
         for (int i = 0; i < textureFiles.length; i++) {
-            BufferedImage image = null;
-            ByteBuffer buffer = null;
             try {
                 InputStream is = AudioMaster.class.getResourceAsStream(textureFiles[i]);
-                image = ImageIO.read(is);
-                buffer = convertImageToByteBuffer(image);
+                assert is != null;
+                BufferedImage image = ImageIO.read(is);
+                ByteBuffer buffer = convertImageToByteBuffer(image);
+                GL11.glTexImage2D(targets[i], 0, GL11.GL_RGBA8,
+                        image.getWidth(), image.getHeight(), 0,
+                        GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
             } catch (NullPointerException e) {
                 System.out.printf("NullPointerException.%n");
             } catch (IllegalArgumentException e) {
@@ -218,10 +220,7 @@ public class Loader {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            GL11.glTexImage2D(targets[i], 0, GL11.GL_RGBA8,
-                    image.getWidth(), image.getHeight(), 0,
-                    GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
-        }
+         }
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
         GL11.glTexParameteri(GL13.GL_TEXTURE_CUBE_MAP, GL11.GL_TEXTURE_WRAP_S, GL12.GL_CLAMP_TO_EDGE);

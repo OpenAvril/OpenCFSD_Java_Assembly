@@ -33,7 +33,7 @@ public class Main
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
-        _stat_PGM_ClientAssembly.dyn_THREAD_get_3d_Graphics().run_Thread_Draw3dGraphics();
+        //_stat_PGM_ClientAssembly.dyn_THREAD_get_3d_Graphics().run_Thread_Draw3dGraphics();
 
     }
 }

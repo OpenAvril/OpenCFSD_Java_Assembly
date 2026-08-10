@@ -75,6 +75,7 @@ public class Terrain {
         //this.heightsGenerator = new HeightsGenerator(gridX, gridZ, VERTEX_COUNT / 2, seed);
         this.heightsGenerator = new HeightsGenerator(seed);
         this.model = generateTerrain(loader, heightMap);
+        this.heights = new float[1][1];
     }
 
     public float getX() {
@@ -142,15 +143,20 @@ public class Terrain {
     }
 
     private RawModel generateTerrain(Loader loader, String heightMap) {
-        InputStream is = getClass().getResourceAsStream("/resources/" + heightMap + ".png");
-        BufferedImage image = null;
+        int vertexCount = Integer.MAX_VALUE;
+        int count = Integer.MAX_VALUE;
         try {
-            image = ImageIO.read(is);
+            InputStream is = getClass().getResourceAsStream(heightMap + ".png");
+            assert is != null;
+            BufferedImage image = ImageIO.read(is);
+            assert image != null;
+            vertexCount = image.getHeight();
+            count = vertexCount * vertexCount;
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("IllegalArgumentException.%n");
         }
-        int vertexCount = image.getHeight();
-        int count = vertexCount * vertexCount;
         heights = new float[vertexCount][vertexCount];
         float[] vertices = new float[count * 3];
         float[] normals = new float[count * 3];
