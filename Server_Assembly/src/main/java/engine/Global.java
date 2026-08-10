@@ -50,8 +50,7 @@ public class Global
     {
         return stat_REG_get_numberOfPraises();
     }
-    public static byte[] stat_CONVERT_MsbByteArray_To_LsbByteArray(byte[] buffer)
-    {
+    public static byte[] stat_CONVERT_MsbByteArray_To_LsbByteArray(byte[] buffer) {
         byte[] temp = new byte[buffer.length];
         for(int indexA = 0; indexA < buffer.length; indexA++) {
             temp[indexA] = Byte.MAX_VALUE;
@@ -87,13 +86,41 @@ public class Global
         }
         return temp;
     }
-    public static byte[] stat_CONVERT_LsbByteArray_To_MsbByteArray(byte[] buffer)
-    {
-        byte[] msbArray = new byte[buffer.length];
-        for (int i = 0; i < buffer.length; i++) {
-            msbArray[i] = buffer[buffer.length - 1 - i];
+    public static byte[] stat_CONVERT_LsbByteArray_To_MsbByteArray(byte[] buffer) {
+        byte[] temp = new byte[buffer.length];
+        for(int indexA = 0; indexA < buffer.length; indexA++) {
+            temp[indexA] = Byte.MAX_VALUE;
         }
-        return msbArray;
+        int bitArrayLength = buffer.length*8;
+        boolean[] msbBits = new boolean[bitArrayLength];
+        boolean[] lsbBits = new boolean[bitArrayLength];
+        for(int indexB = 0; indexB < bitArrayLength; indexB++) {
+            msbBits[indexB] = true;
+            lsbBits[indexB] = true;
+        }
+        int bitsId1 = 0;
+        for (int byteId1 = 0; byteId1 < buffer.length; byteId1++) {
+            for (int bitId1 = 0; bitId1 < 8; bitId1++) {
+                bitsId1 = ((byteId1 * 8) + bitId1);
+                lsbBits[bitsId1] = ((buffer[byteId1] >> bitId1) & 1) == 1;
+            }
+        }
+        int bitsId2 = 0;
+        for (int byteId2 = 0; byteId2 < bitArrayLength; byteId2++) {
+            msbBits[byteId2] = lsbBits[bitArrayLength - 1 - byteId2];
+        }
+        int bitsId3 = 0;
+        for (int byteId3 = 0; byteId3 < buffer.length; byteId3++) {
+            byte tempByte = Byte.MAX_VALUE;
+            for (int bitId3 = 0; bitId3 < 8; bitId3++) {
+                bitsId3 = ((byteId3 * 8) + bitId3);
+                if (msbBits[bitId3]) {
+                    tempByte |= (byte) (1 << bitsId3);
+                }
+            }
+            temp[byteId3] = tempByte;
+        }
+        return temp;
     }
     public static byte[] stat_CONVERT_LsbBoolean_To_LsbByteArray(boolean bool)
     {
@@ -109,8 +136,7 @@ public class Global
         }
         return temp;
     }
-    public static double stat_CONVERT_LsbByteArray_To_LsbDouble(byte[] byteArray)
-    {
+    public static double stat_CONVERT_LsbByteArray_To_LsbDouble(byte[] byteArray) {
         double temp = Double.MAX_VALUE;
         if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have exactly 8 bytes.%n");
@@ -174,13 +200,12 @@ public class Global
         }
         return temp;
     }
-    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(byte[] byteArray)
-    {
+    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(byte[] byteArray) {
         long temp = Long.MAX_VALUE;
-        boolean[] bits = new boolean[64];
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         } else {
+            boolean[] bits = new boolean[64];
             int bitsId1 = 0;
             for (int byteId1 = 0; byteId1 < 8; byteId1++) {
                 for (int bitId1 = 0; bitId1 < 8; bitId1++) {
@@ -202,13 +227,12 @@ public class Global
         }
         return temp;
     }
-    public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value)
-    {
+    public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value) {
+        byte[] bytes = new byte[8];
         boolean[] bits = new boolean[64];
         for (int bitId1 = 0; bitId1 < 64; bitId1++) {
             bits[bitId1] = ((value >> bitId1) & 1L) != 0;
         }
-        byte[] bytes = new byte[8];
         for (int i = 0; i < 32; i++) {
             if (bits[i]) {
                 int bitIndex = (i%8);
