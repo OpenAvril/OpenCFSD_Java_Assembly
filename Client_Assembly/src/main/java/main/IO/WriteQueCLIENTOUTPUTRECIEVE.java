@@ -56,7 +56,7 @@ public class WriteQueCLIENTOUTPUTRECIEVE
     public static void app_FUNCT_write_End(long threadId)
     {
         try {
-            JavaLIBWriteQueCLIENTOUTPUTRECIEVE.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(threadId)));
+            JavaLIBWriteQueCLIENTOUTPUTRECIEVE.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -68,7 +68,7 @@ public class WriteQueCLIENTOUTPUTRECIEVE
     public static void app_FUNCT_write_Start(long threadId)
     {
         try {
-            JavaLIBWriteQueCLIENTOUTPUTRECIEVE.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(threadId)));
+            JavaLIBWriteQueCLIENTOUTPUTRECIEVE.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
