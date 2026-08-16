@@ -200,9 +200,9 @@ public class Global
         }
         return temp;
     }
-    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLong(byte[] byteArray) {
+    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLongLong(byte[] byteArray) {
         long temp = Long.MAX_VALUE;
-        if (byteArray.length != 4) {
+        if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         } else {
             boolean[] bits = new boolean[64];
@@ -210,12 +210,10 @@ public class Global
             for (int byteId1 = 0; byteId1 < 8; byteId1++) {
                 for (int bitId1 = 0; bitId1 < 8; bitId1++) {
                     bitsId1 = ((byteId1*8) + bitId1);
-                    if(bitsId1 < 32) {
-                        bits[bitsId1] = ((byteArray[byteId1] >> bitId1) & 1) == 1;
-                    } else if (bitsId1 == 63) {
+                    if (bitsId1 == 63) {
                         bits[bitsId1] = false;
                     } else {
-                        bits[bitsId1] = false;
+                        bits[bitsId1] = ((byteArray[byteId1] >> bitId1) & 1) == 1;
                     }
                 }
             }
@@ -227,16 +225,22 @@ public class Global
         }
         return temp;
     }
-    public static byte[] stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(long value) {
+    public static byte[] stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(long value) {
         byte[] bytes = new byte[8];
         boolean[] bits = new boolean[64];
-        for (int bitId1 = 0; bitId1 < 64; bitId1++) {
-            bits[bitId1] = ((value >> bitId1) & 1L) != 0;
-        }
-        for (int i = 0; i < 32; i++) {
-            if (bits[i]) {
-                int bitIndex = (i%8);
-                bytes[(i/8)] |= (byte) (1 << bitIndex);
+        if(value > 9223372036854775807L) {
+            throw new NumberFormatException("praiseId greater then an unsigned integer of 63bits.");
+        } else if(value < 0) {
+            throw new NumberFormatException("praiseId less then an unsigned integer of value zero.");
+        } else {
+            for (int bitId1 = 0; bitId1 < 64; bitId1++) {
+                bits[bitId1] = ((value >> bitId1) & 1L) != 0;
+            }
+            for (int i = 0; i < 32; i++) {
+                if (bits[i]) {
+                    int bitIndex = (i % 8);
+                    bytes[(i / 8)] |= (byte) (1 << bitIndex);
+                }
             }
         }
         return bytes;
