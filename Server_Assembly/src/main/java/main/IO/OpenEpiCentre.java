@@ -297,7 +297,20 @@ public class OpenEpiCentre {
             temp[index] = 0;
         }
         try {
-            temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();        System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId = " + Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLongLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)) + "%n");//todo SIMULATION
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (NullPointerException e) {
@@ -305,19 +318,6 @@ public class OpenEpiCentre {
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("temp = " + Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLongLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)) + "%n");//todo SIMULATION
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
-        System.out.printf("*%n");
         return Global.stat_CONVERT_LsbByteArray_To_LSBUnsignedLongLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(double value) {
@@ -467,18 +467,28 @@ public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(long praiseId) {
         try {
             JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(
-                    Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
-                            Global.stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(praiseId)
-                    )
+                Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(
+                    Global.stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(praiseId)
+                )
             );
-        }
-        catch (NoClassDefFoundError e) {
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId = " + praiseId + ".%n");//TODO SIMULATION
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+            System.out.printf("*%n");
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }

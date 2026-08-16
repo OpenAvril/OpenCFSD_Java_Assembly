@@ -110,7 +110,7 @@ public class Output
     private static void stat_REG_boot2_SUBSTANTIATE_Output_paiseId()
     {
         System.out.printf("entered stat_REG_boot2_SUBSTANTIATE_Output_paiseId().%n");
-        _stat_REG_Output_paiseId = Integer.MAX_VALUE;
+        _stat_REG_Output_paiseId = Long.MAX_VALUE;
         System.out.printf("exiting stat_REG_boot2_SUBSTANTIATE_Output_paiseId().%n");
     }
     private static void stat_REG_boot2_SUBSTANTIATE_OutputSubset()

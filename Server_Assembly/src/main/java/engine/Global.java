@@ -228,15 +228,15 @@ public class Global
     public static byte[] stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(long value) {
         byte[] bytes = new byte[8];
         boolean[] bits = new boolean[64];
-        if(value > 9223372036854775807L) {
-            throw new NumberFormatException("praiseId greater then an unsigned integer of 63bits.");
+        if(value > Long.MAX_VALUE) {
+            throw new NumberFormatException("praiseId greater then an unsigned integer of 64bits.");
         } else if(value < 0) {
             throw new NumberFormatException("praiseId less then an unsigned integer of value zero.");
         } else {
             for (int bitId1 = 0; bitId1 < 64; bitId1++) {
                 bits[bitId1] = ((value >> bitId1) & 1L) != 0;
             }
-            for (int i = 0; i < 32; i++) {
+            for (int i = 0; i < 64; i++) {
                 if (bits[i]) {
                     int bitIndex = (i % 8);
                     bytes[(i / 8)] |= (byte) (1 << bitIndex);

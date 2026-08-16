@@ -5,15 +5,14 @@ public class ServerAssembly
 {
     public static Framework _stat_CLASS_framework;
     // public.
-    public static Framework app_generate_Program()
+    public ServerAssembly() {
+
+    }
+    public static Framework dyn_App_Generate_Program()
     {
         System.out.printf("entered DESKTOP APPLICATION generate_Program().%n");
         stat_CLASS_boot1_DEFINE_framework();
         stat_CLASS_boot3_INITIALISE_framework();
-        return stat_CLASS_get_Framework();
-    }
-    public static Framework dyn_CLASS_get_Framework()
-    {
         return stat_CLASS_get_Framework();
     }
     // private.

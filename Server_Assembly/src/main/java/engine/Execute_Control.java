@@ -19,7 +19,6 @@ public class Execute_Control
             stat_REG_set_Item_On_List_Of_Flag_ThreadInitialised(threadId,false);
         }
         stat_REG_set_Flag_is_SystemInitialised(false);
-        obj.dyn_CLASS_get_SIMULATION().Terminate_stat_REG_scanner();
     }
     public void dyn_REG_boot1_DEFINE_Execute_Control()
     {
