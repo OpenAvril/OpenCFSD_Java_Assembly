@@ -25,10 +25,12 @@ public class Simulation
         _SIM_stat_REG_input_Sample = null;
         _SIM_stat_REG_input_Sample = _DEFAULT_inputSample;
         _SIM_stat_REG_input_Sample.dyn_REG_boot2_SUBSTANTIATE_Input();
+        _SIM_stat_REG_input_Sample.dyn_REG_boot3_INITIALISE_Input(obj.dyn_STRUCT_get_User_Input());
         _SIM_stat_REG_input_Sample = _DEFAULT_inputSample;
         _SIM_stat_REG_output_Sample = null;
         _SIM_stat_REG_output_Sample = _DEFAULT_outputSample;
         _SIM_stat_REG_output_Sample.dyn_REG_boot2_SUBSTANTIATE_Output();
+        _SIM_stat_REG_output_Sample.dyn_REG_boot3_INITIALISE_Output(obj.dyn_STRUCT_get_User_Output());
         _SIM_stat_REG_output_Sample = _DEFAULT_outputSample;
         _stat_REG_scanner = null;
         _stat_REG_scanner = new Scanner(System.in);

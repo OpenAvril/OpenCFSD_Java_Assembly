@@ -127,7 +127,7 @@ public class Input
     private static void stat_REG_boot3_INITIALISE_Input_paiseId()
     {
         System.out.printf("entered stat_REG_boot3_INITIALISE_Input_paiseId().%n");
-        _stat_REG_Input_paiseId = (long)(0);
+        _stat_REG_Input_paiseId = 0;
         System.out.printf("exiting stat_REG_boot3_INITIALISE_Input_paiseId().%n");
     }
     private static void stat_REG_boot3_INITIALISE_InputSubset(User_Input objUserInput)

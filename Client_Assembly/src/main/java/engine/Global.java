@@ -83,14 +83,14 @@ public class Global
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getDouble();
     }
-    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLongLong(byte[] byteArray)
+    public static long stat_CONVERT_LsbByteArray_To_LSBLong(byte[] byteArray)
     {
         if (byteArray.length != 4) {
             throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
         }
         return ByteBuffer.wrap(byteArray).order(ByteOrder.LITTLE_ENDIAN).getInt();
     }
-    public static byte[] stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(long value)
+    public static byte[] stat_CONVERT_LSBLong_To_LsbByteArray(long value)
     {
         return stat_CONVERT_MsbByteArray_To_LsbByteArray(ByteBuffer.allocate(4).putLong(value).array());
     }

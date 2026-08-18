@@ -200,50 +200,13 @@ public class Global
         }
         return temp;
     }
-    public static long stat_CONVERT_LsbByteArray_To_LSBUnsignedLongLong(byte[] byteArray) {
-        long temp = Long.MAX_VALUE;
-        if (byteArray.length != 8) {
-            throw new IllegalArgumentException("Byte array must have exactly 4 bytes.%n");
-        } else {
-            boolean[] bits = new boolean[64];
-            int bitsId1 = 0;
-            for (int byteId1 = 0; byteId1 < 8; byteId1++) {
-                for (int bitId1 = 0; bitId1 < 8; bitId1++) {
-                    bitsId1 = ((byteId1*8) + bitId1);
-                    if (bitsId1 == 63) {
-                        bits[bitsId1] = false;
-                    } else {
-                        bits[bitsId1] = ((byteArray[byteId1] >> bitId1) & 1) == 1;
-                    }
-                }
-            }
-            for (int i = 0; i < 64; i++) {
-                if (bits[i]) {
-                    temp |= (1L << i);
-                }
-            }
-        }
-        return temp;
+    public static long stat_CONVERT_LsbByteArray_To_LSBLong(byte[] byteArray) {
+        return ByteBuffer.wrap(byteArray).getLong();
     }
-    public static byte[] stat_CONVERT_LSBUnsignedLongLong_To_LsbByteArray(long value) {
-        byte[] bytes = new byte[8];
-        boolean[] bits = new boolean[64];
-        if(value > Long.MAX_VALUE) {
-            throw new NumberFormatException("praiseId greater then an unsigned integer of 64bits.");
-        } else if(value < 0) {
-            throw new NumberFormatException("praiseId less then an unsigned integer of value zero.");
-        } else {
-            for (int bitId1 = 0; bitId1 < 64; bitId1++) {
-                bits[bitId1] = ((value >> bitId1) & 1L) != 0;
-            }
-            for (int i = 0; i < 64; i++) {
-                if (bits[i]) {
-                    int bitIndex = (i % 8);
-                    bytes[(i / 8)] |= (byte) (1 << bitIndex);
-                }
-            }
-        }
-        return bytes;
+    public static byte[] stat_CONVERT_LSBLong_To_LsbByteArray(long value) {
+        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
+        buffer.putLong(value);
+        return buffer.array();
     }
     public static byte[] stat_CONVERT_LsbDouble_To_LsbByteArray(double value)
     {
