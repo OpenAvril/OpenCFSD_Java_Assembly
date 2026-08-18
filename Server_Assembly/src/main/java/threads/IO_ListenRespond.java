@@ -2,6 +2,7 @@ package threads;
 import SIMULATION.Simulation;
 import engine.Framework;
 import engine.Global;
+import libs.JavaLIB_OpenEpiCentre;
 import main.IO.*;
 import structs.Input;
 import structs.Output;
@@ -123,31 +124,67 @@ public class IO_ListenRespond {
                     System.out.printf("*.%n");
                     System.out.printf("*.%n");
                     OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
-                    switch ((int) _SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId()) {
-                        case (int) 0:
-                            Input_praise0 subset_of_input_for_praise0 = (Input_praise0) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
-                            break;
-
-                        case (int) 1:
-                            Input_praise1 subset_of_input_for_praise1 = (Input_praise1) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
-                            break;
-
-                        case (int) 2:
-                            Input_praise2 subset_of_input_for_praise2 = (Input_praise2) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
-                            break;
-
-                        case (int) 3:
-                            Input_praise3 subset_of_input_for_praise3 = (Input_praise3) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
-                            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
-                            break;
+                    boolean[] bits = new boolean[64];
+                    boolean sign;
+                    boolean[] bitsA = new boolean[31];
+                    boolean[] bitsB = new boolean[32];
+                    int resultA = 0;
+                    int resultB = 0;
+                    for (int i = 0; i < 64; i++) {
+                        // Shift bit to the rightmost position and check if it is 1
+                        bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
                     }
+                    sign = bits[64];
+                    for(int indexA = 0; indexA < 32; indexA++) {
+                        if(indexA == 0) {
+                            bitsA[indexA] = sign;
+                        } else {
+                            bitsA[indexA] = bits[indexA];
+                        }
+                    }
+                    for (int indexB = 0; indexB < 32; indexB++) {
+                        bitsB[indexB] = bits[32+indexB];
+                    }
+                    for (int indexA = 1; indexA < 32; indexA++) {
+                        resultA = (resultA << 1) | (bitsA[indexA] ? 1 : 0);
+                    }
+                    for (int indexB = 0; indexB < 32; indexB++) {
+                        resultB = (resultB << 1) | (bitsB[indexB] ? 1 : 0);
+                    }
+                    switch(resultA) {
+                    case 0:
+                        switch (resultB) {
+                            case 0:
+                                Input_praise0 subset_of_input_for_praise0 = (Input_praise0) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
+                                break;
+
+                            case 1:
+                                Input_praise1 subset_of_input_for_praise1 = (Input_praise1) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
+                                break;
+
+                            case 2:
+                                Input_praise2 subset_of_input_for_praise2 = (Input_praise2) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
+                                break;
+
+                            case 3:
+                                Input_praise3 subset_of_input_for_praise3 = (Input_praise3) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
+                                break;
+                        }
+                        break;
+
+                    case 1:
+                        break;
+                    }
+
+                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewInputReady(false);
                     OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();
                     OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
                 } else {
@@ -160,9 +197,12 @@ public class IO_ListenRespond {
                 WriteQue_ConditionCode.app_FUNCT_write_Start(0);
                 System.out.printf("thread " + threadId + " OUTPUT: ACCESS WriteQue_SimulationIO at Id=0.%n");
                 while (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
-                    if (!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
+                    System.out.printf("thread " + threadId + " : CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend() = true.%n");
+                    if (Global.stat_CONVERT_LsbByteArray_To_LsbBoolean(JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend())) {
+                        System.out.printf("thread " + threadId + " dyn_REG_get_flag__isNewOutputReady() = true.%n");
                         WriteQue_ConditionCode.app_FUNCT_write_End(0);
                         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
+                        System.out.printf("thread " + threadId + " : OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() = " + OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() + ".%n");
                         _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
                         _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
                         Output_praise0 subset_of_output_for_praise0 = null;
