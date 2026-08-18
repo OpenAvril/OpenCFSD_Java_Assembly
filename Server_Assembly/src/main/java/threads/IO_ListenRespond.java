@@ -134,7 +134,7 @@ public class IO_ListenRespond {
                         // Shift bit to the rightmost position and check if it is 1
                         bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
                     }
-                    sign = bits[64];
+                    sign = bits[63];
                     for(int indexA = 0; indexA < 32; indexA++) {
                         if(indexA == 0) {
                             bitsA[indexA] = sign;
