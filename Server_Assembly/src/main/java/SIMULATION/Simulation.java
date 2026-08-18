@@ -80,7 +80,7 @@ public class Simulation
             System.out.printf("thread " + threadId + ": OPEN ACCESS 'WriteQue_ConditionCode' @id=1.%n");
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 System.out.printf("thread " + threadId + " dyn_REG_get_Flag_is_SystemInitialised() => " + true + ".%n");
-                if(!doneOnce2) {
+                if(!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady()) {
                     WriteQue_ConditionCode.app_FUNCT_write_End(1);
                     _SIM_stat_REG_input_Sample = obj.dyn_STRUCT_get_Input();
                     System.out.printf("<=%n");
@@ -114,7 +114,7 @@ public class Simulation
                     System.out.printf("<=%n");
                     System.out.printf("<=%n");
                     System.out.printf("<=%n");
-                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
+                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewInputReady(true);
                     doneOnce2 = true;
                 }
             }

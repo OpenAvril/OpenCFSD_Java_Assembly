@@ -105,7 +105,7 @@ public class IO_ListenRespond {
             System.out.printf("thread " + threadId + " INPUT: ACCESS WriteQue_SimulationIO at Id=0.%n");
             if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 System.out.printf("thread " + threadId + " dyn_REG_get_Flag_is_SystemInitialised() => " + true + ".%n");
-                if (stat_REG_get_flag__isNewInputReady()) {
+                if (obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady()) {
                     System.out.printf("thread " + threadId + " stat_REG_get_flag__isNewInputReady() => " + true + ".%n");
                     WriteQue_ConditionCode.app_FUNCT_write_End(0);
                     //stat_App_Decode_NetworkingSteam_At_Server_Input_Recieve(obj, _SIM_stat_REG_input_Sample, stat_REG_get_Buffer__Input());
@@ -196,10 +196,10 @@ public class IO_ListenRespond {
                 WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
                 WriteQue_ConditionCode.app_FUNCT_write_Start(0);
                 System.out.printf("thread " + threadId + " OUTPUT: ACCESS WriteQue_SimulationIO at Id=0.%n");
-                while (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
+                if (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
                     System.out.printf("thread " + threadId + " : CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend() = true.%n");
-                    if (Global.stat_CONVERT_LsbByteArray_To_LsbBoolean(JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend())) {
-                        System.out.printf("thread " + threadId + " dyn_REG_get_flag__isNewOutputReady() = true.%n");
+                    if (!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
+                        System.out.printf("thread " + threadId + " dyn_REG_get_flag__isNewOutputReady() = false.%n");
                         WriteQue_ConditionCode.app_FUNCT_write_End(0);
                         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
                         System.out.printf("thread " + threadId + " : OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() = " + OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() + ".%n");
