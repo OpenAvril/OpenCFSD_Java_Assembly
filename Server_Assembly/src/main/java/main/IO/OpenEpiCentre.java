@@ -291,30 +291,10 @@ public class OpenEpiCentre {
         return Global.stat_CONVERT_LsbByteArray_To_LsbDouble(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
     public static long CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() {
-        byte[] temp;
-        temp = null;
+        byte[] temp = null;
         temp = new byte[8];
-        for(int index = 0; index < 8; index++) {
-            temp[index] = 0;
-        }
         try {
             temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId();
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.println(Arrays.toString(temp));
-            System.out.println(Arrays.toString(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
-            System.out.printf("CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId = " + Global.stat_CONVERT_LsbByteArray_To_LSBLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)) + "%n");//todo SIMULATION
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-            System.out.printf("*%n");
-
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (NullPointerException e) {
@@ -322,6 +302,21 @@ public class OpenEpiCentre {
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.println(Arrays.toString(temp));
+        System.out.println(Arrays.toString(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)));
+        System.out.printf("CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId = " + Global.stat_CONVERT_LsbByteArray_To_LSBLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp)) + "%n");//todo SIMULATION
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
         return Global.stat_CONVERT_LsbByteArray_To_LSBLong(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
     }
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(double value) {
