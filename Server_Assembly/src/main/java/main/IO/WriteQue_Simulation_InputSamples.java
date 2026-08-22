@@ -24,7 +24,7 @@ public class WriteQue_Simulation_InputSamples
     public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
-            return Global.stat_CONVERT_LsbByteArray_To_LsbBoolean(JavaLIBWriteQue_Simulation_InputSamples.INSTANCE.CLIB_WriteEnableForThreadsAt_SIMULATION_InputSamples__App_FUNCT_get_flag_isPGM_INSTANTIATED());
+            return Global.stat_CONVERT_ByteArray_To_Boolean(JavaLIBWriteQue_Simulation_InputSamples.INSTANCE.CLIB_WriteEnableForThreadsAt_SIMULATION_InputSamples__App_FUNCT_get_flag_isPGM_INSTANTIATED());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -55,7 +55,7 @@ public class WriteQue_Simulation_InputSamples
     public static void app_FUNCT_write_End(long threadId)
     {
         try {
-            JavaLIBWriteQue_Simulation_InputSamples.INSTANCE.CLIB_WriteEnableForThreadsAt_SIMULATION_InputSamples__App_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBLong_To_LsbByteArray(threadId)));
+            JavaLIBWriteQue_Simulation_InputSamples.INSTANCE.CLIB_WriteEnableForThreadsAt_SIMULATION_InputSamples__App_FUNCT_write_End(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -70,7 +70,7 @@ public class WriteQue_Simulation_InputSamples
     public static void app_FUNCT_write_Start(long threadId)
     {
         try {
-            JavaLIBWriteQue_Simulation_InputSamples.INSTANCE.CLIB_WriteEnableForThreadsAt_SIMULATION_InputSamples__App_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBLong_To_LsbByteArray(threadId)));
+            JavaLIBWriteQue_Simulation_InputSamples.INSTANCE.CLIB_WriteEnableForThreadsAt_SIMULATION_InputSamples__App_FUNCT_write_Start(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

@@ -50,85 +50,40 @@ public class Global
     {
         return stat_REG_get_numberOfPraises();
     }
-    public static byte[] stat_CONVERT_MsbByteArray_To_LsbByteArray(byte[] buffer) {
+    public static byte[] stat_CONVERT_ByteArray_To_ReverseByteArray(byte[] buffer) {
         byte[] temp = new byte[buffer.length];
         for(int indexA = 0; indexA < buffer.length; indexA++) {
             temp[indexA] = Byte.MAX_VALUE;
         }
         int bitArrayLength = buffer.length*8;
-        boolean[] msbBits = new boolean[bitArrayLength];
-        boolean[] lsbBits = new boolean[bitArrayLength];
-        for(int indexB = 0; indexB < bitArrayLength; indexB++) {
-            msbBits[indexB] = true;
-            lsbBits[indexB] = true;
-        }
-        int bitsId1 = 0;
-        for (int byteId1 = 0; byteId1 < buffer.length; byteId1++) {
-            for (int bitId1 = 0; bitId1 < 8; bitId1++) {
-                bitsId1 = ((byteId1 * 8) + bitId1);
-                msbBits[bitsId1] = ((buffer[byteId1] >> bitId1) & 1) == 1;
+        boolean[] bitArray = new boolean[bitArrayLength];
+        for (int indexA = 0; indexA < buffer.length; indexA++) {
+            for (int indexB = 0; indexB < 8; indexB++) {
+                bitArray[indexB] = ((buffer[indexA] >>(7 - indexB)) &1) ==1;
             }
         }
-        int bitsId2 = 0;
-        for (int byteId2 = 0; byteId2 < bitArrayLength; byteId2++) {
-            lsbBits[byteId2] = msbBits[bitArrayLength - 1 - byteId2];
+        int left = 0;
+        int right = bitArray.length - 1;
+        while (left < right) {
+            boolean tempBoolean = bitArray[left];
+            bitArray[left] = bitArray[right];
+            bitArray[right] = tempBoolean;
+            left++;
+            right--;
         }
-        int bitsId3 = 0;
-        for (int byteId3 = 0; byteId3 < buffer.length; byteId3++) {
-            byte tempByte = Byte.MAX_VALUE;
-            for (int bitId3 = 0; bitId3 < 8; bitId3++) {
-                bitsId3 = ((byteId3 * 8) + bitId3);
-                if (lsbBits[bitId3]) {
-                    tempByte |= (byte) (1 << bitsId3);
+        for (int indexC = 0; indexC < temp.length; indexC++) {
+            for (int indexD = 0; indexD < 8; indexD++) {
+                if (bitArray[indexD]) {
+                    temp[indexC] |= (byte) (1 << indexD);
                 }
             }
-            temp[byteId3] = tempByte;
         }
         return temp;
     }
-    public static byte[] stat_CONVERT_LsbByteArray_To_MsbByteArray(byte[] buffer) {
-        byte[] temp = new byte[buffer.length];
-        for(int indexA = 0; indexA < buffer.length; indexA++) {
-            temp[indexA] = Byte.MAX_VALUE;
-        }
-        int bitArrayLength = buffer.length*8;
-        boolean[] msbBits = new boolean[bitArrayLength];
-        boolean[] lsbBits = new boolean[bitArrayLength];
-        for(int indexB = 0; indexB < bitArrayLength; indexB++) {
-            msbBits[indexB] = true;
-            lsbBits[indexB] = true;
-        }
-        int bitsId1 = 0;
-        for (int byteId1 = 0; byteId1 < buffer.length; byteId1++) {
-            for (int bitId1 = 0; bitId1 < 8; bitId1++) {
-                bitsId1 = ((byteId1 * 8) + bitId1);
-                lsbBits[bitsId1] = ((buffer[byteId1] >> bitId1) & 1) == 1;
-            }
-        }
-        int bitsId2 = 0;
-        for (int byteId2 = 0; byteId2 < bitArrayLength; byteId2++) {
-            msbBits[byteId2] = lsbBits[bitArrayLength - 1 - byteId2];
-        }
-        int bitsId3 = 0;
-        for (int byteId3 = 0; byteId3 < buffer.length; byteId3++) {
-            byte tempByte = Byte.MAX_VALUE;
-            for (int bitId3 = 0; bitId3 < 8; bitId3++) {
-                bitsId3 = ((byteId3 * 8) + bitId3);
-                if (msbBits[bitId3]) {
-                    tempByte |= (byte) (1 << bitsId3);
-                }
-            }
-            temp[byteId3] = tempByte;
-        }
-        return temp;
+    public static byte[] stat_CONVERT_Boolean_To_ByteArray(boolean bool) {
+        return new byte[] { (byte) (bool ? 1 : 0) };
     }
-    public static byte[] stat_CONVERT_LsbBoolean_To_LsbByteArray(boolean bool)
-    {
-        byte[] byteArray = new byte[] { (byte) (bool ? 1 : 0) };
-        return stat_CONVERT_LsbByteArray_To_MsbByteArray(byteArray);
-    }
-    public static boolean stat_CONVERT_LsbByteArray_To_LsbBoolean(byte[] bytesBool)
-    {
+    public static boolean stat_CONVERT_ByteArray_To_Boolean(byte[] bytesBool) {
         boolean temp;
         temp = false;
         if(bytesBool[0] != 0) {
@@ -136,7 +91,7 @@ public class Global
         }
         return temp;
     }
-    public static double stat_CONVERT_LsbByteArray_To_LsbDouble(byte[] byteArray) {
+    public static double stat_CONVERT_ByteArray_To_Double(byte[] byteArray) {
         double temp = Double.MAX_VALUE;
         if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have exactly 8 bytes.%n");
@@ -200,17 +155,14 @@ public class Global
         }
         return temp;
     }
-    public static long stat_CONVERT_LsbByteArray_To_LSBLong(byte[] byteArray) {
-        return ByteBuffer.wrap(byteArray).getLong();
+    public static long stat_CONVERT_ByteArray_To_Long(byte[] byteArray) {
+        return 0;
     }
-    public static byte[] stat_CONVERT_LSBLong_To_LsbByteArray(long value) {
-        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
-        buffer.putLong(value);
-        return buffer.array();
+    public static byte[] stat_CONVERT_Long_To_ByteArray(long value) {
+        return null;
     }
-    public static byte[] stat_CONVERT_LsbDouble_To_LsbByteArray(double value)
-    {
-        return ByteBuffer.allocate(8).putDouble(value).array();
+    public static byte[] stat_CONVERT_Double_To_ByteArray(double value) {
+        return null;
     }
     public static void stat_CLASS_boot0_DECLAIRE_Global()
     {
