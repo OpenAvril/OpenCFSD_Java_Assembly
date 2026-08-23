@@ -104,6 +104,8 @@ public class Simulation
 
                         } catch (NoClassDefFoundError e) {
                             System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                        } catch (ClassCastException e) {
+                            System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                         }
                         subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueA(2.2);//todo process of input
                         subset_of_input_for_praise0.dyn_REG_set_input_praise0_valueB(3.7);//todo process of input

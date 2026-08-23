@@ -99,8 +99,8 @@ public class Global
             throw new IllegalArgumentException("Byte array must have exactly 8 bytes.%n");
         } else {
             boolean[] bits = new boolean[64];
-            boolean[] fraction = new boolean[11];
-            boolean[] exponent = new boolean[52];
+            boolean[] exponent = new boolean[11];
+            boolean[] fraction = new boolean[52];
             boolean sign = true;
             int bitsId1 = 0;
             for (int byteId1 = 0; byteId1 < 8; byteId1++) {
@@ -120,11 +120,11 @@ public class Global
                 for (int bitId2 = 0; bitId2 < 8; bitId2++) {
                     bitsId2 = ((byteId2*8) + bitId2);
                     if (bitsId2 < 51) {
-                        exponent[exponentId2] = bits[63 - bitsId2];
-                        exponentId2++;
-                    } else if (bitsId2 > 51 && bitsId2 < 63) {
                         fraction[fractionId2] = bits[63 - bitsId2];
                         fractionId2++;
+                    } else if (bitsId2 > 51 && bitsId2 < 63) {
+                        exponent[exponentId2] = bits[63 - bitsId2];
+                        exponentId2++;
                     } else if (bitsId2 == 63) {
                         sign = false;
                     }
@@ -137,11 +137,11 @@ public class Global
                 for (int bitId3 = 0; bitId3 < 8; bitId3++) {
                     bitsId3 = ((byteId3 * 8) + bitId3);
                     if (bitsId3 < 51) {
-                        bits[bitsId3] = exponent[exponentId3];
-                        exponentId3++;
-                    } else if (bitsId3 > 51 && bitsId3 < 63) {
                         bits[bitsId3] = fraction[fractionId3];
                         fractionId3++;
+                    } else if (bitsId3 > 51 && bitsId3 < 63) {
+                        bits[bitsId3] = exponent[exponentId3];
+                        exponentId3++;
                     } else if (bitsId3 == 63) {
                         bits[bitsId3] = sign;
                     }
