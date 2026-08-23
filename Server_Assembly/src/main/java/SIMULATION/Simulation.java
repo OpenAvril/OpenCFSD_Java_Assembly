@@ -219,6 +219,7 @@ public class Simulation
                     System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                     System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                     obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(false);
+                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION
                 }
                 else {
                     //System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION

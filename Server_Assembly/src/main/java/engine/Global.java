@@ -59,11 +59,12 @@ public class Global
         boolean[] bitArray = new boolean[bitArrayLength];
         for (int indexA = 0; indexA < buffer.length; indexA++) {
             for (int indexB = 0; indexB < 8; indexB++) {
-                bitArray[indexB] = ((buffer[indexA] >>(7 - indexB)) &1) ==1;
+                int bitArrayIndex = (indexA*8)+indexB;
+                bitArray[bitArrayIndex] = ((buffer[indexA] >>(7 - indexB)) &1) ==1;
             }
         }
         int left = 0;
-        int right = bitArray.length - 1;
+        int right = bitArrayLength - 1;
         while (left < right) {
             boolean tempBoolean = bitArray[left];
             bitArray[left] = bitArray[right];
@@ -73,7 +74,8 @@ public class Global
         }
         for (int indexC = 0; indexC < temp.length; indexC++) {
             for (int indexD = 0; indexD < 8; indexD++) {
-                if (bitArray[indexD]) {
+                int bitArrayIndex = (indexC*8)+indexD;
+                if (bitArray[bitArrayIndex]) {
                     temp[indexC] |= (byte) (1 << indexD);
                 }
             }

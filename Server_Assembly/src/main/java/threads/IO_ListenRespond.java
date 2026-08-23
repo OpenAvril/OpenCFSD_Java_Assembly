@@ -253,8 +253,8 @@ public class IO_ListenRespond {
                 System.out.printf("thread " + threadId + " :: test point ALPHA.%n");//todo SIMULATION
                 boolean[] bits = new boolean[64];
                 boolean sign;
-                boolean[] bitsA = new boolean[31];
-                boolean[] bitsB = new boolean[31];
+                boolean[] bitsA = new boolean[32];
+                boolean[] bitsB = new boolean[32];
                 int resultA = 0;
                 int resultB = 0;
                 System.out.printf("thread " + threadId + " :: test point BRAVO.%n");//todo SIMULATION
