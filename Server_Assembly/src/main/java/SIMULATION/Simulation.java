@@ -268,72 +268,70 @@ public class Simulation
                         System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                         System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                         System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
-                        for (long praiseIdIndex = 0; praiseIdIndex < 4; praiseIdIndex++) {
-                            System.out.printf("thread " + threadId + " :: PraiseEventId: " + _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId() + ".%n");
-                            Output_praise0 output_subset0 = null;
-                            Output_praise1 output_subset1 = null;
-                            Output_praise2 output_subset2 = null;
-                            Output_praise3 output_subset3 = null;
-                            int[] thread_Listen_switch = null;
-                            thread_Listen_switch = new int[2];
-                            thread_Listen_switch = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
-                            System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
-                            switch (thread_Listen_switch[0]) {
-                                case 0:
-                                    switch (thread_Listen_switch[1]) {
-                                        case 0:
-                                            try {
-                                                output_subset0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                                System.out.printf("thread " + threadId + " :: output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value() + ".%n");
-                                            } catch (NoClassDefFoundError e) {
-                                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                            } catch (ClassCastException e) {
-                                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                            }
-                                            break;
+                        System.out.printf("thread " + threadId + " :: PraiseEventId: " + _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId() + ".%n");
+                        Output_praise0 output_subset0 = null;
+                        Output_praise1 output_subset1 = null;
+                        Output_praise2 output_subset2 = null;
+                        Output_praise3 output_subset3 = null;
+                        int[] thread_Listen_switch = null;
+                        thread_Listen_switch = new int[2];
+                        thread_Listen_switch = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+                        System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
+                        switch (thread_Listen_switch[0]) {
+                            case 0:
+                                switch (thread_Listen_switch[1]) {
+                                    case 0:
+                                        try {
+                                            output_subset0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                            System.out.printf("thread " + threadId + " :: output subset0 value: " + output_subset0.dyn_REG_get_output_praise0_value() + ".%n");
+                                        } catch (NoClassDefFoundError e) {
+                                            System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                        } catch (ClassCastException e) {
+                                            System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                        }
+                                        break;
 
-                                        case 1:
-                                            try {
-                                                output_subset1 = (Output_praise1) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                                System.out.printf("thread " + threadId + " :: output subset1 value: " + output_subset1.dyn_REG_get_output_praise1_value() + ".%n");
-                                            } catch (NoClassDefFoundError e) {
-                                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                            } catch (ClassCastException e) {
-                                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                            }
-                                            break;
+                                    case 1:
+                                        try {
+                                            output_subset1 = (Output_praise1) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                            System.out.printf("thread " + threadId + " :: output subset1 value: " + output_subset1.dyn_REG_get_output_praise1_value() + ".%n");
+                                        } catch (NoClassDefFoundError e) {
+                                            System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                        } catch (ClassCastException e) {
+                                            System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                        }
+                                        break;
 
-                                        case 2:
-                                            try {
-                                                output_subset2 = (Output_praise2) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                                System.out.printf("thread " + threadId + " :: output subset2 value: " + output_subset2.dyn_REG_get_output_praise2_value() + ".%n");
-                                            } catch (NoClassDefFoundError e) {
-                                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                            } catch (ClassCastException e) {
-                                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                            }
-                                            break;
+                                    case 2:
+                                        try {
+                                            output_subset2 = (Output_praise2) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                            System.out.printf("thread " + threadId + " :: output subset2 value: " + output_subset2.dyn_REG_get_output_praise2_value() + ".%n");
+                                        } catch (NoClassDefFoundError e) {
+                                            System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                        } catch (ClassCastException e) {
+                                            System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                        }
+                                        break;
 
-                                        case 3:
-                                            try {
-                                                output_subset3 = (Output_praise3) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                                System.out.printf("thread " + threadId + " :: output subset3 value: " + output_subset3.dyn_REG_get_output_praise3_value() + ".%n");
-                                            } catch (NoClassDefFoundError e) {
-                                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                            } catch (ClassCastException e) {
-                                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                            }
-                                            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION
-                                            break;
+                                    case 3:
+                                        try {
+                                            output_subset3 = (Output_praise3) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                            System.out.printf("thread " + threadId + " :: output subset3 value: " + output_subset3.dyn_REG_get_output_praise3_value() + ".%n");
+                                        } catch (NoClassDefFoundError e) {
+                                            System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                        } catch (ClassCastException e) {
+                                            System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                        }
+                                        obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION
+                                        break;
 
-                                        default:
-                                            System.out.printf("thread " + threadId + " :: case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
-                                            break;
-                                    }
-                                default:
-                                    System.out.printf("thread " + threadId + " :: case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
-                                    break;
-                            }
+                                    default:
+                                        System.out.printf("thread " + threadId + " :: case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
+                                        break;
+                                }
+                            default:
+                                System.out.printf("thread " + threadId + " :: case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
+                                break;
                         }
                         System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                         System.out.printf("thread " + threadId + " :: SIM OUT =>%n");

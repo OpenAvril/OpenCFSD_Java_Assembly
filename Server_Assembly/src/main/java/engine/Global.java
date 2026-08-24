@@ -2,6 +2,7 @@ package engine;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.BitSet;
+import java.util.FormatFlagsConversionMismatchException;
 
 import static SIMULATION.Simulation._SIM_stat_REG_input_Sample;
 
@@ -170,41 +171,53 @@ public class Global
         return ByteBuffer.allocate(Long.BYTES).putLong(value).array();
     }
     public static int[] stat_CONVERT_Long_To_twoInts(long value) {
-        boolean[] thread_Listen_bits = new boolean[64];
-        boolean[] thread_Listen_bitsA = new boolean[32];
-        boolean[] thread_Listen_bitsB = new boolean[32];
-        int thread_Listen_switch_A = 0;
-        int thread_Listen_switch_B = 0;
         int[] result = new int[2];
-        for (int i = 0; i < 64; i++) {
-            thread_Listen_bits[i] = ((value >> i) & 1) == 1;
-        }
-        for (int indexA = 0; indexA < 32; indexA++) {
-            int indexB = 32 + indexA;
-            if (indexA == 31) {
-                if (!thread_Listen_bits[63]) {
-                    thread_Listen_bitsA[indexA] = false;
-                } else {
-                    thread_Listen_bitsA[indexA] = true;
-                }
-                thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA];
-            } else {
-                thread_Listen_bitsA[indexA] = thread_Listen_bits[indexB];
-                thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA];
+        if (value > 2305843009213693951L) {
+            System.out.printf("ERROR :: praiseId is to large for 2x 32-bit MUX(s), switched by a signed 32-bit integer.%n");
+            result[0] = 0;
+            result[1] = 0;
+        } else {
+            boolean[] thread_Listen_bits = new boolean[64];
+            boolean[] temp = new boolean[64];
+            boolean thread_Listen_signNegative = false;
+            boolean[] thread_Listen_bitsA = new boolean[32];
+            boolean[] thread_Listen_bitsB = new boolean[32];
+            int thread_Listen_switch_A = 0;
+            int thread_Listen_switch_B = 0;
+            for (int indexA = 0; indexA < 64; indexA++) {
+                thread_Listen_bits[indexA] = ((value >> indexA) & 1) == 1;
             }
+            for (int indexB = 0; indexB < 64; indexB++) {
+                temp[indexB] = thread_Listen_bits[63-indexB];
+            }
+            for (int indexC = 0; indexC < 64; indexC++) {
+                if (indexC < 31) {
+                    thread_Listen_bits[indexC] = temp[indexC];
+                } else if (indexC > 31 && indexC < 63) {
+                    thread_Listen_bits[indexC] = temp[indexC];
+                } else if(indexC == 31) {
+                    thread_Listen_bits[indexC] = thread_Listen_signNegative;
+                } else {
+                    thread_Listen_bits[indexC] = temp[63];
+                }
+            }
+            for (int indexA = 0; indexA < 32; indexA++) {
+                int indexB = 32 + indexA;
+                if (indexA == 31) {
+                    thread_Listen_bitsA[indexA] = thread_Listen_bits[63];
+                    thread_Listen_bitsB[indexA] = thread_Listen_signNegative;
+                } else {
+                    thread_Listen_bitsA[indexA] = thread_Listen_bits[indexB];
+                    thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA+1];
+                }
+            }
+            for (int indexB = 0; indexB < 32; indexB++) {
+                thread_Listen_switch_A = (thread_Listen_switch_A << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
+                thread_Listen_switch_B = (thread_Listen_switch_B << 1) | (thread_Listen_bitsB[indexB] ? 1 : 0);
+            }
+            result[0] = thread_Listen_switch_B;
+            result[1] = thread_Listen_switch_A;
         }
-        for (int indexB = 0; indexB < 32; indexB++) {
-            thread_Listen_switch_A = (thread_Listen_switch_A << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
-            thread_Listen_switch_B = (thread_Listen_switch_B << 1) | (thread_Listen_bitsB[indexB] ? 1 : 0);
-        }
-        if(thread_Listen_switch_A < 0) {
-            thread_Listen_switch_A = (Integer.MAX_VALUE - 1) - (Integer.MIN_VALUE - thread_Listen_switch_A);
-        }
-        if(thread_Listen_switch_B < 0) {
-            thread_Listen_switch_B = (Integer.MAX_VALUE - 1) - (Integer.MIN_VALUE - thread_Listen_switch_A);
-        }
-        result[0] = thread_Listen_switch_A;
-        result[1] = thread_Listen_switch_B;
         return result;
     }
     public static byte[] stat_CONVERT_Double_To_ByteArray(double value) {
