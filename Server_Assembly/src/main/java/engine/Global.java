@@ -198,10 +198,10 @@ public class Global
             thread_Listen_switch_B = (thread_Listen_switch_B << 1) | (thread_Listen_bitsB[indexB] ? 1 : 0);
         }
         if(thread_Listen_switch_A < 0) {
-            thread_Listen_switch_A = (thread_Listen_switch_A-1) - Integer.MIN_VALUE;
+            thread_Listen_switch_A = (Integer.MAX_VALUE - 1) - (Integer.MIN_VALUE - thread_Listen_switch_A);
         }
         if(thread_Listen_switch_B < 0) {
-            thread_Listen_switch_B = (thread_Listen_switch_B-1) - Integer.MIN_VALUE;
+            thread_Listen_switch_B = (Integer.MAX_VALUE - 1) - (Integer.MIN_VALUE - thread_Listen_switch_A);
         }
         result[0] = thread_Listen_switch_A;
         result[1] = thread_Listen_switch_B;
