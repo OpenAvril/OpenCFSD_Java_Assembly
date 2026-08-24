@@ -254,8 +254,8 @@ public class IO_ListenRespond {
                     thread_Listen_bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
                 }
                 for (int indexA = 0; indexA < 32; indexA++) {
-                    thread_Listen_bitsA[indexA] = thread_Listen_bits[indexA];
-                    thread_Listen_bitsB[indexA] = thread_Listen_bits[32 + indexA];
+                    thread_Listen_bitsA[indexA] = thread_Listen_bits[32 + indexA];
+                    thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA];
                 }
                 for (int indexB = 0; indexB < 32; indexB++) {
                     thread_Listen_switch_A = (thread_Listen_switch_A << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
@@ -353,26 +353,26 @@ public class IO_ListenRespond {
                 System.out.printf("DELTA.%n");//todo SIMULATION
                 _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId());
                 Output_praise0 subset_of_output_for_praise0 = null;
-                boolean[] bits = new boolean[64];
-                boolean[] bitsA = new boolean[32];
-                boolean[] bitsB = new boolean[32];
-                int switch_A = 0;
-                int switch_B = 0;
+                boolean[] thread_Draw_bits = new boolean[64];
+                boolean[] thread_Draw_bitsA = new boolean[32];
+                boolean[] thread_Draw_bitsB = new boolean[32];
+                int thread_Draw_switch_A = 0;
+                int thread_Draw_switch_B = 0;
                 for (int i = 0; i < 64; i++) {
-                    bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
+                    thread_Draw_bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
                 }
                 for (int indexA = 0; indexA < 32; indexA++) {
-                    bitsA[indexA] = bits[indexA];
-                    bitsB[indexA] = bits[32 + indexA];
+                    thread_Draw_bitsA[indexA] = thread_Draw_bits[32 + indexA];
+                    thread_Draw_bitsB[indexA] = thread_Draw_bits[indexA];
                 }
                 for (int indexB = 0; indexB < 32; indexB++) {
-                    switch_A = (switch_A << 1) | (bitsA[indexB] ? 1 : 0);
-                    switch_B = (switch_B << 1) | (bitsB[indexB] ? 1 : 0);
+                    thread_Draw_switch_A = (thread_Draw_switch_A << 1) | (thread_Draw_bitsA[indexB] ? 1 : 0);
+                    thread_Draw_switch_B = (thread_Draw_switch_B << 1) | (thread_Draw_bitsB[indexB] ? 1 : 0);
                 }
-                System.out.printf("thread " + threadId + " :: switch(" + switch_A + ", " + switch_B + ").%n");//todo SIMULATION
-                switch (switch_A) {
+                System.out.printf("thread " + threadId + " :: switch(" + thread_Draw_switch_A + ", " + thread_Draw_switch_B + ").%n");//todo SIMULATION
+                switch (thread_Draw_switch_A) {
                     case 0:
-                        switch (switch_B) {
+                        switch (thread_Draw_switch_B) {
                             case 0:
                                 try {
                                     subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
@@ -397,11 +397,11 @@ public class IO_ListenRespond {
                                 break;
 
                             default:
-                                System.out.printf("thread " + threadId + " :: case(" + switch_A + ", " + switch_B + ").%n");//todo SIMULATION
+                                System.out.printf("thread " + threadId + " :: case(" + thread_Draw_switch_A + ", " + thread_Draw_switch_B + ").%n");//todo SIMULATION
                                 break;
                         }
                     default:
-                        System.out.printf("thread " + threadId + " :: case(" + switch_A + ", " + switch_B + ").%n");//todo SIMULATION
+                        System.out.printf("thread " + threadId + " :: case(" + thread_Draw_switch_A + ", " + thread_Draw_switch_B + ").%n");//todo SIMULATION
                         break;
                 }
                 System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION

@@ -12,6 +12,7 @@ import structs.praise_sets.Output_praise1;
 import structs.praise_sets.Output_praise2;
 import structs.praise_sets.Output_praise3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Simulation
@@ -100,6 +101,12 @@ public class Simulation
                             Input_praise1 subset_of_input_for_praise1 = null;
                             Input_praise2 subset_of_input_for_praise2 = null;
                             Input_praise3 subset_of_input_for_praise3 = null;
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATIONu
                             boolean[] sim_in_bits = new boolean[64];
                             boolean[] sim_in_bitsA = new boolean[32];
                             boolean[] sim_in_bitsB = new boolean[32];
@@ -108,15 +115,42 @@ public class Simulation
                             for (int i = 0; i < 64; i++) {
                                 sim_in_bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
                             }
+                            byte[] temp = new byte[8];
+                            for (int i = 0; i < 64; i++) {
+                                if (sim_in_bits[i]) {
+                                    temp[i / 8] |= (byte) (1 << (7 - (i % 8)));
+                                }
+                            }
+                            System.out.printf("thread " + threadId + " :: sim_in_bits(" + Arrays.toString(temp) + ").%n");
                             for (int indexA = 0; indexA < 32; indexA++) {
                                 sim_in_bitsA[indexA] = sim_in_bits[32 + indexA];
                                 sim_in_bitsB[indexA] = sim_in_bits[indexA];
                             }
+                            temp = new byte[4];
+                            for (int i = 0; i < 32; i++) {
+                                if (sim_in_bitsA[i]) {
+                                    temp[i / 8] |= (byte) (1 << (7 - (i % 8)));
+                                }
+                            }
+                            System.out.printf("thread " + threadId + " :: sim_in_bitsA(" + Arrays.toString(temp) + ").%n");
+                            for (int i = 0; i < 32; i++) {
+                                if (sim_in_bitsB[i]) {
+                                    temp[i / 8] |= (byte) (1 << (7 - (i % 8)));
+                                }
+                            }
+                            System.out.printf("thread " + threadId + " :: sim_in_bitsB(" + Arrays.toString(temp) + ").%n");
                             for (int indexB = 0; indexB < 32; indexB++) {
                                 sim_in_switch_A = (sim_in_switch_A << 1) | (sim_in_bitsA[indexB] ? 1 : 0);
                                 sim_in_switch_B = (sim_in_switch_B << 1) | (sim_in_bitsB[indexB] ? 1 : 0);
                             }
                             System.out.printf("thread " + threadId + " :: switch(" + sim_in_switch_A + ", " + sim_in_switch_B + ").%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: ******%n");//todo SIMULATION
+                            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION
                             switch (sim_in_switch_A) {
                                 case 0:
                                     switch (sim_in_switch_B) {
@@ -260,7 +294,7 @@ public class Simulation
             System.out.printf("thread " + threadId + " :: SIM OUT => : OPEN ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
             if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 System.out.printf("thread " + threadId + " :: dyn_REG_get_Flag_is_SystemInitialised() => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");//todo SIMULATION
-                while (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
+                //while (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
                     System.out.printf("thread " + threadId + " :: loop iterator : while 'is' stack loaded at output.%n");//todo SIMULATION
                     if (obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
                         System.out.printf("thread " + threadId + " :: stat_REG_get_flag__isNewInputReady() => " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + ".%n");//todo SIMULATION
@@ -279,26 +313,26 @@ public class Simulation
                             Output_praise1 output_subset1 = null;
                             Output_praise2 output_subset2 = null;
                             Output_praise3 output_subset3 = null;
-                            boolean[] bits = new boolean[64];
-                            boolean[] bitsA = new boolean[32];
-                            boolean[] bitsB = new boolean[32];
-                            int switch_A = 0;
-                            int switch_B = 0;
+                            boolean[] sim_out_bits = new boolean[64];
+                            boolean[] sim_out_bitsA = new boolean[32];
+                            boolean[] sim_out_bitsB = new boolean[32];
+                            int sim_out_switch_A = 0;
+                            int sim_out_switch_B = 0;
                             for (int i = 0; i < 64; i++) {
-                                bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
+                                sim_out_bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
                             }
                             for (int indexA = 0; indexA < 32; indexA++) {
-                                bitsA[indexA] = bits[indexA];
-                                bitsB[indexA] = bits[32 + indexA];
+                                sim_out_bitsA[indexA] = sim_out_bits[32 + indexA];
+                                sim_out_bitsB[indexA] = sim_out_bits[indexA];
                             }
                             for (int indexB = 0; indexB < 32; indexB++) {
-                                switch_A = (switch_A << 1) | (bitsA[indexB] ? 1 : 0);
-                                switch_B = (switch_B << 1) | (bitsB[indexB] ? 1 : 0);
+                                sim_out_switch_A = (sim_out_switch_A << 1) | (sim_out_bitsA[indexB] ? 1 : 0);
+                                sim_out_switch_B = (sim_out_switch_B << 1) | (sim_out_bitsB[indexB] ? 1 : 0);
                             }
-                            System.out.printf("thread " + threadId + " :: switch(" + switch_A + ", " + switch_B + ").%n");//todo SIMULATION
-                            switch (switch_A) {
+                            System.out.printf("thread " + threadId + " :: switch(" + sim_out_switch_A + ", " + sim_out_switch_B + ").%n");//todo SIMULATION
+                            switch (sim_out_switch_A) {
                                 case 0:
-                                    switch (switch_B) {
+                                    switch (sim_out_switch_B) {
                                         case 0:
                                             try {
                                                 output_subset0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
@@ -345,11 +379,11 @@ public class Simulation
                                             break;
 
                                         default:
-                                            System.out.printf("thread " + threadId + " :: case(" + switch_A + ", " + switch_B + ").%n");//todo SIMULATION
+                                            System.out.printf("thread " + threadId + " :: case(" + sim_out_switch_A + ", " + sim_out_switch_B + ").%n");//todo SIMULATION
                                             break;
                                     }
                                 default:
-                                    System.out.printf("thread " + threadId + " :: case(" + switch_A + ", " + switch_B + ").%n");//todo SIMULATION
+                                    System.out.printf("thread " + threadId + " :: case(" + sim_out_switch_A + ", " + sim_out_switch_B + ").%n");//todo SIMULATION
                                     break;
                             }
                         }
@@ -364,7 +398,7 @@ public class Simulation
                         //System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
                         //WriteQue_ConditionCode.app_FUNCT_write_End(2);//todo SIMULATION
                     }
-                }
+                //}
             }
             else {
                 //System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION

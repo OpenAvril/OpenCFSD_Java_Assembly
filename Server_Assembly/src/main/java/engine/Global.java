@@ -94,6 +94,8 @@ public class Global
         return temp;
     }
     public static double stat_CONVERT_ByteArray_To_Double(byte[] byteArray) {
+        return ByteBuffer.wrap(byteArray).getDouble();
+/*
         double temp = Double.MAX_VALUE;
         if (byteArray.length != 8) {
             throw new IllegalArgumentException("Byte array must have exactly 8 bytes.%n");
@@ -156,15 +158,16 @@ public class Global
             temp = Double.longBitsToDouble(tempLong);
         }
         return temp;
+ */
     }
     public static long stat_CONVERT_ByteArray_To_Long(byte[] byteArray) {
-        return 0;
+        return ByteBuffer.wrap(byteArray).getLong();
     }
     public static byte[] stat_CONVERT_Long_To_ByteArray(long value) {
-        return null;
+        return ByteBuffer.allocate(Long.BYTES).putLong(value).array();
     }
     public static byte[] stat_CONVERT_Double_To_ByteArray(double value) {
-        return null;
+        return ByteBuffer.allocate(8).putDouble(value).array();
     }
     public static void stat_CLASS_boot0_DECLAIRE_Global()
     {
