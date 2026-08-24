@@ -245,26 +245,13 @@ public class IO_ListenRespond {
                 System.out.printf("thread " + threadId + " :: wrap : => OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId( " + _SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() + " ).%n");//todo SIMULATION
                 OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
                 Input_praise0 subset_of_input_for_praise0 = null;
-                boolean[] thread_Listen_bits = new boolean[64];
-                boolean[] thread_Listen_bitsA = new boolean[32];
-                boolean[] thread_Listen_bitsB = new boolean[32];
-                int thread_Listen_switch_A = 0;
-                int thread_Listen_switch_B = 0;
-                for (int i = 0; i < 64; i++) {
-                    thread_Listen_bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
-                }
-                for (int indexA = 0; indexA < 32; indexA++) {
-                    thread_Listen_bitsA[indexA] = thread_Listen_bits[32 + indexA];
-                    thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA];
-                }
-                for (int indexB = 0; indexB < 32; indexB++) {
-                    thread_Listen_switch_A = (thread_Listen_switch_A << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
-                    thread_Listen_switch_B = (thread_Listen_switch_B << 1) | (thread_Listen_bitsB[indexB] ? 1 : 0);
-                }
-                System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch_A + ", " + thread_Listen_switch_B + ").%n");//todo SIMULATION
-                switch (thread_Listen_switch_A) {
+                int[] thread_Listen_switch = null;
+                thread_Listen_switch = new int[2];
+                thread_Listen_switch = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+                System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
+                switch (thread_Listen_switch[0]) {
                     case 0:
-                        switch (thread_Listen_switch_B) {
+                        switch (thread_Listen_switch[1]) {
                             case 0:
                                 try {
                                     subset_of_input_for_praise0 = (Input_praise0)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
@@ -296,11 +283,11 @@ public class IO_ListenRespond {
                                 break;
 
                             default:
-                                System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch_A + ", " + thread_Listen_switch_B + ").%n");//todo SIMULATION
+                                System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
                                 break;
                         }
                     default:
-                        System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch_A + ", " + thread_Listen_switch_B + ").%n");//todo SIMULATION
+                        System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
                         break;
                 }
                 System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
@@ -353,26 +340,13 @@ public class IO_ListenRespond {
                 System.out.printf("DELTA.%n");//todo SIMULATION
                 _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId());
                 Output_praise0 subset_of_output_for_praise0 = null;
-                boolean[] thread_Draw_bits = new boolean[64];
-                boolean[] thread_Draw_bitsA = new boolean[32];
-                boolean[] thread_Draw_bitsB = new boolean[32];
-                int thread_Draw_switch_A = 0;
-                int thread_Draw_switch_B = 0;
-                for (int i = 0; i < 64; i++) {
-                    thread_Draw_bits[i] = ((_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() >> i) & 1) == 1;
-                }
-                for (int indexA = 0; indexA < 32; indexA++) {
-                    thread_Draw_bitsA[indexA] = thread_Draw_bits[32 + indexA];
-                    thread_Draw_bitsB[indexA] = thread_Draw_bits[indexA];
-                }
-                for (int indexB = 0; indexB < 32; indexB++) {
-                    thread_Draw_switch_A = (thread_Draw_switch_A << 1) | (thread_Draw_bitsA[indexB] ? 1 : 0);
-                    thread_Draw_switch_B = (thread_Draw_switch_B << 1) | (thread_Draw_bitsB[indexB] ? 1 : 0);
-                }
-                System.out.printf("thread " + threadId + " :: switch(" + thread_Draw_switch_A + ", " + thread_Draw_switch_B + ").%n");//todo SIMULATION
-                switch (thread_Draw_switch_A) {
+                int[] thread_Listen_switch = null;
+                thread_Listen_switch = new int[2];
+                thread_Listen_switch = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+                System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
+                switch (thread_Listen_switch[0]) {
                     case 0:
-                        switch (thread_Draw_switch_B) {
+                        switch (thread_Listen_switch[1]) {
                             case 0:
                                 try {
                                     subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
@@ -397,11 +371,11 @@ public class IO_ListenRespond {
                                 break;
 
                             default:
-                                System.out.printf("thread " + threadId + " :: case(" + thread_Draw_switch_A + ", " + thread_Draw_switch_B + ").%n");//todo SIMULATION
+                                System.out.printf("thread " + threadId + " :: case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
                                 break;
                         }
                     default:
-                        System.out.printf("thread " + threadId + " :: case(" + thread_Draw_switch_A + ", " + thread_Draw_switch_B + ").%n");//todo SIMULATION
+                        System.out.printf("thread " + threadId + " :: case(" + thread_Listen_switch[0] + ", " + thread_Listen_switch[1] + ").%n");//todo SIMULATION
                         break;
                 }
                 System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION

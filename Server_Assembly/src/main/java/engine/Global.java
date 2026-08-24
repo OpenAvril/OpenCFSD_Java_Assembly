@@ -2,6 +2,9 @@ package engine;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.BitSet;
+
+import static SIMULATION.Simulation._SIM_stat_REG_input_Sample;
+
 public class Global
 {
     private static long _stat_REG_numberOfCores;
@@ -166,8 +169,43 @@ public class Global
     public static byte[] stat_CONVERT_Long_To_ByteArray(long value) {
         return ByteBuffer.allocate(Long.BYTES).putLong(value).array();
     }
+    public static int[] stat_CONVERT_Long_To_twoInts(long value) {
+        boolean[] thread_Listen_bits = new boolean[64];
+        boolean[] thread_Listen_bitsA = new boolean[32];
+        boolean[] thread_Listen_bitsB = new boolean[32];
+        int thread_Listen_switch_A = 0;
+        int thread_Listen_switch_B = 0;
+        int[] result = new int[2];
+        for (int i = 0; i < 64; i++) {
+            thread_Listen_bits[i] = ((value >> i) & 1) == 1;
+        }
+        for (int indexA = 0; indexA < 32; indexA++) {
+            int indexB = 32 + indexA;
+            if (indexA == 31) {
+                if (!thread_Listen_bits[63]) {
+                    thread_Listen_bitsA[indexA] = false;
+                } else {
+                    thread_Listen_bitsA[indexA] = true;
+                }
+                thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA];
+            } else {
+                thread_Listen_bitsA[indexA] = thread_Listen_bits[indexB];
+                thread_Listen_bitsB[indexA] = thread_Listen_bits[indexA];
+            }
+        }
+        for (int indexB = 0; indexB < 32; indexB++) {
+            thread_Listen_switch_A = (thread_Listen_switch_A << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
+            thread_Listen_switch_B = (thread_Listen_switch_B << 1) | (thread_Listen_bitsB[indexB] ? 1 : 0);
+        }
+        result[0] = thread_Listen_switch_A;
+        result[1] = thread_Listen_switch_B;
+        return result;
+    }
     public static byte[] stat_CONVERT_Double_To_ByteArray(double value) {
         return ByteBuffer.allocate(8).putDouble(value).array();
+    }
+    public static long stat_CONVERT_twoInts_To_Long(int[] value) {
+        return 0;
     }
     public static void stat_CLASS_boot0_DECLAIRE_Global()
     {
