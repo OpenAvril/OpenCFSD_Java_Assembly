@@ -302,11 +302,6 @@ public class OpenEpiCentre {
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        System.out.printf("IO Wrapper call to \\// \\// \\// CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() \\// \\// \\//.%n");
-        System.out.printf("IO Wrapper call to \\// \\// \\// CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() \\// \\// \\//.%n");
-        System.out.printf("<= CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId(" + Global.stat_CONVERT_ByteArray_To_Long(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp)) + ").%n");
-        System.out.printf("IO Wrapper call to //\\ //\\ //\\ CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() //\\ //\\ //\\.%n");
-        System.out.printf("IO Wrapper call to //\\ //\\ //\\ CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() //\\ //\\ //\\.%n");
         return Global.stat_CONVERT_ByteArray_To_Long(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp));
     }
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(double value) {
@@ -467,10 +462,5 @@ public class OpenEpiCentre {
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        System.out.printf("IO Wrapper call to \\// \\// \\// CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId() \\// \\// \\//.%n");
-        System.out.printf("IO Wrapper call to \\// \\// \\// CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId() \\// \\// \\//.%n");
-        System.out.printf("=> CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(" + praiseId + ").%n");
-        System.out.printf("IO Wrapper call to //\\ //\\ //\\ CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId() //\\ //\\ //\\.%n");
-        System.out.printf("IO Wrapper call to //\\ //\\ //\\ CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId() //\\ //\\ //\\.%n");
     }
 }

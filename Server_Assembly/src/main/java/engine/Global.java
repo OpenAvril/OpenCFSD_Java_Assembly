@@ -182,7 +182,7 @@ public class Global
             boolean thread_Listen_signNegative = false;
             boolean[] thread_Listen_bitsA = new boolean[32];
             boolean[] thread_Listen_bitsB = new boolean[32];
-            int thread_Listen_switch_A = 0;
+            int thread_Listen_switch_C = 0;
             int thread_Listen_switch_B = 0;
             for (int indexA = 0; indexA < 64; indexA++) {
                 thread_Listen_bits[indexA] = ((value >> indexA) & 1) == 1;
@@ -212,11 +212,11 @@ public class Global
                 }
             }
             for (int indexB = 0; indexB < 32; indexB++) {
-                thread_Listen_switch_A = (thread_Listen_switch_A << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
+                thread_Listen_switch_C = (thread_Listen_switch_C << 1) | (thread_Listen_bitsA[indexB] ? 1 : 0);
                 thread_Listen_switch_B = (thread_Listen_switch_B << 1) | (thread_Listen_bitsB[indexB] ? 1 : 0);
             }
             result[0] = thread_Listen_switch_B;
-            result[1] = thread_Listen_switch_A;
+            result[1] = thread_Listen_switch_C;
         }
         return result;
     }
