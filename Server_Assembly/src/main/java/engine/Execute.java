@@ -90,8 +90,10 @@ public class Execute
         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_terminate_Program();
         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
         OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
-        Pointer tempE2 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerInputReceive();
-        Pointer tempE3 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerOutputSend();
+        OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End();
+        OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start();
+        OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_End();
+        OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_Start();
         boolean tempE4 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerInputReceive();
         boolean tempE5 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend();
         boolean tempE6 = OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_IsInitialised_CLIBOpenEpiCentre();
@@ -193,7 +195,7 @@ public class Execute
     private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj) {
         System.out.printf("entered Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> {
-            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_IO_Listen_Respond(obj, (byte)0);
+            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_IO(obj, (byte)0);
         });
         _stat_REG_List_Of_Threads[1] = new Thread(() -> {
             obj.dyn_CLASS_get_SIMULATION().Thread_Input_Peripheral_Scanner(obj, (byte)1);

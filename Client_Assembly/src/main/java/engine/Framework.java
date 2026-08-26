@@ -1,6 +1,7 @@
 package engine;
 import SIMULATION.Simulation;
 import structs.*;
+import threads.GraphicsEngine;
 import threads.IO_ListenRespond;
 
 public class Framework
@@ -9,11 +10,12 @@ public class Framework
     private static Global _stat_CLASS_Global;
     private static Algorithm _stat_STRUCT_Algorithm;
     private static Input _stat_STRUCT_Input;
-    private static IO_ListenRespond _stat_STRUCT_IO_ListenRespond;
     private static Output _stat_STRUCT_Output;
     private static User_Algorithm _stat_STRUCT_User_Algorithms;
     private static User_Input _stat_STRUCT_User_Inputs;
     private static User_Output _stat_STRUCT_User_Outputs;
+    private static IO_ListenRespond _stat_THREAD_IO_ListenRespond;
+    private static GraphicsEngine _stat_THREAD_3dGraphics;
     private static Simulation SIMULATION;
     // public.
     public Framework() {
@@ -77,13 +79,22 @@ public class Framework
         this.dyn_STRUCT_get_Output().dyn_REG_boot3_INITIALISE_Output(this.dyn_STRUCT_get_User_Output());
         System.out.printf("started independent STRUCT Output().%n");
 
-        System.out.printf("started independent STRUCT IO_ListenRespond().%n");
-        stat_STRUCT_boot1_DEFINE_IO_ListenRespond();
-        stat_STRUCT_boot3_INITIALISE_IO_ListenRespond();
-        this.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_boot1_DEFINE_IO_ListenRespond(this);
-        this.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_boot2_SUBSTANTIATE_IO_ListenRespond(this);
-        this.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_boot3_INITIALISE_IO_ListenRespond(this, this.dyn_STRUCT_get_Input(), this.dyn_STRUCT_get_Output());
-        System.out.printf("done independent STRUCT IO_ListenRespond().%n");
+        System.out.printf("started independent THREAD IO_ListenRespond().%n");
+        stat_THREAD_boot1_DEFINE_IO_ListenRespond();
+        stat_THREAD_boot3_INITIALISE_IO_ListenRespond();
+        this.dyn_THREAD_get_IO_ListenRespond().dyn_REG_boot1_DEFINE_IO_ListenRespond(this);
+        this.dyn_THREAD_get_IO_ListenRespond().dyn_REG_boot2_SUBSTANTIATE_IO_ListenRespond(this);
+        this.dyn_THREAD_get_IO_ListenRespond().dyn_REG_boot3_INITIALISE_IO_ListenRespond(this, this.dyn_STRUCT_get_Input(), this.dyn_STRUCT_get_Output());
+        System.out.printf("done independent THREAD IO_ListenRespond().%n");
+
+        System.out.printf("started independent THREAD GraphicsEngine().%n");
+        stat_THREAD_boot1_DEFINE_3dGraphics();
+        stat_THREAD_boot3_INITIALISE_3dGraphics();
+        //this.dyn_THREAD_get_IO_ListenRespond().dyn_REG_boot1_DEFINE_IO_ListenRespond(this);
+        //this.dyn_THREAD_get_IO_ListenRespond().dyn_REG_boot2_SUBSTANTIATE_IO_ListenRespond(this);
+        //this.dyn_THREAD_get_IO_ListenRespond().dyn_REG_boot3_INITIALISE_IO_ListenRespond(this, this.dyn_STRUCT_get_Input(), this.dyn_STRUCT_get_Output());
+        System.out.printf("done independent THREAD GraphicsEngine().%n");
+
         System.out.printf("done independent STRUCT classes - DECLAIRE, DEFINE INITIALISE, RRegisters - DEFINE, SUBSTANTIATE, INITIALISE.%n");
 
         stat_CLASS_boot1_DEFINE_SIMULATION();
@@ -146,9 +157,12 @@ public class Framework
         System.out.printf("`                 V                 '%n");
         System.out.printf("%n");
 
+        this.dyn_THREAD_get_3d_Graphics().dyn_APP_boot3_INITIALISE_3dGraphics();
+
         System.out.printf("started PROGRAM - LAUNCH THREADS.%n");
         this.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_APP_Launch_Threads(this);
         System.out.printf("exiting PROGRAM - LAUNCH THREADS.%n");
+
         System.out.printf("exiting DESKTOP APPLICATION generate_Program().%n");
         System.out.printf("exiting CONSTRUCTOR Framework()%n");
     }
@@ -203,8 +217,11 @@ public class Framework
     public User_Output dyn_STRUCT_get_User_Output() {
         return stat_STRUCT_get_User_Output();
     }
-    public IO_ListenRespond dyn_STRUCT_get_IO_ListenRespond() {
-        return stat_STRUCT_get_IO_ListenRespond();
+    public IO_ListenRespond dyn_THREAD_get_IO_ListenRespond() {
+        return stat_THREAD_get_IO_ListenRespond();
+    }
+    public GraphicsEngine dyn_THREAD_get_3d_Graphics() {
+        return stat_THREAD_get_3dGraphics();
     }
     public void dyn_STRUCT_boot0_DECLAIRE()
     {
@@ -265,6 +282,20 @@ public class Framework
         }
         System.out.printf("exiting boot3_CLASS_INITIALISE_Global().%n");
     }
+    private static void stat_CLASS_boot1_DEFINE_SIMULATION() {
+        SIMULATION = null;
+    }
+    private static void stat_CLASS_boot3_INITIALISE_SIMULATION(Framework obj) {
+        SIMULATION = new Simulation(obj, obj.dyn_STRUCT_get_Input(), obj.dyn_STRUCT_get_Output());
+        while(stat_CLASS_get_SIMULATION() == null) { }
+    }
+    private static Global stat_CLASS_get_Global()
+    {
+        return _stat_CLASS_Global;
+    }
+    private static Simulation stat_CLASS_get_SIMULATION() {
+        return SIMULATION;
+    }
     private static App stat_CLASS_get_App()
     {
         return _stat_CLASS_App;
@@ -298,10 +329,7 @@ public class Framework
     {
         _stat_STRUCT_User_Outputs = null;
     }
-    private static void stat_STRUCT_boot1_DEFINE_IO_ListenRespond()
-    {
-        _stat_STRUCT_IO_ListenRespond = null;
-    }
+
     private static void stat_STRUCT_boot3_INITIALISE_Algorithm() {
         _stat_STRUCT_Algorithm = new Algorithm();
         try {
@@ -356,26 +384,13 @@ public class Framework
             System.out.printf("NullPointerException.%n");
         }
     }
-    private static void stat_STRUCT_boot3_INITIALISE_IO_ListenRespond() {
-        _stat_STRUCT_IO_ListenRespond = new IO_ListenRespond();
-        try {
-            stat_STRUCT_get_IO_ListenRespond();
-        }
-        catch (NullPointerException e) {
-            System.out.printf("NullPointerException.%n");
-        }
-    }
-    private static Algorithm stat_STRUCT_get_Algorithm()
+   private static Algorithm stat_STRUCT_get_Algorithm()
     {
         return _stat_STRUCT_Algorithm;
     }
     private static Input stat_STRUCT_get_Input()
     {
         return _stat_STRUCT_Input;
-    }
-    private static IO_ListenRespond stat_STRUCT_get_IO_ListenRespond()
-    {
-        return _stat_STRUCT_IO_ListenRespond;
     }
     private static Output stat_STRUCT_get_Output()
     {
@@ -393,18 +408,36 @@ public class Framework
     {
         return _stat_STRUCT_User_Algorithms;
     }
-    private static void stat_CLASS_boot1_DEFINE_SIMULATION() {
-        SIMULATION = null;
-    }
-    private static void stat_CLASS_boot3_INITIALISE_SIMULATION(Framework obj) {
-        SIMULATION = new Simulation(obj, obj.dyn_STRUCT_get_Input(), obj.dyn_STRUCT_get_Output());
-        while(stat_CLASS_get_SIMULATION() == null) { }
-    }
-    private static Global stat_CLASS_get_Global()
+    private static void stat_THREAD_boot1_DEFINE_3dGraphics()
     {
-        return _stat_CLASS_Global;
+        _stat_THREAD_3dGraphics = null;
     }
-    private static Simulation stat_CLASS_get_SIMULATION() {
-        return SIMULATION;
+    private static void stat_THREAD_boot1_DEFINE_IO_ListenRespond()
+    {
+        _stat_THREAD_IO_ListenRespond = null;
+    }
+    private static void stat_THREAD_boot3_INITIALISE_3dGraphics() {
+        _stat_THREAD_3dGraphics = new GraphicsEngine();
+        try {
+            stat_THREAD_get_IO_ListenRespond();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+    }
+    private static void stat_THREAD_boot3_INITIALISE_IO_ListenRespond() {
+        _stat_THREAD_IO_ListenRespond = new IO_ListenRespond();
+        try {
+            stat_THREAD_get_3dGraphics();
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+    }
+    private static GraphicsEngine stat_THREAD_get_3dGraphics() {
+        return _stat_THREAD_3dGraphics;
+    }
+    private static IO_ListenRespond stat_THREAD_get_IO_ListenRespond() {
+        return _stat_THREAD_IO_ListenRespond;
     }
 }

@@ -11,19 +11,70 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <lwjgl.version>2.9.3</lwjgl.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>game/GraphicsEngine</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.wav</include>
+                    <include>**/*.png</include>
+                    <include>**/*.blend</include>
+                    <include>**/*.obj</include>
+                    <include>**/*.fnt</include>
+                    <include>**/*.txt</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
     <dependencies>
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna</artifactId>
-            <version>5.13.0</version> <!-- Use the latest version -->
+            <version>5.13.0</version>
         </dependency>
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna-platform</artifactId>
-            <version>5.13.0</version> <!-- Use the latest version -->
+            <version>5.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl.lwjgl</groupId>
+            <artifactId>lwjgl</artifactId>
+            <version>2.9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl.lwjgl</groupId>
+            <artifactId>lwjgl_util</artifactId>
+            <version>2.9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slick2d</groupId>
+            <artifactId>slick2d-core</artifactId>
+            <version>1.0.2</version> <!-- Replace with your actual version -->
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.jnlp</groupId>
+                    <artifactId>jnlp-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.l33tlabs.twl</groupId>
+            <artifactId>pngdecoder</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>

@@ -4,11 +4,11 @@ import java.io.IOException;
 import main.IO.ServerAssembly;
 public class Main
 {
-    private static Framework _stat_PGM_ClientAssembly = null;
+    private static Framework _stat_PGM_ServerAssembly = null;
     // public.
     public static void main(String[] args) throws IOException {
         System.out.printf("entered first member function, main().%n");
-        _stat_PGM_ClientAssembly = ServerAssembly.app_generate_Program();
+        _stat_PGM_ServerAssembly = ServerAssembly.dyn_App_Generate_Program();
         System.out.printf("==========%n");
         System.out.printf("declaration.%n");
         System.out.printf("definition.%n");
@@ -18,5 +18,6 @@ public class Main
         System.out.printf("running.%n");
         System.out.printf("==========%n");
         System.out.printf("SIMULATION%n");
+
     }
 }

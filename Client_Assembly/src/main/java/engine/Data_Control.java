@@ -28,7 +28,7 @@ public class Data_Control
     }
     public void dyn_APP_Do_Store_PraiseOutputRecieve_To_GameInstanceData(Framework obj, Output stackSlot)
     {
-        switch (stackSlot.dyn_REG_get_Output_praiseId())
+        switch ((int) stackSlot.dyn_REG_get_Output_praiseId())
         {
             case 0:
                 Output_praise0 output_Subset_Praise0 = (Output_praise0)stackSlot.dyn_REG_get_OutputSubset();
@@ -147,7 +147,7 @@ public class Data_Control
     }
     public void dyn_REG_set_Item_On_Array_Of_IsWaitingOnPraiseDoWork(long praiseId, boolean newSTATE)
     {
-        stat_REG_get_Flag_Array_Of_IsWaitingOnPraiseDoWork()[praiseId] = newSTATE;
+        stat_REG_get_Flag_Array_Of_IsWaitingOnPraiseDoWork()[(int)praiseId] = newSTATE;
     }
     public void dyn_REG_boot1_DEFINE_Data_Control()
     {

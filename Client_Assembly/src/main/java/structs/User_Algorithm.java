@@ -47,7 +47,7 @@ public class User_Algorithm {
     }
     public Object dyn_REG_get_Item_On_List_Of_Algorithmsubsets(long praiseId)
     {
-        return stat_REG_get_List_Of_Algorithmsubsets()[praiseId];
+        return stat_REG_get_List_Of_Algorithmsubsets()[(int)praiseId];
     }
     // private.
     private static void stat_CLASS_boot0_DECLAIRE_User_Algorithm()

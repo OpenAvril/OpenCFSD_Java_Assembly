@@ -11,7 +11,7 @@ public class Algorithm_Control
     }
     public void SelectSetAlgorithmsubset(Algorithm objAlgorithm, User_Algorithm objUserAlgorithm, long praiseId)
     {
-        switch(praiseId)
+        switch((int) praiseId)
         {
             case 0:
                 Algorithm_praise0 inputPraise0 = (Algorithm_praise0)objAlgorithm.dyn_REG_get_Algorithmsubset();

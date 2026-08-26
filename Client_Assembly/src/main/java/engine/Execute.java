@@ -1,6 +1,7 @@
 package engine;
 
 import com.sun.jna.Pointer;
+import threads.GraphicsEngine;
 import main.IO.WriteQue_ConditionCode;
 import main.IO.WriteQue_SimulationIO;
 import main.IO.WriteQue_Simulation_InputSamples;
@@ -13,7 +14,8 @@ public class Execute
     private static Pointer _stat_PGM_ConditionCode;
     private static Pointer _stat_PGM_SimulationIO;
     private static Pointer _stat_PGM_WriteQue_Simulation_InputSamples;
-    private static Pointer _stat_PGM_WriteQue_Simulation_OutputSamples;//SIMULATION
+    private static Pointer _stat_PGM_WriteQue_Simulation_OutputSamples;//todo SIMULATION
+
     // public.
     public Execute(Framework obj)  {
         System.out.printf("entered CLASS Execute()%n");
@@ -118,7 +120,7 @@ public class Execute
         System.out.printf("entered *** Launch Threads ***.%n");
         for (int threadId = 0; threadId < _stat_REG_List_Of_Threads.length; threadId++)
         {
-            _stat_REG_List_Of_Threads[threadId].start();
+            //_stat_REG_List_Of_Threads[threadId].start();//todo simulation 3d graphics
         }
         System.out.printf("exiting *** Launch Threads ***.%n");
     }
@@ -163,7 +165,7 @@ public class Execute
     private static void stat_REG_boot3_INITIALISE_List_Of_Threads(Framework obj) {
         System.out.printf("entered Execute stat_REG_boot3_INITIALISE_List_Of_Threads().%n");
         _stat_REG_List_Of_Threads[0] = new Thread(() -> {
-            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_IO_Listen_Respond(obj, (byte)0);
+            obj.dyn_THREAD_get_IO_ListenRespond().dyn_App_Thread_IO_Listen_Respond(obj, (byte)0);
         });
         _stat_REG_List_Of_Threads[1] = new Thread(() -> {
             obj.dyn_CLASS_get_SIMULATION().Thread_Input_Peripheral_Scanner(obj, (byte)1);

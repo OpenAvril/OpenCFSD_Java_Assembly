@@ -39,7 +39,7 @@ public class WriteQue_ServerInputReceive
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerException.%n");
         }
-        return Global.stat_CONVERT_LsbByteArray_To_LsbBoolean(Global.stat_CONVERT_MsbByteArray_To_LsbByteArray(temp));
+        return Global.stat_CONVERT_ByteArray_To_Boolean(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp));
     }
     public static void app_FUNCT_terminate_Program()
     {
@@ -56,7 +56,7 @@ public class WriteQue_ServerInputReceive
     public static void app_FUNCT_write_End(long threadId)
     {
         try {
-            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(threadId)));
+            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {
@@ -68,7 +68,7 @@ public class WriteQue_ServerInputReceive
     public static void app_FUNCT_write_Start(long threadId)
     {
         try {
-            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_LsbByteArray_To_MsbByteArray(Global.stat_CONVERT_LSBUnsignedLong_To_LsbByteArray(threadId)));
+            JavaLIBWriteQue_ServerInputReceive.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (UnsatisfiedLinkError e) {

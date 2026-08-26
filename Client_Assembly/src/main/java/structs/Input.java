@@ -56,7 +56,7 @@ public class Input
     public void dyn_REG_set_InputSubset(Framework obj, long praiseId)
     {
         User_Input userInput = obj.dyn_STRUCT_get_User_Input();
-        switch(praiseId)
+        switch((int)praiseId)
         {
             case 0:
                 stat_REG_set_InputSubset((Input_praise0)userInput.dyn_REG_get_Item_On_List_Of_InputSubsets(praiseId));
