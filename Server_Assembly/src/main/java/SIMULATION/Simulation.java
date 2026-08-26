@@ -184,7 +184,6 @@ public class Simulation
                                     switch (thread_Listen_switch_C[1]) {
                                         case 2147483647:
                                             System.out.printf("thread " + threadId + " :: terminate program!%n");//todo SIMULATION
-                                            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION
                                             break;
 
                                         default:
@@ -199,7 +198,7 @@ public class Simulation
                             }
                             WriteQue_ConditionCode.app_FUNCT_write_Start(1);
                             System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 1%n");//todo SIMULATION
-                            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId(), true);
+                            //obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId(), true);
                             _SIM_stat_REG_PraiseStarted[Math.toIntExact(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId())] = true;//todo SIMULATION
                             obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewInputReady(true);
                             System.out.printf("thread " + threadId + " :: => CC : dyn_REG_set_flag__isNewInputReady(" + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady() + ")%n");//todo SIMULATION
@@ -426,7 +425,7 @@ public class Simulation
     public static void Terminate_stat_REG_scanner() {
         _stat_REG_scanner.close();
     }
-    public boolean dyn_REG_get_FLAG_isSimulationComplete()
+    public boolean dyn_REG_get_FLAG_isSimulationComplete()//todo SIMULATION
     {
         boolean result = true;
         for(int i=0; i < 4; i++) {

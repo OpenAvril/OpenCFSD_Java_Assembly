@@ -99,6 +99,9 @@ public class IO_ListenRespond {
             }
             System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
             WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            if(obj.dyn_CLASS_get_SIMULATION().dyn_REG_get_FLAG_isSimulationComplete()) {//TODO SIMULATION EXIT
+                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION EXIT
+            }//TODO SIMULATION EXIT
             if (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 System.out.printf("thread " + threadId + " :: dyn_REG_get_Flag_is_SystemInitialised() => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");
                 checkPass = true;
@@ -384,7 +387,6 @@ public class IO_ListenRespond {
                                 } catch (ClassCastException e) {
                                     System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                                 }
-                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(0, false);
                                 break;
 
                             case 1:
@@ -398,7 +400,6 @@ public class IO_ListenRespond {
                                 } catch (ClassCastException e) {
                                     System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                                 }
-                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(1, false);
                                 break;
 
                             case 2:
@@ -412,7 +413,6 @@ public class IO_ListenRespond {
                                 } catch (ClassCastException e) {
                                     System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                                 }
-                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(2, false);
                                 break;
 
                             case 3:
@@ -426,20 +426,13 @@ public class IO_ListenRespond {
                                 } catch (ClassCastException e) {
                                     System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                                 }
-                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(3, false);
-                                boolean checkPass = true;
-                                for (int index=0; index < 4; index++) {
-                                    if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(index)) {
-                                        checkPass = false;
-                                        break;
-                                    }
-                                }
-                                if(!checkPass) {
-                                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION EXIT
-                                }
+
                                 break;
 
                             default:
+                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isNewDataReadyForExtraction(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId(), false);
+
+
                                 System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
                                 break;
                         }

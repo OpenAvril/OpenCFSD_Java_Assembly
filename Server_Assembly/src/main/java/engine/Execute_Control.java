@@ -69,6 +69,14 @@ public class Execute_Control
     {
         stat_REG_set_Flag_isWaitingOnPraiseReturn(praiseId, newFlag);
     }
+    public void dyn_REG_set_Flag_isNewDataReadyForInjection(long praiseId, boolean newFlag)
+    {
+        stat_REG_set_Flag_isNewDataReadyForInjection(praiseId, newFlag);
+    }
+    public void dyn_REG_set_Flag_isNewDataReadyForExtraction(long praiseId, boolean newFlag)
+    {
+        stat_REG_set_Flag_isNewDataReadyForExtraction(praiseId, newFlag);
+    }
     public void dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised(byte threadId, boolean newBoolValue)
     {
         stat_REG_set_Item_On_List_Of_Flag_ThreadInitialised(threadId, newBoolValue);
