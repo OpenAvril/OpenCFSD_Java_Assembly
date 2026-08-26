@@ -13,8 +13,10 @@ public interface JavaLIB_OpenEpiCentre extends Library
     void CLIBConcurrentServerIO__app_FUNCT_terminate_Program();
     void CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
     void CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
-    Pointer CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerInputReceive();
-    Pointer CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerOutputSend();
+    void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End();
+    void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start();
+    void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_End();
+    void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_Start();
     byte[] CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerInputReceive();
     byte[] CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend();
     byte[] CLIBConcurrentServerIO__dyn_REG_get_flag_IsInitialised_CLIBOpenEpiCentre();

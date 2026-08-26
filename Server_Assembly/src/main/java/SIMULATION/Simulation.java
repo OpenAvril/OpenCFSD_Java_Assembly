@@ -56,8 +56,8 @@ public class Simulation
         boolean doneOnce = false;
         boolean checkPass = false;
         while (!checkPass) {
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-            System.out.printf("thread " + threadId + " :: SIM IN => : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
+            WriteQue_ConditionCode.app_FUNCT_write_Start(1);
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 1%n");//todo SIMULATION
             WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
             System.out.printf("thread " + threadId + " :: SIM IN => : OPEN ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
             if (!doneOnce) {
@@ -291,7 +291,8 @@ public class Simulation
                     //System.out.printf("thread " + threadId + " :: loop iterator : while 'is' stack loaded at output.%n");//todo SIMULATION
                     if (obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
                         System.out.printf("thread " + threadId + " :: stat_REG_get_flag__isNewInputReady() => " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + ".%n");//todo SIMULATION
-                        //if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId())) {
+
+                        if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId())) {
                             //System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
                             //WriteQue_ConditionCode.app_FUNCT_write_End(2);//todo SIMULATION
                             _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_Output();

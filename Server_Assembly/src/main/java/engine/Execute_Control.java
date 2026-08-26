@@ -2,7 +2,9 @@ package engine;
 
 public class Execute_Control
 {
-    private static boolean[][] _stat_REG_FLAG_array_isWaitingOnPraiseReturn;
+    private static boolean[][] _stat_SIM_REG_FLAG_array_isWaitingOnPraiseReturn;
+    private static boolean[][] _stat_REG_FLAG_array_isNewDataReadyForInjection;
+    private static boolean[][] _stat_REG_FLAG_array_isNewDataReadyForExtraction;
     private static boolean[] _stat_REG_ptr_Flag_array_ThreadInitialised;
     private static boolean _stat_REG_ptr_Flag_isSystemInitialised;
     // public.
@@ -29,6 +31,8 @@ public class Execute_Control
     {
         stat_REG_boot2_SUBSTANTIATE_Flag_isSystemInitialised();
         stat_REG_boot2_SUBSTANTIATE_Flag_isWaitingOnPraiseReturn();
+        stat_REG_boot2_SUBSTANTIATE_Flag_isNewDataReadyForInjection();
+        stat_REG_boot2_SUBSTANTIATE_Flag_isNewDataReadyForExtraction();
         stat_REG_boot2_SUBSTANTIATE_Flag_array_ThreadInitialised();
     }
     public void dyn_REG_boot3_INITIALISE_Execute_Control()
@@ -44,6 +48,14 @@ public class Execute_Control
     public boolean dyn_REG_get_Flag_isWaitingOnPraiseReturn(long praiseId)
     {
         return stat_REG_get_ptr_Flag_isWaitingOnPraiseReturn(praiseId);
+    }
+    public boolean dyn_REG_get_Flag_isNewDataReadyForInjection(long praiseId)
+    {
+        return stat_REG_get_ptr_Flag_isNewDataReadyForInjection(praiseId);
+    }
+    public boolean dyn_REG_get_Flag_isNewDataReadyForExtraction(long praiseId)
+    {
+        return stat_REG_get_ptr_Flag_isNewDataReadyForExtraction(praiseId);
     }
     public boolean dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised(byte threadId)
     {
@@ -85,10 +97,30 @@ public class Execute_Control
     private static void stat_REG_boot2_SUBSTANTIATE_Flag_isWaitingOnPraiseReturn()
     {
         int[] temp = Global.stat_CONVERT_Long_To_twoInts((int)Global.dyn_REG_get_numberOfPraises());
-        _stat_REG_FLAG_array_isWaitingOnPraiseReturn = new boolean[temp[0]+1][temp[1]+1];
+        _stat_SIM_REG_FLAG_array_isWaitingOnPraiseReturn = new boolean[temp[0]+1][temp[1]+1];
         for(int indexA = 0; indexA < temp[0]; indexA++) {
             for (int indexB = 0; indexB < temp[1]; indexB++) {
-                _stat_REG_FLAG_array_isWaitingOnPraiseReturn[indexA][indexB] = true;
+                _stat_SIM_REG_FLAG_array_isWaitingOnPraiseReturn[indexA][indexB] = true;
+            }
+        }
+    }
+    private static void stat_REG_boot2_SUBSTANTIATE_Flag_isNewDataReadyForInjection()
+    {
+        int[] temp = Global.stat_CONVERT_Long_To_twoInts((int)Global.dyn_REG_get_numberOfPraises());
+        _stat_REG_FLAG_array_isNewDataReadyForInjection = new boolean[temp[0]+1][temp[1]+1];
+        for(int indexA = 0; indexA < temp[0]; indexA++) {
+            for (int indexB = 0; indexB < temp[1]; indexB++) {
+                _stat_REG_FLAG_array_isNewDataReadyForInjection[indexA][indexB] = true;
+            }
+        }
+    }
+    private static void stat_REG_boot2_SUBSTANTIATE_Flag_isNewDataReadyForExtraction()
+    {
+        int[] temp = Global.stat_CONVERT_Long_To_twoInts((int)Global.dyn_REG_get_numberOfPraises());
+        _stat_REG_FLAG_array_isNewDataReadyForExtraction = new boolean[temp[0]+1][temp[1]+1];
+        for(int indexA = 0; indexA < temp[0]; indexA++) {
+            for (int indexB = 0; indexB < temp[1]; indexB++) {
+                _stat_REG_FLAG_array_isNewDataReadyForExtraction[indexA][indexB] = true;
             }
         }
     }
@@ -108,7 +140,25 @@ public class Execute_Control
         int[] temp = Global.stat_CONVERT_Long_To_twoInts((int)Global.dyn_REG_get_numberOfPraises());
         for(int indexA = 0; indexA < temp[0]; indexA++) {
             for (int indexB = 0; indexB < temp[1]; indexB++) {
-                _stat_REG_FLAG_array_isWaitingOnPraiseReturn[indexA][indexB] = false;
+                _stat_SIM_REG_FLAG_array_isWaitingOnPraiseReturn[indexA][indexB] = false;
+            }
+        }
+    }
+    private static void stat_REG_boot3_INITIALISE_Flag_isNewDataReadyForInjection()
+    {
+        int[] temp = Global.stat_CONVERT_Long_To_twoInts((int)Global.dyn_REG_get_numberOfPraises());
+        for(int indexA = 0; indexA < temp[0]; indexA++) {
+            for (int indexB = 0; indexB < temp[1]; indexB++) {
+                _stat_REG_FLAG_array_isNewDataReadyForInjection[indexA][indexB] = false;
+            }
+        }
+    }
+    private static void stat_REG_boot3_INITIALISE_Flag_isNewDataReadyForExtraction()
+    {
+        int[] temp = Global.stat_CONVERT_Long_To_twoInts((int)Global.dyn_REG_get_numberOfPraises());
+        for(int indexA = 0; indexA < temp[0]; indexA++) {
+            for (int indexB = 0; indexB < temp[1]; indexB++) {
+                _stat_REG_FLAG_array_isNewDataReadyForExtraction[indexA][indexB] = false;
             }
         }
     }
@@ -125,7 +175,17 @@ public class Execute_Control
     private static boolean stat_REG_get_ptr_Flag_isWaitingOnPraiseReturn(long praiseId)
     {
         int[] switching = Global.stat_CONVERT_Long_To_twoInts(praiseId);
-        return _stat_REG_FLAG_array_isWaitingOnPraiseReturn[switching[0]][switching[1]];
+        return _stat_SIM_REG_FLAG_array_isWaitingOnPraiseReturn[switching[0]][switching[1]];
+    }
+    private static boolean stat_REG_get_ptr_Flag_isNewDataReadyForInjection(long praiseId)
+    {
+        int[] switching = Global.stat_CONVERT_Long_To_twoInts(praiseId);
+        return _stat_REG_FLAG_array_isNewDataReadyForInjection[switching[0]][switching[1]];
+    }
+    private static boolean stat_REG_get_ptr_Flag_isNewDataReadyForExtraction(long praiseId)
+    {
+        int[] switching = Global.stat_CONVERT_Long_To_twoInts(praiseId);
+        return _stat_REG_FLAG_array_isNewDataReadyForExtraction[switching[0]][switching[1]];
     }
     private static boolean stat_get_ptr_list_Of_flag_ThreadInitialised(byte threadId)
     {
@@ -138,7 +198,17 @@ public class Execute_Control
     private static void stat_REG_set_Flag_isWaitingOnPraiseReturn(long praiseId, boolean newFlag)
     {
         int[] switching = Global.stat_CONVERT_Long_To_twoInts(praiseId);
-        _stat_REG_FLAG_array_isWaitingOnPraiseReturn[switching[0]][switching[1]] = newFlag;
+        _stat_SIM_REG_FLAG_array_isWaitingOnPraiseReturn[switching[0]][switching[1]] = newFlag;
+    }
+    private static void stat_REG_set_Flag_isNewDataReadyForInjection(long praiseId, boolean newFlag)
+    {
+        int[] switching = Global.stat_CONVERT_Long_To_twoInts(praiseId);
+        _stat_REG_FLAG_array_isNewDataReadyForInjection[switching[0]][switching[1]] = newFlag;
+    }
+    private static void stat_REG_set_Flag_isNewDataReadyForExtraction(long praiseId, boolean newFlag)
+    {
+        int[] switching = Global.stat_CONVERT_Long_To_twoInts(praiseId);
+        _stat_REG_FLAG_array_isNewDataReadyForExtraction[switching[0]][switching[1]] = newFlag;
     }
     private static void stat_REG_set_Item_On_List_Of_Flag_ThreadInitialised(byte threadId, boolean newFlag)
     {

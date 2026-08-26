@@ -115,39 +115,49 @@ public class OpenEpiCentre {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static Pointer CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerInputReceive() {
-        Pointer temp;
-        temp = null;
+    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_End() {
         try {
-            temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerInputReceive();
-        }
-        catch (NoClassDefFoundError e) {
+            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_End();
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return temp;
     }
-    public static Pointer CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerOutputSend() {
-        Pointer temp;
-        temp = null;
+    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_Start() {
         try {
-            temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_get_program_WriteEnableStack_ServerOutputSend();
-        }
-        catch (NoClassDefFoundError e) {
+            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_Start();
+        } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        }
-        catch (UnsatisfiedLinkError e) {
+        } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
-        return temp;
+    }
+    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End() {
+        try {
+            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End();
+        } catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        } catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+    }
+    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start() {
+        try {
+            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start();
+        } catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        } catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        } catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
     }
     public static boolean CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerInputReceive() {
         byte[]  temp;

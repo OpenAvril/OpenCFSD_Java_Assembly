@@ -101,8 +101,11 @@ public class IO_ListenRespond {
         System.out.printf("thread " + threadId + " :: Starting THREAD.%n");
         checkPass = false;
         while (!checkPass) {
-            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_Listen(obj, threadId);
-            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_Respond(obj, threadId);
+            if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
+                System.out.printf("thread " + threadId + " :: <= CC : udyn_REG_get_Flag_is_SystemInitialised() => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");//todo SIMULATION
+                obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_Listen(obj, threadId);
+                obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_Respond(obj, threadId);
+            }
             WriteQue_ConditionCode.app_FUNCT_write_Start(0);
             System.out.printf("thread " + threadId + " :: CC : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
             WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
@@ -225,107 +228,83 @@ public class IO_ListenRespond {
     }
     private void dyn_App_Thread_Listen (Framework obj,byte threadId) {
         WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-        //System.out.printf("thread " + threadId + " :: CC : ACCESS WriteQue_ConditionCode at Id=0.%n");//todo SIMULATION
-        WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
-        //System.out.printf("thread " + threadId + " :: INPUT : ACCESS WriteQue_SimulationIO at Id=0.%n");//todo SIMULATION
-        if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
-            System.out.printf("thread " + threadId + " :: <= CC : udyn_REG_get_Flag_is_SystemInitialised() => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");//todo SIMULATION
-            if (obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady()) {
-                System.out.printf("thread " + threadId + " :: <= CC : stat_REG_get_flag__isNewInputReady() => " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady() + ".%n");//todo SIMULATION
-                WriteQue_ConditionCode.app_FUNCT_write_End(0);
-                //System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
-                //stat_App_Decode_NetworkingSteam_At_Server_Input_Recieve(obj, _SIM_stat_REG_input_Sample, stat_REG_get_Buffer__Input());
-                //if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId())) {
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
-                    System.out.printf("thread " + threadId + " :: => LIB : OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId( " + _SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() + " ).%n");//todo SIMULATION
-                    OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
-                    Input_praise0 subset_of_input_for_praise0 = null;
-                    Input_praise1 subset_of_input_for_praise1 = null;
-                    Input_praise2 subset_of_input_for_praise2 = null;
-                    Input_praise3 subset_of_input_for_praise3 = null;
-                    int[] thread_Listen_switch_A = null;
-                    thread_Listen_switch_A = new int[2];
-                    thread_Listen_switch_A = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
-                    System.out.printf("thread " + threadId + " :: <= switch(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
-                    switch (thread_Listen_switch_A[0]) {
+        System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
+        //WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
+        //System.out.printf("thread " + threadId + " :: WriteQue : SIM : open access @ 0%n");//todo SIMULATION
+        if (obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady()) {
+            System.out.printf("thread " + threadId + " :: <= CC : stat_REG_get_flag__isNewInputReady() => " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady() + "%n");//todo SIMULATION
+            //stat_App_Decode_NetworkingSteam_At_Server_Input_Recieve(obj, _SIM_stat_REG_input_Sample, stat_REG_get_Buffer__Input());
+            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0.%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start();
+            System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerInputReceive : open access @ 0 (Injection)%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+            System.out.printf("thread " + threadId + " :: => LIB : OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId( " + _SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId() + " ).%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+            Input_praise0 subset_of_input_for_praise0 = null;
+            Input_praise1 subset_of_input_for_praise1 = null;
+            Input_praise2 subset_of_input_for_praise2 = null;
+            Input_praise3 subset_of_input_for_praise3 = null;
+            int[] thread_Listen_switch_A = null;
+            thread_Listen_switch_A = new int[2];
+            thread_Listen_switch_A = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+            System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
+            switch (thread_Listen_switch_A[0]) {
+                case 0:
+                    switch (thread_Listen_switch_A[1]) {
                         case 0:
-                            switch (thread_Listen_switch_A[1]) {
-                                case 0:
-                                    try {
-                                        subset_of_input_for_praise0 = (Input_praise0)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    break;
-
-                                case 1:
-                                    try {
-                                        subset_of_input_for_praise1 = (Input_praise1) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    break;
-
-                                case 2:
-                                    try {
-                                        subset_of_input_for_praise2 = (Input_praise2) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    break;
-
-                                case 3:
-                                    try {
-                                        subset_of_input_for_praise3 = (Input_praise3) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
-                                        OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    break;
-
-                                default:
-                                    System.out.printf("thread " + threadId + " :: done case(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
-                                    break;
+                            try {
+                                subset_of_input_for_praise0 = (Input_praise0)_SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_B(subset_of_input_for_praise0.dyn_REG_get_input_praise0_valueB());
+                            } catch (NullPointerException e) {
+                                System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                            } catch (NoClassDefFoundError e) {
+                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                            } catch (ClassCastException e) {
+                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                             }
+                            break;
 
-                        case 2147483647:
-                            switch (thread_Listen_switch_A[1]) {
-                                case 2147483647:
-                                    System.out.printf("thread " + threadId + " :: terminate program!%n");//todo SIMULATION
-                                    break;
+                        case 1:
+                            try {
+                                subset_of_input_for_praise1 = (Input_praise1) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_A(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise1_Value_B(subset_of_input_for_praise1.dyn_REG_get_input_praise1_valueB());
+                            } catch (NullPointerException e) {
+                                System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                            } catch (NoClassDefFoundError e) {
+                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                            } catch (ClassCastException e) {
+                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                            }
+                            break;
 
-                                default:
-                                    System.out.printf("thread " + threadId + " :: done case(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
-                                    break;
+                        case 2:
+                            try {
+                                subset_of_input_for_praise2 = (Input_praise2) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_A(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise2_Value_B(subset_of_input_for_praise2.dyn_REG_get_input_praise2_valueB());
+                            } catch (NullPointerException e) {
+                                System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                            } catch (NoClassDefFoundError e) {
+                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                            } catch (ClassCastException e) {
+                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                            }
+                            break;
+
+                        case 3:
+                            try {
+                                subset_of_input_for_praise3 = (Input_praise3) _SIM_stat_REG_input_Sample.dyn_REG_get_InputSubset();
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_A(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueA());
+                                OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise3_Value_B(subset_of_input_for_praise3.dyn_REG_get_input_praise3_valueB());
+                            } catch (NullPointerException e) {
+                                System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                            } catch (NoClassDefFoundError e) {
+                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                            } catch (ClassCastException e) {
+                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
                             }
                             break;
 
@@ -333,165 +312,191 @@ public class IO_ListenRespond {
                             System.out.printf("thread " + threadId + " :: done case(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
                             break;
                     }
-                    OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();
-                    OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
-                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewInputReady(false);
-                    System.out.printf("thread " + threadId + " :: => CC : stat_REG_get_flag__isNewInputReady(" + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady() + ")%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-                //}
-            } else {
-                System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
-                WriteQue_ConditionCode.app_FUNCT_write_End(0);
-            }
-            System.out.printf("thread " + threadId + " :: INPUT : CLOSE ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
-            WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
-        }
-    }
-    private void dyn_App_Thread_Respond(Framework obj, byte threadId) {
-        WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-        System.out.printf("thread " + threadId + " :: IO - OUT : OEPN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
-        WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
-        System.out.printf("thread " + threadId + " :: IO - OUT : OEEN ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
-        //System.out.printf("thread " + threadId + " CC : OPEN ACCESS WriteQue_SimulationIO at Id=0.%n");
-        //WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-        if (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
-            System.out.printf("thread " + threadId + " :: CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend() = " + OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend() + "%n");//todo SIMULATION
-            if (!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
-                System.out.printf("thread " + threadId + " :: CC : dyn_REG_get_flag__isNewOutputReady() = " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + "%n");//todo SIMULATION
-                //System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS WriteQue_ConditionCode at Id=0.%n");//todo SIMULATION
-                //WriteQue_ConditionCode.app_FUNCT_write_End(0);
-                OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
-                System.out.printf("thread " + threadId + " :: <= OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() = " + OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() + ".%n");//todo SIMULATION
-                _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
-                //if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId())) {
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId());
-                    Output_praise0 subset_of_output_for_praise0 = null;
-                    Output_praise1 subset_of_output_for_praise1 = null;
-                    Output_praise2 subset_of_output_for_praise2 = null;
-                    Output_praise3 subset_of_output_for_praise3 = null;
-                    int[] thread_Listen_switch_B = null;
-                    thread_Listen_switch_B = new int[2];
-                    thread_Listen_switch_B = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
-                    System.out.printf("thread " + threadId + " :: <= switch(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
-                    switch (thread_Listen_switch_B[0]) {
-                        case 0:
-                            switch (thread_Listen_switch_B[1]) {
-                                case 0:
-                                    try {
-                                        subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                        subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(0, false);
-                                    break;
 
-                                case 1:
-                                    try {
-                                        subset_of_output_for_praise1 = (Output_praise1) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                        subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise1_Value());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(1, false);
-                                    break;
-
-                                case 2:
-                                    try {
-                                        subset_of_output_for_praise2 = (Output_praise2) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                        subset_of_output_for_praise2.dyn_REG_set_output_praise2_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise2_Value());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(2, false);
-                                    break;
-
-                                case 3:
-                                    try {
-                                        subset_of_output_for_praise3 = (Output_praise3) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
-                                        subset_of_output_for_praise3.dyn_REG_set_output_praise3_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise3_Value());
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
-                                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(3, false);
-                                    boolean checkPass = true;
-                                    for (int index=0; index < 4; index++) {
-                                        if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(index)) {
-                                            checkPass = false;
-                                            break;
-                                        }
-                                    }
-                                    if(!checkPass) {
-                                        obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION EXIT
-                                    }
-                                    break;
-
-                                default:
-                                    System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
-                                    break;
-                            }
-
+                case 2147483647:
+                    switch (thread_Listen_switch_A[1]) {
                         case 2147483647:
-                            switch (thread_Listen_switch_B[1]) {
-                                case 2147483647:
-                                    System.out.printf("thread " + threadId + " :: terminate program!%n");//todo SIMULATION
-                                    break;
-
-                                default:
-                                    System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
-                                    break;
-                            }
+                            System.out.printf("thread " + threadId + " :: terminate program!%n");//todo SIMULATION
                             break;
 
                         default:
-                            System.out.printf("thread " + threadId + " :: empty case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
+                            System.out.printf("thread " + threadId + " :: done case(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
                             break;
                     }
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
-                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
-                    //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());//todo SIMULATION
-               // }
-            } else {
-                //System.out.printf("thread " + threadId + " CC : CLOSE ACCESS WriteQue_SimulationIO at Id=0.%n");//todo SIMULATION
-                //WriteQue_ConditionCode.app_FUNCT_write_End(0);//todo SIMULATION
+                    break;
+
+                default:
+                    System.out.printf("thread " + threadId + " :: done case(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
+                    break;
             }
-            System.out.printf("thread " + threadId + " :: IO - OUT : CLOSE ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
-            WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: IO - OUT : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();
+            OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
+            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");
+            obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewInputReady(false);
+            System.out.printf("thread " + threadId + " :: => CC : stat_REG_get_flag__isNewInputReady(" + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady() + ")%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");
+            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerInputReceive : close access @ 0 (Injection)%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End();
+        } else {
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");
             WriteQue_ConditionCode.app_FUNCT_write_End(0);
         }
+        //System.out.printf("thread " + threadId + " :: WriteQue : SIM : close access @ 0%n");//todo SIMULATION
+        //WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
+    }
+    private void dyn_App_Thread_Respond(Framework obj, byte threadId) {
+        WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+        System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
+        //WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
+        //System.out.printf("thread " + threadId + " :: WriteQue : SIM : open access @ 0%n");//todo SIMULATION
+        if (OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend()) {
+            System.out.printf("thread " + threadId + " :: <= CC : CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend() = " + OpenEpiCentre.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerOutputSend() + "%n");//todo SIMULATION
+            if (!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
+                System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_flag__isNewOutputReady() => " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + "%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
+                WriteQue_ConditionCode.app_FUNCT_write_End(0);
+                OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_Start();
+                System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerOutputSend : open access @ 0 (Extraction)%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_pop_From_Stack_Of_Output();
+                System.out.printf("thread " + threadId + " :: <= OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() = " + OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId() + ".%n");//todo SIMULATION
+                _SIM_stat_REG_output_Sample.dyn_REG_set_Output_praiseId(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_MetaData_PraiseEventId());
+                _SIM_stat_REG_output_Sample.dyn_REG_set_OutputSubset(obj, _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId());
+                Output_praise0 subset_of_output_for_praise0 = null;
+                Output_praise1 subset_of_output_for_praise1 = null;
+                Output_praise2 subset_of_output_for_praise2 = null;
+                Output_praise3 subset_of_output_for_praise3 = null;
+                int[] thread_Listen_switch_B = null;
+                thread_Listen_switch_B = new int[2];
+                thread_Listen_switch_B = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+                System.out.printf("thread " + threadId + " :: switch(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
+                switch (thread_Listen_switch_B[0]) {
+                    case 0:
+                        switch (thread_Listen_switch_B[1]) {
+                            case 0:
+                                try {
+                                    subset_of_output_for_praise0 = (Output_praise0) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                    subset_of_output_for_praise0.dyn_REG_set_output_praise0_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise0_Value());
+                                } catch (NullPointerException e) {
+                                    System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                                } catch (NoClassDefFoundError e) {
+                                    System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                } catch (ClassCastException e) {
+                                    System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                }
+                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(0, false);
+                                break;
+
+                            case 1:
+                                try {
+                                    subset_of_output_for_praise1 = (Output_praise1) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                    subset_of_output_for_praise1.dyn_REG_set_output_praise1_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise1_Value());
+                                } catch (NullPointerException e) {
+                                    System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                                } catch (NoClassDefFoundError e) {
+                                    System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                } catch (ClassCastException e) {
+                                    System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                }
+                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(1, false);
+                                break;
+
+                            case 2:
+                                try {
+                                    subset_of_output_for_praise2 = (Output_praise2) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                    subset_of_output_for_praise2.dyn_REG_set_output_praise2_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise2_Value());
+                                } catch (NullPointerException e) {
+                                    System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                                } catch (NoClassDefFoundError e) {
+                                    System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                } catch (ClassCastException e) {
+                                    System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                }
+                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(2, false);
+                                break;
+
+                            case 3:
+                                try {
+                                    subset_of_output_for_praise3 = (Output_praise3) _SIM_stat_REG_output_Sample.dyn_REG_get_OutputSubset();
+                                    subset_of_output_for_praise3.dyn_REG_set_output_praise3_value(OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_get_Item_CLIB_OpenEpiCentre_STRUCT__Output_praise3_Value());
+                                } catch (NullPointerException e) {
+                                    System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                                } catch (NoClassDefFoundError e) {
+                                    System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                                } catch (ClassCastException e) {
+                                    System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                                }
+                                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(3, false);
+                                boolean checkPass = true;
+                                for (int index=0; index < 4; index++) {
+                                    if(obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_isWaitingOnPraiseReturn(index)) {
+                                        checkPass = false;
+                                        break;
+                                    }
+                                }
+                                if(!checkPass) {
+                                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION EXIT
+                                }
+                                break;
+
+                            default:
+                                System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
+                                break;
+                        }
+
+                    case 2147483647:
+                        switch (thread_Listen_switch_B[1]) {
+                            case 2147483647:
+                                System.out.printf("thread " + threadId + " :: terminate program!%n");//todo SIMULATION
+                                break;
+
+                            default:
+                                System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
+                                break;
+                        }
+                        break;
+
+                    default:
+                        System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_B[0] + ", " + thread_Listen_switch_B[1] + ").%n");//todo SIMULATION
+                        break;
+                }
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerOutputSend : close access @ 0 (Extraction)%n");//todo SIMULATION
+                OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_End();
+                WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+                System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
+                obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
+                System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
+                WriteQue_ConditionCode.app_FUNCT_write_End(0);
+                //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());//todo SIMULATION
+            } else {
+                System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
+                WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            }
+        } else {
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
+            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+        }
+        //System.out.printf("thread " + threadId + " :: WriteQue : SIM : close access @ 0%n");//todo SIMULATION
+        //WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
     }
     public void dyn_REG_boot1_DEFINE_IO_ListenRespond(Framework obj) {
         System.out.printf("entered dyn_REG_boot1_DEFINE_IO_ListenRespond().%n");
