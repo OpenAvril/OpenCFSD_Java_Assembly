@@ -36,33 +36,20 @@ public class IO_ListenRespond {
     }
 
     public void dyn_App_Thread_IO(Framework obj, byte threadId) {
-        System.out.printf("thread " + threadId + " :: Enter THREAD member function on thread.%n");
-        boolean doneOnce = false;
+        System.out.printf("thread " + threadId + " :: Entered THREAD member function.%n");
         boolean checkPass = false;
         while (!checkPass) {
             WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-            System.out.printf("thread " + threadId + " :: IO - OUT => : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
-            WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: IO - OUT => : OPEN ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
-            if (!doneOnce) {
-                obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised(threadId, true);
-                System.out.printf("thread " + threadId + " :: isThreadInitialised => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised(threadId) + ".%n");
-                doneOnce = true;
-            }
-            WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: IO - OUT => : CLOSE ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
+            obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised(threadId, true);
+            System.out.printf("thread " + threadId + " :: isThreadInitialised => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised(threadId) + ".%n");
             WriteQue_ConditionCode.app_FUNCT_write_End(0);
-            System.out.printf("thread " + threadId + " :: IO - OUT => : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
             checkPass = true;
         }
-        System.out.printf("thread " + threadId + " :: Initialised Thread.%n");
         checkPass = false;
         boolean temp = true;
         while (!checkPass) {
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-            System.out.printf("thread " + threadId + " :: IO - OUT => : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
-            WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: IO - OUT => : OPEN ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
             temp = true;
             for (byte index = 0; index < 3; index++) {
                 if (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised(index)) {
@@ -89,35 +76,35 @@ public class IO_ListenRespond {
                 temp = false;
                 System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
             }
+            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
             obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(temp);
             if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 checkPass = true;
+                System.out.printf("thread " + threadId + " :: Starting THREAD.%n");
             }
-            WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: IO - OUT => : CLOSE ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
             WriteQue_ConditionCode.app_FUNCT_write_End(0);
-            System.out.printf("thread " + threadId + " :: IO - OUT => : CLOSE ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
         }
-        System.out.printf("thread " + threadId + " :: Starting THREAD.%n");
         checkPass = false;
         while (!checkPass) {
+            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
             if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
-                System.out.printf("thread " + threadId + " :: <= CC : udyn_REG_get_Flag_is_SystemInitialised() => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");//todo SIMULATION
+                System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
+                WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+                System.out.printf("thread " + threadId + " :: CC : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
                 obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_Listen(obj, threadId);
                 obj.dyn_STRUCT_get_IO_ListenRespond().dyn_App_Thread_Respond(obj, threadId);
             }
+            System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
             WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-            System.out.printf("thread " + threadId + " :: CC : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
-            WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: OUTPUT : OPEN ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
             if (!obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 System.out.printf("thread " + threadId + " :: dyn_REG_get_Flag_is_SystemInitialised() => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + ".%n");
                 checkPass = true;
             }
-            System.out.printf("thread " + threadId + " :: CC : CLOSE ACCESS 'WriteQue_SimulationIO' .%n");//todo SIMULATION
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
-            System.out.printf("thread " + threadId + " :: OUTPUT : CLOSE ACCESS 'WriteQue_SimulationIO'.%n");//todo SIMULATION
-            WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
+            System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
+            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
         }
         obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);
     }
