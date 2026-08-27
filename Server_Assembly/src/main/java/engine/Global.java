@@ -57,7 +57,7 @@ public class Global
     public static byte[] stat_CONVERT_ByteArray_To_ReverseByteArray(byte[] buffer) {
         byte[] temp = new byte[buffer.length];
         for(int indexA = 0; indexA < buffer.length; indexA++) {
-            temp[indexA] = Byte.MAX_VALUE;
+            temp[indexA] = (byte)0;
         }
         int bitArrayLength = buffer.length*8;
         boolean[] bitArray = new boolean[bitArrayLength];

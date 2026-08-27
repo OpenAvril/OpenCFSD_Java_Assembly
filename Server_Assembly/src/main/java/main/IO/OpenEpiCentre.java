@@ -312,6 +312,21 @@ public class OpenEpiCentre {
         } catch (UnsatisfiedLinkError e) {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("<= byte[] = " + Arrays.toString(temp) + "%n");
+        System.out.printf("<= reverse_byte[] = " + Arrays.toString(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp)) + "%n");
+        System.out.printf("<= long = " + Global.stat_CONVERT_ByteArray_To_Long(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp)) + "%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
+        System.out.printf("*%n");
         return Global.stat_CONVERT_ByteArray_To_Long(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp));
     }
     public static void CLIBConcurrentServerIO__io_PRAISE_set_Item_Input_praise0_Value_A(double value) {
