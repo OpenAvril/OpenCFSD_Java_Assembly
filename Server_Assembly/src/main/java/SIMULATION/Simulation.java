@@ -175,15 +175,74 @@ public class Simulation
                                             System.out.printf("thread " + threadId + " :: <= : value_B: " + subset_of_SIM_input_for_praise3.dyn_REG_get_input_praise3_valueB() + ".%n");//todo SIMULATION
                                             break;
 
+                                        case Integer.MAX_VALUE:
+                                            break;
+
+                                        case -1:
+                                            break;
+
+                                        case Integer.MIN_VALUE:
+                                            break;
+
                                         default:
                                             System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_C[0] + ", " + thread_Listen_switch_C[1] + ").%n");//todo SIMULATION
                                             break;
                                     }
+                                    break;
 
-                                case 2147483647:
+                                case Integer.MAX_VALUE:
                                     switch (thread_Listen_switch_C[1]) {
-                                        case 2147483647:
-                                            System.out.printf("thread " + threadId + " :: terminate program!%n");//todo SIMULATION
+                                        case 0:
+                                            break;
+
+                                        case Integer.MAX_VALUE:
+                                            break;
+
+                                        case -1:
+                                            break;
+
+                                        case Integer.MIN_VALUE:
+                                            break;
+
+                                        default:
+                                            System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_C[0] + ", " + thread_Listen_switch_C[1] + ").%n");//todo SIMULATION
+                                            break;
+                                    }
+                                    break;
+
+                                case -1:
+                                    switch (thread_Listen_switch_C[1]) {
+                                        case 0:
+                                            break;
+
+                                        case Integer.MAX_VALUE:
+                                            break;
+
+                                        case -1:
+                                            break;
+
+                                        case Integer.MIN_VALUE:
+                                            break;
+
+                                        default:
+                                            System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_C[0] + ", " + thread_Listen_switch_C[1] + ").%n");//todo SIMULATION
+                                            break;
+                                    }
+                                    break;
+
+                                case Integer.MIN_VALUE:
+                                    switch (thread_Listen_switch_C[1]) {
+                                        case 0:
+                                            break;
+
+                                        case Integer.MAX_VALUE:
+                                            break;
+
+                                        case -1:
+                                            break;
+
+                                        case Integer.MIN_VALUE:
+                                            System.out.printf("thread " + threadId + " :: is primed DEFAULT case(" + thread_Listen_switch_C[0] + ", " + thread_Listen_switch_C[1] + ").%n");//todo SIMULATION
                                             break;
 
                                         default:
@@ -266,6 +325,7 @@ public class Simulation
                     WriteQue_ConditionCode.app_FUNCT_write_Start(2);
                     System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 2%n");//todo SIMULATION
                     _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_Output();
+                    _SIM_stat_REG_output_Sample = obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_Buffer__Ouput();
                     System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                     System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
                     System.out.printf("thread " + threadId + " :: SIM OUT =>%n");
@@ -275,7 +335,7 @@ public class Simulation
                     System.out.printf("thread " + threadId + " :: <= : PraiseEventId: " + _SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId() + ".%n");
                     int[] thread_Listen_switch_D = null;
                     thread_Listen_switch_D = new int[2];
-                    thread_Listen_switch_D = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId());
+                    thread_Listen_switch_D = Global.stat_CONVERT_Long_To_twoInts(_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId());
                     Output_praise0 output_subset0 = null;
                     Output_praise1 output_subset1 = null;
                     Output_praise2 output_subset2 = null;
@@ -344,24 +404,74 @@ public class Simulation
                                     System.out.printf("thread " + threadId + " :: <= : output subset3 value: " + result3 + ".%n");
                                     break;
 
-                                default:
-                                    try {
+                                case Integer.MAX_VALUE:
+                                    break;
 
-                                    } catch (NullPointerException e) {
-                                        System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                                    } catch (NoClassDefFoundError e) {
-                                        System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                                    } catch (ClassCastException e) {
-                                        System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                                    }
+                                case -1:
+                                    break;
+
+                                case Integer.MIN_VALUE:
+                                    break;
+
+                                default:
                                     System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_D[0] + ", " + thread_Listen_switch_D[1] + ").%n");//todo SIMULATION
                                     break;
                             }
+                            break;
 
-                        case 2147483647:
+                        case Integer.MAX_VALUE:
                             switch (thread_Listen_switch_D[1]) {
-                                case 2147483647:
+                                case 0:
+                                    break;
 
+                                case Integer.MAX_VALUE:
+                                    break;
+
+                                case -1:
+                                    break;
+
+                                case Integer.MIN_VALUE:
+                                    break;
+
+                                default:
+                                    System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_D[0] + ", " + thread_Listen_switch_D[1] + ").%n");//todo SIMULATION
+                                    break;
+                            }
+                            break;
+
+                        case -1:
+                            switch (thread_Listen_switch_D[1]) {
+                                case 0:
+                                    break;
+
+                                case Integer.MAX_VALUE:
+                                    break;
+
+                                case -1:
+                                    break;
+
+                                case Integer.MIN_VALUE:
+                                    break;
+
+                                default:
+                                    System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_D[0] + ", " + thread_Listen_switch_D[1] + ").%n");//todo SIMULATION
+                                    break;
+                            }
+                            break;
+
+                        case Integer.MIN_VALUE:
+                            switch (thread_Listen_switch_D[1]) {
+                                case 0:
+                                    break;
+
+                                case Integer.MAX_VALUE:
+                                    break;
+
+                                case -1:
+                                    break;
+
+                                case Integer.MIN_VALUE:
+                                    System.out.printf("thread " + threadId + " :: is primed DEFAULT case(" + thread_Listen_switch_D[0] + ", " + thread_Listen_switch_D[1] + ").%n");//todo SIMULATION
                                     break;
 
                                 default:
@@ -371,24 +481,17 @@ public class Simulation
                             break;
 
                         default:
-                            try {
-
-                            } catch (NullPointerException e) {
-                                System.out.printf("thread " + threadId + " :: NullPointerException.%n");
-                            } catch (NoClassDefFoundError e) {
-                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
-                            } catch (ClassCastException e) {
-                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
-                            }
                             System.out.printf("thread " + threadId + " :: close case(" + thread_Listen_switch_D[0] + ", " + thread_Listen_switch_D[1] + ").%n");//todo SIMULATION
                             break;
                     }
                     WriteQue_ConditionCode.app_FUNCT_write_Start(2);
                     System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 2%n");//todo SIMULATION
-                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId(), false);
-                    _SIM_stat_REG_PraiseComplete[Math.toIntExact(_SIM_stat_REG_input_Sample.dyn_REG_get_Input_praiseId())] = true;
-                    obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(false);
-                    System.out.printf("thread " + threadId + " :: => CC : isNewOutputReady(" + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + ")%n");//todo SIMULATION
+                    obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_isWaitingOnPraiseReturn(_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId(), false);
+                    if(_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId() != Integer.MIN_VALUE) {
+                        _SIM_stat_REG_PraiseComplete[(int)_SIM_stat_REG_output_Sample.dyn_REG_get_Output_praiseId()] = true;
+                        obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(false);
+                        System.out.printf("thread " + threadId + " :: => CC : isNewOutputReady(" + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + ")%n");//todo SIMULATION
+                    }
                     if(obj.dyn_CLASS_get_SIMULATION().dyn_REG_get_FLAG_isSimulationComplete()) {//TODO SIMULATION
                         obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION
                     }//TODO SIMULATION

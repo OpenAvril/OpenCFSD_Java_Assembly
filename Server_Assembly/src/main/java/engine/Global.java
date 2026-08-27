@@ -174,8 +174,8 @@ public class Global
         int[] result = new int[2];
         if (value > 2305843009213693951L) {
             System.out.printf("ERROR :: praiseId is to large for 2x 32-bit MUX(s), switched by a signed 32-bit integer.%n");
-            result[0] = 0;
-            result[1] = 0;
+            result[0] = Integer.MIN_VALUE;
+            result[1] = Integer.MIN_VALUE;
         } else {
             boolean[] thread_Listen_bits = new boolean[64];
             boolean[] temp = new boolean[64];
