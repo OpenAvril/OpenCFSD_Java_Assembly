@@ -1,14 +1,11 @@
 package threads;
-import SIMULATION.Simulation;
 import engine.Framework;
 import engine.Global;
-import libs.JavaLIB_OpenEpiCentre;
 import main.IO.*;
 import structs.Input;
 import structs.Output;
 import structs.praise_sets.*;
 import static SIMULATION.Simulation._SIM_stat_REG_input_Sample;
-import static SIMULATION.Simulation._SIM_stat_REG_output_Sample;
 
 public class IO_ListenRespond {
     private static Input _stat_REG_Buffer_For_Input;
@@ -25,11 +22,11 @@ public class IO_ListenRespond {
         System.out.printf("thread " + threadId + " :: Entered THREAD member function.%n");
         boolean checkPass = false;
         while (!checkPass) {
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
             obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Item_On_List_Of_Flag_ThreadInitialised(threadId, true);
             System.out.printf("thread " + threadId + " :: isThreadInitialised => " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Item_On_List_Of_Flag_ThreadInitialised(threadId) + ".%n");
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
             checkPass = true;
         }
@@ -42,19 +39,11 @@ public class IO_ListenRespond {
                     temp = false;
                 }
             }
-            if (!WriteQue_ConditionCode.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
+            if (!WriteQue_ServerInputReceive.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
                 temp = false;
                 System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
             }
-            if (!WriteQue_Simulation_InputSamples.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
-                temp = false;
-                System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
-            }
-            if (!WriteQue_Simulation_OutputSamples.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
-                temp = false;
-                System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
-            }
-            if (!WriteQue_SimulationIO.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
+            if (!WriteQue_ServerOutputSend.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
                 temp = false;
                 System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
             }
@@ -62,29 +51,41 @@ public class IO_ListenRespond {
                 temp = false;
                 System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
             }
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            if (!WriteQue_ServerConditionCode.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
+                temp = false;
+                System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
+            }
+            if (!WriteQue_ClientUserInput.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
+                temp = false;
+                System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
+            }
+            if (!WriteQue_ServerOutputSend.app_FUNCT_get_flag_isPGM_INSTNATIATED()) {
+                temp = false;
+                System.out.printf("thread " + threadId + " :: PROGRAM NOT INSTANTIATED.%n");
+            }
+            WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
             obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(temp);
             if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 checkPass = true;
                 System.out.printf("thread " + threadId + " :: Starting THREAD.%n");
             }
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
         }
         checkPass = false;
         while (!checkPass) {
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
             if (obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised()) {
                 System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
-                WriteQue_ConditionCode.app_FUNCT_write_Start(0);
-                System.out.printf("thread " + threadId + " :: CC : OPEN ACCESS 'WriteQue_ConditionCode'.%n");//todo SIMULATION
+                WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
+                System.out.printf("thread " + threadId + " :: CC : OPEN ACCESS 'WriteQue_ServerConditionCode'.%n");//todo SIMULATION
                 obj.dyn_STRUCT_get_IO_ListenRespond().stat_App_Thread_Listen(obj, threadId);
                 obj.dyn_STRUCT_get_IO_ListenRespond().stat_App_Thread_Respond(obj, threadId);
             }
             System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
             if(obj.dyn_CLASS_get_SIMULATION().dyn_REG_get_FLAG_isSimulationComplete()) {//TODO SIMULATION EXIT
                 obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_set_Flag_is_SystemInitialised(false);//TODO SIMULATION EXIT
             }//TODO SIMULATION EXIT
@@ -93,7 +94,7 @@ public class IO_ListenRespond {
                 checkPass = true;
             }
             System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_Flag_is_SystemInitialised() = " + obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().dyn_REG_get_Flag_is_SystemInitialised() + "%n");//todo SIMULATION
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
         }
         obj.dyn_CLASS_get_App().dyn_CLASS_get_Execute().dyn_CLASS_get_Execute_Control().app_Terminate_All_Threads(obj);
     }
@@ -139,7 +140,7 @@ public class IO_ListenRespond {
     }
 // private.
     private void stat_App_Thread_Listen (Framework obj,byte threadId) {
-        WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+        WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
         System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
         //WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
         //System.out.printf("thread " + threadId + " :: WriteQue : SIM : open access @ 0%n");//todo SIMULATION
@@ -148,10 +149,10 @@ public class IO_ListenRespond {
             //_stat_REG_Buffer_For_Input = obj.dyn_STRUCT_get_Input();
             //stat_App_Decode_NetworkingSteam_At_Server_Input_Recieve(obj, _SIM_stat_REG_input_Sample, stat_REG_get_Buffer__Input());//todo SIMULATION undo
             _stat_REG_Buffer_For_Input = _SIM_stat_REG_input_Sample;//todo SIMULATION
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0.%n");//todo SIMULATION
-            OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start();
-            System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerInputReceive : open access @ 0 (Injection)%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ClientUserInput_Injection__write_Start();
+            System.out.printf("thread " + threadId + " :: WriteQue : STACK - ClientUserInput : open access @ 0 (Injection)%n");//todo SIMULATION
             OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId(_stat_REG_Buffer_For_Input.dyn_REG_get_Input_praiseId());
             System.out.printf("thread " + threadId + " :: => LIB : OpenEpiCentre.CLIBConcurrentServerIO__io_PRAISE_set_MetaData_PraiseEventId( " + _stat_REG_Buffer_For_Input.dyn_REG_get_Input_praiseId() + " ).%n");//todo SIMULATION
             OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_select_set_Intput_Subset(_stat_REG_Buffer_For_Input.dyn_REG_get_Input_praiseId());
@@ -159,6 +160,7 @@ public class IO_ListenRespond {
             Input_praise1 subset_of_input_for_praise1 = null;
             Input_praise2 subset_of_input_for_praise2 = null;
             Input_praise3 subset_of_input_for_praise3 = null;
+            Input_praiseMAX subset_of_input_for_praiseMAX = null;
             int[] thread_Listen_switch_A = null;
             thread_Listen_switch_A = new int[2];
             thread_Listen_switch_A = Global.stat_CONVERT_Long_To_twoInts(_stat_REG_Buffer_For_Input.dyn_REG_get_Input_praiseId());
@@ -289,6 +291,15 @@ public class IO_ListenRespond {
                             break;
 
                         case Integer.MIN_VALUE:
+                            try {
+                                subset_of_input_for_praiseMAX = (Input_praiseMAX)_stat_REG_Buffer_For_Input.dyn_REG_get_InputSubset();
+                            } catch (NullPointerException e) {
+                                System.out.printf("thread " + threadId + " :: NullPointerException.%n");
+                            } catch (NoClassDefFoundError e) {
+                                System.out.printf("thread " + threadId + " :: NoClassDefFoundError.%n");
+                            } catch (ClassCastException e) {
+                                System.out.printf("thread " + threadId + " :: ClassCastException.%n");
+                            }
                             System.out.printf("thread " + threadId + " :: is primed DEFAULT case(" + thread_Listen_switch_A[0] + ", " + thread_Listen_switch_A[1] + ").%n");//todo SIMULATION
                             break;
 
@@ -304,29 +315,29 @@ public class IO_ListenRespond {
             }
             OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer();
             OpenEpiCentre.CLIBConcurrentServerIO__app_FUNCT_push_To_STACK_Of_Input();
-            WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
             System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");
             obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewInputReady(false);
             System.out.printf("thread " + threadId + " :: => CC : stat_REG_get_flag__isNewInputReady(" + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewInputReady() + ")%n");//todo SIMULATION
             System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
             System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
             System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
             System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
             System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
             System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
             System.out.printf("thread " + threadId + " :: IO - IN <=%n");//todo SIMULATION
-            System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerInputReceive : close access @ 0 (Injection)%n");//todo SIMULATION
-            OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End();
+            System.out.printf("thread " + threadId + " :: WriteQue : STACK - ClientUserInput : close access @ 0 (Injection)%n");//todo SIMULATION
+            OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ClientUserInput_Injection__write_End();
         } else {
             System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
         }
         //System.out.printf("thread " + threadId + " :: WriteQue : SIM : close access @ 0%n");//todo SIMULATION
         //WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION
     }
     private void stat_App_Thread_Respond(Framework obj, byte threadId) {
-        WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+        WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
         System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
         //WriteQue_SimulationIO.app_FUNCT_write_Start(0);//todo SIMULATION
         //System.out.printf("thread " + threadId + " :: WriteQue : SIM : open access @ 0%n");//todo SIMULATION
@@ -335,7 +346,7 @@ public class IO_ListenRespond {
             if (!obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady()) {
                 System.out.printf("thread " + threadId + " :: <= CC : dyn_REG_get_flag__isNewOutputReady() => " + obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_get_flag__isNewOutputReady() + "%n");//todo SIMULATION
                 System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
-                WriteQue_ConditionCode.app_FUNCT_write_End(0);
+                WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
                 OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_Start();
                 System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerOutputSend : open access @ 0 (Extraction)%n");//todo SIMULATION
                 _stat_REG_Buffer_For_Ouput = obj.dyn_STRUCT_get_Output();
@@ -500,19 +511,19 @@ public class IO_ListenRespond {
                 System.out.printf("thread " + threadId + " :: IO - OUT =>%n");//todo SIMULATION
                 System.out.printf("thread " + threadId + " :: WriteQue : STACK - ServerOutputSend : close access @ 0 (Extraction)%n");//todo SIMULATION
                 OpenEpiCentre.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerOutputSend_Extraction__write_End();
-                WriteQue_ConditionCode.app_FUNCT_write_Start(0);
+                WriteQue_ServerConditionCode.app_FUNCT_write_Start(0);
                 System.out.printf("thread " + threadId + " :: WriteQue : CC : open access @ 0%n");//todo SIMULATION
                 obj.dyn_STRUCT_get_IO_ListenRespond().dyn_REG_set_flag__isNewOutputReady(true);
                 System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
-                WriteQue_ConditionCode.app_FUNCT_write_End(0);
+                WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
                 //stat_App_Encode_NetworkingSteam_At_Server_Output_Send(obj, _SIM_stat_REG_output_Sample, stat_REG_get_Buffer__Ouput());//todo SIMULATION
             } else {
                 System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
-                WriteQue_ConditionCode.app_FUNCT_write_End(0);
+                WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
             }
         } else {
             System.out.printf("thread " + threadId + " :: WriteQue : CC : close access @ 0%n");//todo SIMULATION
-            WriteQue_ConditionCode.app_FUNCT_write_End(0);
+            WriteQue_ServerConditionCode.app_FUNCT_write_End(0);
         }
         //System.out.printf("thread " + threadId + " :: WriteQue : SIM : close access @ 0%n");//todo SIMULATION
         //WriteQue_SimulationIO.app_FUNCT_write_End(0);//todo SIMULATION

@@ -1,80 +1,84 @@
 package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
-import libs.JavaLIBWriteQue_ServerOutputSend;
-
+import libs.JavaLIB_WriteQueForThreadsAt_ServerOutputSend;
 public class WriteQue_ServerOutputSend
 {
-    public WriteQue_ServerOutputSend()
-    {
-
-    }
     public static Pointer app_FUNCT_generate_Program()
     {
         try {
-            return JavaLIBWriteQue_ServerOutputSend.INSTANCE.app_FUNCT_generate_Program();
-        } catch (NoClassDefFoundError e) {
-            System.out.printf("NoClassDefFoundError.%n");
-            return (Pointer)null;
-        } catch (UnsatisfiedLinkError e) {
-            System.out.printf("NullPointerException.%n");
-            return (Pointer)null;
-        } catch (NullPointerException e) {
-            throw new NullPointerException("NullPointerException.%n");
+            return JavaLIB_WriteQueForThreadsAt_ServerOutputSend.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_generate_Program();
         }
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return null;
     }
     public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
-        byte[] temp;
-        temp = new byte[1];
-        temp[0] = Byte.MAX_VALUE;
         try {
-            temp = JavaLIBWriteQue_ServerOutputSend.INSTANCE.app_FUNCT_get_flag_isPGM_INSTNATIATED();
-        } catch (NoClassDefFoundError e) {
-            System.out.printf("NoClassDefFoundError.%n");
-            return true;
-        } catch (UnsatisfiedLinkError e) {
-            System.out.printf("NullPointerException.%n");
-            return true;
-        } catch (NullPointerException e) {
-            throw new NullPointerException("NullPointerException.%n");
+            return Global.stat_CONVERT_ByteArray_To_Boolean(JavaLIB_WriteQueForThreadsAt_ServerOutputSend.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_get_FLAG_isPGM_INSTANTIATED());
         }
-        return Global.stat_CONVERT_ByteArray_To_Boolean(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(temp));
+        catch (NoClassDefFoundError e) {
+            System.out.printf("NoClassDefFoundError.%n");
+        }
+        catch (NullPointerException e) {
+            System.out.printf("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
+        }
+        return true;
     }
     public static void app_FUNCT_terminate_Program()
     {
         try {
-            JavaLIBWriteQue_ServerOutputSend.INSTANCE.app_FUNCT_terminate_Program();
-        } catch (NoClassDefFoundError e) {
+            JavaLIB_WriteQueForThreadsAt_ServerOutputSend.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_terminate_Program();
+        }
+        catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        } catch (UnsatisfiedLinkError e) {
+        }
+        catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        } catch (NullPointerException e) {
-            throw new NullPointerException("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_End(long threadId)
+    public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaLIBWriteQue_ServerOutputSend.INSTANCE.app_FUNCT_write_End(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
-        } catch (NoClassDefFoundError e) {
+            JavaLIB_WriteQueForThreadsAt_ServerOutputSend.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_write_End(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_int_To_ByteArray(threadId)));
+        }
+        catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        } catch (UnsatisfiedLinkError e) {
+        }
+        catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        } catch (NullPointerException e) {
-            throw new NullPointerException("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_Start(long threadId)
+    public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaLIBWriteQue_ServerOutputSend.INSTANCE.app_FUNCT_write_Start(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
-        } catch (NoClassDefFoundError e) {
+            JavaLIB_WriteQueForThreadsAt_ServerOutputSend.INSTANCE.CLIB_WriteEnableForThreadsAt_ServerOutputSend__App_FUNCT_write_Start(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_int_To_ByteArray(threadId)));
+        }
+        catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
-        } catch (UnsatisfiedLinkError e) {
+        }
+        catch (NullPointerException e) {
             System.out.printf("NullPointerException.%n");
-        } catch (NullPointerException e) {
-            throw new NullPointerException("NullPointerException.%n");
+        }
+        catch (UnsatisfiedLinkError e) {
+            System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
 }

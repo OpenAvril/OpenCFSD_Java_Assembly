@@ -1,15 +1,13 @@
 package main.IO;
-
 import com.sun.jna.Pointer;
 import engine.Global;
-import libs.JavaWriteQue_SimulationIO;
-
-public class WriteQue_SimulationIO {
-
+import libs.JavaLIB_WriteQueForThreadsAt_SimulationIO;
+public class WriteQue_SimulationIO
+{
     public static Pointer app_FUNCT_generate_Program()
     {
         try {
-            return JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO__App_FUNCT_generate_Program();
+            return JavaLIB_WriteQueForThreadsAt_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO__App_FUNCT_generate_Program();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -25,7 +23,7 @@ public class WriteQue_SimulationIO {
     public static Boolean app_FUNCT_get_flag_isPGM_INSTNATIATED()
     {
         try {
-            return Global.stat_CONVERT_ByteArray_To_Boolean(JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_get_flag_isPGM_INSTANTIATED());
+            return Global.stat_CONVERT_ByteArray_To_Boolean(JavaLIB_WriteQueForThreadsAt_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO__App_FUNCT_get_FLAG_isPGM_INSTANTIATED());
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -41,7 +39,7 @@ public class WriteQue_SimulationIO {
     public static void app_FUNCT_terminate_Program()
     {
         try {
-            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_terminate_Program();
+            JavaLIB_WriteQueForThreadsAt_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO__App_FUNCT_terminate_Program();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -53,10 +51,10 @@ public class WriteQue_SimulationIO {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_End(long threadId)
+    public static void app_FUNCT_write_End(int threadId)
     {
         try {
-            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_write_End(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
+            JavaLIB_WriteQueForThreadsAt_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO__App_FUNCT_write_End(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_int_To_ByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
@@ -68,10 +66,10 @@ public class WriteQue_SimulationIO {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void app_FUNCT_write_Start(long threadId)
+    public static void app_FUNCT_write_Start(int threadId)
     {
         try {
-            JavaWriteQue_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO_InputSamples__App_FUNCT_write_Start(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_Long_To_ByteArray(threadId)));
+            JavaLIB_WriteQueForThreadsAt_SimulationIO.INSTANCE.CLIB_WriteEnableForThreadsAt_SimulationIO__App_FUNCT_write_Start(Global.stat_CONVERT_ByteArray_To_ReverseByteArray(Global.stat_CONVERT_int_To_ByteArray(threadId)));
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");

@@ -2,7 +2,7 @@ package main.IO;
 import com.sun.jna.Pointer;
 import engine.Global;
 import java.util.Arrays;
-import libs.JavaLIB_OpenEpiCentre;
+
 public class OpenEpiCentre {
     public static void CLIBConcurrentServerIO__app_FUNCT_flip_Input_DoubleBuffer() {
         try {
@@ -137,9 +137,9 @@ public class OpenEpiCentre {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End() {
+    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ClientUserInput_Injection__write_End() {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_End();
+            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ClientUserInput_Injection__write_End();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (NullPointerException e) {
@@ -148,9 +148,9 @@ public class OpenEpiCentre {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start() {
+    public static void CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ClientUserInput_Injection__write_Start() {
         try {
-            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ServerInputReceive_Injection__write_Start();
+            JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_PGM_WriteEnableStack_ClientUserInput_Injection__write_Start();
         } catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
         } catch (NullPointerException e) {
@@ -159,13 +159,13 @@ public class OpenEpiCentre {
             System.out.printf("UnsatisfiedLinkError.%n");
         }
     }
-    public static boolean CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerInputReceive() {
+    public static boolean CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ClientUserInput() {
         byte[]  temp;
         temp = null;
         temp = new byte[1];
         temp[0] = Byte.MAX_VALUE;
         try {
-            temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ServerInputReceive();
+            temp = JavaLIB_OpenEpiCentre.INSTANCE.CLIBConcurrentServerIO__dyn_REG_get_flag_isStackLoaded_ClientUserInput();
         }
         catch (NoClassDefFoundError e) {
             System.out.printf("NoClassDefFoundError.%n");
